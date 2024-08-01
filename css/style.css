@@ -13,7 +13,7 @@ body{
 	width: 100%;
 	height: 100vh;
 	/* min-height: 100vh; */
-	background-image: url(../bright.jpg);
+	background-image: url(../img/bright.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
