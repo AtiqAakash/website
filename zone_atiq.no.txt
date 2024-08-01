@@ -1,8 +1,1 @@
-atiq.no.		2560	IN	SOA	ns.datacenter.no. hostmaster.atiq.no. 1720436293 16384 2048 1048576 2560
-atiq.no.		3600	IN	NS	ns.datacenter.no.
-atiq.no.		3600	IN	NS	ns2.datacenter.no.
-atiq.no.		600	IN	MX	10 mx.webhuset.no.
-atiq.no.		600	IN	TXT	"v=spf1 include:spf.webhuset.no -all"
-autodiscover.atiq.no.	600	IN	CNAME	mailconfig.webhuset.no.
-autoconfig.atiq.no.	600	IN	CNAME	mailconfig.webhuset.no.
-atiq.no.		2560	IN	SOA	ns.datacenter.no. hostmaster.atiq.no. 1720436293 16384 2048 1048576 2560
+
