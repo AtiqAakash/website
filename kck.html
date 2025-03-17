@@ -5,49 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kringsjå Cricket Klubb</title>
   <style>
-    /* General Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-    }
-    body {
-      /* Use a valid URL or local image for the tiger skin background */
-      background: url('https://scontent-fra3-2.xx.fbcdn.net/v/t39.30808-6/483525036_987795643457660_654859658030607449_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=0r_dCZb1pJkQ7kNvgGSZmWd&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&_nc_gid=jW7eghaozKfJLiG0069g1A&oh=00_AYHKxVA-BYIcK7BZU3-vE84R53YjoptK3rJGaSVBAtKeXA&oe=67DE3A60') no-repeat center center fixed; /* Replace with your image */
-      background-size: cover;
-      color: #fff;
-      line-height: 1.6;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    /* Hero Section */
-    .hero {
-      height: 40vh; /* Reduced height for compact design */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1rem; /* Reduced padding */
-    }
-    .hero-content h2 {
-      font-size: 3rem; /* Increased from 2rem */
-      margin-bottom: 0.5rem;
-    }
-    .hero-content p {
-      font-size: 1.6rem; /* Increased from 1rem */
-      margin-bottom: 1rem;
-    }
-    .hero-summary {
-      font-size: 1.3rem; /* Increased from 0.9rem */
-      margin-bottom: 1rem;
-      line-height: 1.4;
-    }
-    body::before {
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  /* Tiger skin background */
+  background: url('https://scontent-fra3-2.xx.fbcdn.net/v/t39.30808-6/483525036_987795643457660_654859658030607449_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=0r_dCZb1pJkQ7kNvgGSZmWd&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&_nc_gid=jW7eghaozKfJLiG0069g1A&oh=00_AYHKxVA-BYIcK7BZU3-vE84R53YjoptK3rJGaSVBAtKeXA&oe=67DE3A60') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  line-height: 1.6;
+  padding-top: 60px; /* Prevent content from being hidden under the navbar */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem 1rem; /* Reduced padding for compact design */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px; /* Fixed height for the navbar */
+}
+body::before {
       content: '';
       position: fixed;
       top: 0;
@@ -57,73 +52,449 @@
       background: rgba(0, 0, 0, 0.6); /* Adjust the last value (0.6) for darkness intensity */
       z-index: -1; /* Ensure it stays behind the content */
     }
-    /* Stats Section */
-    .stats {
-      padding: 2rem 0; /* Reduced padding */
-      text-align: center;
-    }
-    .stat-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem; /* Reduced spacing */
-    }
-    .btn {
-      background: #ff5722;
-      color: #fff;
-      padding: 0.6rem 1.5rem; /* Smaller buttons */
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .btn:hover {
-      transform: scale(1.1);
-    }
-    .stat-table {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 1.5rem; /* Reduced padding */
-      border-radius: 10px;
-      overflow-x: auto;
-      max-width: 100%;
-      margin: 0 auto;
-    }
-    .stat-table table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .stat-table th,
-    .stat-table td {
-      padding: 0.6rem; /* Reduced padding */
-      text-align: left;
-      border: 1px solid #ff5722;
-    }
-    .stat-table th {
-      background: #ff5722;
-      color: #000;
-    }
-    .stat-table tr:nth-child(even) {
-      background: rgba(255, 255, 255, 0.1);
-    }
-    /* Footer */
-    .footer {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 1rem 0;
-      text-align: center;
-    }
+
+.navbar-logo img {
+  width: 80px; /* Slightly larger logo */
+  height: auto;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem; /* Reduced gap between links */
+  align-items: center;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.9rem; /* Smaller font size for links */
+  padding: 0.4rem 0.8rem; /* Reduced padding for links */
+  border-radius: 5px;
+}
+
+.navbar-links a:hover {
+  background: #ff5722;
+}
+
+/* Hero Section */
+.hero {
+  height: 80vh; /* Full-screen height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 60px; /* Prevent overlap with the fixed navbar */
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.hero-summary {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Stats Section */
+.stats {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.stat-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background: #ff5722;
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Add spacing between sections */
+section {
+  scroll-margin-top: 3rem; /* Adjust the value as needed */
+}
+
+/* Optional: Reduce spacing for the last section to avoid excessive bottom padding */
+section:last-of-type {
+  margin-bottom: 2rem; /* Smaller spacing for the last section */
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.stat-table {
+  background: rgba(0, 0, 0, 0.8); /* Consistent dark background */
+  padding: 1.5rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.stat-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stat-table th,
+.stat-table td {
+  padding: 0.6rem;
+  text-align: left;
+  border: 1px solid #ff5722;
+}
+
+.stat-table th {
+  background: #ff5722;
+  color: #000;
+}
+
+.stat-table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.gallery-slider {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.gallery-slider img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 2px solid #ff5722;
+  border-radius: 10px;
+}
+
+/* Players Section */
+.players {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.players table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.8); /* Consistent dark background */
+  padding: 1.5rem;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.players th,
+.players td {
+  padding: 0.6rem;
+  text-align: left;
+  border: 1px solid #ff5722;
+}
+
+.players th {
+  background: #ff5722;
+  color: #000;
+}
+
+.players tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Team Officials Section */
+.team-officials {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.team-officials table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.8); /* Consistent dark background */
+  padding: 1.5rem;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.team-officials th,
+.team-officials td {
+  padding: 0.6rem;
+  text-align: left;
+  border: 1px solid #ff5722;
+}
+
+.team-officials th {
+  background: #ff5722;
+  color: #000;
+}
+
+.team-officials tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Contact Section */
+.contact {
+  padding: 2rem 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Highlight active navbar link */
+.navbar-links a.active {
+  background: #ff5722; /* Highlight color */
+  color: #000; /* Text color */
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: 2px solid #ff5722;
+}
+
+.contact button {
+  background: #ff5722;
+  color: #fff;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact button:hover {
+  background: #e64a19;
+}
+
+/* Footer */
+.footer {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer-icons a {
+  margin: 0 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.footer-icons a:hover {
+  color: #ff5722;
+}
+/* Adjust Players Section for Responsive Grid Layout */
+.players {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.players .player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Auto-adjust columns */
+  gap: 0.5rem; /* Add spacing between grid items */
+  font-size: 0.9rem; /* Reduce font size for better fit */
+}
+
+.players .player-item {
+  background: rgba(0, 0, 0, 0.8); /* Consistent dark background */
+  padding: 0.6rem;
+  border: 1px solid #ff5722; /* Border for each cell */
+  border-radius: 5px;
+  text-align: center;
+}
+
+.players .player-item:nth-child(even) {
+  background: rgba(0, 0, 0, 0.8); /* Alternating background */
+}
+
+/* Footer Icons - Specific Colors */
+.footer-icons a[href*="facebook"] {
+  color: #1877F2; /* Facebook's official blue color */
+}
+
+.footer-icons a[href*="linkedin"] {
+  color: #0A66C2; /* LinkedIn's official blue color */
+}
+
+.footer-icons a:hover {
+  opacity: 0.8; /* Slightly dim the color on hover */
+}
+
+/* Gallery Styles */
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 1rem; /* Space between images */
+  margin-top: 1rem;
+}
+
+.gallery-images img {
+  width: 100%; /* Ensure images fit within their grid cells */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners for aesthetics */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.gallery-images img:hover {
+  transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+.gallery-images a {
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Gallery Styles */
+.gallery {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4x4 grid */
+  gap: 1rem; /* Space between images */
+  margin-top: 1rem;
+}
+
+.gallery-images img {
+  width: 100%; /* Ensure images fit within their grid cells */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.gallery-images img:hover {
+  transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+.gallery-images a {
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Gallery Styles */
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4x4 grid */
+  gap: 1rem; /* Space between images */
+  margin-top: 1rem;
+}
+
+.gallery-images img {
+  width: 100%; /* Ensure images fit within their grid cells */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Show pointer on hover */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.gallery-images img:hover {
+  transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ff5722;
+}
+
   </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="https://i.postimg.cc/ncHpXNFX/KCK-Logo.png" alt="Kringsjå Cricket Klubb Logo">
+    </div>
+    <div class="navbar-links">
+      <a href="#home">Home</a>
+      <a href="#stats">Stats</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#players">Players</a>
+      <a href="#team-officials">Team Officials</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </nav>
+
   <!-- Hero Section -->
-  <section id="hero" class="hero">
+  <section id="home" class="hero">
     <div class="hero-content">
       <h2>Kringsjå Cricket Klubb</h2>
       <p>Pride of the Tiger - Roaring on the Field!</p>
       <div class="hero-summary">
-        Here is stats from the 2024 seasons. Significantly where Kringsjå Cricket Klubb emerged as group champions in the T20 League and earned promotion to Division 4 from the Qualifying League. Below are the performances of our best players across both leagues.
+        Kringsjå Cricket Klubb emerged as group champions in the T20 League and earned promotion to Division 4 from the Qualifying League.
       </div>
     </div>
   </section>
+
   <!-- Stats Section -->
   <section id="stats" class="stats">
     <h2 class="section-title">Team Performance</h2>
@@ -135,9 +506,240 @@
     </div>
     <div id="stat-table" class="stat-table"></div>
   </section>
+
+<!-- Modal for Full-Screen Image -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+<!-- Gallery Section -->
+<section id="gallery" class="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery-images">
+    <!-- Image 1 -->
+    <img src="https://scontent-fra3-2.xx.fbcdn.net/v/t39.30808-6/466481899_901786898725202_4796250158819194176_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=7YVjTzQgB0wQ7kNvgEtsFQb&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&_nc_gid=9Z_IjQPi0FggGNTq3rcRmw&oh=00_AYEvHAsp7qG7zmQaCG0N1lJWugYb4Yce11JMwXVWDhT3KA&oe=67DE8205" alt="Gallery Image 1" class="gallery-img">
+
+    <!-- Image 2 -->
+    <img src="https://scontent-fra3-1.xx.fbcdn.net/v/t39.30808-6/482976766_987510800152811_7226509165274168532_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=TSdkCqkbRQIQ7kNvgGcRVnJ&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&_nc_gid=yqRXoUE4xJEnL0ZJSgNmgg&oh=00_AYFLovbocCgJUihGqLRl1VyJ_dv6uSqNtf0UtKUaRaiMuA&oe=67DE63D0" alt="Gallery Image 2" class="gallery-img">
+
+    <!-- Image 3 -->
+    <img src="https://scontent-fra5-1.xx.fbcdn.net/v/t39.30808-6/482347480_985909760312915_2159700492868563366_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=MGwL6uXyY4YQ7kNvgH5eIZb&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&_nc_gid=Zo_X16wXrrdrz5GL6Fbtcw&oh=00_AYHnrAys27CRmsduNzvJ4RYQXRB9bP5_nq9KDr2UBYc1XA&oe=67DE6753" alt="Gallery Image 3" class="gallery-img">
+
+    <!-- Image 4 -->
+    <img src="https://scontent-fra3-1.xx.fbcdn.net/v/t39.30808-6/480698537_974033861500505_2787857400420669736_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Xvc1JH4XQAIQ7kNvgHqnaCc&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&_nc_gid=Ae8LWSpTAgJ2iFK-sLwFpQ&oh=00_AYFvG1SXI92wT-3XoHYD2547MfTfZUf73-pPLFfeMNtuPQ&oe=67DE77C2" alt="Gallery Image 4" class="gallery-img">
+
+    <!-- Image 5 -->
+    <img src="https://scontent-fra3-1.xx.fbcdn.net/v/t39.30808-6/480706595_973859051517986_884237724871104304_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=fxrCLaRIP5MQ7kNvgFBVBlN&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&_nc_gid=ZSc5ubMaDpI-fVn4ITIJ9g&oh=00_AYHV8rjtmgFcLjl9X_5mL5v3cKsuyTXgDBIMy2R6vv6olg&oe=67DE5DB1" alt="Gallery Image 5" class="gallery-img">
+
+    <!-- Image 6 -->
+    <img src="https://scontent-fra3-1.xx.fbcdn.net/v/t39.30808-6/476205924_1149569356847968_7764214232620441395_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Rgt3hjzILtAQ7kNvgF2T4Gc&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&_nc_gid=GCtWYjSiWK9qN3yaAr0Rwg&oh=00_AYGRxvqT6FvKgZdbVmiyj9Y21eek3Q-V2b5mXDm3dhJ17Q&oe=67DE77DD" alt="Gallery Image 6" class="gallery-img">
+
+    <!-- Image 7 -->
+    <img src="https://scontent-fra5-2.xx.fbcdn.net/v/t39.30808-6/480696815_973855778184980_620728288148324515_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=JI5SGdumwtUQ7kNvgFF4ubX&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&_nc_gid=CXOS_0-U6JWmwT79zMEQ9Q&oh=00_AYHXT4u-3thaTz9TfdZG-1x1ieIXWXdEPDiDc8X0ga3BGw&oe=67DE7E0A" alt="Gallery Image 7" class="gallery-img">
+
+    <!-- Image 8 -->
+    <img src="https://scontent-fra3-2.xx.fbcdn.net/v/t39.30808-6/481674390_979786917591866_2517710840374410337_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=os-0bM61_wUQ7kNvgHNObDr&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&_nc_gid=rDEd7P8lRpp-IPaaSTUrIg&oh=00_AYFAfwQkDQrXnuoFr8MDfB4sUIetl4vHB5a-ezV9N_qKeA&oe=67DE4D39" alt="Gallery Image 8" class="gallery-img">
+  </div>
+
+  <!-- Modal for Full-Screen Image -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+</section>
+
+<!-- Players Section -->
+<section id="players" class="players">
+  <h2>Players</h2>
+  <div class="player-grid">
+    <!-- Player 1 -->
+    <div class="player-item">
+      <strong>A T M Jakir Alam</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 2 -->
+    <div class="player-item">
+      <strong>Ahmad Jamil</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 3 -->
+    <div class="player-item">
+      <strong>Hemel Howlader</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 4 -->
+    <div class="player-item">
+      <strong>Intiaz Bin Khondoker</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 5 -->
+    <div class="player-item">
+      <strong>Jubair Rahman</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 6 -->
+    <div class="player-item">
+      <strong>Kazi Shefaul Mulk Sh.</strong><br>
+      Bowler
+    </div>
+    <!-- Player 7 -->
+    <div class="player-item">
+      <strong>M M Imran Iqbal Imon</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 8 -->
+    <div class="player-item">
+      <strong>Mahmud Hasan</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 9 -->
+    <div class="player-item">
+      <strong>Md Zubayar</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 10 -->
+    <div class="player-item">
+      <strong>Md Ariful Islam Foys.</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 11 -->
+    <div class="player-item">
+      <strong>Md Ataur Rahman</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 12 -->
+    <div class="player-item">
+      <strong>Md Atiqur Rahman</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 13 -->
+    <div class="player-item">
+      <strong>Md Badrul Hyder</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 14 -->
+    <div class="player-item">
+      <strong>Md Rafiqur Rashid</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 15 -->
+    <div class="player-item">
+      <strong>Md Zahidur Rahman Ar.</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 16 -->
+    <div class="player-item">
+      <strong>Mir Abdul Alim</strong><br>
+      Wicket Keeper
+    </div>
+    <!-- Player 17 -->
+    <div class="player-item">
+      <strong>Mm Imran Iqbal Imon</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 18 -->
+    <div class="player-item">
+      <strong>Mohammed Saifuddin</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 19 -->
+    <div class="player-item">
+      <strong>Mrinal Kumar Das</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 20 -->
+    <div class="player-item">
+      <strong>Nafis Faiyaz</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 21 -->
+    <div class="player-item">
+      <strong>Pritam Bose</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 22 -->
+    <div class="player-item">
+      <strong>S M Sayed Hossain Ru.</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 23 -->
+    <div class="player-item">
+      <strong>Saykat Das</strong><br>
+      Bowler
+    </div>
+    <!-- Player 24 -->
+    <div class="player-item">
+      <strong>Shahadat Hossain</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 25 -->
+    <div class="player-item">
+      <strong>Shahed Mamun</strong><br>
+      All Rounder
+    </div>
+    <!-- Player 26 -->
+    <div class="player-item">
+      <strong>Sujon Hossain</strong><br>
+      All Rounder
+    </div>
+  </div>
+</section>
+
+
+  <!-- Team Officials Section -->
+  <section id="team-officials" class="team-officials">
+    <h2>Team Officials</h2>
+    <table>
+      <tr>
+        <th>Role</th>
+        <th>Name</th>
+      </tr>
+      <tr>
+        <td>Ansvarlig politiattest</td>
+        <td>Saykat Das</td>
+      </tr>
+      <tr>
+        <td>Kasserer (Styremedlem)</td>
+        <td>A T M Jakir Alam</td>
+      </tr>
+      <tr>
+        <td>Leder</td>
+        <td>S M Sayed Hossain Rubel</td>
+      </tr>
+      <tr>
+        <td>Nestleder</td>
+        <td>Mohammad Shahadat Hossain</td>
+      </tr>
+      <tr>
+        <td>Styremedlem</td>
+        <td>Pritam Bose</td>
+      </tr>
+      <tr>
+        <td>Varamedlem</td>
+        <td>Kazi Shefaul Mulk Shawrob</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2025 Atiq. All Rights Reserved.</p>
+    <div class="footer-icons">
+      <a href="https://www.facebook.com/Kringsja.Cricket.Club" target="_blank">Facebook</a>
+      <a href="https://www.linkedin.com/company/kringsja-cricket-klubb" target="_blank">LinkedIn</a>
+    </div>
+    <p>&copy; 2025 <a href="https://www.facebook.com/atiqur.rahman.aakash" target="_blank">ATIQ</a>. All Rights Reserved.</p>
   </footer>
   <script>
     // Define tables for T20, Super League, Combined, and Best Performances stats
@@ -258,7 +860,7 @@
           </tr>
         </table>
       `,
-            Combined: `
+      Combined: `
         <table>
           <tr>
             <th>Category</th>
@@ -369,14 +971,47 @@
         </table>
       `
     };
+    
+    // Function to handle scroll events and highlight the active section
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section"); // All sections on the page
+  const navLinks = document.querySelectorAll(".navbar-links a"); // All navbar links
+
+  // Function to determine which section is currently in view
+  function highlightActiveSection() {
+    let currentSection = ""; // Track the current section
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop; // Top position of the section
+      const sectionHeight = section.clientHeight; // Height of the section
+      const sectionMidpoint = sectionTop + sectionHeight / 2; // Midpoint of the section
+
+      if (window.scrollY >= sectionMidpoint - window.innerHeight / 2) {
+        currentSection = section.getAttribute("id"); // Get the ID of the section
+      }
+    });
+
+    // Remove "active" class from all links
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(currentSection)) {
+        link.classList.add("active"); // Add "active" class to the matching link
+      }
+    });
+  }
+
+  // Attach the scroll event listener
+  window.addEventListener("scroll", highlightActiveSection);
+
+  // Trigger the function on page load to set the initial active link
+  highlightActiveSection();
+});
 
     // Function to display the selected table
     function showTable(tableType) {
       const statTableDiv = document.getElementById('stat-table');
-      
       // Clear previous content
       statTableDiv.innerHTML = "";
-
       // Add the selected table
       statTableDiv.innerHTML = tables[tableType];
     }
@@ -385,6 +1020,31 @@
     document.addEventListener('DOMContentLoaded', () => {
       showTable('T20'); // Default table to display
     });
+    // Get the modal and image elements
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const closeBtn = document.querySelector(".close");
+
+// Open modal on image click
+document.querySelectorAll(".gallery-images img").forEach(img => {
+  img.addEventListener("click", () => {
+    modal.style.display = "block";
+    modalImg.src = img.src; // Set the modal image to the clicked image
+  });
+});
+
+// Close modal on close button click
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close modal if user clicks outside the image
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
   </script>
 </body>
 </html>
