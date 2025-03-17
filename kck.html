@@ -1,10 +1,3 @@
-To include the **Best Performances** button and table (highlighting the best knock and best bowling performances from both leagues), I'll add the new button and corresponding table to your existing code. Here's the continuation:
-
----
-
-### **Updated Code with "Best Performances" Button**
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,21 +12,18 @@ To include the **Best Performances** button and table (highlighting the best kno
       box-sizing: border-box;
       font-family: 'Arial', sans-serif;
     }
-
     body {
       /* Use a valid URL or local image for the tiger skin background */
-      background: url('https://static.vecteezy.com/system/resources/previews/003/197/708/non_2x/tiger-skin-background-vector.jpg') no-repeat center center fixed; /* Replace with your image */
+      background: url('https://scontent-fra3-2.xx.fbcdn.net/v/t39.30808-6/483525036_987795643457660_654859658030607449_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=0r_dCZb1pJkQ7kNvgGSZmWd&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&_nc_gid=jW7eghaozKfJLiG0069g1A&oh=00_AYHKxVA-BYIcK7BZU3-vE84R53YjoptK3rJGaSVBAtKeXA&oe=67DE3A60') no-repeat center center fixed; /* Replace with your image */
       background-size: cover;
       color: #fff;
       line-height: 1.6;
     }
-
     .container {
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
     }
-
     /* Hero Section */
     .hero {
       height: 40vh; /* Reduced height for compact design */
@@ -44,36 +34,40 @@ To include the **Best Performances** button and table (highlighting the best kno
       text-align: center;
       padding: 1rem; /* Reduced padding */
     }
-
     .hero-content h2 {
-      font-size: 2.5rem; /* Increased font size */
+      font-size: 3rem; /* Increased from 2rem */
       margin-bottom: 0.5rem;
     }
-
     .hero-content p {
-      font-size: 1.2rem; /* Increased font size */
+      font-size: 1.6rem; /* Increased from 1rem */
       margin-bottom: 1rem;
     }
-
     .hero-summary {
-      font-size: 1rem; /* Increased font size */
+      font-size: 1.3rem; /* Increased from 0.9rem */
       margin-bottom: 1rem;
       line-height: 1.4;
     }
-
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* Adjust the last value (0.6) for darkness intensity */
+      z-index: -1; /* Ensure it stays behind the content */
+    }
     /* Stats Section */
     .stats {
       padding: 2rem 0; /* Reduced padding */
       text-align: center;
     }
-
     .stat-buttons {
       display: flex;
       justify-content: center;
       gap: 1rem;
       margin-bottom: 1rem; /* Reduced spacing */
     }
-
     .btn {
       background: #ff5722;
       color: #fff;
@@ -83,11 +77,9 @@ To include the **Best Performances** button and table (highlighting the best kno
       cursor: pointer;
       transition: transform 0.3s ease;
     }
-
     .btn:hover {
       transform: scale(1.1);
     }
-
     .stat-table {
       background: rgba(0, 0, 0, 0.8);
       padding: 1.5rem; /* Reduced padding */
@@ -96,28 +88,23 @@ To include the **Best Performances** button and table (highlighting the best kno
       max-width: 100%;
       margin: 0 auto;
     }
-
     .stat-table table {
       width: 100%;
       border-collapse: collapse;
     }
-
     .stat-table th,
     .stat-table td {
       padding: 0.6rem; /* Reduced padding */
       text-align: left;
       border: 1px solid #ff5722;
     }
-
     .stat-table th {
       background: #ff5722;
       color: #000;
     }
-
     .stat-table tr:nth-child(even) {
       background: rgba(255, 255, 255, 0.1);
     }
-
     /* Footer */
     .footer {
       background: rgba(0, 0, 0, 0.8);
@@ -133,11 +120,10 @@ To include the **Best Performances** button and table (highlighting the best kno
       <h2>Kringsjå Cricket Klubb</h2>
       <p>Pride of the Tiger - Roaring on the Field!</p>
       <div class="hero-summary">
-        Here are the stats from the 2024 seasons. Significantly, Kringsjå Cricket Klubb emerged as group champions in the T20 League and earned promotion to Division 4 from the Qualifying League. Below are the performances of our best players across both leagues.
+        Here is stats from the 2024 seasons. Significantly where Kringsjå Cricket Klubb emerged as group champions in the T20 League and earned promotion to Division 4 from the Qualifying League. Below are the performances of our best players across both leagues.
       </div>
     </div>
   </section>
-
   <!-- Stats Section -->
   <section id="stats" class="stats">
     <h2 class="section-title">Team Performance</h2>
@@ -149,12 +135,10 @@ To include the **Best Performances** button and table (highlighting the best kno
     </div>
     <div id="stat-table" class="stat-table"></div>
   </section>
-
   <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 Atiq. All Rights Reserved.</p>
   </footer>
-
   <script>
     // Define tables for T20, Super League, Combined, and Best Performances stats
     const tables = {
@@ -274,7 +258,7 @@ To include the **Best Performances** button and table (highlighting the best kno
           </tr>
         </table>
       `,
-      Combined: `
+            Combined: `
         <table>
           <tr>
             <th>Category</th>
@@ -387,7 +371,6 @@ To include the **Best Performances** button and table (highlighting the best kno
     };
 
     // Function to display the selected table
-       // Function to display the selected table
     function showTable(tableType) {
       const statTableDiv = document.getElementById('stat-table');
       
