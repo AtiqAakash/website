@@ -27,40 +27,9 @@
       margin: 0 auto;
     }
 
-    /* Header Styles */
-    .header {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-    .navbar ul {
-      display: flex;
-      justify-content: flex-end;
-      gap: 1.5rem;
-    }
-
-    .nav-link {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .nav-link:hover {
-      color: #ff5722;
-    }
-
     /* Hero Section */
     .hero {
-      height: 100vh;
+      height: 50vh; /* Reduced height for compact design */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -68,18 +37,18 @@
     }
 
     .hero-content h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 2.5rem; /* Slightly smaller font size */
+      margin-bottom: 0.5rem; /* Reduced spacing */
     }
 
     .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
+      font-size: 1rem; /* Smaller font size */
+      margin-bottom: 1rem; /* Reduced spacing */
     }
 
     /* Stats Section */
     .stats {
-      padding: 4rem 0;
+      padding: 2rem 0; /* Reduced padding */
       text-align: center;
     }
 
@@ -87,13 +56,13 @@
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem; /* Reduced spacing */
     }
 
     .btn {
       background: #ff5722;
       color: #fff;
-      padding: 0.8rem 2rem;
+      padding: 0.6rem 1.5rem; /* Smaller buttons */
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -106,7 +75,7 @@
 
     .stat-table {
       background: rgba(0, 0, 0, 0.8);
-      padding: 2rem;
+      padding: 1.5rem; /* Reduced padding */
       border-radius: 10px;
       overflow-x: auto;
       max-width: 100%;
@@ -120,7 +89,7 @@
 
     .stat-table th,
     .stat-table td {
-      padding: 1rem;
+      padding: 0.8rem; /* Reduced padding */
       text-align: left;
       border: 1px solid #ff5722;
     }
@@ -143,17 +112,10 @@
   </style>
 </head>
 <body>
-  <!-- Header Section -->
-  <header class="header">
-    <div class="container">
-      <h1 class="logo">Kringsjå Cricket Klubb</h1>
-    </div>
-  </header>
-
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="hero-content">
-      <h2>Welcome to Kringsjå Cricket Klubb</h2>
+      <h2>Kringsjå Cricket Klubb</h2>
       <p>Pride of the Tiger - Roaring on the Field!</p>
     </div>
   </section>
@@ -186,22 +148,52 @@
             <th>Key Stats</th>
           </tr>
           <tr>
-            <td>Best Overall</td>
+            <td rowspan="3">Best Overall</td>
             <td>1</td>
             <td>Md Rafiqur Rashid</td>
-            <td>205 runs, avg 51.25, SR 125.00</td>
+            <td>205 runs, avg 51.25, SR 125.00, 8 dismissals</td>
           </tr>
           <tr>
-            <td>Best Bowling</td>
-            <td>1</td>
+            <td>2</td>
             <td>A T M Jakir Alam</td>
             <td>8 wkts at avg 7.88, econ 5.25</td>
           </tr>
           <tr>
-            <td>Best Batting</td>
+            <td>3</td>
+            <td>Mahmud Hasan</td>
+            <td>109 runs, avg 21.80, SR 147.30, 3 dismissals</td>
+          </tr>
+          <tr>
+            <td rowspan="3">Best Bowling</td>
+            <td>1</td>
+            <td>A T M Jakir Alam</td>
+            <td>8 wkts at avg 7.88, econ 5.25, best 21/4</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Shahed Mamun</td>
+            <td>7 wkts at avg 13.14, econ 5.11, best 14/4</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Md Ataur Rahman</td>
+            <td>7 wkts at avg 20.00, econ 7.37, best 31/3</td>
+          </tr>
+          <tr>
+            <td rowspan="3">Best Batting</td>
             <td>1</td>
             <td>Md Rafiqur Rashid</td>
-            <td>205 runs, avg 51.25, SR 125.00</td>
+            <td>205 runs at avg 51.25, SR 125.00, HS 101</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Mahmud Hasan</td>
+            <td>109 runs at avg 21.80, SR 147.30, HS 39</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Md Badrul Hyder</td>
+            <td>91 runs at avg 30.33, SR 87.50, HS 47</td>
           </tr>
         </table>
       `,
@@ -214,22 +206,52 @@
             <th>Key Stats</th>
           </tr>
           <tr>
-            <td>Best Overall</td>
+            <td rowspan="3">Best Overall</td>
             <td>1</td>
             <td>Md Rafiqur Rashid</td>
-            <td>177 runs, avg 59.00, SR 99.44</td>
+            <td>177 runs, avg 59.00, SR 99.44, 4 wkts</td>
           </tr>
           <tr>
-            <td>Best Bowling</td>
+            <td>2</td>
+            <td>Mahmud Hasan</td>
+            <td>80 runs, avg 16.00, SR 97.56, 10 wkts, econ 4.79</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>M M Imran Iqbal Imon</td>
+            <td>153 runs, avg 30.60, SR 107.75, 6 wkts</td>
+          </tr>
+          <tr>
+            <td rowspan="3">Best Bowling</td>
             <td>1</td>
             <td>Mahmud Hasan</td>
-            <td>10 wkts at avg 15.00, econ 4.79</td>
+            <td>10 wkts at avg 15.00, econ 4.79, best 13/5</td>
           </tr>
           <tr>
-            <td>Best Batting</td>
+            <td>2</td>
+            <td>Shahed Mamun</td>
+            <td>10 wkts at avg 12.30, econ 6.77, best 31/4</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Saykat Das</td>
+            <td>7 wkts at avg 24.71, econ 5.24, best 16/2</td>
+          </tr>
+          <tr>
+            <td rowspan="3">Best Batting</td>
             <td>1</td>
             <td>Md Rafiqur Rashid</td>
-            <td>177 runs, avg 59.00, SR 99.44</td>
+            <td>177 runs at avg 59.00, SR 99.44, HS 75</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>M M Imran Iqbal Imon</td>
+            <td>153 runs at avg 30.60, SR 107.75, HS 65</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Mir Abdul Alim</td>
+            <td>104 runs at avg 20.80, SR 73.24, HS 81</td>
           </tr>
         </table>
       `,
@@ -244,28 +266,70 @@
             <th>Key Stats (Super)</th>
           </tr>
           <tr>
-            <td>Best Overall</td>
+            <td rowspan="3">Best Overall</td>
             <td>1</td>
             <td>Md Rafiqur Rashid</td>
-            <td>205 runs, avg 51.25, SR 125.00</td>
+            <td>205 runs, avg 51.25, SR 125.00, 8 dismissals</td>
             <td>Md Rafiqur Rashid</td>
-            <td>177 runs, avg 59.00, SR 99.44</td>
+            <td>177 runs, avg 59.00, SR 99.44, 4 wkts</td>
           </tr>
           <tr>
-            <td>Best Bowling</td>
-            <td>1</td>
+            <td>2</td>
             <td>A T M Jakir Alam</td>
             <td>8 wkts at avg 7.88, econ 5.25</td>
             <td>Mahmud Hasan</td>
-            <td>10 wkts at avg 15.00, econ 4.79</td>
+            <td>80 runs, avg 16.00, SR 97.56, 10 wkts, econ 4.79</td>
           </tr>
           <tr>
-            <td>Best Batting</td>
+            <td>3</td>
+            <td>Mahmud Hasan</td>
+            <td>109 runs, avg 21.80, SR 147.30, 3 dismissals</td>
+            <td>M M Imran Iqbal Imon</td>
+            <td>153 runs, avg 30.60, SR 107.75, 6 wkts</td>
+          </tr>
+          <tr>
+            <td rowspan="3">Best Bowling</td>
+            <td>1</td>
+            <td>A T M Jakir Alam</td>
+            <td>8 wkts at avg 7.88, econ 5.25, best 21/4</td>
+            <td>Mahmud Hasan</td>
+            <td>10 wkts at avg 15.00, econ 4.79, best 13/5</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Shahed Mamun</td>
+            <td>7 wkts at avg 13.14, econ 5.11, best 14/4</td>
+            <td>Shahed Mamun</td>
+            <td>10 wkts at avg 12.30, econ 6.77, best 31/4</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Md Ataur Rahman</td>
+            <td>7 wkts at avg 20.00, econ 7.37, best 31/3</td>
+            <td>Saykat Das</td>
+            <td>7 wkts at avg 24.71, econ 5.24, best 16/2</td>
+          </tr>
+          <tr>
+            <td rowspan="3">Best Batting</td>
             <td>1</td>
             <td>Md Rafiqur Rashid</td>
-            <td>205 runs, avg 51.25, SR 125.00</td>
+            <td>205 runs at avg 51.25, SR 125.00, HS 101</td>
             <td>Md Rafiqur Rashid</td>
-            <td>177 runs, avg 59.00, SR 99.44</td>
+            <td>177 runs at avg 59.00, SR 99.44, HS 75</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Mahmud Hasan</td>
+            <td>109 runs at avg 21.80, SR 147.30, HS 39</td>
+            <td>M M Imran Iqbal Imon</td>
+            <td>153 runs at avg 30.60, SR 107.75, HS 65</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Md Badrul Hyder</td>
+            <td>91 runs at avg 30.33, SR 87.50, HS 47</td>
+            <td>Mir Abdul Alim</td>
+            <td>104 runs at avg 20.80, SR 73.24, HS 81</td>
           </tr>
         </table>
       `
