@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kringsjå Cricket Klubb</title>
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      /* Use a valid URL or local image for the tiger skin background */
+      background: url('https://static.vecteezy.com/system/resources/previews/003/197/708/non_2x/tiger-skin-background-vector.jpg') no-repeat center center fixed; /* Replace with your image */
+      background-size: cover;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header Styles */
+    .header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .navbar ul {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #ff5722;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-content h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Stats Section */
+    .stats {
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .stat-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background: #ff5722;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+    }
+
+    .stat-table {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 2rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .stat-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .stat-table th,
+    .stat-table td {
+      padding: 1rem;
+      text-align: left;
+      border: 1px solid #ff5722;
+    }
+
+    .stat-table th {
+      background: #ff5722;
+      color: #000;
+    }
+
+    .stat-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Footer */
+    .footer {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Kringsjå Cricket Klubb</h1>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h2>Welcome to Kringsjå Cricket Klubb</h2>
+      <p>Pride of the Tiger - Roaring on the Field!</p>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section id="stats" class="stats">
+    <h2 class="section-title">Team Performance</h2>
+    <div class="stat-buttons">
+      <button class="btn" onclick="showTable('T20')">T20 League Stats</button>
+      <button class="btn" onclick="showTable('Super')">Super League Stats</button>
+      <button class="btn" onclick="showTable('Combined')">Combined Stats</button>
+    </div>
+    <div id="stat-table" class="stat-table"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2023 Kringsjå Cricket Klubb. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Define tables for T20, Super League, and Combined stats
+    const tables = {
+      T20: `
+        <table>
+          <tr>
+            <th>Category</th>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Key Stats</th>
+          </tr>
+          <tr>
+            <td>Best Overall</td>
+            <td>1</td>
+            <td>Md Rafiqur Rashid</td>
+            <td>205 runs, avg 51.25, SR 125.00</td>
+          </tr>
+          <tr>
+            <td>Best Bowling</td>
+            <td>1</td>
+            <td>A T M Jakir Alam</td>
+            <td>8 wkts at avg 7.88, econ 5.25</td>
+          </tr>
+          <tr>
+            <td>Best Batting</td>
+            <td>1</td>
+            <td>Md Rafiqur Rashid</td>
+            <td>205 runs, avg 51.25, SR 125.00</td>
+          </tr>
+        </table>
+      `,
+      Super: `
+        <table>
+          <tr>
+            <th>Category</th>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Key Stats</th>
+          </tr>
+          <tr>
+            <td>Best Overall</td>
+            <td>1</td>
+            <td>Md Rafiqur Rashid</td>
+            <td>177 runs, avg 59.00, SR 99.44</td>
+          </tr>
+          <tr>
+            <td>Best Bowling</td>
+            <td>1</td>
+            <td>Mahmud Hasan</td>
+            <td>10 wkts at avg 15.00, econ 4.79</td>
+          </tr>
+          <tr>
+            <td>Best Batting</td>
+            <td>1</td>
+            <td>Md Rafiqur Rashid</td>
+            <td>177 runs, avg 59.00, SR 99.44</td>
+          </tr>
+        </table>
+      `,
+      Combined: `
+        <table>
+          <tr>
+            <th>Category</th>
+            <th>Rank</th>
+            <th>Player (T20)</th>
+            <th>Key Stats (T20)</th>
+            <th>Player (Super)</th>
+            <th>Key Stats (Super)</th>
+          </tr>
+          <tr>
+            <td>Best Overall</td>
+            <td>1</td>
+            <td>Md Rafiqur Rashid</td>
+            <td>205 runs, avg 51.25, SR 125.00</td>
+            <td>Md Rafiqur Rashid</td>
+            <td>177 runs, avg 59.00, SR 99.44</td>
+          </tr>
+          <tr>
+            <td>Best Bowling</td>
+            <td>1</td>
+            <td>A T M Jakir Alam</td>
+            <td>8 wkts at avg 7.88, econ 5.25</td>
+            <td>Mahmud Hasan</td>
+            <td>10 wkts at avg 15.00, econ 4.79</td>
+          </tr>
+          <tr>
+            <td>Best Batting</td>
+            <td>1</td>
+            <td>Md Rafiqur Rashid</td>
+            <td>205 runs, avg 51.25, SR 125.00</td>
+            <td>Md Rafiqur Rashid</td>
+            <td>177 runs, avg 59.00, SR 99.44</td>
+          </tr>
+        </table>
+      `
+    };
+
+    // Function to display the selected table
+    function showTable(tableType) {
+      const statTableDiv = document.getElementById('stat-table');
+      
+      // Clear previous content
+      statTableDiv.innerHTML = "";
+
+      // Add the selected table
+      statTableDiv.innerHTML = tables[tableType];
+    }
+
+    // Automatically load the T20 table on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      showTable('T20'); // Default table to display
+    });
+  </script>
+</body>
+</html>
