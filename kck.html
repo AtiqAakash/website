@@ -811,227 +811,228 @@
   <footer class="footer">
     <p>&copy; 2025 <a href="https://www.facebook.com/atiqur.rahman.aakash" target="_blank">নাঁটের গুরু</a>. All Rights Reserved.</p>
   </footer>
-  <script>
-    // Define tables for T20, Super League, Combined, and Best Performances stats
-const tables = {
-  T20: `
-  <table>
-    <tr>
-      <th>Category</th>
-      <th>Rank</th>
-      <th>Player</th>
-      <th>Key Stats</th>
-    </tr>
-    <!-- Best Batter -->
-    <tr>
-      <td rowspan="3">Best Batter</td>
-      <td>1</td>
-      <td>Md Rafiqur Rashid</td>
-      <td>205 runs, Avg: 51.25, SR: 125.00</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Mahmud Hasan</td>
-      <td>109 runs, Avg: 21.80, SR: 147.30</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Md Badrul Hyder</td>
-      <td>91 runs, Avg: 30.33, SR: 87.50</td>
-    </tr>
-    <!-- Best Bowler -->
-    <tr>
-      <td rowspan="3">Best Bowler</td>
-      <td>1</td>
-      <td>A T M Jakir Alam</td>
-      <td>8 wickets, Econ: 5.25, Avg: 7.88</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Shahed Mamun</td>
-      <td>7 wickets, Econ: 5.11, Avg: 13.14</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Md Ataur Rahman</td>
-      <td>7 wickets, Econ: 7.37, Avg: 20.00</td>
-    </tr>
-    <!-- Best All-Rounder -->
-    <tr>
-      <td rowspan="3">Best All-Rounder</td>
-      <td>1</td>
-      <td>Mahmud Hasan</td>
-      <td>109 runs, 2 wickets, Bat Avg: 21.80</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>A T M Jakir Alam</td>
-      <td>8 wickets, 0 runs, Bowl Avg: 7.88</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Md Ataur Rahman</td>
-      <td>7 wickets, 62 runs, Bat Avg: 20.67</td>
-    </tr>
-  </table>
-  `,
-  Super: `
-  <table>
-    <tr>
-      <th>Category</th>
-      <th>Rank</th>
-      <th>Player</th>
-      <th>Key Stats</th>
-    </tr>
-    <!-- Best Batter -->
-    <tr>
-      <td rowspan="3">Best Batter</td>
-      <td>1</td>
-      <td>Md Rafiqur Rashid</td>
-      <td>177 runs, Avg: 59.00, SR: 99.44</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>M M Imran Iqbal Imon</td>
-      <td>153 runs, Avg: 30.60, SR: 107.75</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Mir Abdul Alim</td>
-      <td>104 runs, Avg: 20.80, SR: 73.24</td>
-    </tr>
-    <!-- Best Bowler -->
-    <tr>
-      <td rowspan="3">Best Bowler</td>
-      <td>1</td>
-      <td>Mahmud Hasan</td>
-      <td>10 wickets, Econ: 4.79, Avg: 15.00</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Shahed Mamun</td>
-      <td>10 wickets, Econ: 6.77, Avg: 12.30</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Saykat Das</td>
-      <td>7 wickets, Econ: 5.24, Avg: 24.71</td>
-    </tr>
-    <!-- Best All-Rounder -->
-    <tr>
-      <td rowspan="3">Best All-Rounder</td>
-      <td>1</td>
-      <td>Mahmud Hasan</td>
-      <td>80 runs, 10 wickets, Bowl Avg: 15.00</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>M M Imran Iqbal Imon</td>
-      <td>153 runs, 6 wickets, Bowl Avg: 19.17</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Md Rafiqur Rashid</td>
-      <td>177 runs, 4 wickets, Bowl Avg: 16.00</td>
-    </tr>
-  </table>
-  `,
-Combined: `
-<table>
-  <tr>
-    <th>Category</th>
-    <th>Rank</th>
-    <th>Player</th>
-    <th>Key Stats</th>
-  </tr>
-  <!-- Best Batter -->
-  <tr>
-    <td rowspan="3">Best Batter</td>
-    <td>1</td>
-    <td>Md Rafiqur Rashid</td>
-    <td>382 runs, Avg: 54.09, SR: 114.06, HS: 101</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>M M Imran Iqbal Imon</td>
-    <td>215 runs, Avg: 30.60, SR: 107.75, HS: 65</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Mahmud Hasan</td>
-    <td>189 runs, Avg: 19.70, SR: 121.47, HS: 49</td>
-  </tr>
-  <!-- Best Bowler -->
-  <tr>
-    <td rowspan="3">Best Bowler</td>
-    <td>1</td>
-    <td>Shahed Mamun</td>
-    <td>17 wickets, Econ: 5.94, Avg: 12.72, Best: 31/4</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Mahmud Hasan</td>
-    <td>12 wickets, Econ: 5.01, Avg: 15.94, Best: 13/5</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>A T M Jakir Alam</td>
-    <td>9 wickets, Econ: 5.26, Avg: 8.23, Best: 21/4</td>
-  </tr>
-  <!-- Best All-Rounder -->
-  <tr>
-    <td rowspan="3">Best All-Rounder</td>
-    <td>1</td>
-    <td>Mahmud Hasan</td>
-    <td>189 runs, 12 wickets, Bat Avg: 19.70, Bowl Avg: 15.94</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Md Rafiqur Rashid</td>
-    <td>382 runs, 6 wickets, Bat Avg: 54.09, Bowl Avg: 16.00</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Shahed Mamun</td>
-    <td>13 runs, 17 wickets, Bowl Avg: 12.72</td>
-  </tr>
-</table>
-`,
-  BestPerformances: `
-    <table>
-      <tr>
-        <th>League</th>
-        <th>Category</th>
-        <th>Player</th>
-        <th>Performance</th>
-      </tr>
-      <!-- Qualifying Super League -->
-      <tr>
-        <td rowspan="2">Qualifying Super League</td>
-        <td>Best Knock</td>
-        <td>Mir Abdul Alim</td>
-        <td>81 runs</td>
-      </tr>
-      <tr>
-        <td>Best Bowling</td>
-        <td>Mahmud Hasan Khokon</td>
-        <td>5 wickets for 13 runs</td>
-      </tr>
-      <!-- T20 League -->
-      <tr>
-        <td rowspan="2">T20 League</td>
-        <td>Best Knock</td>
-        <td>Md Rafiqur Rashid</td>
-        <td>101 runs</td>
-      </tr>
-      <tr>
-        <td>Best Bowling</td>
-        <td>A T M Jakir Alam</td>
-        <td>4 wickets for 21 runs</td>
-      </tr>
-    </table>
-  `
-};    
+ <script>
+  // Define tables for T20, Super League, Combined, and Best Performances stats
+  const tables = {
+    T20: `
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Rank</th>
+          <th>Player</th>
+          <th>Key Stats</th>
+        </tr>
+        <!-- Best Batter -->
+        <tr>
+          <td rowspan="3">Best Batter</td>
+          <td>1</td>
+          <td>Md Rafiqur Rashid</td>
+          <td>205 runs, Avg: 51.25, SR: 125.00</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Mahmud Hasan</td>
+          <td>109 runs, Avg: 21.80, SR: 147.30</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Md Badrul Hyder</td>
+          <td>91 runs, Avg: 30.33, SR: 87.50</td>
+        </tr>
+        <!-- Best Bowler -->
+        <tr>
+          <td rowspan="3">Best Bowler</td>
+          <td>1</td>
+          <td>A T M Jakir Alam</td>
+          <td>8 wickets, Econ: 5.25, Avg: 7.88</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Shahed Mamun</td>
+          <td>7 wickets, Econ: 5.11, Avg: 13.14</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Md Ataur Rahman</td>
+          <td>7 wickets, Econ: 7.37, Avg: 20.00</td>
+        </tr>
+        <!-- Best All-Rounder -->
+        <tr>
+          <td rowspan="3">Best All-Rounder</td>
+          <td>1</td>
+          <td>Mahmud Hasan</td>
+          <td>109 runs, 2 wickets, Bat Avg: 21.80</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>A T M Jakir Alam</td>
+          <td>8 wickets, 0 runs, Bowl Avg: 7.88</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Md Ataur Rahman</td>
+          <td>7 wickets, 62 runs, Bat Avg: 20.67</td>
+        </tr>
+      </table>
+    `,
+    Super: `
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Rank</th>
+          <th>Player</th>
+          <th>Key Stats</th>
+        </tr>
+        <!-- Best Batter -->
+        <tr>
+          <td rowspan="3">Best Batter</td>
+          <td>1</td>
+          <td>Md Rafiqur Rashid</td>
+          <td>177 runs, Avg: 59.00, SR: 99.44</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>M M Imran Iqbal Imon</td>
+          <td>153 runs, Avg: 30.60, SR: 107.75</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Mir Abdul Alim</td>
+          <td>104 runs, Avg: 20.80, SR: 73.24</td>
+        </tr>
+        <!-- Best Bowler -->
+        <tr>
+          <td rowspan="3">Best Bowler</td>
+          <td>1</td>
+          <td>Mahmud Hasan</td>
+          <td>10 wickets, Econ: 4.79, Avg: 15.00</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Shahed Mamun</td>
+          <td>10 wickets, Econ: 6.77, Avg: 12.30</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Saykat Das</td>
+          <td>7 wickets, Econ: 5.24, Avg: 24.71</td>
+        </tr>
+        <!-- Best All-Rounder -->
+        <tr>
+          <td rowspan="3">Best All-Rounder</td>
+          <td>1</td>
+          <td>Mahmud Hasan</td>
+          <td>80 runs, 10 wickets, Bowl Avg: 15.00</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>M M Imran Iqbal Imon</td>
+          <td>153 runs, 6 wickets, Bowl Avg: 19.17</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Md Rafiqur Rashid</td>
+          <td>177 runs, 4 wickets, Bowl Avg: 16.00</td>
+        </tr>
+      </table>
+    `,
+    Combined: `
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Rank</th>
+          <th>Player</th>
+          <th>Key Stats</th>
+        </tr>
+        <!-- Best Batter -->
+        <tr>
+          <td rowspan="3">Best Batter</td>
+          <td>1</td>
+          <td>Md Rafiqur Rashid</td>
+          <td>382 runs, Avg: 54.09, SR: 114.06</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>M M Imran Iqbal Imon</td>
+          <td>215 runs, Avg: 30.60, SR: 107.75</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Mahmud Hasan</td>
+          <td>189 runs, Avg: 19.70, SR: 121.47</td>
+        </tr>
+        <!-- Best Bowler -->
+        <tr>
+          <td rowspan="3">Best Bowler</td>
+          <td>1</td>
+          <td>Shahed Mamun</td>
+          <td>17 wickets, Econ: 5.94, Avg: 12.72</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Md Ataur Rahman</td>
+          <td>13 wickets, Econ: 6.07, Avg: 20.08</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Saykat Das</td>
+          <td>12 wickets, Econ: 5.20, Avg: 19.50</td>
+        </tr>
+        <!-- Best All-Rounder -->
+        <tr>
+          <td rowspan="3">Best All-Rounder</td>
+          <td>1</td>
+          <td>Mahmud Hasan</td>
+          <td>189 runs, 12 wickets, Bat Avg: 19.70, Bowl Avg: 15.94</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Md Rafiqur Rashid</td>
+          <td>382 runs, 6 wickets, Bat Avg: 54.09, Bowl Avg: 16.00</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Shahed Mamun</td>
+          <td>13 runs, 17 wickets, Bowl Avg: 12.72</td>
+        </tr>
+      </table>
+    `,
+    BestPerformances: `
+      <table>
+        <tr>
+          <th>League</th>
+          <th>Category</th>
+          <th>Player</th>
+          <th>Performance</th>
+        </tr>
+        <!-- Qualifying Super League -->
+        <tr>
+          <td rowspan="2">Qualifying Super League</td>
+          <td>Best Knock</td>
+          <td>Mir Abdul Alim</td>
+          <td>81 runs</td>
+        </tr>
+        <tr>
+          <td>Best Bowling</td>
+          <td>Mahmud Hasan</td>
+          <td>5 wickets for 13 runs</td>
+        </tr>
+        <!-- T20 League -->
+        <tr>
+          <td rowspan="2">T20 League</td>
+          <td>Best Knock</td>
+          <td>Md Rafiqur Rashid</td>
+          <td>101 runs</td>
+        </tr>
+        <tr>
+          <td>Best Bowling</td>
+          <td>A T M Jakir Alam</td>
+          <td>4 wickets for 21 runs</td>
+        </tr>
+      </table>
+    `
+  };
+
     // Function to handle scroll events and highlight the active section
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section"); // All sections on the page
