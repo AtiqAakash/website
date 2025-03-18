@@ -475,6 +475,38 @@
       border: 2px solid #ff5722; /* Orange border */
       font-weight: bold; /* Bold text */
     }
+    
+    /* Social Media Links */
+    .social-links {
+      display: flex;
+      justify-content: center; /* Center-align the buttons */
+      gap: 1rem; /* Space between the buttons */
+      margin-bottom: 1.5rem; /* Add spacing below the buttons */
+    }
+    
+    .social-links a {
+      display: inline-block;
+      padding: 0.6rem 1.2rem; /* Padding for button size */
+      text-decoration: none; /* Remove underline */
+      color: #fff; /* White text color */
+      font-weight: bold; /* Bold text */
+      font-size: 0.9rem; /* Font size */
+      border-radius: 5px; /* Rounded corners */
+      background: #ff5722; /* Match website's orange color */
+      border: 2px solid #ff5722; /* Border matching the background */
+      transition: all 0.3s ease; /* Smooth transition for hover effects */
+      text-transform: uppercase; /* Uppercase text */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+      cursor: pointer; /* Pointer cursor on hover */
+    }
+    
+    .social-links a:hover {
+      background: #fff; /* White background on hover */
+      color: #ff5722; /* Text color changes to orange */
+      border-color: #ff5722; /* Border color remains orange */
+      transform: scale(1.05); /* Slightly enlarge the button */
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+    }
   </style>
 </head>
 <body>
