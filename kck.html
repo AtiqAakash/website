@@ -9,541 +9,327 @@
   <!-- Styles -->
   <style>
 /* General Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
-
-body {
-  /* Tiger skin background */
-  background: url('https://scontent-fra3-2.xx.fbcdn.net/v/t39.30808-6/483525036_987795643457660_654859658030607449_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=0r_dCZb1pJkQ7kNvgGSZmWd&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&_nc_gid=jW7eghaozKfJLiG0069g1A&oh=00_AYHKxVA-BYIcK7BZU3-vE84R53YjoptK3rJGaSVBAtKeXA&oe=67DE3A60') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  line-height: 1.6;
-  padding-top: 60px; /* Prevent content from being hidden under the navbar */
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 0.5rem 1rem; /* Reduced padding for compact design */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  height: 60px; /* Fixed height for the navbar */
-}
-body::before {
-      content: '';
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    body {
+      /* Tiger skin background */
+      background: url('https://scontent-fra3-2.xx.fbcdn.net/v/t39.30808-6/483525036_987795643457660_654859658030607449_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=0r_dCZb1pJkQ7kNvgGSZmWd&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&_nc_gid=jW7eghaozKfJLiG0069g1A&oh=00_AYHKxVA-BYIcK7BZU3-vE84R53YjoptK3rJGaSVBAtKeXA&oe=67DE3A60') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.6;
+      padding-top: 60px; /* Prevent content from being hidden under the navbar */
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6); /* Adjust the last value (0.6) for darkness intensity */
-      z-index: -1; /* Ensure it stays behind the content */
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem 0;
+      z-index: 1000;
     }
-
-.navbar-logo img {
-  width: 80px; /* Slightly larger logo */
-  height: auto;
-  margin-top: 10px;
-  object-fit: cover;
-}
-
-.navbar-links {
-  display: flex;
-  gap: 1rem; /* Reduced gap between links */
-  align-items: center;
-}
-
-.navbar-links a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 0.9rem; /* Smaller font size for links */
-  padding: 0.4rem 0.8rem; /* Reduced padding for links */
-  border-radius: 5px;
-}
-
-.navbar-links a:hover {
-  background: #ff5722;
-}
-
-/* Hero Section */
-.hero {
-  height: 80vh; /* Full-screen height */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-top: 60px; /* Prevent overlap with the fixed navbar */
-}
-
-.hero-content h2 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero-content p {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-}
-
-.hero-summary {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  line-height: 1.4;
-}
-
-/* Stats Section */
-.stats {
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.stat-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.btn {
-  background: #ff5722;
-  color: #fff;
-  padding: 0.6rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-/* Add spacing between sections */
-section {
-  scroll-margin-top: 3rem; /* Adjust the value as needed */
-}
-
-/* Optional: Reduce spacing for the last section to avoid excessive bottom padding */
-section:last-of-type {
-  margin-bottom: 2rem; /* Smaller spacing for the last section */
-}
-
-.btn:hover {
-  transform: scale(1.1);
-}
-
-.stat-table {
-  background: rgba(0, 0, 0, 0.8); /* Consistent dark background */
-  padding: 1.5rem;
-  border-radius: 10px;
-  overflow-x: auto;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.stat-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.stat-table th,
-.stat-table td {
-  padding: 0.6rem;
-  text-align: left;
-  border: 1px solid #ff5722;
-}
-
-.stat-table th {
-  background: #ff5722;
-  color: #000;
-}
-
-.stat-table tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* Gallery Section */
-.gallery {
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.gallery-slider {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.gallery-slider img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border: 2px solid #ff5722;
-  border-radius: 10px;
-}
-
-/* Players Section */
-.players {
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.players table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.8); /* Consistent dark background */
-  padding: 1.5rem;
-  border-radius: 10px;
-  overflow-x: auto;
-}
-
-.players th,
-.players td {
-  padding: 0.6rem;
-  text-align: left;
-  border: 1px solid #ff5722;
-}
-
-.players th {
-  background: #ff5722;
-  color: #000;
-}
-
-.players tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* Team Officials Section */
-.team-officials {
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.team-officials table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.8); /* Consistent dark background */
-  padding: 1.5rem;
-  border-radius: 10px;
-  overflow-x: auto;
-}
-
-.team-officials th,
-.team-officials td {
-  padding: 0.6rem;
-  text-align: left;
-  border: 1px solid #ff5722;
-}
-
-.team-officials th {
-  background: #ff5722;
-  color: #000;
-}
-
-.team-officials tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* Contact Section */
-.contact {
-  padding: 2rem 0;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.contact input,
-.contact textarea {
-  padding: 0.8rem;
-  border: none;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-/* Highlight active navbar link */
-.navbar-links a.active {
-  background: #ff5722; /* Highlight color */
-  color: #000; /* Text color */
-}
-
-.contact input:focus,
-.contact textarea:focus {
-  outline: 2px solid #ff5722;
-}
-
-.contact button {
-  background: #ff5722;
-  color: #fff;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.contact button:hover {
-  background: #e64a19;
-}
-
-/* Footer */
-.footer {
-  background: rgba(0, 0, 0, 0.8);
-  padding: 1rem 0;
-  text-align: center;
-}
-
-.footer-icons a {
-  margin: 0 0.5rem;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.5rem;
-}
-
-.footer-icons a:hover {
-  color: #ff5722;
-}
-/* Adjust Players Section for Responsive Grid Layout */
-.players {
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.players .player-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Auto-adjust columns */
-  gap: 0.5rem; /* Add spacing between grid items */
-  font-size: 0.9rem; /* Reduce font size for better fit */
-}
-
-.players .player-item {
-  background: rgba(0, 0, 0, 0.8); /* Consistent dark background */
-  padding: 0.6rem;
-  border: 1px solid #ff5722; /* Border for each cell */
-  border-radius: 5px;
-  text-align: center;
-}
-
-.players .player-item:nth-child(even) {
-  background: rgba(0, 0, 0, 0.8); /* Alternating background */
-}
-
-/* Footer Icons - Specific Colors */
-.footer-icons a[href*="facebook"] {
-  color: #1877F2; /* Facebook's official blue color */
-}
-
-.footer-icons a[href*="linkedin"] {
-  color: #0A66C2; /* LinkedIn's official blue color */
-}
-
-.footer-icons a:hover {
-  opacity: 0.8; /* Slightly dim the color on hover */
-}
-
-/* Gallery Styles */
-.gallery-images {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
-  gap: 1rem; /* Space between images */
-  margin-top: 1rem;
-}
-
-.gallery-images img {
-  width: 100%; /* Ensure images fit within their grid cells */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px; /* Rounded corners for aesthetics */
-  transition: transform 0.3s ease; /* Smooth hover effect */
-}
-
-.gallery-images img:hover {
-  transform: scale(1.05); /* Slightly enlarge image on hover */
-}
-
-.gallery-images a {
-  text-decoration: none; /* Remove underline from links */
-}
-
-/* Gallery Styles */
-.gallery {
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.gallery-images {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4x4 grid */
-  gap: 1rem; /* Space between images */
-  margin-top: 1rem;
-}
-
-.gallery-images img {
-  width: 100%; /* Ensure images fit within their grid cells */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px; /* Rounded corners */
-  transition: transform 0.3s ease; /* Smooth hover effect */
-}
-
-.gallery-images img:hover {
-  transform: scale(1.05); /* Slightly enlarge image on hover */
-}
-
-.gallery-images a {
-  text-decoration: none; /* Remove underline from links */
-}
-
-/* Gallery Styles */
-.gallery-images {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4x4 grid */
-  gap: 1rem; /* Space between images */
-  margin-top: 1rem;
-}
-
-.gallery-images img {
-  width: 100%; /* Ensure images fit within their grid cells */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Show pointer on hover */
-  transition: transform 0.3s ease; /* Smooth hover effect */
-}
-
-.gallery-images img:hover {
-  transform: scale(1.05); /* Slightly enlarge image on hover */
-}
-
-/* Modal Styles */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1000;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 80%;
-  max-height: 80%;
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: #ff5722;
-}
+    
+    .navbar-logo img {
+      height: 40px;
+    }
+    
+    .navbar-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    .navbar-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+    }
+    
+    .navbar-links a:hover {
+      background: #ff5722;
+    }
+    
+    .navbar-links a.active {
+      background: #ff5722;
+      color: #000;
+      border: 2px solid #ff5722;
+      font-weight: bold;
+    }
+    
+    /* Hero Section */
+    .hero {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 60px; /* Prevent overlap with the fixed navbar */
+    }
+    
+    .hero-content h2 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .hero-content p {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-summary {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    
+    /* Stats Section */
+    .stats {
+      padding: 2rem 0;
+      text-align: center;
+    }
+    
+    .stat-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .btn {
+      background: #ff5722;
+      color: #fff;
+      padding: 0.6rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .btn:hover {
+      transform: scale(1.1);
+    }
+    
+    .stat-table {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1.5rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    
+    .stat-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .stat-table th,
+    .stat-table td {
+      padding: 0.6rem;
+      text-align: left;
+      border: 1px solid #ff5722;
+    }
+    
+    .stat-table th {
+      background: #ff5722;
+      color: #000;
+    }
+    
+    .stat-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Gallery Section */
+    .gallery {
+      padding: 2rem 0;
+      text-align: center;
+    }
+    
+    .gallery-slider {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      justify-content: center;
+    }
+    
+    .gallery-slider img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border: 2px solid #ff5722;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-slider img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Players Section */
+    .players {
+      padding: 2rem 0;
+      text-align: center;
+    }
+    
+    .players .player-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    
+    .players .player-item {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 0.6rem;
+      border: 1px solid #ff5722;
+      border-radius: 5px;
+      text-align: center;
+    }
+    
+    .players .player-item:nth-child(even) {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    
+    /* Team Officials Section */
+    .team-officials {
+      padding: 2rem 0;
+      text-align: center;
+    }
+    
+    .team-officials table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1.5rem;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+    
+    .team-officials th,
+    .team-officials td {
+      padding: 0.6rem;
+      text-align: left;
+      border: 1px solid #ff5722;
+    }
+    
+    .team-officials th {
+      background: #ff5722;
+      color: #000;
+    }
+    
+    .team-officials tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
     /* Contact Section */
-.contact {
-  padding: 2rem 0;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.contact-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem; /* Space between social links and form */
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.social-links {
-  display: flex;
-  gap: 1rem; /* Space between Facebook and LinkedIn links */
-}
-
-.social-links a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.1);
-  transition: background 0.3s ease;
-}
-
-.social-links a:hover {
-  background: #ff5722; /* Highlight color on hover */
-}
-
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-}
-
-.contact input,
-.contact textarea {
-  padding: 0.8rem;
-  border: none;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-.contact input:focus,
-.contact textarea:focus {
-  outline: 2px solid #ff5722;
-}
-
-.contact button {
-  background: #ff5722;
-  color: #fff;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.contact button:hover {
-  background: #e64a19;
-}
-    /* Active Button Style */
-.stat-buttons .btn.active {
-  background: #fff; /* White background */
-  color: #ff5722; /* Orange text */
-  border: 2px solid #ff5722; /* Orange border */
-  font-weight: bold; /* Bold text */
-}
-
+    .contact {
+      padding: 3rem 0;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .contact-content {
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    .contact-content p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .social-links {
+      margin-bottom: 1.5rem;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      text-decoration: none;
+      background: #ff5722;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background: #e64a19;
+    }
+    
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .contact input,
+    .contact textarea {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    
+    .contact input:focus,
+    .contact textarea:focus {
+      outline: 2px solid #ff5722;
+    }
+    
+    .contact button {
+      background: #ff5722;
+      color: #fff;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .contact button:hover {
+      background: #e64a19;
+    }
+    
+    /* Footer */
+    .footer {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem 0;
+      text-align: center;
+    }
+    
+    .footer-icons a {
+      margin: 0 0.5rem;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-icons a:hover {
+      color: #ff5722;
+    }
   </style>
 </head>
 <body>
@@ -820,10 +606,17 @@ section:last-of-type {
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
   <div class="contact-container">
-    <!-- Social Media Links -->
-    <div class="social-links">
+        <!-- Social Media Links -->
+    <div class="contact-intro">
+      <p>Get connected to our social media and keep an eye here for updates on upcoming matches, events, and more!</p>
+          <div class="social-links"><br>
       <a href="https://www.facebook.com/Kringsja.Cricket.Club" target="_blank">Facebook</a>
       <a href="https://www.linkedin.com/company/kringsja-cricket-klubb" target="_blank">LinkedIn</a>
+    </div>
+    </div>
+    <!-- Introductory Text -->
+    <div class="contact-intro">
+      <p>Have questions or want to get in touch? Fill out the form below, and we'll get back to you as soon as possible.</p>
     </div>
 
     <!-- Contact Form -->
