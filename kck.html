@@ -536,6 +536,13 @@ section:last-of-type {
 .contact button:hover {
   background: #e64a19;
 }
+    /* Active Button Style */
+.stat-buttons .btn.active {
+  background: #fff; /* White background */
+  color: #ff5722; /* Orange text */
+  border: 2px solid #ff5722; /* Orange border */
+  font-weight: bold; /* Bold text */
+}
 
   </style>
 </head>
@@ -566,17 +573,17 @@ section:last-of-type {
     </div>
   </section>
 
-  <!-- Stats Section -->
-  <section id="stats" class="stats">
-    <h2 class="section-title">Hall of Fame - Season 2024</h2>
-    <div class="stat-buttons">
-      <button class="btn" onclick="showTable('T20')">T20 League Stats</button>
-      <button class="btn" onclick="showTable('Super')">Super League Stats</button>
-      <button class="btn" onclick="showTable('Combined')">Combined Stats</button>
-      <button class="btn" onclick="showTable('BestPerformances')">Best Performances</button>
-    </div>
-    <div id="stat-table" class="stat-table"></div>
-  </section>
+<!-- Stats Section -->
+<section id="stats" class="stats">
+  <h2 class="section-title">Team Performance</h2>
+  <div class="stat-buttons">
+    <button class="btn" onclick="showTable('T20')">T20 League Stats</button>
+    <button class="btn" onclick="showTable('Super')">Super League Stats</button>
+    <button class="btn" onclick="showTable('Combined')">Combined Stats</button>
+    <button class="btn" onclick="showTable('BestPerformances')">Best Performances</button>
+  </div>
+  <div id="stat-table" class="stat-table"></div>
+</section>
 
 <!-- Modal for Full-Screen Image -->
 <div id="imageModal" class="modal">
@@ -1076,18 +1083,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
     // Function to display the selected table
-    function showTable(tableType) {
-      const statTableDiv = document.getElementById('stat-table');
-      // Clear previous content
-      statTableDiv.innerHTML = "";
-      // Add the selected table
-      statTableDiv.innerHTML = tables[tableType];
-    }
+// Function to display the selected table and highlight the active button
+function showTable(tableType) {
+  const statTableDiv = document.getElementById('stat-table');
+  const buttons = document.querySelectorAll('.stat-buttons .btn');
 
-    // Automatically load the T20 table on page load
-    document.addEventListener('DOMContentLoaded', () => {
-      showTable('T20'); // Default table to display
-    });
+  // Clear previous content
+  statTableDiv.innerHTML = "";
+
+  // Add the selected table
+  statTableDiv.innerHTML = tables[tableType];
+
+  // Remove "active" class from all buttons
+  buttons.forEach(button => button.classList.remove('active'));
+
+  // Add "active" class to the clicked button
+  const clickedButton = document.querySelector(`.stat-buttons .btn[onclick="showTable('${tableType}')"]`);
+  if (clickedButton) {
+    clickedButton.classList.add('active');
+  }
+}
+
+// Automatically load the T20 table on page load and highlight its button
+document.addEventListener('DOMContentLoaded', () => {
+  showTable('T20'); // Default table to display
+});
     // Get the modal and image elements
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImage");
