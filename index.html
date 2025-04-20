@@ -1,67 +1,519 @@
-<style>
-  #extracurricular .card-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 20px 0;
-  }
-
-  #extracurricular .grid-card {
-    flex: 0 0 300px;
-    scroll-snap-align: start;
-    background: rgba(255,255,255,0.9);
-    transition: transform 0.3s ease;
-    text-align: center;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-
-  #extracurricular .grid-card:hover {
-    transform: scale(1.05);
-  }
-
-  #extracurricular {
-    background: linear-gradient(to right, #e0f7fa, #e0f2f1);
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    padding: 80px 20px;
-  }
-
-  .slider {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-  }
-
-  .slides {
-    display: flex;
-    width: 300%; /* assume 3 images */
-    transition: transform 1s ease-in-out;
-  }
-
-  .slides img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    flex: 0 0 100%;
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const slidesContainer = document.querySelector(".slides");
-    if (slidesContainer) {
-      const slides = slidesContainer.querySelectorAll("img");
-      let currentIndex = 0;
-
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-      }
-
-      setInterval(nextSlide, 3000);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atiq - Embedded Software Developer & Drone Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #2ecc71;
+      --light: #f8f9fa;
+      --dark: #2d3436;
+      --shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-  });
-</script>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* Floating Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: var(--dark);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 8px 12px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=M3wzNjM5Nzd8MHwxfHNlYXJjaHwxfHxiaWdnZXxlbnwwfHx8fDE3MTc3NDYyMDJ8MA&ixlib=rb-4.0.3&w=1920') fixed center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      background: rgba(255,255,255,0.9);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      max-width: 800px;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.75rem;
+      margin-bottom: 40px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 3px;
+      background: var(--accent);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Image Slider */
+    .slider-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .slide {
+      min-width: 100%;
+      box-shadow: var(--shadow);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .slide img {
+      width: 100%;
+      display: block;
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+
+    .slider-button:hover {
+      background: var(--accent);
+    }
+
+    .slider-button.prev { left: 10px; }
+    .slider-button.next { right: 10px; }
+
+    /* Experience Timeline */
+    .timeline {
+      position: relative;
+      padding: 40px 0;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background: var(--accent);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      padding: 30px 40px;
+      position: relative;
+      width: 50%;
+      transition: 0.4s;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background: var(--accent);
+      border-radius: 50%;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .timeline-item.right {
+      left: 50%;
+    }
+
+    .timeline-item a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Project Cards */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: 0.4s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Education Section */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .education-card {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      transition: 0.4s;
+    }
+
+    .education-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .education-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Floating Navbar -->
+  <nav id="navbar">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#gallery">Photography</a>
+    <a href="#voluntary">Community</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Md Atiqur Rahman</h1>
+      <p>Embedded Software Developer | Drone Engineer | IT Support Engineer</p>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/aakashrahman" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/atiqur.rahman.aakash" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.flickr.com/photos/your-profile" target="_blank"><i class="fab fa-flickr"></i></a>
+        <a href="https://www.github.com/AtiqAakash" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+      <a href="Atiq-CV.pdf" class="btn" style="background: var(--accent); color: white; padding: 14px 30px; border-radius: 30px; margin-top: 25px; display: inline-block; font-size: 1.1rem;">Download CV</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <p style="font-size: 1.1rem; line-height: 1.8;">
+      I am Md Atiqur Rahman, a passionate Embedded Software Developer, Drone Engineer, and IT Support Engineer with expertise in Robotics, Embedded Systems, IoT, and Web Development. My academic background includes a Bachelor's in Computer Science & Engineering and ongoing Master's studies in Industrial Informatics – Cyber Physical Systems.
+    </p>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <h2 class="section-title">Professional Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item left">
+        <h3 style="font-size: 1.5rem;"><a href="https://www.topseven.com" target="_blank">TOPseven Drone R&D</a> - Werkstudent</h3>
+        <p style="font-size: 1.1rem;"><em>Oct 2024 - March 2025 | Emden, Germany</em></p>
+        <ul style="font-size: 1rem; line-height: 1.6;">
+          <li>Assembled drones from scratch with sensor integration</li>
+          <li>Developed Android app for drone control (Java/Mavsdk)</li>
+          <li>3D modeling with Fusion 360 and Creality Scan</li>
+        </ul>
+      </div>
+      <div class="timeline-item right">
+        <h3 style="font-size: 1.5rem;"><a href="https://www.robotaviation.com" target="_blank">Robot Aviation</a> - Intern</h3>
+        <p style="font-size: 1.1rem;"><em>Nov 2023 - June 2024 | Hønefoss, Norway</em></p>
+        <ul style="font-size: 1rem; line-height: 1.6;">
+          <li>Integrated FLIR sensors for real-time radiation monitoring</li>
+          <li>Reduced ground station setup time by 70% with Bash scripting</li>
+          <li>Developed web-based Flight Logger system</li>
+        </ul>
+      </div>
+      <div class="timeline-item left">
+        <h3 style="font-size: 1.5rem;"><a href="https://www.homeandmarine.com" target="_blank">Home & Marine</a> - Network Technician</h3>
+        <p style="font-size: 1.1rem;"><em>July 2024 - Sept 2024 | Bremen, Germany</em></p>
+        <ul style="font-size: 1rem; line-height: 1.6;">
+          <li>Optimized Disney Cruise ship network systems</li>
+          <li>Documented maritime network procedures</li>
+        </ul>
+      </div>
+      <div class="timeline-item right">
+        <h3 style="font-size: 1.5rem;"><a href="https://www.codefix.com.bd" target="_blank">CodeFix IT</a> - IT Support Engineer</h3>
+        <p style="font-size: 1.1rem;"><em>Jan 2018 - Nov 2019 | Dhaka, Bangladesh</em></p>
+        <ul style="font-size: 1rem; line-height: 1.6;">
+          <li>Managed 150+ IT systems including servers and networks</li>
+          <li>Developed custom automation scripts in C++/Python</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3 style="font-size: 1.3rem;">Smart Workshop Solution</h3>
+        <p style="font-size: 1rem;">AI/AR-powered assembly guidance system</p>
+        <div class="tags">
+          <span>AI Depth Camera</span>
+          <span>Augmented Reality</span>
+          <span>Python</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3 style="font-size: 1.3rem;">Facial Recognition Door Lock</h3>
+        <p style="font-size: 1rem;">Secure access system with ML integration</p>
+        <div class="tags">
+          <span>ESP32</span>
+          <span>C++</span>
+          <span>Machine Learning</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3 style="font-size: 1.3rem;">Flight Logger</h3>
+        <p style="font-size: 1rem;">Drone log management system</p>
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>PHP</span>
+          <span>MySQL</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3 style="font-size: 1.3rem;">IoT Security System</h3>
+        <p style="font-size: 1rem;">Real-time monitoring with biometric authentication</p>
+        <div class="tags">
+          <span>C++</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3 style="font-size: 1.3rem;">ConBot (Bash)</h3>
+        <p style="font-size: 1rem;">Automated Ardupilot configuration script</p>
+        <div class="tags">
+          <span>Bash</span>
+          <span>Ardupilot</span>
+          <span>SITL</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3 style="font-size: 1.3rem;">IoT Weather Station</h3>
+        <p style="font-size: 1rem;">Environmental parameter monitoring</p>
+        <div class="tags">
+          <span>C++</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3 style="font-size: 1.3rem;">Industrial Sorting Machine</h3>
+        <p style="font-size: 1rem;">Sensor-based object sorting system</p>
+        <div class="tags">
+          <span>C++</span>
+          <span>Sensors</span>
+          <span>Automation</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3 style="font-size: 1.3rem;">Biometric Attendance System</h3>
+        <p style="font-size: 1rem;">Fingerprint-based attendance tracking</p>
+        <div class="tags">
+          <span>C++</span>
+          <span>PHP</span>
+          <span>MySQL</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3 style="font-size: 1.3rem;">Smart Home Automation</h3>
+        <p style="font-size: 1rem;">IoT-based home control system</p>
+        <div class="tags">
+          <span>C++</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="education-grid">
+      <div class="education-card">
+        <a href="https://www.hs-emden-leer.de" target="_blank">
+          <h3>Hochschule Emden/Leer</h3>
+          <p>Master of Engineering - Cyber Physical Systems</p>
+        </a>
+      </div>
+      <div class="education-card">
+        <a href="https://www.uio.no" target="_blank">
+          <h3>University of Oslo</h3>
+          <p>Master of Science - Programming & System Architecture</p>
+        </a>
+      </div>
+      <div class="education-card">
+        <a href="https://www.uoda.edu.bd" target="_blank">
+          <h3>University of Development Alternative</h3>
+          <p>Bachelor of Science - Computer Science & Engineering</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photography Gallery -->
+  <section id="gallery" class="section">
+    <h2 class="section-title">Photography</h2>
+    <div class="slider-container">
+      <button class="slider-button prev" onclick="prevSlide()">&#10094;</button>
+      <div class="slider-track">
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=M3wzNjM5Nzd8MHwxfHNlYXJjaHwxfHxiaWdnZXxlbnwwfHx8fDE3MTc3NDYyMDJ8MA&ixlib=rb-4.0.3&w=1920" alt="Drone Photography">
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1517177019441-53a04b1b2186?ixid=M3wzNjM5Nzd8MHwxfHNlYXJjaHwyfHxiaWdnZXxlbnwwfHx8fDE3MTc3NDYyNjJ8MA&ixlib=rb-4.0.3&w=1920" alt="Aerial Photography">
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1516280580979-301116677601?ixid=M3wzNjM5Nzd8MHwxfHNlYXJjaHwzfHxiaWdnZXxlbnwwfHx8fDE3MTc3NDYzMjJ8MA&ixlib=rb-4.0.3&w=1920" alt="Landscape Photography">
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?ixid=M3wzNjM5Nzd8MHwxfHNlYXJjaHw0fHxiaWdnZXxlbnwwfHx8fDE3MTc3NDY0MTJ8MA&ixlib=rb-4.0.3&w=1920" alt="Drone Technology">
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1517177019441-53a04b1b2186?ixid=M3wzNjM5Nzd8MHwxfHNlYXJjaHw1fHxiaWdnZXxlbnwwfHx8fDE3MTc3NDYyNjJ8MA&ixlib=rb-4.0.3&w=1920" alt="Automation Systems">
+        </div>
+      </div>
+      <button class="slider-button next" onclick="nextSlide()">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Voluntary Work -->
+  <section id="voluntary" class="section">
+    <h2 class="section-title">Community Engagement</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3 style="font-size: 1.3rem;">Hridoye Bangladesh</h3>
+        <p style="font-size: 1rem;">Founding President of 400+ member organization</p>
+      </div>
+      <div class="project-card">
+        <h3 style="font-size: 1.3rem;">Kringjå Cricket Club</h3>
+        <p style="font-size 1rem;">Daglig Leder at Norges Cricket Forbund</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact</h2>
+    <div style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px;">
+      <p><i class="fas fa-envelope"></i> aakash.unipune@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +47 458 08 855</p>
+    </div>
+    <a href="mailto:aakash.unipune@gmail.com" class="btn" style="background: var(--accent); color: white; padding: 14px 30px; border-radius: 30px; font-size: 1.1rem;">Send Message</a>
+  </section>
+
+  <script>
+    // Image Slider
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      const track = document.querySelector('.slider-track');
+      if (index >= totalSlides) currentSlide = 0;
+      if (index < 0) currentSlide = totalSlides - 1;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function nextSlide() { showSlide(++currentSlide); }
+    function prevSlide() { showSlide(--currentSlide); }
+
+    // Navbar Scroll Animation
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.style.backdropFilter = 'blur(10px)';
+        navbar.style.padding = '10px';
+      } else {
+        navbar.style.backdropFilter = 'blur(0)';
+        navbar.style.padding = '20px';
+      }
+    });
+  </script>
+</body>
+</html>
