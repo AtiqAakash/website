@@ -1,58 +1,109 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <!-- title -->
-    <title>Atiq - A dreamer</title>
-    <meta charset="utf-8">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+}
 
-    <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+body {
+  overflow-x: hidden;
+  color: #fff;
+  line-height: 1.6;
+}
 
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/bright.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-</head>
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
 
-<!-- body starts here -->
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
 
-<body>
-    <div class="hero">
-        <nav>
-            <h2 class="logo"><strong class="po">Port</strong>fo<span>lio</span></h2>
-        </nav>
+.hero .btn {
+  background-color: #eb7134;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.4s;
+}
 
-        <div class="content" data-aos="fade-up">
-            <h2 class="hi"><strong>Hi, There!</strong></h2>
-            <h1>I Am <span class="input"></span></h1>
-            <p>An Embedded Software Developer | Drone Engineer | IT Support Engineer <br><br>I'm interested in Robotics, Embedded Systems, IOT, Web Development and Media Production. </p>
+.hero .btn:hover {
+  background-color: transparent;
+  border: 2px solid #eb7134;
+  color: #eb7134;
+}
 
-            <div class="social">
-                <a href="https://www.linkedin.com/in/aakashrahman" target="_blank" id="linkedin"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.facebook.com/atiqur.rahman.aakash" target="_blank" id="facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.github.com/AtiqAakash" target="_blank" id="github"><i class="fab fa-github"></i></a>
-            </div>
+.social a {
+  width: 40px;
+  height: 40px;
+  background: #eb7134;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 5px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
-            <a class="space" href="Atiq-CV.pdf" target="_blank"><button>Download CV</button></a>
-            <!-- <button onclick="window.location.href='#about'">Contact</button> -->
+.social a:hover {
+  transform: scale(1.2);
+}
 
-        </div>
+.about, .experience, .projects, .skills, .contact {
+  padding: 50px 20px;
+  background: #191919;
+  color: #fff;
+  text-align: center;
+}
 
-    </div>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-</body>
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
 
-</body>
-</html>
+.project-card {
+  background: #2b2b2b;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+.project-card:hover {
+  background: #eb7134;
+  color: #fff;
+}
+
+footer {
+  background: #101010;
+  padding: 20px;
+  text-align: center;
+}
