@@ -16,56 +16,89 @@
       overflow-x: hidden;
       color: #fff;
       line-height: 1.6;
+      background: #121212;
     }
 
-    /* Hero Section */
+    /* Background Carousel */
     .hero {
       width: 100%;
       height: 100vh;
-      background: linear-gradient(135deg, #eb7134, #ff9b54);
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
+      overflow: hidden;
+    }
+
+    .carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 300%;
+      height: 100%;
+      display: flex;
+      animation: slide 15s infinite;
+    }
+
+    .carousel img {
+      width: 33.33%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+
+    @keyframes slide {
+      0%, 100% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
     }
 
     .hero h1 {
       font-size: 3rem;
+      z-index: 2;
+      position: relative;
       margin-bottom: 10px;
     }
 
     .hero p {
       font-size: 1.2rem;
+      z-index: 2;
+      position: relative;
       margin-bottom: 20px;
     }
 
     .hero .btn {
-      background-color: #fff;
-      color: #eb7134;
+      background-color: #eb7134;
+      color: #fff;
       padding: 10px 20px;
       border-radius: 30px;
       text-decoration: none;
       transition: 0.4s;
+      z-index: 2;
+      position: relative;
     }
 
     .hero .btn:hover {
       background-color: transparent;
-      border: 2px solid #fff;
-      color: #fff;
+      border: 2px solid #eb7134;
+      color: #eb7134;
     }
 
     .social a {
       width: 40px;
       height: 40px;
-      background: #fff;
+      background: #eb7134;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
       margin: 0 5px;
-      color: #eb7134;
+      color: #fff;
       text-decoration: none;
       transition: 0.3s;
+      z-index: 2;
+      position: relative;
     }
 
     .social a:hover {
@@ -115,11 +148,29 @@
       padding: 20px;
       border-radius: 10px;
       transition: 0.4s;
+      position: relative;
+      overflow: hidden;
     }
 
     .project-card:hover {
       background: #ff9b54;
       color: #191919;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      transform: skewY(-10deg);
+      transition: 0.4s;
+    }
+
+    .project-card:hover::before {
+      transform: skewY(10deg);
     }
 
     /* Footer */
@@ -130,11 +181,18 @@
       color: #fff;
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .split {
-        flex-direction: column;
-      }
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section h2 {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .project-card {
+      animation: fadeIn 1s ease-in-out;
     }
   </style>
 </head>
@@ -142,6 +200,11 @@
 <body>
   <!-- Hero Section -->
   <section id="hero" class="hero">
+    <div class="carousel">
+      <img src="https://via.placeholder.com/1920x1080?text=Drone+Background+1" alt="Drone Background">
+      <img src="https://via.placeholder.com/1920x1080?text=Drone+Background+2" alt="Drone Background">
+      <img src="https://via.placeholder.com/1920x1080?text=Drone+Background+3" alt="Drone Background">
+    </div>
     <div class="container">
       <h1><strong>Md Atiqur Rahman</strong></h1>
       <p>Embedded Software Developer | Drone Engineer | IT Support Engineer</p>
