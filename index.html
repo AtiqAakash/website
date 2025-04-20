@@ -4,137 +4,117 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atiq - Embedded Software Developer & Drone Engineer</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
+    /* Colorlib Jackson Template Styling */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      overflow-x: hidden;
+      background: #1a1a1a;
       color: #fff;
       line-height: 1.6;
-      background: #121212;
     }
 
-    /* Background Carousel */
     .hero {
-      width: 100%;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x1080?text=Drone+Background');
+      background-size: cover;
+      background-position: center;
       height: 100vh;
-      position: relative;
       display: flex;
-      justify-content: center;
       align-items: center;
+      padding: 0 20px;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
       text-align: center;
-      overflow: hidden;
-    }
-
-    .carousel {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 300%;
-      height: 100%;
-      display: flex;
-      animation: slide 15s infinite;
-    }
-
-    .carousel img {
-      width: 33.33%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.7);
-    }
-
-    @keyframes slide {
-      0%, 100% { transform: translateX(0); }
-      33% { transform: translateX(-100%); }
-      66% { transform: translateX(-200%); }
     }
 
     .hero h1 {
       font-size: 3rem;
-      z-index: 2;
-      position: relative;
       margin-bottom: 10px;
     }
 
     .hero p {
       font-size: 1.2rem;
-      z-index: 2;
-      position: relative;
       margin-bottom: 20px;
     }
 
-    .hero .btn {
-      background-color: #eb7134;
+    .btn {
+      background: #eb7134;
       color: #fff;
       padding: 10px 20px;
       border-radius: 30px;
       text-decoration: none;
       transition: 0.4s;
-      z-index: 2;
-      position: relative;
+      display: inline-block;
     }
 
-    .hero .btn:hover {
-      background-color: transparent;
+    .btn:hover {
+      background: transparent;
       border: 2px solid #eb7134;
       color: #eb7134;
     }
 
     .social a {
-      width: 40px;
-      height: 40px;
-      background: #eb7134;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      margin: 0 5px;
       color: #fff;
-      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.2rem;
       transition: 0.3s;
-      z-index: 2;
-      position: relative;
     }
 
     .social a:hover {
-      transform: scale(1.2);
+      color: #eb7134;
     }
 
-    /* Sections */
-    section {
+    .section {
       padding: 50px 20px;
-      background: #191919;
-      color: #fff;
-      text-align: center;
-    }
-
-    section:nth-of-type(even) {
-      background: #2b2b2b;
-    }
-
-    .container {
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    .split {
-      display: flex;
-      gap: 20px;
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
     }
 
-    .section {
-      flex: 1;
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background: #eb7134;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .timeline {
-      display: flex;
-      flex-direction: column;
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .skill-item {
+      background: #2b2b2b;
+      padding: 20px;
+      border-radius: 10px;
+      transition: 0.4s;
+    }
+
+    .skill-item:hover {
+      background: #eb7134;
+      color: #1a1a1a;
     }
 
     .project-grid {
@@ -144,69 +124,157 @@
     }
 
     .project-card {
-      background: #eb7134;
+      background: #2b2b2b;
       padding: 20px;
       border-radius: 10px;
       transition: 0.4s;
-      position: relative;
-      overflow: hidden;
     }
 
     .project-card:hover {
-      background: #ff9b54;
-      color: #191919;
+      background: #eb7134;
+      color: #1a1a1a;
     }
 
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
       width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.1);
-      transform: skewY(-10deg);
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
       transition: 0.4s;
     }
 
-    .project-card:hover::before {
-      transform: skewY(10deg);
+    .gallery img:hover {
+      transform: scale(1.05);
     }
 
-    /* Footer */
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background: #eb7134;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+
+    .timeline-item {
+      padding: 20px 40px;
+      position: relative;
+      width: 50%;
+      border-bottom: 2px solid #eb7134;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #eb7134;
+      border-radius: 50%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item.left {
+      left: 0;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 10px;
+    }
+
+    .timeline-item p {
+      color: #eb7134;
+      margin-bottom: 15px;
+    }
+
+    .timeline-item ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .timeline-item li {
+      margin-bottom: 8px;
+    }
+
+    .contact {
+      background: #2b2b2b;
+      padding: 50px 20px;
+    }
+
+    .contact form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: #3a3a3a;
+      color: #fff;
+    }
+
+    .contact input:focus,
+    .contact textarea:focus {
+      outline: none;
+      border: 2px solid #eb7134;
+    }
+
+    .contact .btn {
+      margin-top: 20px;
+    }
+
     footer {
       background: #101010;
       padding: 20px;
       text-align: center;
-      color: #fff;
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 30px;
+      }
 
-    section h2 {
-      animation: fadeIn 1s ease-in-out;
-    }
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+      }
 
-    .project-card {
-      animation: fadeIn 1s ease-in-out;
+      .timeline-item.right {
+        left: 0;
+      }
     }
   </style>
 </head>
 
 <body>
   <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="carousel">
-      <img src="https://via.placeholder.com/1920x1080?text=Drone+Background+1" alt="Drone Background">
-      <img src="https://via.placeholder.com/1920x1080?text=Drone+Background+2" alt="Drone Background">
-      <img src="https://via.placeholder.com/1920x1080?text=Drone+Background+3" alt="Drone Background">
-    </div>
-    <div class="container">
-      <h1><strong>Md Atiqur Rahman</strong></h1>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Md Atiqur Rahman</h1>
       <p>Embedded Software Developer | Drone Engineer | IT Support Engineer</p>
       <div class="social">
         <a href="https://www.linkedin.com/in/aakashrahman" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -218,108 +286,115 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I am Md Atiqur Rahman, a passionate Embedded Software Developer, Drone Engineer, and IT Support Engineer with expertise in Robotics, Embedded Systems, IoT, and Web Development. I have hands-on experience in assembling drones, configuring firmware, developing Android apps, and managing IT systems. My academic background includes a Bachelor's in Computer Science & Engineering and ongoing Master's studies in Industrial Informatics – Cyber Physical Systems.</p>
-    </div>
+  <section class="section" id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>I am Md Atiqur Rahman, a passionate Embedded Software Developer, Drone Engineer, and IT Support Engineer with expertise in Robotics, Embedded Systems, IoT, and Web Development. I have hands-on experience in assembling drones, configuring firmware, developing Android apps, and managing IT systems. My academic background includes a Bachelor's in Computer Science & Engineering and ongoing Master's studies in Industrial Informatics – Cyber Physical Systems.</p>
   </section>
 
-  <!-- Experience & Education Section -->
-  <section id="experience-education" class="experience-education">
-    <div class="container">
-      <div class="split">
-        <div class="section">
-          <h2>Professional Experience</h2>
-          <div class="timeline">
-            <div class="timeline-item">
-              <h3>TOPseven Drone R&D Werkstudent</h3>
-              <p><em>Oct 2024 - March 2025 | Emden, Germany</em></p>
-              <ul>
-                <li>Assembled drones from scratch, integrating sensors, communication systems, and payloads.</li>
-                <li>Configured firmware for flight controllers (e.g., Pixhawk, CubePilot).</li>
-                <li>Developed an Android app for drone control using Java (Mavsdk).</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <h3>Robot Aviation - Unmanned Systems Development Intern</h3>
-              <p><em>Nov 2023 - June 2024 | Hønefoss, Norway</em></p>
-              <ul>
-                <li>Integrated advanced sensors like FLIR’s radioactivity sensor into drones for real-time monitoring.</li>
-                <li>Built a web-based Flight Logger system using HTML, CSS, JavaScript, PHP, MySQL.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="section">
-          <h2>Education</h2>
-          <div class="timeline">
-            <div class="timeline-item">
-              <h3>Hochschule Emden/Leer</h3>
-              <p><em>Master of Engineering in Industrial Informatics – Cyber Physical Systems (Ongoing)</em></p>
-            </div>
-            <div class="timeline-item">
-              <h3>University of Oslo</h3>
-              <p><em>Master of Science in Programming and System Architecture (Discontinued, Thesis remaining)</em></p>
-            </div>
-            <div class="timeline-item">
-              <h3>University of Development Alternative</h3>
-              <p><em>Bachelor of Science in Computer Science & Engineering</em></p>
-            </div>
-          </div>
-        </div>
+  <!-- Skills Section -->
+  <section class="section" id="skills">
+    <h2 class="section-title">Skills & Tools</h2>
+    <div class="skills">
+      <div class="skill-item">
+        <h3>Programming Languages</h3>
+        <p>C/C++, Python, Java, Bash Scripting, HTML, CSS, JavaScript, PHP, MySQL</p>
+      </div>
+      <div class="skill-item">
+        <h3>Tools & Technologies</h3>
+        <p>Pixhawk, CubePilot, Fusion 360, SITL Simulation, Linux, Raspberry Pi, STM32, PX4/ArduPilot, 3D Scanning</p>
       </div>
     </div>
   </section>
 
-  <!-- Projects & Skills Section -->
-  <section id="projects-skills" class="projects-skills">
-    <div class="container">
-      <div class="split">
-        <div class="section">
-          <h2>Projects</h2>
-          <div class="project-grid">
-            <div class="project-card">
-              <h3>Smart Workshop Solution</h3>
-              <p>AI-Powered Assembly Guidance System using AI Depth Camera and Augmented Reality.</p>
-            </div>
-            <div class="project-card">
-              <h3>Facial Recognition Secured Access System</h3>
-              <p>Developed a secure facial recognition door lock system using ESP32, C++, Python, and Machine Learning.</p>
-            </div>
-            <div class="project-card">
-              <h3>Flight Logger</h3>
-              <p>Flight Log Management System built with HTML, CSS, JavaScript, PHP, and MySQL.</p>
-            </div>
-          </div>
-        </div>
-        <div class="section">
-          <h2>Skills & Tools</h2>
-          <div class="skill-list">
-            <div class="skill-item">
-              <h3>Programming Languages</h3>
-              <p>C/C++, Python, Java, Bash Scripting, HTML, CSS, JavaScript, PHP, MySQL</p>
-            </div>
-            <div class="skill-item">
-              <h3>Tools & Technologies</h3>
-              <p>Pixhawk, CubePilot, Fusion 360, SITL Simulation, Linux, Raspberry Pi, STM32, PX4/ArduPilot</p>
-            </div>
-          </div>
-        </div>
+  <!-- Projects Section -->
+  <section class="section" id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Smart Workshop Solution</h3>
+        <p>AI-Powered Assembly Guidance System using AI Depth Camera and Augmented Reality.</p>
+      </div>
+      <div class="project-card">
+        <h3>Facial Recognition Secured Access System</h3>
+        <p>Developed a secure facial recognition door lock system using ESP32, C++, Python, and Machine Learning.</p>
+      </div>
+      <div class="project-card">
+        <h3>Flight Logger</h3>
+        <p>Flight Log Management System built with HTML, CSS, JavaScript, PHP, and MySQL.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photography Gallery -->
+  <section class="section" id="gallery">
+    <h2 class="section-title">Photography Gallery</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/250x200?text=Photo+1" alt="Photography Sample">
+      <img src="https://via.placeholder.com/250x200?text=Photo+2" alt="Photography Sample">
+      <img src="https://via.placeholder.com/250x200?text=Photo+3" alt="Photography Sample">
+      <img src="https://via.placeholder.com/250x200?text=Photo+4" alt="Photography Sample">
+    </div>
+  </section>
+
+  <!-- Experience & Education (Timeline) -->
+  <section class="section" id="resume">
+    <h2 class="section-title">Professional Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item left">
+        <h3>TOPseven Drone R&D Werkstudent</h3>
+        <p>Oct 2024 - March 2025 | Emden, Germany</p>
+        <ul>
+          <li>Assembled drones from scratch, integrating sensors and payloads.</li>
+          <li>Configured firmware for flight controllers (e.g., Pixhawk, CubePilot).</li>
+          <li>Developed an Android app for drone control using Java (Mavsdk).</li>
+        </ul>
+      </div>
+      <div class="timeline-item right">
+        <h3>Robot Aviation - Unmanned Systems Development Intern</h3>
+        <p>Nov 2023 - June 2024 | Hønefoss, Norway</p>
+        <ul>
+          <li>Integrated FLIR’s radioactivity sensor into drones for real-time monitoring.</li>
+          <li>Built a web-based Flight Logger system using HTML, CSS, JavaScript, PHP, MySQL.</li>
+        </ul>
+      </div>
+      <div class="timeline-item left">
+        <h3>Hochschule Emden/Leer</h3>
+        <p>Master of Engineering in Industrial Informatics – Cyber Physical Systems (Ongoing)</p>
+      </div>
+      <div class="timeline-item right">
+        <h3>University of Development Alternative</h3>
+        <p>Bachelor of Science in Computer Science & Engineering</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voluntary Experience -->
+  <section class="section" id="voluntary">
+    <h2 class="section-title">Voluntary Work</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Hridoye Bangladesh</h3>
+        <p>Founding President of a community organization with 400+ members in Norway.</p>
+      </div>
+      <div class="project-card">
+        <h3>Kringjå Cricket Club</h3>
+        <p>Daglig Leder of the Board of Directors at Norges Cricket Forbund.</p>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <p>Feel free to reach out if you'd like to collaborate or learn more about my work!</p>
-      <div class="contact-info">
-        <p><i class="fas fa-envelope"></i> aakash.unipune@gmail.com</p>
-        <p><i class="fas fa-phone"></i> +47 458 08 855</p>
-      </div>
-      <a href="mailto:aakash.unipune@gmail.com" class="btn">Send Email</a>
+  <section class="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <p><i class="fas fa-envelope"></i> aakash.unipune@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +47 458 08 855</p>
     </div>
   </section>
 
@@ -327,8 +402,5 @@
   <footer>
     <p>&copy; 2024 Md Atiqur Rahman. All rights reserved.</p>
   </footer>
-
-  <!-- Font Awesome Icons -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </body>
 </html>
