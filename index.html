@@ -29,7 +29,7 @@
       overflow-x: hidden;
     }
 
-    /* Hero Section */
+    /* Hero Background */
     .hero {
       height: 100vh;
       background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://source.unsplash.com/1600x900/?drone,technology') center/cover no-repeat fixed;
@@ -45,12 +45,6 @@
       font-size: 3rem;
       color: var(--dark);
       text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin: 25px 0;
-      color: #555;
     }
 
     /* Floating Navbar */
@@ -77,26 +71,28 @@
       text-decoration: none;
       font-size: 16px;
       font-weight: 500;
+      padding: 8px 12px;
       transition: var(--transition);
     }
 
     nav a:hover {
       color: var(--primary);
+      border-bottom: 2px solid var(--primary);
     }
 
     /* Social Icons */
     .social-icons {
-      margin: 30px 0;
+      margin: 25px 0;
     }
 
     .social-icons a {
       color: var(--dark);
       font-size: 2.2rem;
-      transition: transform 0.4s ease, color 0.3s ease; /* Added transition for smoothness */
+      transition: var(--transition);
     }
 
     .social-icons a:hover {
-      transform: rotate(360deg) scale(1.1); /* Restored spinning + scaling */
+      transform: rotate(360deg);
       color: var(--primary);
     }
 
@@ -132,6 +128,17 @@
       opacity: 0;
       animation: fadeSlideDown 1s ease-out forwards;
       animation-delay: 0.1s;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     @keyframes fadeSlideDown {
@@ -205,6 +212,10 @@
       transition: var(--transition);
     }
 
+    .tool-badge:hover {
+      transform: scale(1.05);
+    }
+
     /* Projects Section */
     .project-card {
       text-align: left;
@@ -239,13 +250,52 @@
       transition: transform 0.5s ease;
     }
 
-    /* Gallery Images */
     .slide img {
       width: 100%;
       height: 400px;
       object-fit: cover;
       border-radius: 10px;
       transition: var(--transition);
+    }
+
+    /* Slider Navigation */
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.8);
+      color: var(--dark);
+      border-radius: 50%;
+      padding: 20px;
+      cursor: pointer;
+      font-size: 2.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .slider-button:hover {
+      transform: scale(1.1);
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Dots Indicators */
+    .slider-dots {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      background: #ddd;
+      border-radius: 50%;
+      margin: 0 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .slider-dot.active {
+      background: var(--primary);
     }
 
     /* Contact Section */
@@ -268,16 +318,6 @@
     .contact-card:hover {
       transform: translateY(-7px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    }
-
-    /* No Underlines */
-    a {
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: var(--primary);
     }
 
     /* Skills Section */
@@ -305,23 +345,18 @@
       transform: scale(1.05);
     }
 
+    /* Hover Effects */
+    a:hover {
+      color: var(--primary);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2rem; }
       .section-title { font-size: 1.8rem; }
       .card-grid { grid-template-columns: 1fr; }
-      .tool-badge { font-size: 0.8rem; }
-      .project-badge { font-size: 0.8rem; }
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: white;
-      color: #555;
-      margin-top: 50px;
-      font-size: 14px;
+      .skill-card { font-size: 0.9rem; }
     }
   </style>
 </head>
@@ -348,6 +383,7 @@
     <div class="social-icons">
       <a href="https://linkedin.com/in/aakashrahman" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://flickr.com/photos/atiq-bro" target="_blank"><i class="fab fa-flickr"></i></a>
       <a href="https://github.com/AtiqAakash" target="_blank"><i class="fab fa-github"></i></a>
     </div>
     <a href="Atiq-CV.pdf" class="btn">Download CV</a>
@@ -371,10 +407,9 @@
         </div>
         <ul>
           <li>Assembled drones integrating sensors, communication systems, and payloads</li>
-          <li>Configured firmware for flight controllers (Pixhawk, CubePilot)</li>
           <li>Developed an Android app for drone control (Java/Mavsdk)</li>
           <li>3D modeled components with Fusion 360</li>
-          <li>Conducted rigorous testing and SITL simulations</li>
+          <li>Conducted rigorous testing and troubleshooting</li>
         </ul>
       </div>
 
@@ -386,14 +421,14 @@
           <span class="tool-badge">C++</span>
           <span class="tool-badge">Bash</span>
           <span class="tool-badge">FLIR Sensors</span>
-          <span class="tool-badge">SITL</span>
           <span class="tool-badge">NAS Cloud</span>
+          <span class="tool-badge">SITL</span>
         </div>
         <ul>
-          <li>Integrated FLIR sensors for real-time radiation monitoring</li>
-          <li>Reduced setup time by 70% using Bash scripts</li>
+          <li>Integrated FLIR sensors for radiation monitoring</li>
+          <li>Reduced ground station setup time by 70% using Bash</li>
           <li>Built Flight Logger system (HTML/PHP/MySQL)</li>
-          <li>Designed secured cloud backup systems</li>
+          <li>Designed secured multilayer cloud backup systems</li>
         </ul>
       </div>
 
@@ -417,8 +452,9 @@
         <p><strong>IT Support Engineer</strong><br>Jan 2018 – Nov 2019 | Dhaka, Bangladesh</p>
         <div class="tools-list">
           <span class="tool-badge">Linux</span>
-          <span class="tool-badge">Networking</span>
+          <span class="tool-badge">Networking Devices</span>
           <span class="tool-badge">C++</span>
+          <span class="tool-badge">Python</span>
         </div>
         <ul>
           <li>Managed 150+ IT systems</li>
@@ -432,6 +468,7 @@
   <section id="projects" class="section container">
     <h2 class="section-title">Projects</h2>
     <div class="card-grid">
+      <!-- Smart Workshop -->
       <div class="project-card">
         <h3>Smart Workshop Solution</h3>
         <div class="tools-list">
@@ -441,41 +478,53 @@
         </div>
         <p>AI-powered assembly guidance system using object detection</p>
       </div>
+
+      <!-- Facial Recognition -->
       <div class="project-card">
         <h3>Facial Recognition Secured Access System</h3>
         <div class="tools-list">
           <span class="tool-badge">ESP32</span>
           <span class="tool-badge">C++</span>
-          <span class="tool-badge">Python</span>
+          <span class="tool-badge">Machine Learning</span>
         </div>
         <p>Secure access system with facial/object recognition</p>
       </div>
+
+      <!-- ConBot -->
       <div class="project-card">
         <h3>ConBot (Bash)</h3>
         <div class="tools-list">
           <span class="tool-badge">Bash</span>
           <span class="tool-badge">Ardupilot</span>
         </div>
-        <p>Unmanned systems configuration script for Ardupilot community</p>
+        <p>Unmanned systems configuration script for Ardupilot</p>
       </div>
+
+      <!-- Flight Logger -->
       <div class="project-card">
         <h3>Flight Logger</h3>
         <div class="tools-list">
           <span class="tool-badge">HTML</span>
           <span class="tool-badge">PHP</span>
-          <span class="project-badge">2nd Prize</span>
+          <span class="tool-badge">MySQL</span>
         </div>
         <p>Flight log management system with interactive interface</p>
+        <span class="project-badge">2nd Prize</span>
       </div>
+
+      <!-- IoT-Based Control -->
       <div class="project-card">
         <h3>IoT-Based Control & Security System</h3>
         <div class="tools-list">
           <span class="tool-badge">C++</span>
           <span class="tool-badge">HTML</span>
-          <span class="project-badge">2nd Prize</span>
+          <span class="tool-badge">JavaScript</span>
         </div>
         <p>Real-time monitoring system with biometric authentication</p>
+        <span class="project-badge">2nd Prize</span>
       </div>
+
+      <!-- IoT Weather Station -->
       <div class="project-card">
         <h3>IoT Weather Station</h3>
         <div class="tools-list">
@@ -484,6 +533,8 @@
         </div>
         <p>Environmental parameter monitoring system</p>
       </div>
+
+      <!-- Industrial Sorting -->
       <div class="project-card">
         <h3>Industrial Sorting Machine Prototype</h3>
         <div class="tools-list">
@@ -491,6 +542,8 @@
         </div>
         <p>Object detection sorting system for industrial use</p>
       </div>
+
+      <!-- Biometric Attendance -->
       <div class="project-card">
         <h3>Biometric Attendance System</h3>
         <div class="tools-list">
@@ -538,6 +591,9 @@
           <img src="https://source.unsplash.com/1200x600/?aerial_photography" alt="Aerial Image">
         </div>
         <div class="slide">
+          <img src="https://source.unsplash.com/1200x600/?technology" alt="Tech Image">
+        </div>
+        <div class="slide">
           <img src="https://source.unsplash.com/1200x600/?raspberry_pi" alt="Raspberry Pi">
         </div>
         <div class="slide">
@@ -550,16 +606,13 @@
           <img src="https://source.unsplash.com/1200x600/?robotics" alt="Robotics">
         </div>
         <div class="slide">
+          <img src="https://source.unsplash.com/1200x600/?sensors" alt="Sensors">
+        </div>
+        <div class="slide">
           <img src="https://source.unsplash.com/1200x600/?server_room" alt="Server Room">
         </div>
         <div class="slide">
           <img src="https://source.unsplash.com/1200x600/?cruise_ship" alt="Cruise Ship">
-        </div>
-        <div class="slide">
-          <img src="https://source.unsplash.com/1200x600/?fusioneer" alt="Fusion 360">
-        </div>
-        <div class="slide">
-          <img src="https://source.unsplash.com/1200x600/?flight_simulation" alt="Flight Simulation">
         </div>
       </div>
       <div class="slider-dots">
@@ -652,7 +705,7 @@
       <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/Olav+M.+Troviks+Vei+66,+0864+Oslo" target="_blank" style="color: var(--primary); transition: var(--transition);">Olav M. Troviks Vei 66, 0864 Oslo</a></p>
       <p><i class="fas fa-envelope"></i> <a href="mailto:atiqur.pilot@gmail.com" style="color: var(--primary); transition: var(--transition);">atiqur.pilot@gmail.com</a></p>
       <p><i class="fas fa-phone"></i> <a href="tel:+4745808855" style="color: var(--primary); transition: var(--transition);">+47 458 08 855</a></p>
-      <a href="mailto:atiqur.pilot@gmail.com" class="btn" style="margin-top: 35px;">Send Message</a>
+      <a href="mailto:atiqur.pilot@gmail.com" class="btn" style="margin-top: 35px; display: block;">Send Message</a>
     </div>
   </section>
 
@@ -661,7 +714,7 @@
   </footer>
 
   <script>
-    // Photography Slider with 10 images
+    // Photography Slider
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
@@ -681,7 +734,7 @@
       showSlide();
     }, 5000);
 
-    // Manual navigation
+    // Manual control
     document.querySelector('.next').addEventListener('click', () => {
       currentSlide = (currentSlide + 1) % totalSlides;
       showSlide();
