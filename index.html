@@ -73,7 +73,7 @@
       color: var(--light-text);
       text-decoration: none;
       font-weight: 500;
-      padding: 10px 18px;
+      padding: 8px 15px;
       transition: var(--transition);
     }
 
@@ -262,7 +262,7 @@
     .social-icons {
       margin: 20px 0;
       display: flex;
-      gap: 20px;
+      gap: 25px;
     }
 
     .social-icons a {
@@ -285,6 +285,7 @@
       font-weight: 600;
       margin-top: 25px;
       transition: var(--transition);
+      display: inline-block;
     }
 
     .btn:hover {
@@ -348,17 +349,17 @@
       transform: translateY(-5px);
     }
 
+    /* Hover Effects */
+    a:hover {
+      text-decoration: underline;
+      color: var(--primary);
+    }
+
     /* Tool Icons */
     .tool-icon {
       color: var(--primary);
       font-size: 2.5rem;
       margin-right: 15px;
-    }
-
-    /* Hover Effects */
-    a:hover {
-      text-decoration: underline;
-      color: var(--primary);
     }
 
     /* Photography Section */
@@ -379,6 +380,36 @@
       transform: translateY(0);
     }
 
+    /* Contact Section */
+    .contact-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+    }
+
+    /* References */
+    .reference-card {
+      padding: 25px;
+      margin: 20px 0;
+      background: var(--card-bg);
+      color: white;
+      text-align: left;
+    }
+
+    .reference-card h4 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -387,6 +418,45 @@
       color: #7f8c8d;
       margin-top: 80px;
       font-size: 0.9rem;
+    }
+
+    /* Project Cards */
+    .project-card {
+      background: var(--card-bg);
+      color: white;
+      text-align: left;
+    }
+
+    /* Tool Stack */
+    .tool-stack {
+      margin: 15px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Voluntary Experience */
+    .voluntary-card {
+      background: var(--card-bg);
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 15px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: var(--transition);
+      text-align: left;
+    }
+
+    .voluntary-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+    }
+
+    /* Grid Layout */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -461,11 +531,12 @@
               <span class="tool-badge">SITL Simulation</span>
             </div>
             <ul>
-              <li>Assembled drones integrating sensors, communication systems, and payloads</li>
+              <li>Assembled drones from scratch with sensors, communication systems, and payloads</li>
               <li>Configured firmware for flight controllers (Pixhawk, CubePilot)</li>
               <li>Developed an Android app for drone control using Java (Mavsdk)</li>
               <li>3D modeled custom components with Fusion 360 and printed using Creality</li>
               <li>Conducted rigorous testing and troubleshooting of drone systems</li>
+              <li>Simulated flights in 2D/3D environments using SITL</li>
             </ul>
           </div>
         </div>
@@ -486,9 +557,9 @@
               <span class="tool-badge">SITL Simulation</span>
             </div>
             <ul>
-              <li>Integrated FLIR sensors for real-time radiation monitoring</li>
+              <li>Integrated advanced sensors like FLIR’s radioactivity sensor into drones</li>
               <li>Reduced ground station setup time by 70% with Bash scripting</li>
-              <li>Built Flight Logger system (HTML/PHP/MySQL)</li>
+              <li>Built Flight Logger system using HTML/PHP/MySQL</li>
               <li>Designed secured multilayer cloud backup systems</li>
             </ul>
           </div>
@@ -504,13 +575,14 @@
             <p><strong>Network Technician | July 2024 – Sept 2024</strong></p>
             <div class="tools-list">
               <span class="tool-badge">IP Networking</span>
-              <span class="tool-badge">NAS Cloud</span>
               <span class="tool-badge">Microsoft Office</span>
+              <span class="tool-badge">NAS Cloud</span>
             </div>
             <ul>
               <li>Optimized Disney Cruise ship network systems</li>
               <li>Conducted fault-finding and resolved technical issues</li>
               <li>Documented test results and operational procedures</li>
+              <li>Collaborated on network infrastructure upgrades</li>
             </ul>
           </div>
         </div>
@@ -550,7 +622,7 @@
         <!-- Smart Workshop -->
         <div class="project-card">
           <h3>Smart Workshop Solution</h3>
-          <div class="tech-stack">
+          <div class="tool-stack">
             <span class="tool-badge">AI Depth Camera</span>
             <span class="tool-badge">Augmented Reality</span>
             <span class="tool-badge">Python</span>
@@ -561,18 +633,40 @@
         <!-- Facial Recognition -->
         <div class="project-card">
           <h3>Facial Recognition Door Lock</h3>
-          <div class="tech-stack">
+          <div class="tool-stack">
             <span class="tool-badge">ESP32</span>
             <span class="tool-badge">C++</span>
             <span class="tool-badge">Machine Learning</span>
           </div>
-          <p>Secure access system with facial recognition</p>
+          <p>Secure access system with facial recognition and object detection</p>
+        </div>
+
+        <!-- ConBot -->
+        <div class="project-card">
+          <h3>ConBot (Bash)</h3>
+          <div class="tool-stack">
+            <span class="tool-badge">Bash</span>
+            <span class="tool-badge">Ardupilot</span>
+            <span class="tool-badge">SITL Simulation</span>
+          </div>
+          <p>Automatic configuration script for unmanned systems</p>
+        </div>
+
+        <!-- Flight Logger -->
+        <div class="project-card">
+          <h3>Flight Logger</h3>
+          <div class="tool-stack">
+            <span class="tool-badge">HTML</span>
+            <span class="tool-badge">PHP</span>
+            <span class="tool-badge">MySQL</span>
+          </div>
+          <p>Flight Log Management System with interactive interface</p>
         </div>
 
         <!-- IoT-Based Control -->
         <div class="project-card">
           <h3>IoT-Based Control & Security System</h3>
-          <div class="tech-stack">
+          <div class="tool-stack">
             <span class="tool-badge">C++</span>
             <span class="tool-badge">JavaScript</span>
             <span class="project-badge">2nd Prize</span>
@@ -580,15 +674,64 @@
           <p>Real-time monitoring system with biometric authentication</p>
         </div>
 
-        <!-- Flight Logger -->
+        <!-- IoT Weather Station -->
         <div class="project-card">
-          <h3>Flight Logger</h3>
-          <div class="tech-stack">
+          <h3>IoT Weather Station</h3>
+          <div class="tool-stack">
+            <span class="tool-badge">C++</span>
             <span class="tool-badge">HTML</span>
+            <span class="tool-badge">JavaScript</span>
+          </div>
+          <p>Environmental parameter monitoring system</p>
+        </div>
+
+        <!-- Automatic Irrigation -->
+        <div class="project-card">
+          <h3>Automatic Irrigation System</h3>
+          <div class="tool-stack">
+            <span class="tool-badge">C++</span>
+          </div>
+          <p>Smart irrigation system using soil moisture sensors</p>
+        </div>
+
+        <!-- Industrial Sorting -->
+        <div class="project-card">
+          <h3>Industrial Sorting Machine Prototype</h3>
+          <div class="tool-stack">
+            <span class="tool-badge">C++</span>
+          </div>
+          <p>Object detection sorting system for industrial use</p>
+        </div>
+
+        <!-- Smart Home -->
+        <div class="project-card">
+          <h3>Smart Home Automation</h3>
+          <div class="tool-stack">
+            <span class="tool-badge">C++</span>
+            <span class="tool-badge">HTML</span>
+            <span class="tool-badge">JavaScript</span>
+          </div>
+          <p>IoT-based home control system</p>
+        </div>
+
+        <!-- GSM Irrigation -->
+        <div class="project-card">
+          <h3>GSM Remote Controlled Irrigation System</h3>
+          <div class="tool-stack">
+            <span class="tool-badge">C++</span>
+          </div>
+          <p>Remote-controlled irrigation system via SMS</p>
+        </div>
+
+        <!-- Biometric Attendance -->
+        <div class="project-card">
+          <h3>Biometric Attendance System</h3>
+          <div class="tool-stack">
+            <span class="tool-badge">C++</span>
             <span class="tool-badge">PHP</span>
             <span class="tool-badge">MySQL</span>
           </div>
-          <p>Flight Log Management System with interactive interface</p>
+          <p>Fingerprint-based attendance tracking system</p>
         </div>
       </div>
     </div>
@@ -647,7 +790,7 @@
   <!-- Photography Section -->
   <section id="photography" class="section fade-in">
     <div class="container">
-      <h2 class="section-title">Photography</h2>
+      <h2 class="section-title">Photography Portfolio</h2>
       <div class="slider-container">
         <button class="slider-button prev" onclick="prevSlide()">❮</button>
         <div class="slides">
@@ -671,17 +814,17 @@
     <div class="container">
       <h2 class="section-title">Community & Volunteering</h2>
       <div class="card-grid">
-        <div class="card">
-          <h3>Hridoye Bangladesh</h3>
-          <p>Founding President of 400+ member cultural organization</p>
+        <div class="voluntary-card">
+          <h3>Founding President of Hridoye Bangladesh</h3>
+          <p>400+ member cultural organization in Norway</p>
         </div>
-        <div class="card">
-          <h3>Kringjå Cricket Club</h3>
-          <p>Daglig Leder of Board of Directors at Norges Cricket Forbund</p>
+        <div class="voluntary-card">
+          <h3>Daglig Leder of Kringjå Cricket Club</h3>
+          <p>Board of Directors at Norges Cricket Forbund</p>
         </div>
-        <div class="card">
+        <div class="voluntary-card">
           <h3>Freelance Photographer</h3>
-          <p>Documenting events, landscapes, and tech innovations</p>
+          <p>Capturing events, landscapes, and tech innovations</p>
         </div>
       </div>
     </div>
@@ -727,7 +870,7 @@
         <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/Olav+M.+Troviks+Vei+66,+0864+Oslo" target="_blank" style="color: var(--primary); text-decoration: underline;">Olav M. Troviks Vei 66, 0864 Oslo</a></p>
         <p><i class="fas fa-envelope"></i> <a href="mailto:aakash.unipune@gmail.com" style="color: var(--primary); text-decoration: underline;">aakash.unipune@gmail.com</a></p>
         <p><i class="fas fa-phone"></i> <a href="tel:+4745808855" style="color: var(--primary); text-decoration: underline;">+47 458 08 855</a></p>
-        <a href="mailto:aakash.unipune@gmail.com" class="btn">Send Email</a>
+        <a href="mailto:aakash.unipune@gmail.com" class="btn">Send Message</a>
       </div>
     </div>
   </section>
@@ -739,44 +882,4 @@
     const totalSlides = slides.length;
 
     function showSlide(index) {
-      const slidesContainer = document.querySelector('.slides');
-      slidesContainer.style.transform = `translateX(-${index * 100}%)`;
-      currentSlide = index;
-    }
-
-    function nextSlide() {
-      showSlide(currentSlide === totalSlides -1 ? 0 : currentSlide +1);
-    }
-
-    function prevSlide() {
-      showSlide(currentSlide === 0 ? totalSlides -1 : currentSlide -1);
-    }
-
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', e => {
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Fade-in on Scroll
-    window.addEventListener('scroll', () => {
-      document.querySelectorAll('.fade-in').forEach(el => {
-        const pos = el.getBoundingClientRect().top;
-        if (pos < window.innerHeight * 0.7) {
-          el.classList.add('active');
-        }
-      });
-    });
-
-    // Parallax Effect
-    window.addEventListener('scroll', () => {
-      document.querySelector('.hero').style.transform = `translateY(-${window.scrollY * 0.15}px)`;
-    });
-  </script>
-</body>
-</html>
+      const slidesContainer = document.querySelector('.
