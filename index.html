@@ -29,6 +29,30 @@
       overflow-x: hidden;
     }
 
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://source.unsplash.com/1600x900/?drone,technology') center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 40px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--dark);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 25px 0;
+      color: #555;
+    }
+
     /* Floating Navbar */
     nav {
       position: fixed;
@@ -53,46 +77,16 @@
       text-decoration: none;
       font-size: 16px;
       font-weight: 500;
-      padding: 8px 12px;
       transition: var(--transition);
     }
 
     nav a:hover {
       color: var(--primary);
-      border-bottom: 2px solid var(--primary);
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      background: url('https://source.unsplash.com/1600x900/?drone,technology') center/cover no-repeat fixed;
-      background-blend-mode: overlay;
-      background-color: #f8f9fa;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0 40px;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      color: var(--dark);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin: 25px 0;
-      color: #555;
     }
 
     /* Social Icons */
     .social-icons {
       margin: 30px 0;
-      display: flex;
-      gap: 25px;
     }
 
     .social-icons a {
@@ -338,6 +332,31 @@
       max-width: 300px;
     }
 
+    /* Skills Section */
+    #skills {
+      padding: 60px 0;
+    }
+
+    .skill-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .skill-card {
+      background: var(--primary);
+      padding: 15px;
+      border-radius: 8px;
+      color: white;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: scale(1.05);
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2rem; }
@@ -357,10 +376,14 @@
       font-size: 14px;
     }
 
-    /* Hover Effects */
+    /* No Underlines */
+    a {
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
     a:hover {
       color: var(--primary);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -383,11 +406,10 @@
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <h1>Atiqur Rahman</h1>
-    <p>Drone Developer | Embedded Engineer | Pilot | Photographer</p>
+    <p>Drone Developer | Embedded Engineer | Pilot</p>
     <div class="social-icons">
       <a href="https://linkedin.com/in/aakashrahman" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://flickr.com/photos/atiq-bro" target="_blank"><i class="fab fa-flickr"></i></a>
       <a href="https://github.com/AtiqAakash" target="_blank"><i class="fab fa-github"></i></a>
     </div>
     <a href="Atiq-CV.pdf" class="btn">Download CV</a>
@@ -407,14 +429,13 @@
           <span class="tool-badge">Fusion 360</span>
           <span class="tool-badge">Pixhawk</span>
           <span class="tool-badge">CubePilot</span>
-          <span class="tool-badge">SITL</span>
         </div>
         <ul>
-          <li>Assembled drones integrating sensors, communication systems, and payloads</li>
+          <li>Assembled drones integrating sensors and payloads</li>
           <li>Configured firmware for flight controllers (Pixhawk, CubePilot)</li>
           <li>Developed an Android app for drone control (Java/Mavsdk)</li>
-          <li>3D modeled components with Fusion 360 and printed using Creality</li>
-          <li>Conducted rigorous testing and troubleshooting of drone systems</li>
+          <li>3D modeled components with Fusion 360</li>
+          <li>Conducted rigorous testing and SITL simulations</li>
         </ul>
       </div>
 
@@ -430,25 +451,24 @@
           <span class="tool-badge">NAS Cloud</span>
         </div>
         <ul>
-          <li>Integrated FLIR sensors for real-time radiation monitoring</li>
-          <li>Reduced setup time by 70% with Bash automation</li>
+          <li>Integrated FLIR sensors for radiation monitoring</li>
+          <li>Reduced setup time by 70% using Bash scripts</li>
           <li>Built Flight Logger system (HTML/PHP/MySQL)</li>
-          <li>Designed secured multilayer cloud backup systems</li>
+          <li>Designed secured cloud backup systems</li>
         </ul>
       </div>
 
       <!-- Home & Marine -->
       <div class="experience-card">
         <h3><a href="https://www.homeandmarine.com" target="_blank" style="color: var(--primary); transition: var(--transition);">Home & Marine</a></h3>
-        <p><strong>Network Technician</strong><br>Jul 2024 – Sept 2024 | Adam-Opel-Straße 15, 28237 Bremen, Germany</p>
+        <p><strong>Network Technician</strong><br>Jul 2024 – Sept 2024 | Bremen, Germany</p>
         <div class="tools-list">
           <span class="tool-badge">IP Networking</span>
           <span class="tool-badge">NAS Cloud</span>
         </div>
         <ul>
           <li>Optimized Disney Cruise ship networks</li>
-          <li>Documented test results and operational procedures</li>
-          <li>Collaborated on network infrastructure upgrades</li>
+          <li>Documented operational procedures</li>
         </ul>
       </div>
 
@@ -458,15 +478,12 @@
         <p><strong>IT Support Engineer</strong><br>Jan 2018 – Nov 2019 | Dhaka, Bangladesh</p>
         <div class="tools-list">
           <span class="tool-badge">Linux</span>
-          <span class="tool-badge">Networking Devices</span>
+          <span class="tool-badge">Networking</span>
           <span class="tool-badge">C++</span>
-          <span class="tool-badge">Python</span>
         </div>
         <ul>
-          <li>Managed 150+ IT systems (servers, workstations, networks)</li>
-          <li>Diagnosed hardware/software/network issues</li>
+          <li>Managed 150+ IT systems</li>
           <li>Developed automation scripts in C++/Python</li>
-          <li>Implemented security protocols and backup solutions</li>
         </ul>
       </div>
     </div>
@@ -476,85 +493,58 @@
   <section id="projects" class="section container">
     <h2 class="section-title">Projects</h2>
     <div class="card-grid">
-      <!-- Smart Workshop -->
       <div class="project-card">
         <h3>Smart Workshop Solution</h3>
         <div class="tools-list">
           <span class="tool-badge">AI Depth Camera</span>
           <span class="tool-badge">Augmented Reality</span>
           <span class="tool-badge">Python</span>
-          <span class="tool-badge">Object Detection</span>
         </div>
-        <p>AI-powered assembly guidance system using object detection algorithms</p>
+        <p>AI-powered assembly guidance system using object detection</p>
       </div>
-
-      <!-- Facial Recognition -->
       <div class="project-card">
         <h3>Facial Recognition Secured Access System</h3>
         <div class="tools-list">
           <span class="tool-badge">ESP32</span>
           <span class="tool-badge">C++</span>
-          <span class="tool-badge">Python</span>
           <span class="tool-badge">ML</span>
         </div>
         <p>Secure access system with facial/object recognition</p>
       </div>
-
-      <!-- ConBot -->
       <div class="project-card">
         <h3>ConBot (Bash)</h3>
         <div class="tools-list">
           <span class="tool-badge">Bash</span>
           <span class="tool-badge">Ardupilot</span>
         </div>
-        <p>Automatic configuration script for unmanned systems contributed to the Ardupilot community</p>
+        <p>Unmanned systems configuration script for Ardupilot</p>
       </div>
-
-      <!-- Flight Logger -->
       <div class="project-card">
         <h3>Flight Logger</h3>
         <div class="tools-list">
           <span class="tool-badge">HTML</span>
           <span class="tool-badge">PHP</span>
-          <span class="tool-badge">MySQL</span>
+          <span class="project-badge">2nd Prize</span>
         </div>
         <p>Flight log management system with interactive interface</p>
-        <span class="project-badge">2nd Prize: Intra University Project Competition</span>
       </div>
-
-      <!-- IoT-Based Control -->
       <div class="project-card">
         <h3>IoT-Based Control & Security System</h3>
         <div class="tools-list">
           <span class="tool-badge">C++</span>
           <span class="tool-badge">HTML</span>
-          <span class="tool-badge">JavaScript</span>
+          <span class="project-badge">2nd Prize</span>
         </div>
         <p>Real-time monitoring system with biometric authentication</p>
-        <span class="project-badge">2nd Prize: Intra University Project Competition</span>
       </div>
-
-      <!-- IoT Weather Station -->
       <div class="project-card">
         <h3>IoT Weather Station</h3>
         <div class="tools-list">
           <span class="tool-badge">C++</span>
           <span class="tool-badge">HTML</span>
-          <span class="tool-badge">JavaScript</span>
         </div>
         <p>Environmental parameter monitoring system</p>
       </div>
-
-      <!-- Automatic Irrigation -->
-      <div class="project-card">
-        <h3>Automatic Irrigation System</h3>
-        <div class="tools-list">
-          <span class="tool-badge">C++</span>
-        </div>
-        <p>Soil moisture-based smart irrigation system</p>
-      </div>
-
-      <!-- Industrial Sorting -->
       <div class="project-card">
         <h3>Industrial Sorting Machine Prototype</h3>
         <div class="tools-list">
@@ -562,28 +552,6 @@
         </div>
         <p>Object detection sorting system for industrial use</p>
       </div>
-
-      <!-- Smart Home -->
-      <div class="project-card">
-        <h3>Smart Home Automation</h3>
-        <div class="tools-list">
-          <span class="tool-badge">C++</span>
-          <span class="tool-badge">HTML</span>
-          <span class="tool-badge">JavaScript</span>
-        </div>
-        <p>IoT-based home control system</p>
-      </div>
-
-      <!-- GSM Irrigation -->
-      <div class="project-card">
-        <h3>GSM Remote Controlled Irrigation System</h3>
-        <div class="tools-list">
-          <span class="tool-badge">C++</span>
-        </div>
-        <p>Remote-controlled irrigation via SMS</p>
-      </div>
-
-      <!-- Biometric Attendance -->
       <div class="project-card">
         <h3>Biometric Attendance System</h3>
         <div class="tools-list">
@@ -631,9 +599,6 @@
           <img src="https://source.unsplash.com/1200x600/?aerial_photography" alt="Aerial Image">
         </div>
         <div class="slide">
-          <img src="https://source.unsplash.com/1200x600/?technology" alt="Tech Image">
-        </div>
-        <div class="slide">
           <img src="https://source.unsplash.com/1200x600/?raspberry_pi" alt="Raspberry Pi">
         </div>
         <div class="slide">
@@ -646,13 +611,16 @@
           <img src="https://source.unsplash.com/1200x600/?robotics" alt="Robotics">
         </div>
         <div class="slide">
-          <img src="https://source.unsplash.com/1200x600/?sensors" alt="Sensors">
-        </div>
-        <div class="slide">
           <img src="https://source.unsplash.com/1200x600/?server_room" alt="Server Room">
         </div>
         <div class="slide">
           <img src="https://source.unsplash.com/1200x600/?cruise_ship" alt="Cruise Ship">
+        </div>
+        <div class="slide">
+          <img src="https://source.unsplash.com/1200x600/?fusioneer" alt="Fusion 360">
+        </div>
+        <div class="slide">
+          <img src="https://source.unsplash.com/1200x600/?flight_simulation" alt="Flight Simulation">
         </div>
       </div>
       <div class="slider-dots">
@@ -704,7 +672,6 @@
       <div class="card">
         <h3>Freelance Photographer</h3>
         <p>Capturing tech innovations and landscapes</p>
-        <p><a href="https://www.flickr.com/photos/atiq-bro" target="_blank" style="color: var(--primary); transition: var(--transition);">View Flicker Portfolio</a></p>
       </div>
     </div>
   </section>
@@ -744,9 +711,9 @@
     <div class="contact-card">
       <h2 class="section-title" style="margin-bottom: 40px;">Contact Me</h2>
       <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/Olav+M.+Troviks+Vei+66,+0864+Oslo" target="_blank" style="color: var(--primary); transition: var(--transition);">Olav M. Troviks Vei 66, 0864 Oslo</a></p>
-      <p><i class="fas fa-envelope"></i> <a href="mailto:atiqur.pilot@gmail.com" style="color: var(--primary); transition: var(--transition);">atiqur.pilot@gmail.com</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:aakash.unipune@gmail.com" style="color: var(--primary); transition: var(--transition);">aakash.unipune@gmail.com</a></p>
       <p><i class="fas fa-phone"></i> <a href="tel:+4745808855" style="color: var(--primary); transition: var(--transition);">+47 458 08 855</a></p>
-      <a href="mailto:atiqur.pilot@gmail.com" class="btn" style="margin-top: 35px;">Send Message</a>
+      <a href="mailto:aakash.unipune@gmail.com" class="btn" style="margin-top: 35px;">Send Message</a>
     </div>
   </section>
 
@@ -775,7 +742,7 @@
       showSlide();
     }, 5000);
 
-    // Manual navigation
+    // Manual control
     document.querySelector('.next').addEventListener('click', () => {
       currentSlide = (currentSlide + 1) % totalSlides;
       showSlide();
