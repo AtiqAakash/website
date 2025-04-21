@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atiq - Embedded Software Developer & Drone Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
   <style>
     :root {
       --accent: #2ecc71;
-      --light: #f8f9fa;
       --dark: #2d3436;
-      --secondary: #ffffff1a;
+      --light: #f8f9fa;
       --shadow: 0 4px 6px rgba(0,0,0,0.1);
+      --hover-scale: 1.05;
     }
 
     * {
@@ -23,27 +23,10 @@
     }
 
     body {
-      background: var(--light);
+      background: linear-gradient(135deg, #2ecc71, #3498db);
       color: var(--dark);
       line-height: 1.6;
       overflow-x: hidden;
-    }
-
-    /* Animated Gradient Background */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(135deg, #2ecc71, #3498db);
-      animation: gradient 15s ease infinite;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     /* Floating Navbar */
@@ -52,10 +35,10 @@
       width: 100%;
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(10px);
-      padding: 20px;
+      padding: 15px 20px;
       display: flex;
-      justify-content: center;
-      gap: 25px;
+      justify-content: space-between;
+      align-items: center;
       z-index: 1000;
       transition: 0.4s;
     }
@@ -70,48 +53,98 @@
 
     nav a:hover {
       color: var(--accent);
-      border-bottom: 2px solid var(--accent);
-    }
-
-    /* Section Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Animated Cards */
-    .card {
-      background: white;
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      transition: 0.4s;
-      position: relative;
-      overflow: hidden;
-      margin: 20px 0;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: var(--secondary);
-      z-index: -1;
-      transition: 0.4s;
-    }
-
-    .card:hover::before {
       transform: scale(1.05);
     }
 
-    /* Timeline Animation */
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=M3wzNjM5Nzd8MHwxfHNlYXJjaHwxfHxiaWdnZXxlbnwwfHx8fDE3MTc3NDYyMDJ8MA&ixlib=rb-4.0.3&w=1920');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    /* Social Icons */
+    .social {
+      display: flex;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: var(--light);
+      border-radius: 50%;
+      color: var(--dark);
+      transition: 0.4s;
+    }
+
+    .social a:hover {
+      background: var(--accent);
+      transform: rotate(360deg);
+      color: white;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.05) 100%);
+    }
+
+    .section-title {
+      font-size: 2.75rem;
+      margin-bottom: 40px;
+      position: relative;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 3px;
+      background: var(--accent);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+
+    /* Experience Timeline */
     .timeline {
       position: relative;
       padding: 40px 0;
@@ -126,13 +159,6 @@
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { opacity: 0.4; }
-      50% { opacity: 1; }
-      100% { opacity: 0.4; }
     }
 
     .timeline-item {
@@ -141,11 +167,17 @@
       width: 50%;
       transition: 0.4s;
       opacity: 0.9;
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
     }
 
     .timeline-item:hover {
-      transform: translateY(-5px) scale(1.02);
-      opacity: 1;
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .timeline-item.right {
+      left: 50%;
     }
 
     .timeline-item::before {
@@ -160,18 +192,37 @@
       transform: translate(-50%, -50%);
     }
 
-    /* Project Grid */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
+    /* Project Cards */
+    .project-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 20px 0;
+      transition: 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.2);
     }
 
     /* Education Cards */
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .education-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px 0;
+      transition: 0.4s;
+      display: flex;
+      align-items: center;
       gap: 20px;
+    }
+
+    .education-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.2);
     }
 
     /* Photography Slider */
@@ -194,8 +245,9 @@
 
     .slide img {
       width: 100%;
-      display: block;
-      border-radius: 10px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
     }
 
     .slider-button {
@@ -208,24 +260,70 @@
       padding: 15px;
       cursor: pointer;
       border-radius: 50%;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       transition: 0.3s;
+      z-index: 1;
     }
 
     .slider-button:hover {
       background: var(--accent);
+      color: white;
     }
 
-    /* Section Fade In */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: 0.6s;
+    /* Voluntary Work Cards */
+    .voluntary-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px 0;
+      transition: 0.4s;
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
-    .fade-in.active {
-      opacity: 1;
-      transform: translateY(0);
+    .voluntary-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* Animated Icons */
+    .icon {
+      font-size: 2rem;
+      color: var(--accent);
+      transition: 0.4s;
+    }
+
+    .icon:hover {
+      transform: scale(1.1);
+    }
+
+    /* References Section */
+    .reference-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px 0;
+      transition: 0.4s;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .reference-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 30px;
+      }
+      .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+      }
     }
   </style>
 </head>
@@ -233,19 +331,25 @@
 <body>
   <!-- Floating Navbar -->
   <nav id="navbar">
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#gallery">Photography</a>
-    <a href="#voluntary">Community</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-brand">
+      <i class="fas fa-drone"></i>
+      <span>Atiq</span>
+    </div>
+    <div class="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#gallery">Photography</a>
+      <a href="#voluntary">Community</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <!-- Hero Section -->
   <section id="hero" class="hero">
-    <div class="container">
+    <div class="hero-content">
       <h1>Md Atiqur Rahman</h1>
       <p>Embedded Software Developer | Drone Engineer | IT Support Engineer</p>
       <div class="social">
@@ -259,7 +363,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="section fade-in">
+  <section id="about" class="section">
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <p style="font-size: 1.1rem; line-height: 1.8;">
@@ -269,49 +373,66 @@
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="section fade-in">
+  <section id="experience" class="section">
     <div class="container">
       <h2 class="section-title">Professional Journey</h2>
       <div class="timeline">
         <div class="timeline-item left">
           <div class="card">
+            <div class="icon-container">
+              <i class="fas fa-drone"></i>
+            </div>
             <h3><a href="https://www.topseven.com" target="_blank">TOPseven Drone R&D</a> - Werkstudent</h3>
-            <p><em>Oct 2024 - March 2025 | Emden, Germany</em></p>
-            <ul>
-              <li>Assembled drones from scratch with sensor integration</li>
-              <li>Developed Android app for drone control (Java/Mavsdk)</li>
+            <p style="font-size: 1rem; color: #6c757d;"><em>Oct 2024 - March 2025 | Emden, Germany</em></p>
+            <ul style="font-size: 1rem; line-height: 1.5;">
+              <li>Assembled drones with sensors, communication systems, and payloads</li>
+              <li>Configured firmware for Pixhawk/CubePilot flight controllers</li>
+              <li>Developed Android app using Java (Mavsdk)</li>
               <li>3D modeling with Fusion 360 and Creality Scan</li>
+              <li>Simulated flights in 2D/3D environments using SITL</li>
             </ul>
           </div>
         </div>
         <div class="timeline-item right">
           <div class="card">
+            <div class="icon-container">
+              <i class="fas fa-cubes"></i>
+            </div>
             <h3><a href="https://www.robotaviation.com" target="_blank">Robot Aviation</a> - Intern</h3>
-            <p><em>Nov 2023 - June 2024 | Hønefoss, Norway</em></p>
-            <ul>
-              <li>Integrated FLIR radioactivity sensors into drones</li>
-              <li>Built web-based Flight Logger system</li>
-              <li>Reduced ground station setup time by 70% with Bash scripting</li>
+            <p style="font-size: 1rem; color: #6c757d;"><em>Nov 2023 - June 2024 | Hønefoss, Norway</em></p>
+            <ul style="font-size: 1rem; line-height: 1.5;">
+              <li>Integrated FLIR sensors for real-time radiation monitoring</li>
+              <li>Built web-based Flight Logger (HTML/CSS/JS/PHP/MySQL)</li>
+              <li>Reduced ground station setup time by 70% using Bash scripting</li>
+              <li>Designed multilayer cloud backup systems</li>
             </ul>
           </div>
         </div>
         <div class="timeline-item left">
           <div class="card">
+            <div class="icon-container">
+              <i class="fas fa-ship"></i>
+            </div>
             <h3><a href="https://www.homeandmarine.com" target="_blank">Home & Marine</a> - Network Technician</h3>
-            <p><em>July 2024 - Sept 2024 | Bremen, Germany</em></p>
-            <ul>
+            <p style="font-size: 1rem; color: #6c757d;"><em>July 2024 - Sept 2024 | Bremen, Germany</em></p>
+            <ul style="font-size: 1rem; line-height: 1.5;">
               <li>Optimized Disney Cruise ship network systems</li>
-              <li>Documented maritime network procedures</li>
+              <li>Conducted fault-finding and network troubleshooting</li>
+              <li>Documented maritime operational procedures</li>
             </ul>
           </div>
         </div>
         <div class="timeline-item right">
           <div class="card">
+            <div class="icon-container">
+              <i class="fas fa-server"></i>
+            </div>
             <h3><a href="https://www.codefix.com.bd" target="_blank">CodeFix IT</a> - IT Support Engineer</h3>
-            <p><em>Jan 2018 - Nov 2019 | Dhaka, Bangladesh</em></p>
-            <ul>
-              <li>Managed 150+ IT systems including servers and networks</li>
-              <li>Developed custom automation scripts in C++/Python</li>
+            <p style="font-size: 1rem; color: #6c757d;"><em>Jan 2018 - Nov 2019 | Dhaka, Bangladesh</em></p>
+            <ul style="font-size: 1rem; line-height: 1.5;">
+              <li>Managed 150+ IT systems including servers/networks</li>
+              <li>Developed automation scripts in C++/Python</li>
+              <li>Implemented security protocols and backup solutions</li>
             </ul>
           </div>
         </div>
@@ -320,65 +441,108 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="section fade-in">
+  <section id="projects" class="section">
     <div class="container">
       <h2 class="section-title">Projects</h2>
       <div class="project-grid">
-        <div class="card">
+        <div class="project-card">
+          <div class="icon-container">
+            <i class="fas fa-robot"></i>
+          </div>
           <h3>Smart Workshop Solution</h3>
-          <p>AI/AR-powered assembly guidance system</p>
+          <p>AI-Powered Assembly Guidance System</p>
           <div class="tags">
             <span>AI Depth Camera</span>
             <span>Augmented Reality</span>
             <span>Python</span>
           </div>
         </div>
-        <div class="card">
+        <div class="project-card">
+          <div class="icon-container">
+            <i class="fas fa-lock"></i>
+          </div>
           <h3>Facial Recognition Door Lock</h3>
-          <p>Secure access system with ML integration</p>
+          <p>Secure access system with ML</p>
           <div class="tags">
             <span>ESP32</span>
             <span>C++</span>
             <span>Machine Learning</span>
           </div>
         </div>
-        <div class="card">
+        <div class="project-card">
+          <div class="icon-container">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>ConBot (Bash)</h3>
+          <p>Ardupilot configuration automation</p>
+          <div class="tags">
+            <span>Bash</span>
+            <span>SITL</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="icon-container">
+            <i class="fas fa-plane"></i>
+          </div>
           <h3>Flight Logger</h3>
           <p>Drone log management system</p>
           <div class="tags">
             <span>HTML</span>
             <span>CSS</span>
-            <span>JavaScript</span>
             <span>PHP</span>
-            <span>MySQL</span>
           </div>
         </div>
-        <div class="card">
+        <div class="project-card">
+          <div class="icon-container">
+            <i class="fas fa-shield"></i>
+          </div>
           <h3>IoT Security System</h3>
-          <p>Real-time monitoring with biometric authentication</p>
+          <p>Real-time biometric authentication</p>
           <div class="tags">
             <span>C++</span>
-            <span>HTML</span>
-            <span>CSS</span>
             <span>JavaScript</span>
           </div>
         </div>
-        <div class="card">
-          <h3>ConBot (Bash)</h3>
-          <p>Automated Ardupilot configuration script</p>
-          <div class="tags">
-            <span>Bash</span>
-            <span>Ardupilot</span>
-            <span>SITL</span>
+        <div class="project-card">
+          <div class="icon-container">
+            <i class="fas fa-sun"></i>
           </div>
-        </div>
-        <div class="card">
           <h3>IoT Weather Station</h3>
           <p>Environmental parameter monitoring</p>
           <div class="tags">
             <span>C++</span>
             <span>HTML</span>
-            <span>CSS</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="icon-container">
+            <i class="fas fa-water"></i>
+          </div>
+          <h3>Automatic Irrigation System</h3>
+          <p>Sensor-based water optimization</p>
+          <div class="tags">
+            <span>C++</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="icon-container">
+            <i class="fas fa-industry"></i>
+          </div>
+          <h3>Industrial Sorting Machine</h3>
+          <p>Object detection sorting system</p>
+          <div class="tags">
+            <span>C++</span>
+            <span>Sensors</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="icon-container">
+            <i class="fas fa-home"></i>
+          </div>
+          <h3>Smart Home Automation</h3>
+          <p>IoT-based home control system</p>
+          <div class="tags">
+            <span>C++</span>
             <span>JavaScript</span>
           </div>
         </div>
@@ -387,34 +551,43 @@
   </section>
 
   <!-- Education Section -->
-  <section id="education" class="section fade-in">
+  <section id="education" class="section">
     <div class="container">
       <h2 class="section-title">Education</h2>
       <div class="education-grid">
-        <div class="card">
-          <a href="https://www.hs-emden-leer.de" target="_blank">
-            <h3>Hochschule Emden/Leer</h3>
+        <div class="education-card">
+          <div class="icon-container">
+            <i class="fas fa-university"></i>
+          </div>
+          <div>
+            <h3><a href="https://www.hs-emden-leer.de" target="_blank">Hochschule Emden/Leer</a></h3>
             <p>Master of Engineering - Cyber Physical Systems</p>
-          </a>
+          </div>
         </div>
-        <div class="card">
-          <a href="https://www.uio.no" target="_blank">
-            <h3>University of Oslo</h3>
+        <div class="education-card">
+          <div class="icon-container">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h3><a href="https://www.uio.no" target="_blank">University of Oslo</a></h3>
             <p>Master of Science - Programming & System Architecture</p>
-          </a>
+          </div>
         </div>
-        <div class="card">
-          <a href="https://www.uoda.edu.bd" target="_blank">
-            <h3>University of Development Alternative</h3>
+        <div class="education-card">
+          <div class="icon-container">
+            <i class="fas fa-school"></i>
+          </div>
+          <div>
+            <h3><a href="https://www.uoda.edu.bd" target="_blank">University of Development Alternative</a></h3>
             <p>Bachelor of Science - Computer Science & Engineering</p>
-          </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Photography Gallery -->
-  <section id="gallery" class="section fade-in">
+  <section id="gallery" class="section">
     <div class="container">
       <h2 class="section-title">Photography</h2>
       <div class="slider-container">
@@ -429,6 +602,9 @@
           <div class="slide">
             <img src="https://images.unsplash.com/photo-1516280580979-301116677601?ixid=M3wzNjM5Nzd8MHwxfHNlYXJjaHwzfHxiaWdnZXxlbnwwfHx8fDE3MTc3NDYzMjJ8MA&ixlib=rb-4.0.3&w=1920" alt="Landscape Photography">
           </div>
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?ixid=M3wzNjM5Nzd8MHwxfHNlYXJjaHw0fHxiaWdnZXxlbnwwfHx8fDE3MTc3NDY0MTJ8MA&ixlib=rb-4.0.3&w=1920" alt="Drone Tech">
+          </div>
         </div>
         <button class="slider-button next" onclick="nextSlide()">&#10095;</button>
       </div>
@@ -436,31 +612,91 @@
   </section>
 
   <!-- Voluntary Work -->
-  <section id="voluntary" class="section fade-in">
+  <section id="voluntary" class="section">
     <div class="container">
       <h2 class="section-title">Community Engagement</h2>
-      <div class="project-grid">
-        <div class="card">
-          <h3>Hridoye Bangladesh</h3>
-          <p>Founding President of 400+ member organization</p>
+      <div class="voluntary-grid">
+        <div class="voluntary-card">
+          <div class="icon-container">
+            <i class="fas fa-users"></i>
+          </div>
+          <div>
+            <h3>Hridoye Bangladesh</h3>
+            <p>Founding President of 400+ member community organization in Norway</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>Kringjå Cricket Club</h3>
-          <p>Daglig Leder at Norges Cricket Forbund</p>
+        <div class="voluntary-card">
+          <div class="icon-container">
+            <i class="fas fa-cricket"></i>
+          </div>
+          <div>
+            <h3>Kringjå Cricket Club</h3>
+            <p>Daglig Leder of Board of Directors at Norges Cricket Forbund</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- References Section -->
+  <section id="references" class="section">
+    <div class="container">
+      <h2 class="section-title">References</h2>
+      <div class="reference-grid">
+        <div class="reference-card">
+          <div class="icon-container">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <h4>Niklas Nyroth</h4>
+            <p>CEO, Robot Aviation AS</p>
+            <p>+47 90652502</p>
+            <p>niklas.nyroth@robotaviation.com</p>
+          </div>
+        </div>
+        <div class="reference-card">
+          <div class="icon-container">
+            <i class="fas fa-plane"></i>
+          </div>
+          <div>
+            <h4>Cem Yolcubal</h4>
+            <p>Drone Prototype Developer, TOPseven GmbH</p>
+            <p>+49 15170551030</p>
+            <p>cem.yolcubal@topseven.com</p>
+          </div>
+        </div>
+        <div class="reference-card">
+          <div class="icon-container">
+            <i class="fas fa-university"></i>
+          </div>
+          <div>
+            <h4>Farzan M. Noori</h4>
+            <p>Postdoctoral Researcher, University of Oslo</p>
+            <p>+47 912 55 115</p>
+            <p>farzanmn@ifi.uio.no</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section fade-in">
+  <section id="contact" class="section">
     <div class="container">
       <h2 class="section-title">Contact</h2>
-      <div style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px;">
-        <p><i class="fas fa-envelope"></i> aakash.unipune@gmail.com</p>
-        <p><i class="fas fa-phone"></i> +47 458 08 855</p>
+      <div class="contact-info">
+        <div class="icon-container">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <p style="margin: 0;">aakash.unipune@gmail.com</p>
       </div>
-      <a href="mailto:aakash.unipune@gmail.com" class="btn" style="background: var(--accent); color: white; padding: 14px 30px; border-radius: 30px; font-size: 1.1rem;">Send Message</a>
+      <div class="contact-info">
+        <div class="icon-container">
+          <i class="fas fa-phone"></i>
+        </div>
+        <p style="margin: 0;">+47 458 08 855</p>
+      </div>
+      <a href="mailto:aakash.unipune@gmail.com" class="btn" style="background: var(--accent); color: white; padding: 14px 30px; border-radius: 30px; font-size: 1.1rem; margin-top: 25px;">Send Message</a>
     </div>
   </section>
 
@@ -479,16 +715,6 @@
 
     function nextSlide() { showSlide(++currentSlide); }
     function prevSlide() { showSlide(--currentSlide); }
-
-    // Scroll Animations
-    window.addEventListener('scroll', () => {
-      document.querySelectorAll('.fade-in').forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < window.innerHeight * 0.8) {
-          section.classList.add('active');
-        }
-      });
-    });
   </script>
 </body>
 </html>
