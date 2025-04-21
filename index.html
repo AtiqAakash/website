@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atiqur Rahman | Embedded Systems & Drone Engineer</title>
+  <title>Atiqur Rahman | Drone Developer & Embedded Engineer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
@@ -27,6 +27,17 @@
       background: white;
       color: var(--dark);
       scroll-behavior: smooth;
+    }
+
+    /* Parallax Background */
+    body {
+      background-image: url('https://source.unsplash.com/1600x900/?technology,drone');
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-blend-mode: overlay;
+      background-color: #f8f9fa;
     }
 
     /* Floating Navbar */
@@ -62,7 +73,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
       padding: 0 20px;
     }
 
@@ -70,20 +80,26 @@
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
       color: var(--dark);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
 
     .hero p {
       font-size: 1.1rem;
       margin: 15px 0;
-      color: #555;
+      color: #444;
     }
 
     /* Social Icons */
+    .social-icons {
+      margin: 20px 0;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
     .social-icons a {
       color: var(--dark);
-      font-size: 1.8rem;
-      margin: 0 10px;
+      font-size: 2rem;
       transition: var(--transition);
     }
 
@@ -158,6 +174,7 @@
       opacity: 0;
       animation: popIn 0.6s ease-in-out forwards;
       animation-delay: 0.3s;
+      transition: var(--transition);
     }
 
     @keyframes popIn {
@@ -168,6 +185,7 @@
     .card:hover, .experience-card:hover, .project-card:hover, .reference-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      cursor: pointer;
     }
 
     /* Experience Cards */
@@ -192,6 +210,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      justify-content: center;
     }
 
     .tool-badge {
@@ -201,6 +220,11 @@
       border-radius: 4px;
       font-size: 0.8rem;
       text-transform: uppercase;
+      transition: var(--transition);
+    }
+
+    .tool-badge:hover {
+      transform: scale(1.05);
     }
 
     /* Projects Section */
@@ -215,6 +239,12 @@
       color: white;
       border-radius: 4px;
       font-size: 0.8rem;
+      margin-top: 5px;
+      transition: var(--transition);
+    }
+
+    .project-badge:hover {
+      transform: scale(1.05);
     }
 
     /* Photography Slider */
@@ -238,7 +268,6 @@
 
     .slide {
       min-width: 100%;
-      transition: transform 0.5s ease;
     }
 
     .slide img {
@@ -246,6 +275,11 @@
       height: 400px;
       object-fit: cover;
       border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .slide:hover img {
+      transform: scale(1.05);
     }
 
     /* Slider Navigation */
@@ -330,11 +364,6 @@
       transition: var(--transition);
     }
 
-    .contact-card p {
-      margin: 12px 0;
-      color: #444;
-    }
-
     .contact-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 18px rgba(0,0,0,0.15);
@@ -361,8 +390,25 @@
 
     /* Hover Effects */
     a:hover {
-      text-decoration: underline;
       color: var(--primary);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    /* Photography Link */
+    #flickr-link {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: white;
+      border-radius: 25px;
+      font-size: 14px;
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    #flickr-link:hover {
+      transform: scale(1.05);
+      background: var(--accent);
     }
   </style>
 </head>
@@ -383,7 +429,7 @@
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <h1>Atiqur Rahman</h1>
-    <p>Embedded Systems Developer | Drone Engineer</p>
+    <p>Drone Developer | Pilot | Embedded Engineer | Photographer</p>
     <div class="social-icons">
       <a href="https://linkedin.com/in/aakashrahman" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -399,7 +445,7 @@
     <div class="card-grid">
       <!-- TOPseven GmbH -->
       <div class="experience-card">
-        <h3><a href="https://www.topseven.com" target="_blank" style="color: var(--primary); text-decoration: underline;">TOPseven GmbH</a></h3>
+        <h3><a href="https://www.topseven.com" target="_blank" style="color: var(--primary); transition: var(--transition);">TOPseven GmbH</a></h3>
         <p><strong>Werkstudent (Drone R&D)</strong><br>Oct 2024 – Mar 2025 | Emden, Germany</p>
         <div class="tools-list">
           <span class="tool-badge">Python</span>
@@ -418,7 +464,7 @@
 
       <!-- Robot Aviation -->
       <div class="experience-card">
-        <h3><a href="https://www.robotaviation.com" target="_blank" style="color: var(--primary); text-decoration: underline;">Robot Aviation</a></h3>
+        <h3><a href="https://www.robotaviation.com" target="_blank" style="color: var(--primary); transition: var(--transition);">Robot Aviation</a></h3>
         <p><strong>Unmanned Systems Intern</strong><br>Nov 2023 – Jun 2024 | Hønefoss, Norway</p>
         <div class="tools-list">
           <span class="tool-badge">C++</span>
@@ -436,7 +482,7 @@
 
       <!-- Home & Marine -->
       <div class="experience-card">
-        <h3><a href="https://www.homeandmarine.com" target="_blank" style="color: var(--primary); text-decoration: underline;">Home & Marine</a></h3>
+        <h3><a href="https://www.homeandmarine.com" target="_blank" style="color: var(--primary); transition: var(--transition);">Home & Marine</a></h3>
         <p><strong>Network Technician</strong><br>Jul 2024 – Sept 2024 | Bremen, Germany</p>
         <div class="tools-list">
           <span class="tool-badge">IP Networking</span>
@@ -450,7 +496,7 @@
 
       <!-- CodeFix IT -->
       <div class="experience-card">
-        <h3><a href="https://www.codefix.com.bd" target="_blank" style="color: var(--primary); text-decoration: underline;">CodeFix IT</a></h3>
+        <h3><a href="https://www.codefix.com.bd" target="_blank" style="color: var(--primary); transition: var(--transition);">CodeFix IT</a></h3>
         <p><strong>IT Support Engineer</strong><br>Jan 2018 – Nov 2019 | Dhaka, Bangladesh</p>
         <div class="tools-list">
           <span class="tool-badge">Linux</span>
@@ -476,7 +522,7 @@
           <span class="tool-badge">Augmented Reality</span>
           <span class="tool-badge">Python</span>
         </div>
-        <p>AI-powered assembly guidance system using object detection</p>
+        <p>AI-powered assembly guidance system using object detection algorithms</p>
       </div>
       <div class="project-card">
         <h3>Facial Recognition Door Lock</h3>
@@ -493,7 +539,7 @@
           <span class="tool-badge">Bash</span>
           <span class="tool-badge">Ardupilot</span>
         </div>
-        <p>Unmanned systems configuration script</p>
+        <p>Unmanned systems configuration script for Ardupilot</p>
       </div>
       <div class="project-card">
         <h3>Flight Logger</h3>
@@ -531,7 +577,7 @@
     </div>
   </section>
 
-  <!-- Photography Slider -->
+  <!-- Photography Section -->
   <section id="gallery" class="section">
     <h2 class="section-title">Gallery</h2>
     <div class="slider-container">
@@ -545,15 +591,14 @@
         <div class="slide">
           <img src="https://source.unsplash.com/1200x600/?technology" alt="Tech Image">
         </div>
-        <div class="slide">
-          <img src="https://source.unsplash.com/1200x600/?3d_printing" alt="3D Printing">
-        </div>
       </div>
       <div class="slider-dots">
         <span class="slider-dot" onclick="currentSlide=0; showSlide()"></span>
         <span class="slider-dot" onclick="currentSlide=1; showSlide()"></span>
         <span class="slider-dot" onclick="currentSlide=2; showSlide()"></span>
-        <span class="slider-dot" onclick="currentSlide=3; showSlide()"></span>
+      </div>
+      <div class="gallery-link">
+        <a href="https://www.flickr.com/photos/atiq-bro" target="_blank" id="flickr-link">View Full Photography Portfolio</a>
       </div>
     </div>
   </section>
@@ -563,15 +608,15 @@
     <h2 class="section-title">Education</h2>
     <div class="card-grid">
       <div class="card">
-        <h3><a href="https://www.hs-emden-leer.de" target="_blank" style="color: var(--primary); text-decoration: underline;">Hochschule Emden/Leer</a></h3>
+        <h3><a href="https://www.hs-emden-leer.de" target="_blank" style="color: var(--primary); transition: var(--transition);">Hochschule Emden/Leer</a></h3>
         <p>Master of Engineering – Cyber Physical Systems (Ongoing)</p>
       </div>
       <div class="card">
-        <h3><a href="https://www.uio.no" target="_blank" style="color: var(--primary); text-decoration: underline;">University of Oslo</a></h3>
+        <h3><a href="https://www.uio.no" target="_blank" style="color: var(--primary); transition: var(--transition);">University of Oslo</a></h3>
         <p>Master of Science – Programming & System Architecture (Discontinued)</p>
       </div>
       <div class="card">
-        <h3><a href="https://www.uoda.edu.bd" target="_blank" style="color: var(--primary); text-decoration: underline;">University of Development Alternative</a></h3>
+        <h3><a href="https://www.uoda.edu.bd" target="_blank" style="color: var(--primary); transition: var(--transition);">University of Development Alternative</a></h3>
         <p>Bachelor of Science – Computer Science & Engineering</p>
       </div>
     </div>
@@ -583,11 +628,11 @@
     <div class="card-grid">
       <div class="card">
         <h3>Founder of Hridoye Bangladesh</h3>
-        <p>400+ member cultural org in Norway</p>
+        <p>400+ member cultural organization in Norway</p>
       </div>
       <div class="card">
-        <h3>Kringjå Cricket Club</h3>
-        <p>Board Leader at Norges Cricket Forbund</p>
+        <h3><a href="atiq.no/kck" target="_blank" style="color: var(--primary); transition: var(--transition);">Kringjå Cricket Club</a></h3>
+        <p>Daglig Leder of Board of Directors at Norges Cricket Forbund</p>
       </div>
       <div class="card">
         <h3>Freelance Photographer</h3>
@@ -603,25 +648,25 @@
       <!-- Niklas Nyroth -->
       <div class="reference-card">
         <h4>Niklas Nyroth</h4>
-        <p>CEO, <a href="https://www.robotaviation.com" target="_blank" style="color: var(--primary); text-decoration: underline;">Robot Aviation AS</a></p>
-        <p><i class="fas fa-phone"></i> <a href="tel:+4790652502" style="color: var(--primary); text-decoration: underline;">+47 90652502</a></p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:niklas.nyroth@robotaviation.com" style="color: var(--primary); text-decoration: underline;">niklas.nyroth@robotaviation.com</a></p>
+        <p>CEO, <a href="https://www.robotaviation.com" target="_blank" style="color: var(--primary); transition: var(--transition);">Robot Aviation AS</a></p>
+        <p><i class="fas fa-phone"></i> +47 90652502</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:niklas.nyroth@robotaviation.com" style="color: var(--primary); transition: var(--transition);">niklas.nyroth@robotaviation.com</a></p>
       </div>
 
       <!-- Cem Yolcubal -->
       <div class="reference-card">
         <h4>Cem Yolcubal</h4>
-        <p>Drone Developer, <a href="https://www.topseven.com" target="_blank" style="color: var(--primary); text-decoration: underline;">TOPseven GmbH</a></p>
-        <p><i class="fas fa-phone"></i> <a href="tel:+4915170551030" style="color: var(--primary); text-decoration: underline;">+49 15170551030</a></p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:cem.yolcubal@topseven.com" style="color: var(--primary); text-decoration: underline;">cem.yolcubal@topseven.com</a></p>
+        <p>Drone Developer, <a href="https://www.topseven.com" target="_blank" style="color: var(--primary); transition: var(--transition);">TOPseven GmbH</a></p>
+        <p><i class="fas fa-phone"></i> +49 15170551030</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:cem.yolcubal@topseven.com" style="color: var(--primary); transition: var(--transition);">cem.yolcubal@topseven.com</a></p>
       </div>
 
       <!-- Farzan M. Noori -->
       <div class="reference-card">
         <h4>Farzan M. Noori</h4>
-        <p>Researcher, <a href="https://www.uio.no" target="_blank" style="color: var(--primary); text-decoration: underline;">University of Oslo</a></p>
-        <p><i class="fas fa-phone"></i> <a href="tel:+4791255115" style="color: var(--primary); text-decoration: underline;">+47 912 55 115</a></p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:farzanmn@ifi.uio.no" style="color: var(--primary); text-decoration: underline;">farzanmn@ifi.uio.no</a></p>
+        <p>Researcher, <a href="https://www.uio.no" target="_blank" style="color: var(--primary); transition: var(--transition);">University of Oslo</a></p>
+        <p><i class="fas fa-phone"></i> +47 912 55 115</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:farzanmn@ifi.uio.no" style="color: var(--primary); transition: var(--transition);">farzanmn@ifi.uio.no</a></p>
       </div>
     </div>
   </section>
@@ -630,9 +675,9 @@
   <section id="contact" class="section">
     <div class="contact-card">
       <h2 class="section-title" style="margin-bottom: 30px;">Contact Me</h2>
-      <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/Olav+M.+Troviks+Vei+66,+0864+Oslo" target="_blank" style="color: var(--primary); text-decoration: underline;">Oslo, Norway</a></p>
-      <p><i class="fas fa-envelope"></i> <a href="mailto:aakash.unipune@gmail.com" style="color: var(--primary); text-decoration: underline;">aakash.unipune@gmail.com</a></p>
-      <p><i class="fas fa-phone"></i> <a href="tel:+4745808855" style="color: var(--primary); text-decoration: underline;">+47 458 08 855</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/Olav+M.+Troviks+Vei+66,+0864+Oslo" target="_blank" style="color: var(--primary); transition: var(--transition);">Oslo, Norway</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:aakash.unipune@gmail.com" style="color: var(--primary); transition: var(--transition);">aakash.unipune@gmail.com</a></p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+4745808855" style="color: var(--primary); transition: var(--transition);">+47 458 08 855</a></p>
       <a href="mailto:aakash.unipune@gmail.com" class="btn" style="margin-top: 25px;">Send Message</a>
     </div>
   </section>
@@ -642,11 +687,12 @@
   </footer>
 
   <script>
+    // Photography Slider
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
     const dots = document.querySelectorAll('.slider-dot');
-    
+
     function showSlide() {
       slides.forEach((slide, index) => {
         slide.style.transform = `translateX(-${currentSlide * 100}%)`;
