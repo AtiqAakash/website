@@ -10,9 +10,7 @@
     :root {
       --primary: #2ecc71;
       --secondary: #3498db;
-      --light: white;
       --dark: #2c3e50;
-      --accent: #1abc9c;
       --transition: all 0.3s ease;
     }
 
@@ -31,21 +29,13 @@
       overflow-x: hidden;
     }
 
-    /* Centered Layout */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-
     /* Floating Navbar */
     nav {
       position: fixed;
       width: 100%;
       top: 0;
-      background: rgba(255,255,255,0.9);
-      padding: 15px 0;
+      background: white;
+      padding: 15px;
       z-index: 999;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
@@ -75,7 +65,9 @@
     /* Hero Section */
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://source.unsplash.com/1600x900/?drone,technology') center/cover no-repeat fixed;
+      background: url('https://source.unsplash.com/1600x900/?drone,technology') center/cover no-repeat fixed;
+      background-blend-mode: overlay;
+      background-color: #f8f9fa;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -92,19 +84,20 @@
 
     .hero p {
       font-size: 1.2rem;
-      margin: 20px 0;
+      margin: 25px 0;
       color: #555;
     }
 
     /* Social Icons */
     .social-icons {
-      margin: 25px 0;
+      margin: 30px 0;
+      display: flex;
+      gap: 25px;
     }
 
     .social-icons a {
       color: var(--dark);
-      font-size: 2rem;
-      margin: 0 15px;
+      font-size: 2.2rem;
       transition: var(--transition);
     }
 
@@ -122,12 +115,11 @@
       font-size: 16px;
       margin: 30px 0;
       transition: var(--transition);
-      display: inline-block;
     }
 
     .btn:hover {
       transform: scale(1.05);
-      background: var(--accent);
+      background: var(--secondary);
     }
 
     /* Sections */
@@ -170,7 +162,7 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 40px;
       margin-top: 50px;
-      justify-items: center; /* Center cards */
+      justify-items: center;
     }
 
     .card, .experience-card, .project-card, .reference-card {
@@ -241,7 +233,7 @@
     }
 
     .project-badge {
-      background: var(--accent);
+      background: var(--secondary);
       padding: 6px 12px;
       color: white;
       border-radius: 6px;
@@ -296,6 +288,26 @@
       color: white;
     }
 
+    /* Dots Indicators */
+    .slider-dots {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      background: #ddd;
+      border-radius: 50%;
+      margin: 0 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .slider-dot.active {
+      background: var(--primary);
+    }
+
     /* Contact Section */
     #contact {
       padding: 80px 20px;
@@ -313,11 +325,6 @@
       transition: var(--transition);
     }
 
-    .contact-card p {
-      margin: 18px 0;
-      color: #444;
-    }
-
     .contact-card:hover {
       transform: translateY(-7px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.15);
@@ -325,8 +332,8 @@
 
     /* Button Spacing */
     .contact-card .btn {
-      margin-top: 30px;
-      display: inline-block;
+      margin-top: 35px;
+      display: block;
       width: 100%;
       max-width: 300px;
     }
@@ -376,7 +383,7 @@
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <h1>Atiqur Rahman</h1>
-    <p>Drone Developer | Pilot | Embedded Engineer | Photographer</p>
+    <p>Drone Developer | Embedded Engineer | Pilot | Photographer</p>
     <div class="social-icons">
       <a href="https://linkedin.com/in/aakashrahman" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -400,13 +407,14 @@
           <span class="tool-badge">Fusion 360</span>
           <span class="tool-badge">Pixhawk</span>
           <span class="tool-badge">CubePilot</span>
+          <span class="tool-badge">SITL</span>
         </div>
         <ul>
           <li>Assembled drones integrating sensors, communication systems, and payloads</li>
-          <li>Developed an Android app for drone control using Java (Mavsdk)</li>
-          <li>3D modeled custom components with Fusion 360 and printed using Creality</li>
+          <li>Configured firmware for flight controllers (Pixhawk, CubePilot)</li>
+          <li>Developed an Android app for drone control (Java/Mavsdk)</li>
+          <li>3D modeled components with Fusion 360 and printed using Creality</li>
           <li>Conducted rigorous testing and troubleshooting of drone systems</li>
-          <li>Simulated flights in 2D/3D environments using SITL</li>
         </ul>
       </div>
 
@@ -423,25 +431,24 @@
         </div>
         <ul>
           <li>Integrated FLIR sensors for real-time radiation monitoring</li>
-          <li>Reduced ground station setup time by 70% using Bash scripting</li>
+          <li>Reduced setup time by 70% with Bash automation</li>
           <li>Built Flight Logger system (HTML/PHP/MySQL)</li>
           <li>Designed secured multilayer cloud backup systems</li>
-          <li>Simulated flights in 2D/3D environments using SITL</li>
         </ul>
       </div>
 
       <!-- Home & Marine -->
       <div class="experience-card">
         <h3><a href="https://www.homeandmarine.com" target="_blank" style="color: var(--primary); transition: var(--transition);">Home & Marine</a></h3>
-        <p><strong>Network Technician (Summer Student)</strong><br>Jul 2024 – Sept 2024 | Bremen, Germany</p>
+        <p><strong>Network Technician</strong><br>Jul 2024 – Sept 2024 | Adam-Opel-Straße 15, 28237 Bremen, Germany</p>
         <div class="tools-list">
           <span class="tool-badge">IP Networking</span>
           <span class="tool-badge">NAS Cloud</span>
         </div>
         <ul>
-          <li>Optimized Disney Cruise ship network systems</li>
-          <li>Conducted fault-finding and resolved technical issues</li>
-          <li>Documented operational procedures</li>
+          <li>Optimized Disney Cruise ship networks</li>
+          <li>Documented test results and operational procedures</li>
+          <li>Collaborated on network infrastructure upgrades</li>
         </ul>
       </div>
 
@@ -450,7 +457,7 @@
         <h3><a href="https://www.codefix.com.bd" target="_blank" style="color: var(--primary); transition: var(--transition);">CodeFix IT</a></h3>
         <p><strong>IT Support Engineer</strong><br>Jan 2018 – Nov 2019 | Dhaka, Bangladesh</p>
         <div class="tools-list">
-          <span class="tool-badge">Linux Servers</span>
+          <span class="tool-badge">Linux</span>
           <span class="tool-badge">Networking Devices</span>
           <span class="tool-badge">C++</span>
           <span class="tool-badge">Python</span>
@@ -469,42 +476,123 @@
   <section id="projects" class="section container">
     <h2 class="section-title">Projects</h2>
     <div class="card-grid">
+      <!-- Smart Workshop -->
       <div class="project-card">
         <h3>Smart Workshop Solution</h3>
         <div class="tools-list">
           <span class="tool-badge">AI Depth Camera</span>
           <span class="tool-badge">Augmented Reality</span>
           <span class="tool-badge">Python</span>
+          <span class="tool-badge">Object Detection</span>
         </div>
         <p>AI-powered assembly guidance system using object detection algorithms</p>
       </div>
+
+      <!-- Facial Recognition -->
       <div class="project-card">
         <h3>Facial Recognition Secured Access System</h3>
         <div class="tools-list">
           <span class="tool-badge">ESP32</span>
           <span class="tool-badge">C++</span>
-          <span class="tool-badge">Machine Learning</span>
+          <span class="tool-badge">Python</span>
+          <span class="tool-badge">ML</span>
         </div>
         <p>Secure access system with facial/object recognition</p>
       </div>
+
+      <!-- ConBot -->
       <div class="project-card">
         <h3>ConBot (Bash)</h3>
         <div class="tools-list">
           <span class="tool-badge">Bash</span>
           <span class="tool-badge">Ardupilot</span>
         </div>
-        <p>Unmanned systems configuration script for Ardupilot</p>
+        <p>Automatic configuration script for unmanned systems contributed to the Ardupilot community</p>
       </div>
+
+      <!-- Flight Logger -->
       <div class="project-card">
         <h3>Flight Logger</h3>
         <div class="tools-list">
           <span class="tool-badge">HTML</span>
           <span class="tool-badge">PHP</span>
-          <span class="project-badge">2nd Prize</span>
+          <span class="tool-badge">MySQL</span>
         </div>
         <p>Flight log management system with interactive interface</p>
+        <span class="project-badge">2nd Prize: Intra University Project Competition</span>
       </div>
-      <!-- Add remaining projects -->
+
+      <!-- IoT-Based Control -->
+      <div class="project-card">
+        <h3>IoT-Based Control & Security System</h3>
+        <div class="tools-list">
+          <span class="tool-badge">C++</span>
+          <span class="tool-badge">HTML</span>
+          <span class="tool-badge">JavaScript</span>
+        </div>
+        <p>Real-time monitoring system with biometric authentication</p>
+        <span class="project-badge">2nd Prize: Intra University Project Competition</span>
+      </div>
+
+      <!-- IoT Weather Station -->
+      <div class="project-card">
+        <h3>IoT Weather Station</h3>
+        <div class="tools-list">
+          <span class="tool-badge">C++</span>
+          <span class="tool-badge">HTML</span>
+          <span class="tool-badge">JavaScript</span>
+        </div>
+        <p>Environmental parameter monitoring system</p>
+      </div>
+
+      <!-- Automatic Irrigation -->
+      <div class="project-card">
+        <h3>Automatic Irrigation System</h3>
+        <div class="tools-list">
+          <span class="tool-badge">C++</span>
+        </div>
+        <p>Soil moisture-based smart irrigation system</p>
+      </div>
+
+      <!-- Industrial Sorting -->
+      <div class="project-card">
+        <h3>Industrial Sorting Machine Prototype</h3>
+        <div class="tools-list">
+          <span class="tool-badge">C++</span>
+        </div>
+        <p>Object detection sorting system for industrial use</p>
+      </div>
+
+      <!-- Smart Home -->
+      <div class="project-card">
+        <h3>Smart Home Automation</h3>
+        <div class="tools-list">
+          <span class="tool-badge">C++</span>
+          <span class="tool-badge">HTML</span>
+          <span class="tool-badge">JavaScript</span>
+        </div>
+        <p>IoT-based home control system</p>
+      </div>
+
+      <!-- GSM Irrigation -->
+      <div class="project-card">
+        <h3>GSM Remote Controlled Irrigation System</h3>
+        <div class="tools-list">
+          <span class="tool-badge">C++</span>
+        </div>
+        <p>Remote-controlled irrigation via SMS</p>
+      </div>
+
+      <!-- Biometric Attendance -->
+      <div class="project-card">
+        <h3>Biometric Attendance System</h3>
+        <div class="tools-list">
+          <span class="tool-badge">C++</span>
+          <span class="tool-badge">PHP</span>
+          <span class="tool-badge">MySQL</span>
+        </div>
+        <p>Fingerprint-based attendance tracking system</p>
+      </div>
     </div>
   </section>
 
@@ -531,9 +619,9 @@
     </div>
   </section>
 
-  <!-- Photography Slider -->
+  <!-- Gallery Section -->
   <section id="gallery" class="section container">
-    <h2 class="section-title">Photography</h2>
+    <h2 class="section-title">Gallery</h2>
     <div class="slider-container">
       <div class="slides">
         <div class="slide">
@@ -545,14 +633,39 @@
         <div class="slide">
           <img src="https://source.unsplash.com/1200x600/?technology" alt="Tech Image">
         </div>
+        <div class="slide">
+          <img src="https://source.unsplash.com/1200x600/?raspberry_pi" alt="Raspberry Pi">
+        </div>
+        <div class="slide">
+          <img src="https://source.unsplash.com/1200x600/?3d_printing" alt="3D Printing">
+        </div>
+        <div class="slide">
+          <img src="https://source.unsplash.com/1200x600/?embedded_systems" alt="Embedded Systems">
+        </div>
+        <div class="slide">
+          <img src="https://source.unsplash.com/1200x600/?robotics" alt="Robotics">
+        </div>
+        <div class="slide">
+          <img src="https://source.unsplash.com/1200x600/?sensors" alt="Sensors">
+        </div>
+        <div class="slide">
+          <img src="https://source.unsplash.com/1200x600/?server_room" alt="Server Room">
+        </div>
+        <div class="slide">
+          <img src="https://source.unsplash.com/1200x600/?cruise_ship" alt="Cruise Ship">
+        </div>
       </div>
       <div class="slider-dots">
         <span class="slider-dot" onclick="currentSlide=0; showSlide()"></span>
         <span class="slider-dot" onclick="currentSlide=1; showSlide()"></span>
         <span class="slider-dot" onclick="currentSlide=2; showSlide()"></span>
-      </div>
-      <div class="gallery-link">
-        <a href="https://www.flickr.com/photos/atiq-bro" target="_blank" class="btn" style="margin-top: 25px;">View Flickr Portfolio</a>
+        <span class="slider-dot" onclick="currentSlide=3; showSlide()"></span>
+        <span class="slider-dot" onclick="currentSlide=4; showSlide()"></span>
+        <span class="slider-dot" onclick="currentSlide=5; showSlide()"></span>
+        <span class="slider-dot" onclick="currentSlide=6; showSlide()"></span>
+        <span class="slider-dot" onclick="currentSlide=7; showSlide()"></span>
+        <span class="slider-dot" onclick="currentSlide=8; showSlide()"></span>
+        <span class="slider-dot" onclick="currentSlide=9; showSlide()"></span>
       </div>
     </div>
   </section>
@@ -591,6 +704,7 @@
       <div class="card">
         <h3>Freelance Photographer</h3>
         <p>Capturing tech innovations and landscapes</p>
+        <p><a href="https://www.flickr.com/photos/atiq-bro" target="_blank" style="color: var(--primary); transition: var(--transition);">View Flicker Portfolio</a></p>
       </div>
     </div>
   </section>
@@ -629,10 +743,10 @@
   <section id="contact" class="section container">
     <div class="contact-card">
       <h2 class="section-title" style="margin-bottom: 40px;">Contact Me</h2>
-      <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/Olav+M.+Troviks+Vei+66,+0864+Oslo" target="_blank" style="color: var(--primary); transition: var(--transition);">Oslo, Norway</a></p>
-      <p><i class="fas fa-envelope"></i> <a href="mailto:aakash.unipune@gmail.com" style="color: var(--primary); transition: var(--transition);">aakash.unipune@gmail.com</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/Olav+M.+Troviks+Vei+66,+0864+Oslo" target="_blank" style="color: var(--primary); transition: var(--transition);">Olav M. Troviks Vei 66, 0864 Oslo</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:atiqur.pilot@gmail.com" style="color: var(--primary); transition: var(--transition);">atiqur.pilot@gmail.com</a></p>
       <p><i class="fas fa-phone"></i> <a href="tel:+4745808855" style="color: var(--primary); transition: var(--transition);">+47 458 08 855</a></p>
-      <a href="mailto:aakash.unipune@gmail.com" class="btn" style="margin-top: 35px; display: block;">Send Message</a>
+      <a href="mailto:atiqur.pilot@gmail.com" class="btn" style="margin-top: 35px;">Send Message</a>
     </div>
   </section>
 
@@ -641,7 +755,7 @@
   </footer>
 
   <script>
-    // Photography Slider
+    // Photography Slider with 10 images
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
@@ -655,13 +769,13 @@
       dots[currentSlide].classList.add('active');
     }
 
-    // Auto-play
+    // Auto-play every 5 seconds
     let autoPlay = setInterval(() => {
       currentSlide = (currentSlide + 1) % totalSlides;
       showSlide();
     }, 5000);
 
-    // Manual control
+    // Manual navigation
     document.querySelector('.next').addEventListener('click', () => {
       currentSlide = (currentSlide + 1) % totalSlides;
       showSlide();
