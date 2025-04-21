@@ -3,276 +3,596 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Md Atiqur Rahman | Embedded Systems & Drone Engineer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Atiq - Embedded Software Developer & Drone Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f4f6f8;
-      color: #333;
-      scroll-behavior: smooth;
+    :root {
+      --dark: #1a1a1a;
+      --silver: #ebedf0;
+      --light: #ffffff;
+      --accent: #2ecc71;
+      --shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Floating Navbar */
     nav {
       position: fixed;
       width: 100%;
-      background: rgba(255,255,255,0.9);
+      background: rgba(25,25,25,0.9);
       backdrop-filter: blur(10px);
+      padding: 15px 20px;
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 15px 0;
-      z-index: 999;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: 0.4s;
     }
+
     nav a {
-      color: #333;
+      color: var(--silver);
+      font-weight: 600;
       text-decoration: none;
-      font-weight: 500;
-      padding: 8px 15px;
+      padding: 8px 12px;
       transition: 0.3s;
     }
+
     nav a:hover {
-      color: #2ecc71;
-      border-bottom: 2px solid #2ecc71;
+      color: var(--light);
+      border-bottom: 2px solid var(--silver);
     }
-    section {
-      padding: 100px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+
+    /* Hero Section */
     .hero {
       height: 100vh;
-      background: linear-gradient(135deg, #2ecc71, #3498db);
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/featured?drone,technology');
+      background-size: cover;
+      background-position: center;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: white;
     }
+
+    .hero-content {
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      max-width: 800px;
+    }
+
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      color: var(--light);
     }
+
     .hero p {
       font-size: 1.2rem;
+      margin-bottom: 25px;
+      color: var(--silver);
     }
-    .btn {
-      margin-top: 20px;
-      background: #2ecc71;
-      color: white;
-      padding: 12px 30px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
+
+    /* Social Icons */
+    .social {
+      display: flex;
+      gap: 15px;
+      margin: 20px 0;
     }
+
+    .social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: var(--dark);
+      border-radius: 50%;
+      color: var(--silver);
+      transition: 0.4s;
+    }
+
+    .social a:hover {
+      background: var(--accent);
+      transform: rotate(360deg);
+      color: var(--light);
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--dark);
+      color: var(--light);
+    }
+
     .section-title {
-      font-size: 2.2rem;
+      font-size: 2.75rem;
       margin-bottom: 40px;
-      text-align: center;
       position: relative;
+      text-align: center;
+      padding-bottom: 15px;
     }
+
     .section-title::after {
       content: '';
-      width: 60px;
-      height: 4px;
-      background: #2ecc71;
       position: absolute;
-      bottom: -10px;
+      width: 100px;
+      height: 3px;
+      background: var(--silver);
+      bottom: 0;
       left: 50%;
       transform: translateX(-50%);
+      animation: pulse 2s infinite;
     }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
     }
+
+    /* Cards */
     .card {
-      background: white;
-      padding: 30px;
+      background: rgba(25,25,25,0.9);
       border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    }
-    .slider {
+      padding: 30px;
+      margin: 20px 0;
+      transition: 0.4s;
       position: relative;
       overflow: hidden;
     }
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0%, var(--silver) 50%, transparent 100%);
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    .card:hover::before {
+      opacity: 0.2;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background: var(--silver);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      padding: 30px 40px;
+      position: relative;
+      width: 50%;
+      transition: 0.4s;
+      opacity: 0.9;
+      background: rgba(25,25,25,0.8);
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-5px);
+      background: rgba(25,25,25,0.9);
+    }
+
+    .timeline-item.right {
+      left: 50%;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background: var(--silver);
+      border-radius: 50%;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Project Cards */
+    .project-card {
+      background: rgba(25,25,25,0.8);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px 0;
+      transition: 0.4s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      background: rgba(25,25,25,0.9);
+    }
+
+    /* Education Cards */
+    .education-card {
+      background: rgba(25,25,25,0.8);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px 0;
+      transition: 0.4s;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .education-card:hover {
+      transform: translateY(-5px);
+      background: rgba(25,25,25,0.9);
+    }
+
+    /* Photography Slider */
+    .slider-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
     .slide img {
       width: 100%;
-      border-radius: 10px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
     }
-    .footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: #eaeaea;
-      font-size: 0.9rem;
-      color: #555;
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      color: var(--silver);
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      transition: 0.3s;
+    }
+
+    .slider-button:hover {
+      background: var(--accent);
+      color: var(--light);
+    }
+
+    /* Icons */
+    .icon {
+      font-size: 2rem;
+      color: var(--silver);
+      transition: 0.4s;
+    }
+
+    .icon:hover {
+      transform: scale(1.1);
+      color: var(--accent);
+    }
+
+    /* References Section */
+    .reference-card {
+      background: rgba(25,25,25,0.8);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px 0;
+      transition: 0.4s;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .reference-card:hover {
+      transform: translateY(-5px);
+      background: rgba(25,25,25,0.9);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#photography">Photography</a>
-    <a href="#community">Community</a>
-    <a href="#contact">Contact</a>
+  <!-- Floating Navbar -->
+  <nav id="navbar">
+    <div class="nav-brand">
+      <i class="fas fa-drone" style="color: var(--silver);"></i>
+      <span style="color: var(--light);">Md Atiqur Rahman</span>
+    </div>
+    <div class="nav-links">
+      <a href="#hero" style="color: var(--silver);">Home</a>
+      <a href="#about" style="color: var(--silver);">About</a>
+      <a href="#experience" style="color: var(--silver);">Experience</a>
+      <a href="#projects" style="color: var(--silver);">Projects</a>
+      <a href="#education" style="color: var(--silver);">Education</a>
+      <a href="#gallery" style="color: var(--silver);">Photography</a>
+      <a href="#voluntary" style="color: var(--silver);">Community</a>
+      <a href="#contact" style="color: var(--silver);">Contact</a>
+    </div>
   </nav>
 
-  <section class="hero" id="hero">
-    <div>
-      <h1>Md Atiqur Rahman</h1>
-      <p>Embedded Software Developer | Drone Engineer | Tech Enthusiast</p>
-      <div style="margin-top: 20px;">
-        <a href="https://linkedin.com/in/aakashrahman" target="_blank"><i class="fab fa-linkedin fa-2x" style="margin: 0 10px;"></i></a>
-        <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank"><i class="fab fa-facebook fa-2x" style="margin: 0 10px;"></i></a>
-        <a href="https://flickr.com/photos/atiq-bro" target="_blank"><i class="fab fa-flickr fa-2x" style="margin: 0 10px;"></i></a>
-        <a href="https://github.com/AtiqAakash" target="_blank"><i class="fab fa-github fa-2x" style="margin: 0 10px;"></i></a>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1 style="color: var(--light);">Md Atiqur Rahman</h1>
+      <p style="color: var(--silver);">Embedded Software Developer | Drone Engineer | IT Support Engineer</p>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/aakashrahman" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.facebook.com/atiqur.rahman.aakash" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.flickr.com/photos/your-profile" target="_blank">
+          <i class="fab fa-flickr"></i>
+        </a>
+        <a href="https://www.github.com/AtiqAakash" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
       </div>
-      <a href="Atiq-CV.pdf" class="btn">Download CV</a>
+      <a href="Atiq-CV.pdf" class="btn" style="background: var(--accent); color: var(--light); padding: 14px 30px; border-radius: 30px; margin-top: 25px; font-size: 1.1rem;">Download CV</a>
     </div>
   </section>
 
-  <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <div class="card">
-      <p>I am Md Atiqur Rahman, an Embedded Software Developer and Drone Engineer with expertise in robotics, IoT, embedded systems, and full-stack development. Currently pursuing a Master's in Industrial Informatics – Cyber Physical Systems in Germany, with a strong academic and project background in Norway, Germany, and Bangladesh.</p>
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p style="color: var(--silver); font-size: 1.1rem; line-height: 1.8;">
+        Embedded Software Developer, Drone Engineer, and IT Support Engineer with expertise in Robotics, Embedded Systems, IoT, and Web Development. Currently pursuing a Master's in Industrial Informatics – Cyber Physical Systems.
+      </p>
     </div>
   </section>
 
-  <section id="experience">
-    <h2 class="section-title">Experience</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>TOPseven GmbH</h3>
-        <p><strong>Werkstudent | Oct 2024 - Mar 2025</strong><br> Emden, Germany</p>
-        <ul>
-          <li>Built drones, configured flight stacks, designed Android controllers.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Robot Aviation</h3>
-        <p><strong>Intern | Nov 2023 - Jun 2024</strong><br> Hønefoss, Norway</p>
-        <ul>
-          <li>Sensor integration, drone simulation, and web development.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Home & Marine</h3>
-        <p><strong>Technician | Jul 2024 - Sep 2024</strong><br> Bremen, Germany</p>
-        <ul>
-          <li>Managed shipboard networking infrastructure.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>CodeFix IT</h3>
-        <p><strong>Support Engineer | 2018 - 2019</strong><br> Dhaka, Bangladesh</p>
-        <ul>
-          <li>System admin, troubleshooting, automation scripting.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>Smart Workshop</h3>
-        <p>AR + AI driven interactive assembly guide.</p>
-      </div>
-      <div class="card">
-        <h3>Flight Logger</h3>
-        <p>Drone log management web app (HTML, JS, PHP).</p>
-      </div>
-      <div class="card">
-        <h3>Facial Recognition Lock</h3>
-        <p>ESP32 + Python + ML model-based secure entry.</p>
-      </div>
-      <div class="card">
-        <h3>IoT Weather Station</h3>
-        <p>Environmental sensor web app using ESP and JS.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="education">
-    <h2 class="section-title">Education</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>Hochschule Emden/Leer</h3>
-        <p>Master in Industrial Informatics – CPS (ongoing)</p>
-      </div>
-      <div class="card">
-        <h3>University of Oslo</h3>
-        <p>MSc. Programming & System Architecture (thesis pending)</p>
-      </div>
-      <div class="card">
-        <h3>UODA</h3>
-        <p>BSc. Computer Science & Engineering</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="photography">
-    <h2 class="section-title">Photography</h2>
-    <div class="slider">
-      <div class="slides">
-        <div class="slide"><img src="https://source.unsplash.com/1600x800/?drone,landscape"></div>
-        <div class="slide"><img src="https://source.unsplash.com/1600x800/?aerial,nature"></div>
-        <div class="slide"><img src="https://source.unsplash.com/1600x800/?sky,drone"></div>
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="card">
+            <div class="icon-container">
+              <i class="fas fa-drone" style="color: var(--silver);"></i>
+            </div>
+            <h3><a href="https://www.topseven.com" target="_blank" style="color: var(--silver);">TOPseven Drone R&D</a></h3>
+            <p style="color: #6c757d; font-size: 0.9rem;"><em>Oct 2024 - March 2025 | Emden, Germany</em></p>
+            <ul style="color: var(--silver); font-size: 0.95rem; line-height: 1.5;">
+              <li>Assembled drones with sensors, communication systems, and payloads</li>
+              <li>Configured firmware for Pixhawk/CubePilot flight controllers</li>
+              <li>Developed Android app using Java (Mavsdk)</li>
+              <li>3D modeling with Fusion 360 and Creality Scan</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="card">
+            <div class="icon-container">
+              <i class="fas fa-cubes" style="color: var(--silver);"></i>
+            </div>
+            <h3><a href="https://www.robotaviation.com" target="_blank" style="color: var(--silver);">Robot Aviation</a></h3>
+            <p style="color: #6c757d; font-size: 0.9rem;"><em>Nov 2023 - June 2024 | Hønefoss, Norway</em></p>
+            <ul style="color: var(--silver); font-size: 0.95rem; line-height: 1.5;">
+              <li>Integrated FLIR sensors for radiation monitoring</li>
+              <li>Built Flight Logger system (HTML/PHP/MySQL)</li>
+              <li>Reduced ground station setup time by 70% with Bash scripting</li>
+              <li>Designed cloud backup solutions</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Add all experience entries here -->
+        <div class="timeline-item left">
+          <div class="card">
+            <div class="icon-container">
+              <i class="fas fa-ship" style="color: var(--silver);"></i>
+            </div>
+            <h3><a href="https://www.homeandmarine.com" target="_blank" style="color: var(--silver);">Home & Marine</a></h3>
+            <p style="color: #6c757d; font-size: 0.9rem;"><em>July 2024 - Sept 2024 | Bremen, Germany</em></p>
+            <ul style="color: var(--silver); font-size: 0.95rem; line-height: 1.5;">
+              <li>Optimized Disney Cruise ship network systems</li>
+              <li>Documented maritime operational procedures</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="card">
+            <div class="icon-container">
+              <i class="fas fa-server" style="color: var(--silver);"></i>
+            </div>
+            <h3><a href="https://www.codefix.com.bd" target="_blank" style="color: var(--silver);">CodeFix IT</a></h3>
+            <p style="color: #6c757d; font-size: 0.9rem;"><em>Jan 2018 - Nov 2019 | Dhaka, Bangladesh</em></p>
+            <ul style="color: var(--silver); font-size: 0.95rem; line-height: 1.5;">
+              <li>Managed 150+ IT systems</li>
+              <li>Developed automation scripts in C++/Python</li>
+              <li>Implemented security protocols</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="community">
-    <h2 class="section-title">Community</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>Hridoye Bangladesh</h3>
-        <p>Founder & President, 400+ member cultural network.</p>
-      </div>
-      <div class="card">
-        <h3>Kringjå Cricket Club</h3>
-        <p>Daglig Leder at Norges Cricket Forbund club.</p>
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="icon-container">
+            <i class="fas fa-robot" style="color: var(--silver);"></i>
+          </div>
+          <h3 style="color: var(--silver);">Smart Workshop Solution</h3>
+          <p style="color: #6c757d;">AI-Powered Assembly Guidance System</p>
+          <div class="tags">
+            <span>Python</span>
+            <span>AR</span>
+            <span>AI</span>
+          </div>
+        </div>
+        <!-- Add all other projects here -->
+        <div class="project-card">
+          <div class="icon-container">
+            <i class="fas fa-lock" style="color: var(--silver);"></i>
+          </div>
+          <h3 style="color: var(--silver);">Facial Recognition Door Lock</h3>
+          <p style="color: #6c757d;">Secure access system with ML</p>
+          <div class="tags">
+            <span>ESP32</span>
+            <span>C++</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="icon-container">
+            <i class="fas fa-code" style="color: var(--silver);"></i>
+          </div>
+          <h3 style="color: var(--silver);">ConBot (Bash)</h3>
+          <p style="color: #6c757d;">Ardupilot configuration automation</p>
+          <div class="tags">
+            <span>Bash</span>
+            <span>SITL</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="card" style="text-align: center;">
-      <p><i class="fas fa-envelope"></i> aakash.unipune@gmail.com</p>
-      <p><i class="fas fa-phone"></i> +47 458 08 855</p>
-      <a href="mailto:aakash.unipune@gmail.com" class="btn">Send Email</a>
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="education-grid">
+        <div class="education-card">
+          <div class="icon-container">
+            <i class="fas fa-university" style="color: var(--silver);"></i>
+          </div>
+          <div>
+            <h3 style="color: var(--silver);"><a href="https://www.hs-emden-leer.de" target="_blank">Hochschule Emden/Leer</a></h3>
+            <p style="color: #6c757d;">Master of Engineering - Cyber Physical Systems (Ongoing)</p>
+          </div>
+        </div>
+        <!-- Add other education entries -->
+      </div>
     </div>
   </section>
 
-  <footer class="footer">
-    &copy; 2024 Md Atiqur Rahman. All rights reserved.
-  </footer>
+  <!-- Photography Gallery -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2 class="section-title">Photography</h2>
+      <div class="slider-container">
+        <button class="slider-button prev" onclick="prevSlide()">&#10094;</button>
+        <div class="slider-track">
+          <div class="slide">
+            <img src="https://source.unsplash.com/featured?drone" alt="Drone Photography">
+          </div>
+          <div class="slide">
+            <img src="https://source.unsplash.com/featured?technology" alt="Tech Photo">
+          </div>
+          <div class="slide">
+            <img src="https://source.unsplash.com/featured?iot" alt="IoT Photo">
+          </div>
+        </div>
+        <button class="slider-button next" onclick="nextSlide()">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voluntary Work -->
+  <section id="voluntary" class="section">
+    <div class="container">
+      <h2 class="section-title">Community Engagement</h2>
+      <div class="voluntary-grid">
+        <div class="voluntary-card">
+          <div class="icon-container">
+            <i class="fas fa-users" style="color: var(--silver);"></i>
+          </div>
+          <div>
+            <h3 style="color: var(--silver);">Hridoye Bangladesh</h3>
+            <p style="color: #6c757d;">Founding President (400+ members)</p>
+          </div>
+        </div>
+        <!-- Add other voluntary entries -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-info">
+        <div class="icon-container">
+          <i class="fas fa-envelope" style="color: var(--silver);"></i>
+        </div>
+        <p style="color: var(--silver); margin: 0;">aakash.unipune@gmail.com</p>
+      </div>
+      <div class="contact-info">
+        <div class="icon-container">
+          <i class="fas fa-phone" style="color: var(--silver);"></i>
+        </div>
+        <p style="color: var(--silver); margin: 0;">+47 458 08 855</p>
+      </div>
+      <a href="mailto:aakash.unipune@gmail.com" class="btn" style="background: var(--accent); color: var(--light); padding: 14px 30px; border-radius: 30px; font-size: 1.1rem;">Send Message</a>
+    </div>
+  </section>
 
   <script>
-    let current = 0;
+    // Image Slider
+    let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
-    setInterval(() => {
-      current = (current + 1) % slides.length;
-      document.querySelector('.slides').style.transform = `translateX(-${current * 100}%)`;
-    }, 3000);
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      const track = document.querySelector('.slider-track');
+      if (index >= totalSlides) currentSlide = 0;
+      if (index < 0) currentSlide = totalSlides - 1;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function nextSlide() { showSlide(++currentSlide); }
+    function prevSlide() { showSlide(--currentSlide); }
   </script>
 </body>
 </html>
