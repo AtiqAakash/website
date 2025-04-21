@@ -6,109 +6,217 @@
   <title>Md Atiqur Rahman | Embedded Systems & Drone Engineer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #2ecc71;
       --secondary: #3498db;
-      --dark-bg: #1a1a1a;
-      --light-text: #ebedf0;
-      --accent-bg: #2c3e50;
+      --dark-bg: #121212;
+      --light-text: #f9f9f9;
+      --accent: #1abc9c;
       --hover-color: #27ae60;
+      --font-heading: 'Playfair Display', serif;
     }
 
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
       font-family: 'Poppins', sans-serif;
       background: var(--dark-bg);
       color: var(--light-text);
       scroll-behavior: smooth;
     }
 
-    /* Hero Section */
+    /* Parallax Hero */
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://source.unsplash.com/1600x900/?drone,technology');
-      background-size: cover;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x900/?drone,technology') center/cover no-repeat fixed;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: white;
-      padding: 20px;
+      text-align: center;
+      padding: 0 15px;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-family: var(--font-heading);
+      font-size: 3.2rem;
       margin-bottom: 20px;
       text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
 
     .hero p {
       font-size: 1.2rem;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
+      opacity: 0.8;
     }
 
     /* Floating Navbar */
     nav {
       position: fixed;
       width: 100%;
-      background: rgba(25,25,25,0.8);
-      backdrop-filter: blur(10px);
-      padding: 15px 0;
+      background: rgba(18,18,18,0.95);
+      padding: 12px 0;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      z-index: 999;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      gap: 16px;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
 
     nav a {
       color: var(--light-text);
-      text-decoration: none;
       font-weight: 500;
-      padding: 8px 15px;
-      transition: 0.3s;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: 0.3s ease-in-out;
     }
 
     nav a:hover {
       color: var(--primary);
       border-bottom: 2px solid var(--primary);
+      transform: scale(1.05);
     }
 
     /* Cards */
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      margin: 20px 0;
-      transition: 0.3s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: left;
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    .card, .experience-card, .project-card, .reference-card, .contact-card {
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 12px;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .card:hover, .experience-card:hover, .project-card:hover, .reference-card:hover, .contact-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+    }
+
+    /* Photography Slider */
+    .slider-container {
+      position: relative;
+      margin: 40px auto;
+      max-width: 1200px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: 0.4s;
+    }
+
+    .slide:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Slider Navigation */
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(25,25,25,0.7);
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      cursor: pointer;
+      font-size: 1.8rem;
+      transition: 0.4s;
+    }
+
+    .slider-button:hover {
+      background: var(--primary);
+      color: white;
+      transform: scale(1.1);
     }
 
     /* Experience Cards */
     .experience-card {
-      background: var(--accent-bg);
-      color: white;
-      padding: 30px;
+      padding: 25px;
       margin: 20px 0;
-      transition: 0.3s;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .experience-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    .experience-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .experience-card p {
+      margin: 10px 0;
+      opacity: 0.8;
+    }
+
+    .tools-list {
+      margin: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tool-badge {
+      padding: 5px 10px;
+      background: var(--primary);
+      color: white;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Projects Section */
+    .project-card {
+      padding: 25px;
+      margin: 20px 0;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    .project-tech {
+      margin: 15px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .project-badge {
+      background: var(--secondary);
+      padding: 5px 10px;
+      color: white;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
     }
 
     /* Skills Section */
-    .skills-list {
+    .skills-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
@@ -117,137 +225,66 @@
 
     .skill-card {
       background: var(--primary);
-      color: white;
       padding: 20px;
-      text-align: center;
       border-radius: 10px;
-      transition: 0.4s;
+      color: white;
+      text-align: center;
+      transition: 0.3s;
     }
 
     .skill-card:hover {
-      background: var(--secondary);
-    }
-
-    /* Photography Gallery */
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin: 40px auto;
-    }
-
-    .photo-item {
-      border-radius: 10px;
-      overflow: hidden;
-      transition: 0.4s;
-    }
-
-    .photo-item:hover {
       transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    /* Projects Section */
-    .project-card {
-      background: white;
-      padding: 25px;
+    /* Education Cards */
+    .education-card {
+      padding: 20px;
       margin: 20px 0;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: 0.3s;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    .education-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
     }
 
-    /* References */
+    /* References Cards */
     .reference-card {
-      background: white;
-      padding: 25px;
+      padding: 20px;
       margin: 20px 0;
-      border-radius: 10px;
-      transition: 0.3s;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .reference-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    .reference-card h4 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
     }
 
-    /* Address Formatting */
-    .address {
-      font-style: italic;
-      color: #7f8c8d;
+    .reference-card p {
+      margin: 8px 0;
+      opacity: 0.8;
     }
 
-    /* Hover Effects */
-    .tool-card:hover {
-      background: var(--primary);
-      color: white;
-      padding: 5px;
+    /* Contact Section */
+    .contact-card {
+      padding: 30px;
+    }
+
+    .contact-card p {
+      margin: 15px 0;
     }
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
+      .hero h1 { font-size: 2.2rem; }
       .section-title { font-size: 2rem; }
       .card-grid { grid-template-columns: 1fr; }
+      .tool-badge { font-size: 0.8rem; }
+      .project-badge { font-size: 0.8rem; }
     }
 
-    /* Sections */
-    .section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      text-align: center;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      width: 80px;
-      height: 4px;
-      background: var(--primary);
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    /* Tool Icons */
-    .tool-icon {
-      color: var(--primary);
-      font-size: 1.5rem;
-      margin-right: 10px;
-    }
-
-    /* Photography Section */
-    #photography {
-      background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1));
-      padding: 80px 0;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      background: var(--dark-bg);
-      color: var(--light-text);
-      margin-top: 80px;
-    }
-
-    /* Animation on Scroll */
+    /* Section Animations */
     .fade-in {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
       transition: all 0.6s ease;
     }
 
@@ -256,23 +293,32 @@
       transform: translateY(0);
     }
 
-    /* Tool Cards */
-    .tool-card {
-      background: var(--light-text);
-      color: var(--dark-bg);
-      padding: 5px 10px;
-      margin: 5px;
-      border-radius: 5px;
+    /* Social Icons */
+    .social-icons {
+      margin-bottom: 30px;
+    }
+
+    .social-icons a {
       transition: 0.4s;
     }
 
-    /* Award Badges */
-    .project-award {
-      background: var(--primary);
-      color: white;
-      padding: 5px 10px;
-      border-radius: 5px;
-      margin-top: 10px;
+    /* Address Formatting */
+    .address {
+      font-style: italic;
+      color: #7f8c8d;
+    }
+
+    /* Tool Icons */
+    .tool-icon {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-right: 10px;
+    }
+
+    /* Photography Slider */
+    #photography {
+      background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1));
+      padding: 80px 0;
     }
   </style>
 </head>
@@ -282,8 +328,8 @@
     <a href="#hero">Home</a>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
     <a href="#education">Education</a>
     <a href="#photography">Photography</a>
     <a href="#community">Community</a>
@@ -292,385 +338,346 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero" class="parallax-bg">
-    <div class="hero-content">
-      <h1>Md Atiqur Rahman</h1>
-      <p>Embedded Software Developer | Drone Engineer | IT Support Specialist</p>
-      <div class="social-icons">
-        <a href="https://linkedin.com/in/aakashrahman" target="_blank">
-          <i class="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank">
-          <i class="fab fa-facebook fa-2x"></i>
-        </a>
-        <a href="https://flickr.com/photos/atiq-bro" target="_blank">
-          <i class="fab fa-flickr fa-2x"></i>
-        </a>
-        <a href="https://github.com/AtiqAakash" target="_blank">
-          <i class="fab fa-github fa-2x"></i>
-        </a>
-      </div>
-      <a href="Atiq-CV.pdf" class="btn" style="background: var(--primary); color: white; padding: 14px 30px; border-radius: 30px; margin-top: 25px;">Download CV</a>
+  <section id="hero" class="hero">
+    <h1>Md Atiqur Rahman</h1>
+    <p>Embedded Systems Developer | Drone Engineer | Cyber Physical Systems Specialist</p>
+    <div class="social-icons">
+      <a href="https://linkedin.com/in/aakashrahman" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://flickr.com/photos/atiq-bro" target="_blank"><i class="fab fa-flickr"></i></a>
+      <a href="https://github.com/AtiqAakash" target="_blank"><i class="fab fa-github"></i></a>
     </div>
+    <a href="Atiq-CV.pdf" class="btn">Download CV</a>
   </section>
 
   <!-- About Section -->
-  <section class="section fade-in" id="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="card">
-        <p>Embedded Software Developer, Drone Engineer, and IT Support Specialist with expertise in Robotics, IoT, and Full-Stack Development. Currently pursuing a Master's in Cyber Physical Systems at Hochschule Emden/Leer, Germany.</p>
-      </div>
+  <section id="about" class="section fade-in">
+    <h2 class="section-title">About Me</h2>
+    <div class="card">
+      <p>Embedded Systems Developer and Drone Engineer with expertise in robotics, IoT, and full-stack development. Currently pursuing a Master's in Cyber Physical Systems at <a href="https://www.hs-emden-leer.de" target="_blank">Hochschule Emden/Leer</a>, Germany. Over 5 years of professional experience across Norway, Germany, and Bangladesh.</p>
     </div>
   </section>
 
   <!-- Experience Section -->
-  <section class="section fade-in" id="experience">
-    <div class="container">
-      <h2 class="section-title">Professional Experience</h2>
-      <div class="card-grid">
-        <!-- TOPseven Drone R&D -->
-        <div class="experience-card">
-          <div class="card-content">
-            <h3>TOPseven Drone R&D</h3>
-            <p class="address">Württemberger Str. 13, 26723 Emden, Germany</p>
-            <p><strong>Werkstudent | Oct 2024 – Mar 2025</strong></p>
-            <div class="tools">
-              <p><strong>Tools & Technologies:</strong></p>
-              <div class="tool-container">
-                <span class="tool-card">Python</span>
-                <span class="tool-card">C++</span>
-                <span class="tool-card">Creality Scan</span>
-                <span class="tool-card">Pixhawk</span>
-                <span class="tool-card">CubePilot</span>
-                <span class="tool-card">Fusion 360</span>
-                <span class="tool-card">Java (Mavsdk)</span>
-                <span class="tool-card">SITL Simulation</span>
-              </div>
-              <ul>
-                <li>Assembled drones from scratch with sensors, communication systems, and payloads</li>
-                <li>Configured firmware for flight controllers (Pixhawk, CubePilot)</li>
-                <li>Developed an Android app for drone control using Java (Mavsdk)</li>
-                <li>3D modeled custom components with Fusion 360 and printed using Creality</li>
-                <li>Conducted rigorous testing and troubleshooting of drone systems</li>
-              </ul>
-            </div>
-          </div>
+  <section id="experience" class="section fade-in">
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="card-grid">
+      <!-- TOPseven Drone R&D -->
+      <div class="experience-card">
+        <h3><a href="https://www.topseven.com" target="_blank">TOPseven GmbH</a></h3>
+        <p class="address"><a href="https://www.google.com/maps/search/W%C3%BCrttemberger+Str.+13,+26723+Emden,+Germany" target="_blank">Württemberger Str. 13, 26723 Emden, Germany</a></p>
+        <p><strong>Werkstudent (Drone R&D) | Oct 2024 – Mar 2025</strong></p>
+        <div class="tools-list">
+          <span class="tool-badge">Python</span>
+          <span class="tool-badge">C++</span>
+          <span class="tool-badge">Fusion 360</span>
+          <span class="tool-badge">Pixhawk</span>
+          <span class="tool-badge">CubePilot</span>
+          <span class="tool-badge">SITL Simulation</span>
         </div>
-
-        <!-- Robot Aviation -->
-        <div class="experience-card">
-          <div class="card-content">
-            <h3>Robot Aviation</h3>
-            <p class="address">Flyplassveien 24, 3514 Hønefoss, Norway</p>
-            <p><strong>Unmanned Systems Intern | Nov 2023 – Jun 2024</strong></p>
-            <div class="tools">
-              <p><strong>Tools & Technologies:</strong></p>
-              <div class="tool-container">
-                <span class="tool-card">C++</span>
-                <span class="tool-card">Python</span>
-                <span class="tool-card">Bash Scripting</span>
-                <span class="tool-card">HTML</span>
-                <span class="tool-card">CSS</span>
-                <span class="tool-card">JavaScript</span>
-                <span class="tool-card">PHP</span>
-                <span class="tool-card">MySQL</span>
-                <span class="tool-card">NAS Cloud</span>
-              </div>
-              <ul>
-                <li>Integrated FLIR sensors for real-time radiation monitoring</li>
-                <li>Reduced ground station setup time by 70% with Bash scripting</li>
-                <li>Built Flight Logger system (HTML/PHP/MySQL)</li>
-                <li>Designed secured multilayer cloud backup systems</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Home & Marine -->
-        <div class="experience-card">
-          <div class="card-content">
-            <h3>Home & Marine</h3>
-            <p class="address">Adam-Opel-Straße 15, 28237 Bremen, Germany</p>
-            <p><strong>Network Technician | July 2024 – Sept 2024</strong></p>
-            <div class="tools">
-              <p><strong>Tools & Technologies:</strong></p>
-              <div class="tool-container">
-                <span class="tool-card">IP Networking</span>
-                <span class="tool-card">Microsoft Office</span>
-                <span class="tool-card">Network Configuration</span>
-                <span class="tool-card">Fault-Finding Tools</span>
-              </div>
-              <ul>
-                <li>Optimized Disney Cruise ship network systems</li>
-                <li>Conducted fault-finding and resolved technical issues</li>
-                <li>Documented test results and operational procedures</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- CodeFix IT -->
-        <div class="experience-card">
-          <div class="card-content">
-            <h3>CodeFix IT</h3>
-            <p class="address">34, Awal Centre, Level-4, Dhaka 1213</p>
-            <p><strong>IT Support Engineer | Jan 2018 – Nov 2019</strong></p>
-            <div class="tools">
-              <p><strong>Tools & Technologies:</strong></p>
-              <div class="tool-container">
-                <span class="tool-card">Linux Servers</span>
-                <span class="tool-card">Networking Devices</span>
-                <span class="tool-card">Backup Solutions</span>
-                <span class="tool-card">C++</span>
-                <span class="tool-card">Python</span>
-                <span class="tool-card">Ticketing Systems</span>
-              </div>
-              <ul>
-                <li>Managed 150+ IT systems (servers, workstations, networks)</li>
-                <li>Diagnosed hardware/software/network issues</li>
-                <li>Developed automation scripts in C++/Python</li>
-                <li>Implemented security protocols and backup solutions</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <ul style="list-style-type: disc; padding-left: 25px;">
+          <li>Assembled drones integrating sensors, communication systems, and payloads</li>
+          <li>Developed Android app for drone control using Java (Mavsdk)</li>
+          <li>3D modeled components with Fusion 360 and printed using Creality</li>
+          <li>Configured flight controllers and simulated flights in 2D/3D environments</li>
+        </ul>
       </div>
-    </div>
-  </section>
 
-  <!-- Projects Section -->
-  <section class="section fade-in" id="projects">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <div class="card-grid">
-        <div class="project-card">
-          <h3>Smart Workshop Solution</h3>
-          <p>AI-Powered Assembly Guidance System</p>
-          <div class="tools">
-            <p><strong>Technologies:</strong></p>
-            <div class="tool-container">
-              <span class="tool-card">Python</span>
-              <span class="tool-card">Augmented Reality</span>
-              <span class="tool-card">AI Depth Camera</span>
-              <span class="tool-card">3D Modeling</span>
-            </div>
-          </div>
+      <!-- Robot Aviation -->
+      <div class="experience-card">
+        <h3><a href="https://www.robotaviation.com" target="_blank">Robot Aviation</a></h3>
+        <p class="address"><a href="https://www.google.com/maps/search/Flyplassveien+24,+3514+Hønefoss,+Norway" target="_blank">Flyplassveien 24, 3514 Hønefoss, Norway</a></p>
+        <p><strong>Unmanned Systems Intern | Nov 2023 – Jun 2024</strong></p>
+        <div class="tools-list">
+          <span class="tool-badge">C++</span>
+          <span class="tool-badge">Bash Scripting</span>
+          <span class="tool-badge">NAS Cloud</span>
+          <span class="tool-badge">SITL Simulation</span>
+          <span class="tool-badge">3D Printing</span>
+          <span class="tool-badge">FLIR Sensors</span>
         </div>
+        <ul style="list-style-type: disc; padding-left: 25px;">
+          <li>Integrated FLIR radioactivity sensors for real-time monitoring</li>
+          <li>Reduced ground station setup time by 70% with Bash scripting</li>
+          <li>Built Flight Logger system using HTML/PHP/MySQL</li>
+          <li>Designed secured multilayer cloud backup systems</li>
+        </ul>
+      </div>
 
-        <div class="project-card">
-          <h3>Facial Recognition Secured Access System</h3>
-          <p>Door lock system with ML integration</p>
-          <div class="tools">
-            <p><strong>Technologies:</strong></p>
-            <div class="tool-container">
-              <span class="tool-card">ESP32</span>
-              <span class="tool-card">C++</span>
-              <span class="tool-card">Python</span>
-              <span class="tool-card">Machine Learning</span>
-            </div>
-          </div>
+      <!-- Home & Marine -->
+      <div class="experience-card">
+        <h3><a href="https://www.homeandmarine.com" target="_blank">Home & Marine</a></h3>
+        <p class="address"><a href="https://www.google.com/maps/search/Adam-Opel-Straße+15,+28237+Bremen,+Germany" target="_blank">Adam-Opel-Straße 15, 28237 Bremen, Germany</a></p>
+        <p><strong>Network Technician | July 2024 – Sept 2024</strong></p>
+        <div class="tools-list">
+          <span class="tool-badge">IP Networking</span>
+          <span class="tool-badge">NAS Cloud</span>
+          <span class="tool-badge">Fault-Finding Tools</span>
+          <span class="tool-badge">Microsoft Office</span>
         </div>
+        <ul style="list-style-type: disc; padding-left: 25px;">
+          <li>Optimized Disney Cruise ship network systems</li>
+          <li>Documented operational procedures and test results</li>
+          <li>Collaborated on network infrastructure upgrades</li>
+        </ul>
+      </div>
 
-        <div class="project-card">
-          <h3>Flight Logger</h3>
-          <p>Flight log management system</p>
-          <div class="tools">
-            <p><strong>Technologies:</strong></p>
-            <div class="tool-container">
-              <span class="tool-card">HTML</span>
-              <span class="tool-card">CSS</span>
-              <span class="tool-card">JavaScript</span>
-              <span class="tool-card">PHP</span>
-              <span class="tool-card">MySQL</span>
-            </div>
-          </div>
+      <!-- CodeFix IT -->
+      <div class="experience-card">
+        <h3><a href="https://www.codefix.com.bd" target="_blank">CodeFix IT</a></h3>
+        <p class="address"><a href="https://www.google.com/maps/search/34,+Awal+Centre,+Level-4,+Kemal+Ataturk+Avenue,+Dhaka+1213" target="_blank">34, Awal Centre, Level-4, Dhaka 1213</a></p>
+        <p><strong>IT Support Engineer | Jan 2018 – Nov 2019</strong></p>
+        <div class="tools-list">
+          <span class="tool-badge">Linux Servers</span>
+          <span class="tool-badge">Networking Devices</span>
+          <span class="tool-badge">Backup Solutions</span>
+          <span class="tool-badge">C++</span>
+          <span class="tool-badge">Python</span>
+          <span class="tool-badge">Ticketing Systems</span>
         </div>
-
-        <div class="project-card">
-          <h3>IoT-Based Control & Security System</h3>
-          <p>Real-time monitoring with notifications</p>
-          <div class="tools">
-            <p><strong>Technologies:</strong></p>
-            <div class="tool-container">
-              <span class="tool-card">C++</span>
-              <span class="tool-card">HTML</span>
-              <span class="tool-card">JavaScript</span>
-            </div>
-            <div class="project-award">2nd Prize: Intra University Project Competition</div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Biometric Attendance System</h3>
-          <p>Fingerprint-based attendance tracking</p>
-          <div class="tools">
-            <p><strong>Technologies:</strong></p>
-            <div class="tool-container">
-              <span class="tool-card">C++</span>
-              <span class="tool-card">PHP</span>
-              <span class="tool-card">MySQL</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Add all other projects -->
+        <ul style="list-style-type: disc; padding-left: 25px;">
+          <li>Managed 150+ IT systems (servers, workstations, networks)</li>
+          <li>Diagnosed hardware/software/network issues</li>
+          <li>Developed automation scripts in C++/Python</li>
+          <li>Implemented security protocols and backup solutions</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section class="section fade-in" id="skills">
-    <div class="container">
-      <h2 class="section-title">Skills & Technologies</h2>
-      <div class="skills-list">
-        <div class="skill-card">
-          <i class="fas fa-code tool-icon"></i>
-          <h3>Programming</h3>
-          <p>C/C++, Python, Java, JavaScript, PHP, MySQL</p>
+  <section id="skills" class="section fade-in">
+    <h2 class="section-title">Skills & Technologies</h2>
+    <div class="skills-container">
+      <div class="skill-card">
+        <i class="fas fa-code tool-icon"></i>
+        <h4>Programming</h4>
+        <p>C/C++, Python, Java, JavaScript, PHP, MySQL</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-drone tool-icon"></i>
+        <h4>Drone Tech</h4>
+        <p>Pixhawk, CubePilot, STM32, Raspberry Pi, NVIDIA Jetson Nano</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-server tool-icon"></i>
+        <h4>Networking</h4>
+        <p>Linux Servers, NAS Cloud, Bash Scripting, Security Protocols</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-cubes tool-icon"></i>
+        <h4>Embedded Systems</h4>
+        <p>Firmware Development, SITL Simulation, 3D Modeling/Printing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section fade-in">
+    <h2 class="section-title">Projects</h2>
+    <div class="card-grid">
+      <!-- Smart Workshop -->
+      <div class="project-card">
+        <h3>Smart Workshop Solution</h3>
+        <div class="project-tech">
+          <span class="tool-badge">AI Depth Camera</span>
+          <span class="tool-badge">Augmented Reality</span>
+          <span class="tool-badge">Python</span>
         </div>
-        <div class="skill-card">
-          <i class="fas fa-drone tool-icon"></i>
-          <h3>Drone Tech</h3>
-          <p>Pixhawk, CubePilot, STM32, Raspberry Pi, NVIDIA Jetson Nano, SITL Simulation</p>
+        <p>AI-Powered Assembly Guidance System for industrial setups</p>
+      </div>
+
+      <!-- Facial Recognition -->
+      <div class="project-card">
+        <h3>Facial Recognition Door Lock</h3>
+        <div class="project-tech">
+          <span class="tool-badge">ESP32</span>
+          <span class="tool-badge">C++</span>
+          <span class="tool-badge">Machine Learning</span>
         </div>
-        <div class="skill-card">
-          <i class="fas fa-server tool-icon"></i>
-          <h3>Networking</h3>
-          <p>Linux Servers, NAS Cloud, Bash Scripting, Security Protocols</p>
+        <p>Secure access system with facial recognition</p>
+      </div>
+
+      <!-- Flight Logger -->
+      <div class="project-card">
+        <h3>Flight Logger</h3>
+        <div class="project-tech">
+          <span class="tool-badge">HTML</span>
+          <span class="tool-badge">PHP</span>
+          <span class="tool-badge">MySQL</span>
         </div>
-        <div class="skill-card">
-          <i class="fas fa-cubes tool-icon"></i>
-          <h3>Embedded Systems</h3>
-          <p>Firmware Development, 3D Modeling/Printing, 3D Scanning, Mission Planner</p>
+        <p>Flight log management system with interactive interface</p>
+      </div>
+
+      <!-- IoT-Based Control -->
+      <div class="project-card">
+        <h3>IoT-Based Control & Security System</h3>
+        <div class="project-tech">
+          <span class="tool-badge">C++</span>
+          <span class="tool-badge">JavaScript</span>
+          <span class="project-badge">2nd Prize</span>
         </div>
+        <p>Real-time monitoring with biometric authentication</p>
+      </div>
+
+      <!-- IoT Weather Station -->
+      <div class="project-card">
+        <h3>IoT Weather Station</h3>
+        <div class="project-tech">
+          <span class="tool-badge">C++</span>
+          <span class="tool-badge">HTML</span>
+        </div>
+        <p>Environmental parameter monitoring system</p>
+      </div>
+
+      <!-- Biometric Attendance -->
+      <div class="project-card">
+        <h3>Biometric Attendance System</h3>
+        <div class="project-tech">
+          <span class="tool-badge">C++</span>
+          <span class="tool-badge">PHP</span>
+          <span class="tool-badge">MySQL</span>
+        </div>
+        <p>Fingerprint-based attendance tracking system</p>
       </div>
     </div>
   </section>
 
   <!-- Education Section -->
-  <section class="section fade-in" id="education">
-    <div class="container">
-      <h2 class="section-title">Education</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3><a href="https://www.hs-emden-leer.de" target="_blank">Hochschule Emden/Leer</a></h3>
-          <p>Master of Engineering – Industrial Informatics (Cyber Physical Systems)</p>
-        </div>
-        <div class="card">
-          <h3><a href="https://www.uio.no" target="_blank">University of Oslo</a></h3>
-          <p>Master of Science – Programming & System Architecture (Thesis pending)</p>
-        </div>
-        <div class="card">
-          <h3><a href="https://www.uoda.edu.bd" target="_blank">University of Development Alternative</a></h3>
-          <p>Bachelor of Science – Computer Science & Engineering</p>
-        </div>
+  <section id="education" class="section fade-in">
+    <h2 class="section-title">Education</h2>
+    <div class="card-grid">
+      <div class="education-card">
+        <h3><a href="https://www.hs-emden-leer.de" target="_blank">Hochschule Emden/Leer</a></h3>
+        <p>Master of Engineering – Industrial Informatics (Cyber Physical Systems)</p>
+      </div>
+      <div class="education-card">
+        <h3><a href="https://www.uio.no" target="_blank">University of Oslo</a></h3>
+        <p>Master of Science – Programming & System Architecture (Discontinued, Thesis pending)</p>
+      </div>
+      <div class="education-card">
+        <h3><a href="https://www.uoda.edu.bd" target="_blank">University of Development Alternative</a></h3>
+        <p>Bachelor of Science – Computer Science & Engineering</p>
       </div>
     </div>
   </section>
 
-  <!-- Photography Section -->
+  <!-- Photography Slider -->
   <section id="photography" class="section fade-in">
-    <div class="container">
-      <h2 class="section-title">Photography Portfolio</h2>
-      <div class="photo-grid">
-        <div class="photo-item">
-          <img src="https://source.unsplash.com/400x300/?drone_photography" alt="Drone Photo 1">
-        </div>
-        <div class="photo-item">
-          <img src="https://source.unsplash.com/400x300/?aerial_photography" alt="Drone Photo 2">
-        </div>
-        <div class="photo-item">
-          <img src="https://source.unsplash.com/400x300/?technology" alt="Tech Photo">
-        </div>
+    <h2 class="section-title">Photography Portfolio</h2>
+    <div class="slider-container">
+      <button class="slider-button prev" onclick="prevSlide()">❮</button>
+      <div class="slides">
+        <div class="slide"><img src="https://source.unsplash.com/1600x900/?drone_photography" alt="Drone"></div>
+        <div class="slide"><img src="https://source.unsplash.com/1600x900/?aerial_photography" alt="Aerial"></div>
+        <div class="slide"><img src="https://source.unsplash.com/1600x900/?technology" alt="Tech"></div>
       </div>
+      <button class="slider-button next" onclick="nextSlide()">❯</button>
     </div>
   </section>
 
   <!-- Community Section -->
-  <section class="section fade-in" id="community">
-    <div class="container">
-      <h2 class="section-title">Community & Voluntary Work</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Hridoye Bangladesh</h3>
-          <p>Founding President of 400+ member cultural organization in Norway</p>
-        </div>
-        <div class="card">
-          <h3>Kringjå Cricket Club</h3>
-          <p>Daglig Leder of Board of Directors at Norges Cricket Forbund</p>
-        </div>
-        <div class="card">
-          <h3>Freelance Photography</h3>
-          <p>Documenting events, landscapes, and tech innovations</p>
-        </div>
+  <section id="community" class="section fade-in">
+    <h2 class="section-title">Community & Voluntary Work</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Hridoye Bangladesh</h3>
+        <p>Founding President of 400+ member cultural organization in Norway</p>
+      </div>
+      <div class="card">
+        <h3>Kringjå Cricket Club</h3>
+        <p>Daglig Leder of Board of Directors at Norges Cricket Forbund</p>
+      </div>
+      <div class="card">
+        <h3>Freelance Photographer</h3>
+        <p>Capturing events, landscapes, and tech innovations</p>
       </div>
     </div>
   </section>
 
   <!-- References Section -->
-  <section class="section fade-in" id="references">
-    <div class="container">
-      <h2 class="section-title">References</h2>
-      <div class="card-grid">
-        <div class="reference-card">
-          <h4>Niklas Nyroth</h4>
-          <p>CEO, Robot Aviation AS</p>
-          <p><i class="fas fa-phone"></i> +47 90652502</p>
-          <p><i class="fas fa-envelope"></i> niklas.nyroth@robotaviation.com</p>
-        </div>
-        <div class="reference-card">
-          <h4>Cem Yolcubal</h4>
-          <p>Drone Prototype Developer, TOPseven GmbH</p>
-          <p><i class="fas fa-phone"></i> +49 15170551030</p>
-          <p><i class="fas fa-envelope"></i> cem.yolcubal@topseven.com</p>
-        </div>
-        <div class="reference-card">
-          <h4>Farzan M. Noori</h4>
-          <p>Postdoctoral Researcher, University of Oslo</p>
-          <p><i class="fas fa-phone"></i> +47 912 55 115</p>
-          <p><i class="fas fa-envelope"></i> farzanmn@ifi.uio.no</p>
-        </div>
+  <section id="references" class="section fade-in">
+    <h2 class="section-title">References</h2>
+    <div class="card-grid">
+      <div class="reference-card">
+        <h4>Niklas Nyroth</h4>
+        <p>CEO, Robot Aviation AS</p>
+        <p><i class="fas fa-phone"></i> +47 90652502</p>
+        <p><i class="fas fa-envelope"></i> niklas.nyroth@robotaviation.com</p>
+      </div>
+      <div class="reference-card">
+        <h4>Cem Yolcubal</h4>
+        <p>Drone Prototype Developer, TOPseven GmbH</p>
+        <p><i class="fas fa-phone"></i> +49 15170551030</p>
+        <p><i class="fas fa-envelope"></i> cem.yolcubal@topseven.com</p>
+      </div>
+      <div class="reference-card">
+        <h4>Farzan M. Noori</h4>
+        <p>Postdoctoral Researcher, University of Oslo</p>
+        <p><i class="fas fa-phone"></i> +47 912 55 115</p>
+        <p><i class="fas fa-envelope"></i> farzanmn@ifi.uio.no</p>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="section fade-in" id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact</h2>
-      <div class="contact-card">
-        <p><i class="fas fa-map-marker-alt"></i> Olav M. Troviks Vei 66, 0864 Oslo, Norway</p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:aakash.unipune@gmail.com" style="color: var(--light-text);">aakash.unipune@gmail.com</a></p>
-        <p><i class="fas fa-phone"></i> +47 458 08 855</p>
-        <a href="mailto:aakash.unipune@gmail.com" class="btn" style="background: var(--primary); margin-top: 25px;">Send Email</a>
-      </div>
+  <section id="contact" class="section fade-in">
+    <h2 class="section-title">Contact</h2>
+    <div class="card contact-card">
+      <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/Olav+M.+Troviks+Vei+66,+0864+Oslo" target="_blank">Olav M. Troviks Vei 66, 0864 Oslo</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:aakash.unipune@gmail.com" style="color: var(--light-text);">aakash.unipune@gmail.com</a></p>
+      <p><i class="fas fa-phone"></i> +47 458 08 855</p>
+      <a href="mailto:aakash.unipune@gmail.com" class="btn">Send Message</a>
     </div>
   </section>
 
-  <footer class="footer">
+  <!-- Footer -->
+  <footer>
     <p>© 2024 Md Atiqur Rahman. All rights reserved.</p>
   </footer>
 
   <script>
-    // Smooth Scroll Animation
+    // Photography Slider
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      const slidesContainer = document.querySelector('.slides');
+      slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide === totalSlides - 1 ? 0 : currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide === 0 ? totalSlides - 1 : currentSlide - 1);
+    }
+
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', e => {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        const target = document.querySelector(anchor.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
       });
     });
 
-    // Add "active" class on scroll
+    // Fade-in on Scroll
     window.addEventListener('scroll', () => {
       document.querySelectorAll('.fade-in').forEach(section => {
         const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < window.innerHeight * 0.7) {
+        if (sectionTop < window.innerHeight * 0.8) {
           section.classList.add('active');
         }
       });
+    });
+
+    // Parallax Effect
+    window.addEventListener('scroll', () => {
+      document.querySelector('.hero').style.transform = `translateY(${window.scrollY * 0.2}px)`;
     });
   </script>
 </body>
