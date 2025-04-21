@@ -147,6 +147,7 @@
     .experience-card {
       padding: 25px;
       margin: 20px 0;
+      color: white;
     }
 
     .experience-card h3 {
@@ -176,6 +177,9 @@
     .project-card {
       padding: 25px;
       margin: 20px 0;
+      background: var(--card-bg);
+      color: white;
+      text-align: left;
     }
 
     .project-card h3 {
@@ -410,31 +414,6 @@
       color: var(--primary);
     }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      background: var(--dark-bg);
-      color: #7f8c8d;
-      margin-top: 80px;
-      font-size: 0.9rem;
-    }
-
-    /* Project Cards */
-    .project-card {
-      background: var(--card-bg);
-      color: white;
-      text-align: left;
-    }
-
-    /* Tool Stack */
-    .tool-stack {
-      margin: 15px 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
     /* Voluntary Experience */
     .voluntary-card {
       background: var(--card-bg);
@@ -457,6 +436,31 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       margin-top: 40px;
+    }
+
+    /* Education Cards */
+    .education-card {
+      padding: 25px;
+      margin: 20px 0;
+      background: var(--card-bg);
+      color: white;
+      text-align: left;
+    }
+
+    .education-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      background: var(--dark-bg);
+      color: #7f8c8d;
+      margin-top: 80px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -512,7 +516,7 @@
   <!-- Experience Section -->
   <section id="experience" class="section fade-in">
     <div class="container">
-      <h2 class="section-title">Experience</h2>
+      <h2 class="section-title">Professional Experience</h2>
       <div class="timeline">
         <!-- TOPseven GmbH -->
         <div class="timeline-item left">
@@ -531,11 +535,11 @@
               <span class="tool-badge">SITL Simulation</span>
             </div>
             <ul>
-              <li>Assembled drones from scratch with sensors, communication systems, and payloads</li>
+              <li>Assembled drones from scratch, integrating sensors and payloads</li>
               <li>Configured firmware for flight controllers (Pixhawk, CubePilot)</li>
               <li>Developed an Android app for drone control using Java (Mavsdk)</li>
               <li>3D modeled custom components with Fusion 360 and printed using Creality</li>
-              <li>Conducted rigorous testing and troubleshooting of drone systems</li>
+              <li>Conducted rigorous testing and troubleshooting</li>
               <li>Simulated flights in 2D/3D environments using SITL</li>
             </ul>
           </div>
@@ -561,6 +565,7 @@
               <li>Reduced ground station setup time by 70% with Bash scripting</li>
               <li>Built Flight Logger system using HTML/PHP/MySQL</li>
               <li>Designed secured multilayer cloud backup systems</li>
+              <li>Simulated flights in 2D/3D environments using SITL</li>
             </ul>
           </div>
         </div>
@@ -619,28 +624,6 @@
     <div class="container">
       <h2 class="section-title">Projects</h2>
       <div class="card-grid">
-        <!-- Smart Workshop -->
-        <div class="project-card">
-          <h3>Smart Workshop Solution</h3>
-          <div class="tool-stack">
-            <span class="tool-badge">AI Depth Camera</span>
-            <span class="tool-badge">Augmented Reality</span>
-            <span class="tool-badge">Python</span>
-          </div>
-          <p>AI-Powered Assembly Guidance System for industrial setups</p>
-        </div>
-
-        <!-- Facial Recognition -->
-        <div class="project-card">
-          <h3>Facial Recognition Door Lock</h3>
-          <div class="tool-stack">
-            <span class="tool-badge">ESP32</span>
-            <span class="tool-badge">C++</span>
-            <span class="tool-badge">Machine Learning</span>
-          </div>
-          <p>Secure access system with facial recognition and object detection</p>
-        </div>
-
         <!-- ConBot -->
         <div class="project-card">
           <h3>ConBot (Bash)</h3>
@@ -674,13 +657,34 @@
           <p>Real-time monitoring system with biometric authentication</p>
         </div>
 
+        <!-- Smart Workshop -->
+        <div class="project-card">
+          <h3>Smart Workshop Solution</h3>
+          <div class="tool-stack">
+            <span class="tool-badge">AI Depth Camera</span>
+            <span class="tool-badge">Augmented Reality</span>
+            <span class="tool-badge">Python</span>
+          </div>
+          <p>AI-Powered Assembly Guidance System using object detection algorithms</p>
+        </div>
+
+        <!-- Facial Recognition -->
+        <div class="project-card">
+          <h3>Facial Recognition Door Lock</h3>
+          <div class="tool-stack">
+            <span class="tool-badge">ESP32</span>
+            <span class="tool-badge">C++</span>
+            <span class="tool-badge">Machine Learning</span>
+          </div>
+          <p>Secure access system with facial recognition</p>
+        </div>
+
         <!-- IoT Weather Station -->
         <div class="project-card">
           <h3>IoT Weather Station</h3>
           <div class="tool-stack">
             <span class="tool-badge">C++</span>
             <span class="tool-badge">HTML</span>
-            <span class="tool-badge">JavaScript</span>
           </div>
           <p>Environmental parameter monitoring system</p>
         </div>
@@ -691,7 +695,7 @@
           <div class="tool-stack">
             <span class="tool-badge">C++</span>
           </div>
-          <p>Smart irrigation system using soil moisture sensors</p>
+          <p>Soil moisture-based smart irrigation system</p>
         </div>
 
         <!-- Industrial Sorting -->
@@ -720,7 +724,7 @@
           <div class="tool-stack">
             <span class="tool-badge">C++</span>
           </div>
-          <p>Remote-controlled irrigation system via SMS</p>
+          <p>Remote-controlled irrigation via SMS</p>
         </div>
 
         <!-- Biometric Attendance -->
@@ -771,15 +775,15 @@
     <div class="container">
       <h2 class="section-title">Education</h2>
       <div class="card-grid">
-        <div class="card">
+        <div class="education-card">
           <h3><a href="https://www.hs-emden-leer.de" target="_blank" style="color: var(--primary); text-decoration: underline;">Hochschule Emden/Leer</a></h3>
           <p>Master of Engineering – Industrial Informatics (Cyber Physical Systems)</p>
         </div>
-        <div class="card">
+        <div class="education-card">
           <h3><a href="https://www.uio.no" target="_blank" style="color: var(--primary); text-decoration: underline;">University of Oslo</a></h3>
-          <p>Master of Science – Programming & System Architecture (Discontinued, Thesis pending)</p>
+          <p>Master of Science – Programming & System Architecture (Discontinued, Thesis remaining)</p>
         </div>
-        <div class="card">
+        <div class="education-card">
           <h3><a href="https://www.uoda.edu.bd" target="_blank" style="color: var(--primary); text-decoration: underline;">University of Development Alternative</a></h3>
           <p>Bachelor of Science – Computer Science & Engineering</p>
         </div>
@@ -790,7 +794,7 @@
   <!-- Photography Section -->
   <section id="photography" class="section fade-in">
     <div class="container">
-      <h2 class="section-title">Photography Portfolio</h2>
+      <h2 class="section-title">Photography</h2>
       <div class="slider-container">
         <button class="slider-button prev" onclick="prevSlide()">❮</button>
         <div class="slides">
@@ -824,7 +828,7 @@
         </div>
         <div class="voluntary-card">
           <h3>Freelance Photographer</h3>
-          <p>Capturing events, landscapes, and tech innovations</p>
+          <p>Capturing tech innovations and landscapes</p>
         </div>
       </div>
     </div>
@@ -850,8 +854,7 @@
           <p><i class="fas fa-phone"></i> <a href="tel:+4915170551030" style="color: var(--primary); text-decoration: underline;">+49 15170551030</a></p>
           <p><i class="fas fa-envelope"></i> <a href="mailto:cem.yolcubal@topseven.com" style="color: var(--primary); text-decoration: underline;">cem.yolcubal@topseven.com</a></p>
         </div>
-
-        <!-- Farzan M. Noori -->
+                <!-- Farzan M. Noori -->
         <div class="reference-card">
           <h4>Farzan M. Noori</h4>
           <p>Postdoctoral Researcher, <a href="https://www.uio.no" target="_blank" style="color: var(--primary); text-decoration: underline;">University of Oslo</a></p>
@@ -875,6 +878,13 @@
     </div>
   </section>
 
+  <!-- Footer Section -->
+  <footer class="section">
+    <div class="container">
+      <p class="footer-text" style="color: var(--light-text); opacity: 0.8;">&copy; 2024 Md Atiqur Rahman. All rights reserved.</p>
+    </div>
+  </footer>
+
   <script>
     // Photography Slider
     let currentSlide = 0;
@@ -882,4 +892,56 @@
     const totalSlides = slides.length;
 
     function showSlide(index) {
-      const slidesContainer = document.querySelector('.
+      const slidesContainer = document.querySelector('.slides');
+      slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    // Auto-play slider
+    let autoPlay = setInterval(nextSlide, 5000);
+
+    // Pause auto-play on hover
+    const sliderContainer = document.querySelector('.slider-container');
+    sliderContainer.addEventListener('mouseover', () => clearInterval(autoPlay));
+    sliderContainer.addEventListener('mouseout', () => autoPlay = setInterval(nextSlide, 5000));
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+
+    // Fade-in Animation
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.fade-in').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.8) {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
+        }
+      });
+    });
+
+    // Parallax Effect
+    window.addEventListener('scroll', () => {
+      document.querySelector('.hero').style.transform = `translateY(-${window.scrollY * 0.2}px)`;
+    });
+  </script>
+</body>
+</html>
