@@ -22,11 +22,24 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: white;
       color: var(--dark);
       scroll-behavior: smooth;
       max-width: 100%;
       overflow-x: hidden;
+      position: relative;
+      z-index: 0;
+    }
+
+    /* Fixed Background Layer */
+    .fixed-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('bright.jpg') center/cover no-repeat;
+      z-index: -1;
+      opacity: 0.5; /* Adjust transparency (0-1) */
     }
 
     /* Floating Navbar */
@@ -65,14 +78,13 @@
     /* Hero Section */
     .hero {
       height: 100vh;
-      background: 
-        linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), /* 10% white overlay */
-        url('background.jpg') center/cover no-repeat scroll; /* Your image */
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 0 40px;
+      position: relative;
+      z-index: 1;
     }
 
     .hero h1 {
@@ -121,6 +133,8 @@
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     .section-title {
@@ -367,6 +381,9 @@
   </style>
 </head>
 <body>
+  <!-- Fixed Background Layer -->
+  <div class="fixed-bg"></div>
+
   <!-- Floating Navbar -->
   <nav>
     <div class="nav-container">
@@ -638,7 +655,7 @@
       </div>
       <div class="skill-card">
         <h4>Drone Tech</h4>
-        <p>Pixhawk, CubePilot, STM32, Raspberry Pi, NVIDIA Jetson Nano, Mission Planner, QGroundControl, SITL Simulation</p>
+        <p>Pixhawk, CubePilot, STM32, Raspberry Pi, NVIDIA Jetson Nano, Mission Planner, QGroundControl</p>
       </div>
       <div class="skill-card">
         <h4>Networking</h4>
@@ -646,7 +663,7 @@
       </div>
       <div class="skill-card">
         <h4>Embedded Systems</h4>
-        <p>Firmware, 3D Modeling/Printing, SITL Simulation</p>
+        <p>Firmware, SITL Simulation, 3D Modeling/Printing</p>
       </div>
     </div>
   </section>
@@ -656,43 +673,26 @@
     <h2 class="section-title">Gallery</h2>
     <div class="slider-container">
       <div class="slides">
-        <!-- Replace with your images -->
-        <div class="slide">
-          <img src="drone1.jpg" alt="Drone Image">
-        </div>
-        <div class="slide">
-          <img src="technology1.jpg" alt="Tech Image">
-        </div>
-        <div class="slide">
-          <img src="raspberry_pi.jpg" alt="Raspberry Pi">
-        </div>
-        <div class="slide">
-          <img src="3d_printing.jpg" alt="3D Printing">
-        </div>
-        <div class="slide">
-          <img src="embedded_systems.jpg" alt="Embedded Systems">
-        </div>
-        <div class="slide">
-          <img src="robotics.jpg" alt="Robotics">
-        </div>
-        <div class="slide">
-          <img src="sensors.jpg" alt="Sensors">
-        </div>
-        <div class="slide">
-          <img src="server_room.jpg" alt="Server Room">
-        </div>
-        <div class="slide">
-          <img src="cruise_ship.jpg" alt="Cruise Ship">
-        </div>
-        <div class="slide">
-          <img src="drone2.jpg" alt="Drone Image">
-        </div>
+        <!-- 12 images -->
+        <div class="slide"><img src="1.jpg" alt="Slide 1"></div>
+        <div class="slide"><img src="2.jpg" alt="Slide 2"></div>
+        <div class="slide"><img src="3.jpg" alt="Slide 3"></div>
+        <div class="slide"><img src="4.jpg" alt="Slide 4"></div>
+        <div class="slide"><img src="5.jpg" alt="Slide 5"></div>
+        <div class="slide"><img src="6.jpg" alt="Slide 6"></div>
+        <div class="slide"><img src="7.jpg" alt="Slide 7"></div>
+        <div class="slide"><img src="8.jpg" alt="Slide 8"></div>
+        <div class="slide"><img src="9.jpg" alt="Slide 9"></div>
+        <div class="slide"><img src="10.jpg" alt="Slide 10"></div>
+        <div class="slide"><img src="11.jpg" alt="Slide 11"></div>
+        <div class="slide"><img src="12.jpg" alt="Slide 12"></div>
       </div>
       <div class="slider-buttons">
         <button class="slider-button prev">&#10094;</button>
         <button class="slider-button next">&#10095;</button>
       </div>
       <div class="slider-dots">
+        <!-- 12 dots -->
         <span class="slider-dot" onclick="currentSlide=0; showSlide()"></span>
         <span class="slider-dot" onclick="currentSlide=1; showSlide()"></span>
         <span class="slider-dot" onclick="currentSlide=2; showSlide()"></span>
@@ -703,6 +703,8 @@
         <span class="slider-dot" onclick="currentSlide=7; showSlide()"></span>
         <span class="slider-dot" onclick="currentSlide=8; showSlide()"></span>
         <span class="slider-dot" onclick="currentSlide=9; showSlide()"></span>
+        <span class="slider-dot" onclick="currentSlide=10; showSlide()"></span>
+        <span class="slider-dot" onclick="currentSlide=11; showSlide()"></span>
       </div>
     </div>
   </section>
@@ -804,7 +806,7 @@
     let autoPlay = setInterval(() => {
       currentSlide = (currentSlide + 1) % totalSlides;
       showSlide();
-    }, 2000);
+    }, 5000);
 
     // Manual navigation buttons
     document.querySelector('.next').addEventListener('click', () => {
@@ -826,10 +828,6 @@
     });
   </script>
 
-  <!-- Hero Background Setup -->
+  <!-- Fixed Background Layer -->
   <script>
-    // Ensure your image is named "background.jpg" and placed in the same folder
-    document.querySelector('.hero').style.backgroundImage = `url('background.jpg')`;
-  </script>
-</body>
-</html>
+    //
