@@ -61,11 +61,13 @@
       color: var(--primary);
       border-bottom: 2px solid var(--primary);
     }
-    
+
+    /* Hero Section */
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
-        url('background.jpg') center/cover no-repeat fixed;
+      background: 
+        linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), /* 10% white overlay */
+        url('background.jpg') center/cover no-repeat scroll; /* Your image */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -79,7 +81,6 @@
       color: var(--dark);
       text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
-
 
     /* Social Icons */
     .social-icons {
@@ -571,7 +572,6 @@
           <span class="tool-badge">C++</span>
           <span class="tool-badge">HTML</span>
           <span class="tool-badge">CSS</span>
-          <span class="tool-badge">JavaScript</span>
         </div>
         <p>Environmental parameter monitoring system</p>
       </div>
@@ -658,42 +658,35 @@
       <div class="slides">
         <!-- Replace with your images -->
         <div class="slide">
-          <img src="1.jpg" alt="Drone Image">
+          <img src="drone1.jpg" alt="Drone Image">
         </div>
         <div class="slide">
-          <img src="2.jpg" alt="Drone Image">
+          <img src="technology1.jpg" alt="Tech Image">
         </div>
         <div class="slide">
-          <img src="3.jpg" alt="Drone Image">
+          <img src="raspberry_pi.jpg" alt="Raspberry Pi">
         </div>
         <div class="slide">
-          <img src="4.jpg" alt="Drone Image">
+          <img src="3d_printing.jpg" alt="3D Printing">
         </div>
         <div class="slide">
-          <img src="5.jpg" alt="Drone Image">
+          <img src="embedded_systems.jpg" alt="Embedded Systems">
         </div>
         <div class="slide">
-          <img src="6.jpg" alt="Drone Image">
+          <img src="robotics.jpg" alt="Robotics">
         </div>
         <div class="slide">
-          <img src="7.jpg" alt="Drone Image">
+          <img src="sensors.jpg" alt="Sensors">
         </div>
         <div class="slide">
-          <img src="8.jpg" alt="Drone Image">
+          <img src="server_room.jpg" alt="Server Room">
         </div>
         <div class="slide">
-          <img src="9.jpg" alt="Drone Image">
+          <img src="cruise_ship.jpg" alt="Cruise Ship">
         </div>
         <div class="slide">
-          <img src="10.jpg" alt="Drone Image">
+          <img src="drone2.jpg" alt="Drone Image">
         </div>
-        <div class="slide">
-          <img src="11.jpg" alt="Drone Image">
-        </div>
-        <div class="slide">
-          <img src="12.jpg" alt="Drone Image">
-        </div>
-
       </div>
       <div class="slider-buttons">
         <button class="slider-button prev">&#10094;</button>
@@ -811,7 +804,7 @@
     let autoPlay = setInterval(() => {
       currentSlide = (currentSlide + 1) % totalSlides;
       showSlide();
-    }, 5000);
+    }, 3000);
 
     // Manual navigation buttons
     document.querySelector('.next').addEventListener('click', () => {
@@ -831,21 +824,12 @@
         showSlide();
       });
     });
-        // Parallax JavaScript
-    window.addEventListener('DOMContentLoaded', () => {
-      window.addEventListener('scroll', () => {
-        const parallaxSpeed = 0.3; // Adjust sensitivity
-        const offset = window.pageYOffset;
-        const bg = document.querySelector('.parallax-bg');
-        bg.style.transform = `translateY(${offset * parallaxSpeed}px)`;
-      });
-    });
   </script>
 
   <!-- Hero Background Setup -->
   <script>
-    const heroImage = 'https://source.unsplash.com/1600x900/?drone,technology';
-    document.querySelector('.hero').style.backgroundImage = `linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('${heroImage}')`;
+    // Ensure your image is named "background.jpg" and placed in the same folder
+    document.querySelector('.hero').style.backgroundImage = `url('background.jpg')`;
   </script>
 </body>
 </html>
