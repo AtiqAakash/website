@@ -80,6 +80,19 @@
       color: var(--dark);
       text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
+    /* Parallax styles */
+    .parallax-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      transition: transform 0.3s ease;
+    }
 
     /* Social Icons */
     .social-icons {
@@ -383,6 +396,7 @@
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
+    <div class="parallax-bg" style="background-image: url('background.jpg');"></div>
     <h1>Atiqur Rahman</h1>
     <p>Drone Developer | Embedded Engineer | Pilot</p>
     <div class="social-icons">
@@ -658,35 +672,42 @@
       <div class="slides">
         <!-- Replace with your images -->
         <div class="slide">
-          <img src="bright.jpg" alt="Drone Image">
+          <img src="1.jpg" alt="Drone Image">
         </div>
         <div class="slide">
-          <img src="bright.jpg" alt="Drone Image">
+          <img src="2.jpg" alt="Drone Image">
         </div>
         <div class="slide">
-          <img src="bright.jpg" alt="Drone Image">
+          <img src="3.jpg" alt="Drone Image">
         </div>
         <div class="slide">
-          <img src="bright.jpg" alt="Drone Image">
+          <img src="4.jpg" alt="Drone Image">
         </div>
         <div class="slide">
-          <img src="bright.jpg" alt="Drone Image">
+          <img src="5.jpg" alt="Drone Image">
         </div>
         <div class="slide">
-          <img src="bright.jpg" alt="Drone Image">
+          <img src="6.jpg" alt="Drone Image">
         </div>
         <div class="slide">
-          <img src="bright.jpg" alt="Drone Image">
+          <img src="7.jpg" alt="Drone Image">
         </div>
         <div class="slide">
-          <img src="bright.jpg" alt="Drone Image">
+          <img src="8.jpg" alt="Drone Image">
         </div>
         <div class="slide">
-          <img src="bright.jpg" alt="Drone Image">
+          <img src="9.jpg" alt="Drone Image">
         </div>
         <div class="slide">
-          <img src="bright.jpg" alt="Drone Image">
+          <img src="10.jpg" alt="Drone Image">
         </div>
+        <div class="slide">
+          <img src="11.jpg" alt="Drone Image">
+        </div>
+        <div class="slide">
+          <img src="12.jpg" alt="Drone Image">
+        </div>
+
       </div>
       <div class="slider-buttons">
         <button class="slider-button prev">&#10094;</button>
@@ -822,6 +843,15 @@
       dot.addEventListener('click', () => {
         currentSlide = index;
         showSlide();
+      });
+    });
+        // Parallax JavaScript
+    window.addEventListener('DOMContentLoaded', () => {
+      window.addEventListener('scroll', () => {
+        const parallaxSpeed = 0.3; // Adjust sensitivity
+        const offset = window.pageYOffset;
+        const bg = document.querySelector('.parallax-bg');
+        bg.style.transform = `translateY(${offset * parallaxSpeed}px)`;
       });
     });
   </script>
