@@ -11,9 +11,6 @@
       --primary: #4CAF50;
       --secondary: #2196F3;
       --dark: #2c3e50;
-      --light: #f8f9fa;
-      --text: #333;
-      --spacing: 2rem;
       --transition: all 0.3s ease;
     }
     * {
@@ -29,7 +26,6 @@
       overflow-x: hidden;
       position: relative;
       z-index: 0;
-      background: var(--light);
     }
     /* Fixed Background Layer */
     .fixed-bg {
@@ -51,7 +47,6 @@
       padding: 15px;
       z-index: 999;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: var(--transition);
     }
     nav .nav-container {
       display: flex;
@@ -221,7 +216,7 @@
     /* Gallery Section */
     #gallery {
       padding: 60px 0;
-      background: var(--light);
+      background: #f8f9fa;
     }
     .slider-container {
       position: relative;
@@ -232,7 +227,7 @@
     }
     .slides {
       display: flex;
-      transition: transform 0.5s;
+      transition: transform 0.5s ease;
       width: 100%;
     }
     .slide img {
@@ -289,7 +284,7 @@
     /* Contact Section */
     #contact {
       padding: 80px 20px;
-      background: var(--light);
+      background: #f8f9fa;
     }
     .contact-card {
       background: white;
@@ -727,53 +722,43 @@
       <a href="mailto:atiqur.pilot@gmail.com" class="btn" style="margin-top: 35px; display: block;">Send Message</a>
     </div>
   </section>
-  <!-- Slider JavaScript -->
+  <!-- JavaScript for Slider -->
   <script>
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
     const sliderContainer = document.querySelector('.slides');
     const dots = document.querySelectorAll('.slider-dot');
-
+  
     function showSlide() {
       sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
       dots.forEach(dot => dot.classList.remove('active'));
       dots[currentSlide].classList.add('active');
     }
-
+  
     // Auto-play every 5 seconds
     let autoPlay = setInterval(() => {
       currentSlide = (currentSlide + 1) % totalSlides;
       showSlide();
     }, 5000);
-
+  
     // Manual navigation buttons
     document.querySelector('.next').addEventListener('click', () => {
       currentSlide = (currentSlide + 1) % totalSlides;
       showSlide();
     });
-
+  
     document.querySelector('.prev').addEventListener('click', () => {
       currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
       showSlide();
     });
-
+  
     // Dot navigation
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         currentSlide = index;
         showSlide();
       });
-    });
-  </script>
-
-  <!-- Fixed Background Layer -->
-  <script>
-    // Add any JavaScript for the fixed background here (if needed)
-    // Example: Parallax effect
-    window.addEventListener('scroll', () => {
-      const scrollPos = window.scrollY;
-      document.querySelector('.fixed-bg').style.transform = `translateY(${scrollPos * 0.2}px)`;
     });
   </script>
 </body>
