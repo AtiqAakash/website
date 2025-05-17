@@ -14,7 +14,7 @@
     .fixed-bg {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
       background: url('background.jpg') center/cover no-repeat;
-      z-index: 0; opacity: 0.10; pointer-events: none;
+      z-index: 0; opacity: 1; pointer-events: none;
     }
     ::-webkit-scrollbar { width: 8px; background: #f2f2f2; }
     ::-webkit-scrollbar-thumb { background: #bbb; border-radius: 8px; }
@@ -31,7 +31,7 @@
         <a href="#experience" class="hover:text-green-600 transition">Experience</a>
         <a href="#projects" class="hover:text-green-600 transition">Projects</a>
         <a href="#skills" class="hover:text-green-600 transition">Skills</a>
-        <a href="#gallery" class="hover:text-green-600 transition">Gallery</a>
+        <a href="#photography-gallery" class="hover:text-green-600 transition">Photography Gallery</a>
         <a href="#education" class="hover:text-green-600 transition">Education</a>
         <a href="#community" class="hover:text-green-600 transition">Community</a>
         <a href="#references" class="hover:text-green-600 transition">References</a>
@@ -46,7 +46,7 @@
       <a href="#experience" class="block py-2 hover:text-green-600">Experience</a>
       <a href="#projects" class="block py-2 hover:text-green-600">Projects</a>
       <a href="#skills" class="block py-2 hover:text-green-600">Skills</a>
-      <a href="#gallery" class="block py-2 hover:text-green-600">Gallery</a>
+      <a href="#photography-gallery" class="block py-2 hover:text-green-600">Photography Gallery</a>
       <a href="#education" class="block py-2 hover:text-green-600">Education</a>
       <a href="#community" class="block py-2 hover:text-green-600">Community</a>
       <a href="#references" class="block py-2 hover:text-green-600">References</a>
@@ -78,7 +78,7 @@
   <section id="experience" class="max-w-6xl mx-auto py-20 px-4">
     <h2 class="text-3xl playfair font-bold text-center mb-10 text-gray-900">Experience</h2>
     <div class="grid md:grid-cols-2 gap-8">
-      <!-- Experience Card 1 -->
+      <!-- TOPseven GmbH -->
       <div class="bg-white rounded-xl shadow p-7">
         <h3 class="text-xl font-bold mb-1"><a href="https://www.topseven.com" class="text-green-600 hover:underline" target="_blank">TOPseven GmbH</a></h3>
         <p class="text-gray-600 mb-3"><strong>Werkstudent (Drone R&D)</strong><br>
@@ -106,7 +106,7 @@
           <li>Simulated flights in 2D/3D environments using SITL</li>
         </ul>
       </div>
-      <!-- Experience Card 2 -->
+      <!-- Robot Aviation -->
       <div class="bg-white rounded-xl shadow p-7">
         <h3 class="text-xl font-bold mb-1"><a href="https://www.robotaviation.com" class="text-green-600 hover:underline" target="_blank">Robot Aviation</a></h3>
         <p class="text-gray-600 mb-3"><strong>Unmanned Systems Intern</strong><br>
@@ -135,9 +135,9 @@
           <li>Designed secured multilayer cloud backup systems</li>
         </ul>
       </div>
-      <!-- Experience Card 3 -->
+      <!-- Home & Marine -->
       <div class="bg-white rounded-xl shadow p-7">
-        <h3 class="text-xl font-bold mb-1"><a href="https://www.homeandmarine.com" class="text-green-600 hover:underline" target="_blank">Home & Marine</a></h3>
+        <h3 class="text-xl font-bold mb-1"><a href="https://home-marine.com/" class="text-green-600 hover:underline" target="_blank">Home & Marine</a></h3>
         <p class="text-gray-600 mb-3"><strong>Network Technician</strong><br>
           Jul 2024 – Sept 2024 | <a href="https://www.google.com/maps/search/Adam-Opel-Straße+15,+28237+Bremen,+Germany" target="_blank" class="text-blue-600 hover:underline">Adam-Opel-Straße 15, 28237 Bremen, Germany</a>
         </p>
@@ -154,7 +154,7 @@
           <li>Collaborated on network infrastructure upgrades</li>
         </ul>
       </div>
-      <!-- Experience Card 4 -->
+      <!-- CodeFix IT -->
       <div class="bg-white rounded-xl shadow p-7">
         <h3 class="text-xl font-bold mb-1"><a href="https://www.codefix.com.bd" class="text-green-600 hover:underline" target="_blank">CodeFix IT</a></h3>
         <p class="text-gray-600 mb-3"><strong>IT Support Engineer</strong><br>
@@ -189,7 +189,7 @@
   <section id="projects" class="max-w-6xl mx-auto py-20 px-4">
     <h2 class="text-3xl playfair font-bold text-center mb-10 text-gray-900">Projects</h2>
     <div class="grid md:grid-cols-2 gap-8">
-      <!-- Copy and paste your project cards here as shown in previous responses... -->
+      <!-- Smart Workshop Solution -->
       <div class="bg-white rounded-xl shadow p-7">
         <h3 class="font-semibold mb-1">Smart Workshop Solution</h3>
         <div class="flex flex-wrap gap-2 mb-2">
@@ -200,6 +200,7 @@
         </div>
         <p class="text-gray-700 text-sm">AI-Powered Assembly Guidance System using object detection algorithms</p>
       </div>
+      <!-- Facial Recognition -->
       <div class="bg-white rounded-xl shadow p-7">
         <h3 class="font-semibold mb-1">Facial Recognition Secured Access System</h3>
         <div class="flex flex-wrap gap-2 mb-2">
@@ -210,7 +211,28 @@
         </div>
         <p class="text-gray-700 text-sm">Secure access system with facial/object recognition</p>
       </div>
-      <!-- ... (all other projects as above, just copy from your content) ... -->
+      <!-- ConBot -->
+      <div class="bg-white rounded-xl shadow p-7">
+        <h3 class="font-semibold mb-1">ConBot (Bash)</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Bash</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Ardupilot</span>
+        </div>
+        <p class="text-gray-700 text-sm">Automatic configuration script for unmanned systems contributed to the Ardupilot community</p>
+      </div>
+      <!-- Flight Logger -->
+      <div class="bg-white rounded-xl shadow p-7">
+        <h3 class="font-semibold mb-1">Flight Logger</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">HTML</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">CSS</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">JavaScript</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">PHP</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">MySQL</span>
+        </div>
+        <p class="text-gray-700 text-sm">Flight Log Management System to track flight logs, operator activity, and flight hours</p>
+      </div>
+      <!-- IoT-Based Control -->
       <div class="bg-white rounded-xl shadow p-7">
         <h3 class="font-semibold mb-1">IoT-Based Control & Security System</h3>
         <div class="flex flex-wrap gap-2 mb-2">
@@ -222,7 +244,61 @@
         <p class="text-gray-700 text-sm">Real-time monitoring system with biometric authentication</p>
         <span class="inline-block mt-2 bg-yellow-400 text-yellow-900 px-2 py-0.5 text-xs rounded font-semibold">2nd Prize</span>
       </div>
-      <!-- ...repeat for all your project cards... -->
+      <!-- IoT Weather Station -->
+      <div class="bg-white rounded-xl shadow p-7">
+        <h3 class="font-semibold mb-1">IoT Weather Station</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">HTML</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">CSS</span>
+        </div>
+        <p class="text-gray-700 text-sm">Environmental parameter monitoring system</p>
+      </div>
+      <!-- Industrial Sorting Machine Prototype -->
+      <div class="bg-white rounded-xl shadow p-7">
+        <h3 class="font-semibold mb-1">Industrial Sorting Machine Prototype</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+        </div>
+        <p class="text-gray-700 text-sm">Object detection sorting system for industrial use</p>
+      </div>
+      <!-- Biometric Attendance System -->
+      <div class="bg-white rounded-xl shadow p-7">
+        <h3 class="font-semibold mb-1">Biometric Attendance System</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">PHP</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">MySQL</span>
+        </div>
+        <p class="text-gray-700 text-sm">Fingerprint-based attendance tracking system</p>
+      </div>
+      <!-- GSM Remote Controlled Irrigation System -->
+      <div class="bg-white rounded-xl shadow p-7">
+        <h3 class="font-semibold mb-1">GSM Remote Controlled Irrigation System</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+        </div>
+        <p class="text-gray-700 text-sm">Remote-controlled irrigation system via SMS</p>
+      </div>
+      <!-- Smart Home Automation -->
+      <div class="bg-white rounded-xl shadow p-7">
+        <h3 class="font-semibold mb-1">Smart Home Automation</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">HTML</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">CSS</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">JavaScript</span>
+        </div>
+        <p class="text-gray-700 text-sm">IoT-based home control system</p>
+      </div>
+      <!-- Automatic Irrigation System -->
+      <div class="bg-white rounded-xl shadow p-7">
+        <h3 class="font-semibold mb-1">Automatic Irrigation System</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+        </div>
+        <p class="text-gray-700 text-sm">Soil moisture-based smart irrigation system</p>
+      </div>
     </div>
   </section>
 
@@ -249,12 +325,12 @@
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section id="gallery" class="max-w-6xl mx-auto py-20 px-4">
-    <h2 class="text-3xl playfair font-bold text-center mb-10 text-gray-900">Gallery</h2>
-    <div class="relative rounded-xl overflow-hidden max-w-3xl mx-auto">
+  <!-- Photography Gallery -->
+  <section id="photography-gallery" class="max-w-6xl mx-auto py-20 px-4">
+    <h2 class="text-3xl playfair font-bold text-center mb-10 text-gray-900">Photography Gallery</h2>
+    <div class="relative rounded-xl overflow-hidden max-w-4xl mx-auto">
       <div class="slides flex transition-transform duration-500" style="width:100%;">
-        <div class="slide w-full"><img src="1.jpg" loading="lazy" class="w-full object-cover h-72 sm:h-96 bg-gray-200" alt="Slide 1"></div>
+        <div class="slide w-full"><img src="1.jpg" loading="lazy" class="w-full object-cover h-[450px] sm:h-[600px] bg-gray-200" alt="Slide 1"></div>
       </div>
       <div class="absolute inset-0 flex items-center justify-between px-2">
         <button class="slider-button prev bg-white/90 rounded-full shadow text-3xl text-gray-600 hover:bg-green-600 hover:text-white p-2">&#10094;</button>
@@ -274,6 +350,11 @@
         <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
         <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
       </div>
+      <div class="flex justify-center mt-6">
+        <a href="https://flickr.com/photos/atiq-bro" target="_blank" class="inline-block px-6 py-2 bg-blue-600 hover:bg-green-600 text-white rounded-full font-semibold transition">
+          See Full Photography Portfolio <i class="fab fa-flickr ml-2"></i>
+        </a>
+      </div>
     </div>
     <script>
       const imgList = [
@@ -283,24 +364,38 @@
       let currentSlide = 0;
       const sliderImg = document.querySelector('.slide img');
       const dots = document.querySelectorAll('.slider-dot');
+      let autoInterval;
       function showSlide() {
         sliderImg.src = imgList[currentSlide];
         dots.forEach(dot => dot.classList.remove('bg-green-600'));
         dots[currentSlide].classList.add('bg-green-600');
       }
+      function autoSlide() {
+        autoInterval = setInterval(() => {
+          currentSlide = (currentSlide + 1) % imgList.length;
+          showSlide();
+        }, 3500);
+      }
       showSlide();
+      autoSlide();
       document.querySelector('.next').onclick = () => {
+        clearInterval(autoInterval);
         currentSlide = (currentSlide + 1) % imgList.length;
         showSlide();
+        autoSlide();
       };
       document.querySelector('.prev').onclick = () => {
+        clearInterval(autoInterval);
         currentSlide = (currentSlide - 1 + imgList.length) % imgList.length;
         showSlide();
+        autoSlide();
       };
       dots.forEach((dot, idx) => {
         dot.onclick = () => {
+          clearInterval(autoInterval);
           currentSlide = idx;
           showSlide();
+          autoSlide();
         };
       });
     </script>
