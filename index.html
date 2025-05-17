@@ -24,12 +24,12 @@
       height: 100vh;
       top: 0; left: 0;
       z-index: -1;
-      opacity: 0.5;
+      opacity: 0.55;
       pointer-events: none;
       transition: opacity .4s;
     }
     .glass { background: rgba(28,32,42,0.80); border-radius: 1rem; box-shadow: 0 8px 40px 0 rgba(10,20,40,0.17);}
-    .glass-hero { background: rgba(36,44,66,0.25); border-radius: 1rem; }
+    .glass-hero { background: rgba(36,44,66,0.16); border-radius: 1rem; } /* More transparent */
     .glass-sm { background: rgba(40,50,64,0.88); border-radius: .7rem; }
     .section-title {
       font-family: 'Playfair Display', serif;
@@ -52,7 +52,6 @@
     .nav-active, .nav-link.active { color: #65d6ff !important; border-bottom: 2.5px solid #65d6ff !important; font-weight: bold;}
     .nav-link:hover { color: #65d6ff; }
     .flickr-btn { background: #ff0084; }
-    /* SLIDER CSS */
     .slider-wrapper {
       width: 100%;
       max-width: 1100px;
@@ -75,7 +74,6 @@
       border-radius: 1rem;
       background: #223;
       user-select: none;
-      pointer-events: none;
     }
     @media (min-width: 640px) {
       .slider-image { height: 420px; }
@@ -86,6 +84,13 @@
     }
     .slider-dot {
       transition: background .2s;
+      width: 12px;
+      height: 12px;
+      margin: 0 4px;
+      border-radius: 50%;
+      display: inline-block;
+      background: #5b6578;
+      cursor: pointer;
     }
     @media (max-width:640px) {
       .section-title { font-size: 1.3rem;}
@@ -152,19 +157,19 @@
   <!-- Experience -->
   <section id="experience" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Experience</h2>
-    <div class="grid gap-6 md:grid-cols-1">
+    <div class="grid gap-6 md:grid-cols-2">
       <!-- Beagle Systems -->
       <div class="glass-sm p-5 mb-2">
         <div class="flex items-center justify-between flex-wrap">
-          <div class="w-1/3 min-w-[160px] text-left">
+          <div class="w-1/3 min-w-[120px] text-left">
             <h3 class="font-bold text-lg text-cyan-300">
               <a href="https://www.beaglesystems.com/" target="_blank" class="hover:underline">Beagle Systems</a>
             </h3>
           </div>
-          <div class="w-1/3 min-w-[150px] text-center">
+          <div class="w-1/3 min-w-[100px] text-center">
             <div class="text-sm text-gray-300 font-semibold">Drone Pilot & Technician</div>
           </div>
-          <div class="w-1/3 min-w-[110px] text-right">
+          <div class="w-1/3 min-w-[90px] text-right">
             <span class="text-xs text-gray-300">May 2025</span>
           </div>
         </div>
@@ -184,15 +189,15 @@
       <!-- TOPseven -->
       <div class="glass-sm p-5 mb-2">
         <div class="flex items-center justify-between flex-wrap">
-          <div class="w-1/3 min-w-[160px] text-left">
+          <div class="w-1/3 min-w-[120px] text-left">
             <h3 class="font-bold text-lg text-cyan-300">
               <a href="https://www.topseven.com" target="_blank" class="hover:underline">TOPseven GmbH</a>
             </h3>
           </div>
-          <div class="w-1/3 min-w-[150px] text-center">
+          <div class="w-1/3 min-w-[100px] text-center">
             <div class="text-sm text-gray-300 font-semibold">Werkstudent (Drone R&D)</div>
           </div>
-          <div class="w-1/3 min-w-[110px] text-right">
+          <div class="w-1/3 min-w-[90px] text-right">
             <span class="text-xs text-gray-300">Oct 2024 – Mar 2025</span>
           </div>
         </div>
@@ -216,15 +221,15 @@
       <!-- Robot Aviation -->
       <div class="glass-sm p-5 mb-2">
         <div class="flex items-center justify-between flex-wrap">
-          <div class="w-1/3 min-w-[160px] text-left">
+          <div class="w-1/3 min-w-[120px] text-left">
             <h3 class="font-bold text-lg text-cyan-300">
               <a href="https://www.robotaviation.com" target="_blank" class="hover:underline">Robot Aviation</a>
             </h3>
           </div>
-          <div class="w-1/3 min-w-[150px] text-center">
+          <div class="w-1/3 min-w-[100px] text-center">
             <div class="text-sm text-gray-300 font-semibold">Unmanned Systems Intern</div>
           </div>
-          <div class="w-1/3 min-w-[110px] text-right">
+          <div class="w-1/3 min-w-[90px] text-right">
             <span class="text-xs text-gray-300">Nov 2023 – Jun 2024</span>
           </div>
         </div>
@@ -253,15 +258,15 @@
       <!-- Home & Marine -->
       <div class="glass-sm p-5 mb-2">
         <div class="flex items-center justify-between flex-wrap">
-          <div class="w-1/3 min-w-[160px] text-left">
+          <div class="w-1/3 min-w-[120px] text-left">
             <h3 class="font-bold text-lg text-cyan-300">
               <a href="https://home-marine.com/" target="_blank" class="hover:underline">Home & Marine</a>
             </h3>
           </div>
-          <div class="w-1/3 min-w-[150px] text-center">
+          <div class="w-1/3 min-w-[100px] text-center">
             <div class="text-sm text-gray-300 font-semibold">Network Technician</div>
           </div>
-          <div class="w-1/3 min-w-[110px] text-right">
+          <div class="w-1/3 min-w-[90px] text-right">
             <span class="text-xs text-gray-300">Jul 2024 – Sept 2024</span>
           </div>
         </div>
@@ -276,13 +281,13 @@
       <!-- CodeFix IT -->
       <div class="glass-sm p-5 mb-2">
         <div class="flex items-center justify-between flex-wrap">
-          <div class="w-1/3 min-w-[160px] text-left">
+          <div class="w-1/3 min-w-[120px] text-left">
             <h3 class="font-bold text-lg text-cyan-300">CodeFix IT</h3>
           </div>
-          <div class="w-1/3 min-w-[150px] text-center">
+          <div class="w-1/3 min-w-[100px] text-center">
             <div class="text-sm text-gray-300 font-semibold">IT Support Engineer</div>
           </div>
-          <div class="w-1/3 min-w-[110px] text-right">
+          <div class="w-1/3 min-w-[90px] text-right">
             <span class="text-xs text-gray-300">Jan 2018 – Nov 2019</span>
           </div>
         </div>
@@ -303,88 +308,87 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Projects -->
   <section id="projects" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Projects</h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <!-- Compact: Only name & skills/tools -->
       <div class="glass-sm p-5">
-        <h3 class="font-semibold text-cyan-200 mb-2 text-center">Smart Workshop Solution</h3>
-        <div class="flex flex-wrap gap-1 justify-center">
+        <h3 class="font-semibold text-cyan-200 mb-2">Smart Workshop Solution</h3>
+        <div class="flex flex-wrap gap-1">
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">AI Depth Camera</span>
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Augmented Reality</span>
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Python</span>
         </div>
       </div>
       <div class="glass-sm p-5">
-        <h3 class="font-semibold text-cyan-200 mb-2 text-center">Facial Recognition Secured Access</h3>
-        <div class="flex flex-wrap gap-1 justify-center">
+        <h3 class="font-semibold text-cyan-200 mb-2">Facial Recognition Secured Access</h3>
+        <div class="flex flex-wrap gap-1">
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">ESP32</span>
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Machine Learning</span>
         </div>
       </div>
       <div class="glass-sm p-5">
-        <h3 class="font-semibold text-cyan-200 mb-2 text-center">ConBot (Bash)</h3>
-        <div class="flex flex-wrap gap-1 justify-center">
+        <h3 class="font-semibold text-cyan-200 mb-2">ConBot (Bash)</h3>
+        <div class="flex flex-wrap gap-1">
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Bash</span>
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Ardupilot</span>
         </div>
       </div>
       <div class="glass-sm p-5">
-        <h3 class="font-semibold text-cyan-200 mb-2 text-center">Flight Logger</h3>
-        <div class="flex flex-wrap gap-1 justify-center">
+        <h3 class="font-semibold text-cyan-200 mb-2">Flight Logger</h3>
+        <div class="flex flex-wrap gap-1">
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">PHP</span>
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JavaScript</span>
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span>
         </div>
       </div>
       <div class="glass-sm p-5">
-        <h3 class="font-semibold text-cyan-200 mb-2 text-center">IoT Control & Security System</h3>
-        <div class="flex flex-wrap gap-1 justify-center">
+        <h3 class="font-semibold text-cyan-200 mb-2">IoT Control & Security System</h3>
+        <div class="flex flex-wrap gap-1">
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JS</span>
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span>
         </div>
       </div>
       <div class="glass-sm p-5">
-        <h3 class="font-semibold text-cyan-200 mb-2 text-center">IoT Weather Station</h3>
-        <div class="flex flex-wrap gap-1 justify-center">
+        <h3 class="font-semibold text-cyan-200 mb-2">IoT Weather Station</h3>
+        <div class="flex flex-wrap gap-1">
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span>
         </div>
       </div>
       <div class="glass-sm p-5">
-        <h3 class="font-semibold text-cyan-200 mb-2 text-center">Industrial Sorting Machine</h3>
-        <div class="flex flex-wrap gap-1 justify-center">
+        <h3 class="font-semibold text-cyan-200 mb-2">Industrial Sorting Machine</h3>
+        <div class="flex flex-wrap gap-1">
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
         </div>
       </div>
       <div class="glass-sm p-5">
-        <h3 class="font-semibold text-cyan-200 mb-2 text-center">Biometric Attendance System</h3>
-        <div class="flex flex-wrap gap-1 justify-center">
+        <h3 class="font-semibold text-cyan-200 mb-2">Biometric Attendance System</h3>
+        <div class="flex flex-wrap gap-1">
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">PHP</span>
         </div>
       </div>
       <div class="glass-sm p-5">
-        <h3 class="font-semibold text-cyan-200 mb-2 text-center">GSM Controlled Irrigation</h3>
-        <div class="flex flex-wrap gap-1 justify-center">
+        <h3 class="font-semibold text-cyan-200 mb-2">GSM Controlled Irrigation</h3>
+        <div class="flex flex-wrap gap-1">
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
         </div>
       </div>
       <div class="glass-sm p-5">
-        <h3 class="font-semibold text-cyan-200 mb-2 text-center">Smart Home Automation</h3>
-        <div class="flex flex-wrap gap-1 justify-center">
+        <h3 class="font-semibold text-cyan-200 mb-2">Smart Home Automation</h3>
+        <div class="flex flex-wrap gap-1">
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span>
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JS</span>
         </div>
       </div>
       <div class="glass-sm p-5">
-        <h3 class="font-semibold text-cyan-200 mb-2 text-center">Automatic Irrigation System</h3>
-        <div class="flex flex-wrap gap-1 justify-center">
+        <h3 class="font-semibold text-cyan-200 mb-2">Automatic Irrigation System</h3>
+        <div class="flex flex-wrap gap-1">
           <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
         </div>
       </div>
@@ -397,19 +401,19 @@
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
       <div class="glass-sm p-6 text-center">
         <h4 class="text-base font-extrabold mb-1 text-cyan-300">Programming</h4>
-        <p class="text-sm font-semibold text-gray-300">C/C++, Python, Java, JavaScript, PHP, MySQL, Bash, HTML, CSS</p>
+        <p class="text-sm font-semibold text-gray-300">C/C++, Python, Java, JavaScript, PHP, MySQL, Bash, MATLAB</p>
       </div>
       <div class="glass-sm p-6 text-center">
-        <h4 class="text-base font-extrabold mb-1 text-cyan-300">Drone Tech</h4>
-        <p class="text-sm font-semibold text-gray-300">Pixhawk, CubePilot, STM32, Raspberry Pi, NVIDIA Jetson Nano, Mission Planner, QGroundControl, PX4, SITL, Drone Piloting, Assembly</p>
+        <h4 class="text-base font-extrabold mb-1 text-cyan-300">Drone & Robotics</h4>
+        <p class="text-sm font-semibold text-gray-300">Pixhawk, CubePilot, STM32, Raspberry Pi, NVIDIA Jetson Nano, Mission Planner, QGroundControl, PX4, SITL, Ardupilot</p>
       </div>
       <div class="glass-sm p-6 text-center">
-        <h4 class="text-base font-extrabold mb-1 text-cyan-300">Networking</h4>
-        <p class="text-sm font-semibold text-gray-300">Linux, IP Networking, Bash Scripting, Security Protocols, Remote Management Tools, Ticketing Systems, NAS, Cloud, VPN</p>
+        <h4 class="text-base font-extrabold mb-1 text-cyan-300">Networking & Embedded</h4>
+        <p class="text-sm font-semibold text-gray-300">Linux, IP Networking, Bash Scripting, Security Protocols, Arduino, ESP32, Firmware, Embedded Systems, 3D Modeling/Printing</p>
       </div>
       <div class="glass-sm p-6 text-center">
-        <h4 class="text-base font-extrabold mb-1 text-cyan-300">Embedded Systems & IoT</h4>
-        <p class="text-sm font-semibold text-gray-300">Arduino, ESP32, Firmware, Embedded C, Sensors, Actuators, 3D Modeling/Printing</p>
+        <h4 class="text-base font-extrabold mb-1 text-cyan-300">Web & Tools</h4>
+        <p class="text-sm font-semibold text-gray-300">HTML, CSS, JavaScript, PHP, MySQL, Git, Docker, Fusion 360, Microsoft Office</p>
       </div>
     </div>
   </section>
@@ -417,26 +421,33 @@
   <!-- Photography Gallery -->
   <section id="photography-gallery" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Photography Gallery</h2>
-    <div class="glass max-w-5xl mx-auto p-4">
+    <div class="glass max-w-4xl mx-auto p-4">
       <div class="slider-wrapper">
         <div class="slider-inner" id="slider-inner">
-          <img src="1.jpg" alt="Slide 1" class="slider-image">
-          <img src="2.jpg" alt="Slide 2" class="slider-image">
-          <img src="3.jpg" alt="Slide 3" class="slider-image">
-          <img src="4.jpg" alt="Slide 4" class="slider-image">
-          <img src="5.jpg" alt="Slide 5" class="slider-image">
-          <img src="6.jpg" alt="Slide 6" class="slider-image">
-          <img src="7.jpg" alt="Slide 7" class="slider-image">
-          <img src="8.jpg" alt="Slide 8" class="slider-image">
-          <img src="9.jpg" alt="Slide 9" class="slider-image">
-          <img src="10.jpg" alt="Slide 10" class="slider-image">
-          <img src="11.jpg" alt="Slide 11" class="slider-image">
-          <img src="12.jpg" alt="Slide 12" class="slider-image">
+          <img src="1.jpg" alt="Slide 1" class="slider-image" draggable="false">
         </div>
-        <button class="absolute top-1/2 left-3 -translate-y-1/2 bg-gray-900/90 rounded-full shadow text-3xl text-gray-300 hover:bg-cyan-700 hover:text-white p-2 z-10" id="slider-prev">&#10094;</button>
-        <button class="absolute top-1/2 right-3 -translate-y-1/2 bg-gray-900/90 rounded-full shadow text-3xl text-gray-300 hover:bg-cyan-700 hover:text-white p-2 z-10" id="slider-next">&#10095;</button>
+        <button id="prev-slide" class="absolute top-1/2 -translate-y-1/2 left-2 z-10 bg-gray-900/90 rounded-full shadow text-3xl text-gray-300 hover:bg-cyan-700 hover:text-white p-2">
+          &#10094;
+        </button>
+        <button id="next-slide" class="absolute top-1/2 -translate-y-1/2 right-2 z-10 bg-gray-900/90 rounded-full shadow text-3xl text-gray-300 hover:bg-cyan-700 hover:text-white p-2">
+          &#10095;
+        </button>
+        <div class="flex justify-center mt-4">
+          <!-- 12 dots -->
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+        </div>
       </div>
-      <div class="flex justify-center mt-4 space-x-2" id="slider-dots"></div>
       <div class="flex justify-center mt-6">
         <a href="http://flickr.com/photos/atiq-bro" target="_blank" class="inline-block px-6 py-2 flickr-btn hover:bg-[#00bcd4] text-white rounded-full font-bold text-lg transition">
           See Full Photography Portfolio <i class="fab fa-flickr ml-2"></i>
@@ -444,36 +455,42 @@
       </div>
     </div>
     <script>
-      const sliderInner = document.getElementById('slider-inner');
-      const sliderImages = sliderInner.querySelectorAll('.slider-image');
-      const dotsContainer = document.getElementById('slider-dots');
-      let current = 0;
-      function updateSlider(idx) {
-        sliderInner.style.transform = `translateX(-${idx * 100}%)`;
-        [...dotsContainer.children].forEach(dot => dot.classList.remove('active'));
-        if (dotsContainer.children[idx]) dotsContainer.children[idx].classList.add('active');
+      // Simple, single-image-at-a-time slider
+      const imgList = [
+        '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg',
+        '7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg'
+      ];
+      let currentSlide = 0;
+      const sliderImg = document.querySelector('.slider-image');
+      const dots = document.querySelectorAll('.slider-dot');
+      function showSlide(idx) {
+        sliderImg.src = imgList[idx];
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[idx].classList.add('active');
       }
-      function goto(idx) {
-        current = (idx + sliderImages.length) % sliderImages.length;
-        updateSlider(current);
-      }
-      // dots
-      sliderImages.forEach((_, i) => {
-        const dot = document.createElement('span');
-        dot.className = 'slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer mx-1';
-        dot.onclick = () => { goto(i); resetAuto(); };
-        dotsContainer.appendChild(dot);
+      // Init
+      showSlide(currentSlide);
+      // Dots click
+      dots.forEach((dot, idx) => {
+        dot.onclick = () => {
+          currentSlide = idx;
+          showSlide(currentSlide);
+        };
       });
-      updateSlider(0);
-      // next/prev
-      document.getElementById('slider-next').onclick = function() { goto(current+1); resetAuto(); }
-      document.getElementById('slider-prev').onclick = function() { goto(current-1); resetAuto(); }
-      // auto-slide
-      let autoSlide = setInterval(() => goto(current+1), 3500);
-      function resetAuto() {
-        clearInterval(autoSlide);
-        autoSlide = setInterval(() => goto(current+1), 3500);
-      }
+      // Buttons
+      document.getElementById('next-slide').onclick = () => {
+        currentSlide = (currentSlide + 1) % imgList.length;
+        showSlide(currentSlide);
+      };
+      document.getElementById('prev-slide').onclick = () => {
+        currentSlide = (currentSlide - 1 + imgList.length) % imgList.length;
+        showSlide(currentSlide);
+      };
+      // Auto play
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % imgList.length;
+        showSlide(currentSlide);
+      }, 3500);
     </script>
   </section>
 
@@ -510,8 +527,11 @@
       </div>
       <div class="glass-sm p-6 text-center">
         <h3 class="font-bold mb-1 text-cyan-300">Freelance Photographer</h3>
-        <div class="text-sm text-gray-400">Capturing tech innovations and landscapes<br>
-          <a href="http://flickr.com/photos/atiq-bro" target="_blank" class="flickr-btn inline-block px-3 py-1 rounded ml-2 hover:bg-cyan-500 transition">Flickr Portfolio</a>
+        <div class="text-sm text-gray-400">Capturing tech innovations and landscapes</div>
+        <div class="mt-3">
+          <a href="http://flickr.com/photos/atiq-bro" target="_blank" class="inline-block px-6 py-2 flickr-btn hover:bg-[#00bcd4] text-white rounded-full font-bold text-base transition">
+            See Full Photography Portfolio <i class="fab fa-flickr ml-2"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -522,28 +542,22 @@
     <h2 class="section-title">References</h2>
     <div class="grid gap-6 md:grid-cols-3">
       <div class="glass-sm p-6 text-center">
-        <h4 class="font-bold text-lg mb-1 text-cyan-200">
-          <a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:underline">Niklas Nyroth</a>
-        </h4>
+        <h4 class="font-bold text-lg mb-1 text-cyan-200"><a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:underline">Niklas Nyroth</a></h4>
         <div class="text-gray-200">CEO, <a href="https://www.robotaviation.com" target="_blank" class="hover:underline">Robot Aviation AS</a></div>
-        <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4790652502" class="primary-accent">+47 90652502</a></div>
-        <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:niklas.nyroth@robotaviation.com" class="primary-accent">niklas.nyroth@robotaviation.com</a></div>
+        <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4790652502" class="text-cyan-400">+47 90652502</a></div>
+        <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:niklas.nyroth@robotaviation.com" class="text-cyan-400">niklas.nyroth@robotaviation.com</a></div>
       </div>
       <div class="glass-sm p-6 text-center">
-        <h4 class="font-bold text-lg mb-1 text-cyan-200">
-          <a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:underline">Cem Yolcubal</a>
-        </h4>
-        <div class="text-gray-200">Drone Pilot at <a href="https://www.beaglesystems.com/" target="_blank" class="hover:underline">Beagle Systems</a><br>Formerly at TOPseven GmbH</div>
-        <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4915170551030" class="primary-accent">+49 15170551030</a></div>
-        <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:cem.yolcubal@topseven.com" class="primary-accent">cem.yolcubal@topseven.com</a></div>
+        <h4 class="font-bold text-lg mb-1 text-cyan-200"><a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:underline">Cem Yolcubal</a></h4>
+        <div class="text-gray-200">Drone Pilot at Beagle Systems<br>Formerly at TOPseven GmbH</div>
+        <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4915170551030" class="text-cyan-400">+49 15170551030</a></div>
+        <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:cem.yolcubal@topseven.com" class="text-cyan-400">cem.yolcubal@topseven.com</a></div>
       </div>
       <div class="glass-sm p-6 text-center">
-        <h4 class="font-bold text-lg mb-1 text-cyan-200">
-          <a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:underline">Farzan M. Noori</a>
-        </h4>
+        <h4 class="font-bold text-lg mb-1 text-cyan-200"><a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:underline">Farzan M. Noori</a></h4>
         <div class="text-gray-200">Researcher, <a href="https://www.uio.no" target="_blank" class="hover:underline">University of Oslo</a></div>
-        <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4791255115" class="primary-accent">+47 912 55 115</a></div>
-        <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:farzanmn@ifi.uio.no" class="primary-accent">farzanmn@ifi.uio.no</a></div>
+        <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4791255115" class="text-cyan-400">+47 912 55 115</a></div>
+        <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:farzanmn@ifi.uio.no" class="text-cyan-400">farzanmn@ifi.uio.no</a></div>
       </div>
     </div>
   </section>
@@ -564,14 +578,15 @@
   <footer class="text-center text-gray-600 text-xs py-5 font-semibold bg-transparent">
     &copy; 2024 Atiqur Rahman. All rights reserved.
   </footer>
-
   <!-- Active NavBar Highlight Script -->
   <script>
+    // Section-to-link mapping
     const sectionIds = [
       'hero','experience','projects','skills','photography-gallery',
       'education','community','references','contact'
     ];
     const navLinks = document.querySelectorAll('.nav-link');
+
     function setActiveNav() {
       let scroll = window.scrollY + 120;
       let activeIdx = 0;
