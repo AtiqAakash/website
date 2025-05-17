@@ -18,19 +18,19 @@
     }
     .playfair { font-family: 'Playfair Display', serif; }
     .parallax-bg {
-      background: url('background.jpg') center center / cover no-repeat fixed;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') center center / cover no-repeat fixed;
       position: fixed;
       width: 100vw;
       height: 100vh;
       top: 0; left: 0;
       z-index: -1;
-      opacity: 0.20;
+      opacity: 0.45;
       pointer-events: none;
       transition: opacity .4s;
     }
-    .glass { background: rgba(28,32,42,0.78); border-radius: 1rem; box-shadow: 0 8px 40px 0 rgba(10,20,40,0.17);}
-    .glass-hero { background: rgba(36,44,66,0.50); border-radius: 1rem; }
-    .glass-sm { background: rgba(40,50,64,0.84); border-radius: .7rem; }
+    .glass { background: rgba(28,32,42,0.80); border-radius: 1rem; box-shadow: 0 8px 40px 0 rgba(10,20,40,0.17);}
+    .glass-hero { background: rgba(36,44,66,0.62); border-radius: 1rem; }
+    .glass-sm { background: rgba(40,50,64,0.88); border-radius: .7rem; }
     .section-title {
       font-family: 'Playfair Display', serif;
       font-weight: 900;
@@ -119,7 +119,7 @@
       <!-- Beagle Systems -->
       <div class="glass-sm p-5">
         <div class="flex items-center justify-between mb-2">
-          <h3 class="font-bold text-lg text-cyan-300">Beagle Systems</h3>
+          <h3 class="font-bold text-lg text-cyan-300"><a href="https://www.beagle.systems/" target="_blank" class="hover:underline">Beagle Systems</a></h3>
           <span class="text-xs text-gray-300">May 2025</span>
         </div>
         <div class="text-sm text-gray-300 mb-1">Drone Pilot & Technician</div>
@@ -134,7 +134,7 @@
       <!-- TOPseven -->
       <div class="glass-sm p-5">
         <div class="flex items-center justify-between mb-2">
-          <h3 class="font-bold text-lg text-cyan-300">TOPseven GmbH</h3>
+          <h3 class="font-bold text-lg text-cyan-300"><a href="https://www.topseven.com" target="_blank" class="hover:underline">TOPseven GmbH</a></h3>
           <span class="text-xs text-gray-300">Oct 2024 – Mar 2025</span>
         </div>
         <div class="text-sm text-gray-300 mb-1">Werkstudent (Drone R&D)</div>
@@ -155,7 +155,7 @@
       <!-- Robot Aviation -->
       <div class="glass-sm p-5">
         <div class="flex items-center justify-between mb-2">
-          <h3 class="font-bold text-lg text-cyan-300">Robot Aviation</h3>
+          <h3 class="font-bold text-lg text-cyan-300"><a href="https://www.robotaviation.com" target="_blank" class="hover:underline">Robot Aviation</a></h3>
           <span class="text-xs text-gray-300">Nov 2023 – Jun 2024</span>
         </div>
         <div class="text-sm text-gray-300 mb-1">Unmanned Systems Intern</div>
@@ -179,7 +179,7 @@
       <!-- Home & Marine -->
       <div class="glass-sm p-5">
         <div class="flex items-center justify-between mb-2">
-          <h3 class="font-bold text-lg text-cyan-300">Home & Marine</h3>
+          <h3 class="font-bold text-lg text-cyan-300"><a href="https://home-marine.com/" target="_blank" class="hover:underline">Home & Marine</a></h3>
           <span class="text-xs text-gray-300">Jul 2024 – Sept 2024</span>
         </div>
         <div class="text-sm text-gray-300 mb-1">Network Technician</div>
@@ -220,17 +220,28 @@
   <section id="projects" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Projects</h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Smart Workshop Solution</h3><div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">AI Depth Camera</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Augmented Reality</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Python</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Facial Recognition Secured Access</h3><div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">ESP32</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Machine Learning</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">ConBot (Bash)</h3><div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Bash</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Ardupilot</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Flight Logger</h3><div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">PHP</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JavaScript</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">IoT Control & Security System</h3><div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JS</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">IoT Weather Station</h3><div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Industrial Sorting Machine</h3><div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Biometric Attendance System</h3><div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">PHP</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">GSM Controlled Irrigation</h3><div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Smart Home Automation</h3><div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JS</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Automatic Irrigation System</h3><div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Smart Workshop Solution</h3>
+        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">AI Depth Camera</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Augmented Reality</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Python</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Facial Recognition Secured Access</h3>
+        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">ESP32</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Machine Learning</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">ConBot (Bash)</h3>
+        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Bash</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Ardupilot</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Flight Logger</h3>
+        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">PHP</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JavaScript</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">IoT Control & Security System</h3>
+        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JS</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">IoT Weather Station</h3>
+        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Industrial Sorting Machine</h3>
+        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Biometric Attendance System</h3>
+        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">PHP</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">GSM Controlled Irrigation</h3>
+        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Smart Home Automation</h3>
+        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JS</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Automatic Irrigation System</h3>
+        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span></div></div>
     </div>
   </section>
 
@@ -257,22 +268,45 @@
     </div>
   </section>
 
-  <!-- Photography Gallery -->
-  <section id="photography-gallery" class="max-w-6xl mx-auto py-12 px-2">
+  <!-- Photography Gallery (Modern Slider) -->
+  <section id="photography-gallery" class="max-w-7xl mx-auto py-12 px-2">
     <h2 class="section-title">Photography Gallery</h2>
-    <div class="glass max-w-4xl mx-auto p-4">
-      <div class="relative rounded-xl overflow-hidden">
-        <div class="slides flex transition-transform duration-500" style="width:100%;">
-          <div class="slide w-full"><img id="gallery-img" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" loading="lazy" class="w-full object-cover h-[340px] sm:h-[500px] bg-gray-700 rounded-lg" alt="Slide"></div>
+    <div class="glass mx-auto px-2 py-5" style="max-width:1100px;">
+      <div class="relative overflow-hidden">
+        <div id="photo-slider" class="flex transition-transform duration-500 ease-[cubic-bezier(.77,0,.175,1)]" style="width:1200%;">
+          <div class="slider-photo shrink-0 w-full"><img src="1.jpg" alt="Slide 1" class="rounded-xl w-full object-cover h-[270px] md:h-[440px]"></div>
+          <div class="slider-photo shrink-0 w-full"><img src="2.jpg" alt="Slide 2" class="rounded-xl w-full object-cover h-[270px] md:h-[440px]"></div>
+          <div class="slider-photo shrink-0 w-full"><img src="3.jpg" alt="Slide 3" class="rounded-xl w-full object-cover h-[270px] md:h-[440px]"></div>
+          <div class="slider-photo shrink-0 w-full"><img src="4.jpg" alt="Slide 4" class="rounded-xl w-full object-cover h-[270px] md:h-[440px]"></div>
+          <div class="slider-photo shrink-0 w-full"><img src="5.jpg" alt="Slide 5" class="rounded-xl w-full object-cover h-[270px] md:h-[440px]"></div>
+          <div class="slider-photo shrink-0 w-full"><img src="6.jpg" alt="Slide 6" class="rounded-xl w-full object-cover h-[270px] md:h-[440px]"></div>
+          <div class="slider-photo shrink-0 w-full"><img src="7.jpg" alt="Slide 7" class="rounded-xl w-full object-cover h-[270px] md:h-[440px]"></div>
+          <div class="slider-photo shrink-0 w-full"><img src="8.jpg" alt="Slide 8" class="rounded-xl w-full object-cover h-[270px] md:h-[440px]"></div>
+          <div class="slider-photo shrink-0 w-full"><img src="9.jpg" alt="Slide 9" class="rounded-xl w-full object-cover h-[270px] md:h-[440px]"></div>
+          <div class="slider-photo shrink-0 w-full"><img src="10.jpg" alt="Slide 10" class="rounded-xl w-full object-cover h-[270px] md:h-[440px]"></div>
+          <div class="slider-photo shrink-0 w-full"><img src="11.jpg" alt="Slide 11" class="rounded-xl w-full object-cover h-[270px] md:h-[440px]"></div>
+          <div class="slider-photo shrink-0 w-full"><img src="12.jpg" alt="Slide 12" class="rounded-xl w-full object-cover h-[270px] md:h-[440px]"></div>
         </div>
-        <div class="absolute inset-0 flex items-center justify-between px-2">
-          <button class="slider-button prev bg-gray-900/90 rounded-full shadow text-3xl text-gray-300 hover:bg-cyan-700 hover:text-white p-2">&#10094;</button>
-          <button class="slider-button next bg-gray-900/90 rounded-full shadow text-3xl text-gray-300 hover:bg-cyan-700 hover:text-white p-2">&#10095;</button>
-        </div>
-        <div class="flex justify-center mt-2 space-x-2">
-          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
-          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
-          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
+        <!-- Arrow Buttons -->
+        <button id="photo-prev" class="absolute top-1/2 left-[-40px] transform -translate-y-1/2 bg-gray-900/70 hover:bg-cyan-600 transition text-4xl text-white rounded-full shadow p-2 hidden md:block z-10" aria-label="Prev">&#10094;</button>
+        <button id="photo-next" class="absolute top-1/2 right-[-40px] transform -translate-y-1/2 bg-gray-900/70 hover:bg-cyan-600 transition text-4xl text-white rounded-full shadow p-2 hidden md:block z-10" aria-label="Next">&#10095;</button>
+        <!-- On mobile, show smaller arrows inside -->
+        <button id="photo-prev-mob" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-900/80 hover:bg-cyan-600 transition text-2xl text-white rounded-full shadow p-1 md:hidden z-10" aria-label="Prev">&#10094;</button>
+        <button id="photo-next-mob" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-900/80 hover:bg-cyan-600 transition text-2xl text-white rounded-full shadow p-1 md:hidden z-10" aria-label="Next">&#10095;</button>
+        <!-- Dots -->
+        <div class="flex justify-center mt-4 space-x-2">
+          <span class="slider-dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
         </div>
         <div class="flex justify-center mt-6">
           <a href="http://flickr.com/photos/atiq-bro" target="_blank" class="inline-block px-6 py-2 flickr-btn hover:bg-[#00bcd4] text-white rounded-full font-bold text-lg transition">
@@ -282,30 +316,69 @@
       </div>
     </div>
     <script>
-      // Example gallery, use your own image URLs for a real gallery
-      const galleryImgs = [
-        'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80'
-      ];
-      let galleryIdx = 0;
-      const imgElem = document.getElementById('gallery-img');
+      // --- Slider Setup ---
+      const numSlides = 12;
+      const slider = document.getElementById('photo-slider');
       const dots = document.querySelectorAll('.slider-dot');
-      function showGallerySlide(idx) {
-        imgElem.src = galleryImgs[idx];
-        dots.forEach((d,i)=>d.classList.toggle('bg-cyan-600',i===idx));
+      let current = 0;
+      let sliderInterval;
+
+      function updateSlider() {
+        slider.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach((dot, i) =>
+          dot.classList.toggle('bg-cyan-500', i === current)
+        );
+        dots.forEach((dot, i) =>
+          dot.classList.toggle('bg-gray-400', i !== current)
+        );
       }
-      document.querySelector('.next').onclick = () => {
-        galleryIdx = (galleryIdx+1)%galleryImgs.length;
-        showGallerySlide(galleryIdx);
-      };
-      document.querySelector('.prev').onclick = () => {
-        galleryIdx = (galleryIdx-1+galleryImgs.length)%galleryImgs.length;
-        showGallerySlide(galleryIdx);
-      };
-      dots.forEach((dot,i)=>dot.onclick=()=>{galleryIdx=i;showGallerySlide(galleryIdx);});
-      setInterval(()=>{ galleryIdx=(galleryIdx+1)%galleryImgs.length; showGallerySlide(galleryIdx); }, 3500);
-      showGallerySlide(0);
+
+      function goTo(idx) {
+        current = idx;
+        updateSlider();
+      }
+
+      function nextSlide() {
+        current = (current + 1) % numSlides;
+        updateSlider();
+      }
+      function prevSlide() {
+        current = (current - 1 + numSlides) % numSlides;
+        updateSlider();
+      }
+
+      // Controls for desktop
+      document.getElementById('photo-next').onclick = () => { nextSlide(); resetInterval(); };
+      document.getElementById('photo-prev').onclick = () => { prevSlide(); resetInterval(); };
+      // Controls for mobile
+      document.getElementById('photo-next-mob').onclick = () => { nextSlide(); resetInterval(); };
+      document.getElementById('photo-prev-mob').onclick = () => { prevSlide(); resetInterval(); };
+      // Dots
+      dots.forEach((dot, i) => {
+        dot.onclick = () => { goTo(i); resetInterval(); }
+      });
+
+      function startInterval() {
+        sliderInterval = setInterval(nextSlide, 2700);
+      }
+      function resetInterval() {
+        clearInterval(sliderInterval);
+        startInterval();
+      }
+      // Responsive: show/hide right arrows based on screen
+      function checkButtons() {
+        const isMobile = window.innerWidth < 768;
+        document.getElementById('photo-next').style.display = isMobile ? "none" : "";
+        document.getElementById('photo-prev').style.display = isMobile ? "none" : "";
+        document.getElementById('photo-next-mob').style.display = isMobile ? "" : "none";
+        document.getElementById('photo-prev-mob').style.display = isMobile ? "" : "none";
+      }
+      window.addEventListener('resize', checkButtons);
+
+      // Init
+      checkButtons();
+      updateSlider();
+      startInterval();
     </script>
   </section>
 
@@ -342,56 +415,57 @@
       </div>
       <div class="glass-sm p-6 text-center">
         <h3 class="font-bold mb-1 text-cyan-300">Freelance Photographer</h3>
-        <div class="text-sm text-gray-400">Capturing tech innovations and landscapes.<br>
-        <a href="http://flickr.com/photos/atiq-bro" target="_blank" class="text-cyan-400 hover:underline">See full photography portfolio</a></div>
+        <div class="text-sm text-gray-400">
+          Capturing tech innovations and landscapes<br>
+          <a href="http://flickr.com/photos/atiq-bro" target="_blank" class="text-cyan-400 hover:underline text-sm font-bold">See Full Photography Portfolio</a>
+        </div>
       </div>
     </div>
   </section>
 
-<!-- References -->
-<section id="references" class="max-w-6xl mx-auto py-12 px-2">
-  <h2 class="section-title">References</h2>
-  <div class="grid gap-6 md:grid-cols-3">
-    <div class="glass-sm p-6 text-center">
-      <h4 class="font-bold text-lg mb-1 text-cyan-300 flex items-center justify-center gap-2">
-        <a href="https://www.linkedin.com/in/niklas-nyroth/" target="_blank" class="hover:underline flex items-center gap-2">
-          Niklas Nyroth <i class="fab fa-linkedin text-[#0A66C2]"></i>
-        </a>
-      </h4>
-      <div class="text-gray-200">
-        CEO, <a href="https://www.robotaviation.com" target="_blank" class="hover:underline text-cyan-300">Robot Aviation AS</a>
+  <!-- References -->
+  <section id="references" class="max-w-6xl mx-auto py-12 px-2">
+    <h2 class="section-title">References</h2>
+    <div class="grid gap-6 md:grid-cols-3">
+      <div class="glass-sm p-6 text-center">
+        <h4 class="font-bold text-lg mb-1 text-cyan-300 flex items-center justify-center gap-2">
+          <a href="https://www.linkedin.com/in/niklas-nyroth/" target="_blank" class="hover:underline flex items-center gap-2">
+            Niklas Nyroth <i class="fab fa-linkedin text-[#0A66C2]"></i>
+          </a>
+        </h4>
+        <div class="text-gray-200">
+          CEO, <a href="https://www.robotaviation.com" target="_blank" class="hover:underline text-cyan-300">Robot Aviation AS</a>
+        </div>
+        <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4790652502" class="text-cyan-400">+47 90652502</a></div>
+        <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:niklas.nyroth@robotaviation.com" class="text-cyan-400">niklas.nyroth@robotaviation.com</a></div>
       </div>
-      <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4790652502" class="text-cyan-400">+47 90652502</a></div>
-      <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:niklas.nyroth@robotaviation.com" class="text-cyan-400">niklas.nyroth@robotaviation.com</a></div>
-    </div>
-    <div class="glass-sm p-6 text-center">
-      <h4 class="font-bold text-lg mb-1 text-cyan-300 flex items-center justify-center gap-2">
-        <a href="https://www.linkedin.com/in/cem-yolcubal-41b3471a7/" target="_blank" class="hover:underline flex items-center gap-2">
-          Cem Yolcubal <i class="fab fa-linkedin text-[#0A66C2]"></i>
-        </a>
-      </h4>
-      <div class="text-gray-200">
-        Drone Pilot at <a href="https://www.beagle.systems/" target="_blank" class="hover:underline text-cyan-300">Beagle Systems</a><br>
-        Formerly at <a href="https://www.topseven.com" target="_blank" class="hover:underline text-cyan-300">TOPseven GmbH</a>
+      <div class="glass-sm p-6 text-center">
+        <h4 class="font-bold text-lg mb-1 text-cyan-300 flex items-center justify-center gap-2">
+          <a href="https://www.linkedin.com/in/cem-yolcubal-41b3471a7/" target="_blank" class="hover:underline flex items-center gap-2">
+            Cem Yolcubal <i class="fab fa-linkedin text-[#0A66C2]"></i>
+          </a>
+        </h4>
+        <div class="text-gray-200">
+          Drone Pilot at <a href="https://www.beagle.systems/" target="_blank" class="hover:underline text-cyan-300">Beagle Systems</a><br>
+          Formerly at <a href="https://www.topseven.com" target="_blank" class="hover:underline text-cyan-300">TOPseven GmbH</a>
+        </div>
+        <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4915170551030" class="text-cyan-400">+49 15170551030</a></div>
+        <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:cem.yolcubal@topseven.com" class="text-cyan-400">cem.yolcubal@topseven.com</a></div>
       </div>
-      <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4915170551030" class="text-cyan-400">+49 15170551030</a></div>
-      <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:cem.yolcubal@topseven.com" class="text-cyan-400">cem.yolcubal@topseven.com</a></div>
-    </div>
-    <div class="glass-sm p-6 text-center">
-      <h4 class="font-bold text-lg mb-1 text-cyan-300 flex items-center justify-center gap-2">
-        <a href="https://www.linkedin.com/in/farzan-m-noori-55b45847/" target="_blank" class="hover:underline flex items-center gap-2">
-          Farzan M. Noori <i class="fab fa-linkedin text-[#0A66C2]"></i>
-        </a>
-      </h4>
-      <div class="text-gray-200">
-        Researcher, <a href="https://www.uio.no" target="_blank" class="hover:underline text-cyan-300">University of Oslo</a>
+      <div class="glass-sm p-6 text-center">
+        <h4 class="font-bold text-lg mb-1 text-cyan-300 flex items-center justify-center gap-2">
+          <a href="https://www.linkedin.com/in/farzan-m-noori-55b45847/" target="_blank" class="hover:underline flex items-center gap-2">
+            Farzan M. Noori <i class="fab fa-linkedin text-[#0A66C2]"></i>
+          </a>
+        </h4>
+        <div class="text-gray-200">
+          Researcher, <a href="https://www.uio.no" target="_blank" class="hover:underline text-cyan-300">University of Oslo</a>
+        </div>
+        <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4791255115" class="text-cyan-400">+47 912 55 115</a></div>
+        <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:farzanmn@ifi.uio.no" class="text-cyan-400">farzanmn@ifi.uio.no</a></div>
       </div>
-      <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4791255115" class="text-cyan-400">+47 912 55 115</a></div>
-      <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:farzanmn@ifi.uio.no" class="text-cyan-400">farzanmn@ifi.uio.no</a></div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Contact -->
   <section id="contact" class="max-w-6xl mx-auto py-12 px-2">
