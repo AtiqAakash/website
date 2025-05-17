@@ -3,79 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atiqur Rahman | Drone Developer & Embedded Engineer</title>
+  <title>Atiqur Rahman | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: #f7fafd;}
-    .playfair { font-family: 'Playfair Display', serif; }
-    .fixed-bg {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      background: url('background.jpg') center/cover no-repeat;
-      z-index: 0;
-      opacity: 1;
-      pointer-events: none;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #181e29;
+      color: #e0e6ef;
+      min-height: 100vh;
     }
-    .glass { background: rgba(255,255,255,0.75); box-shadow: 0 4px 24px 0 rgba(80,90,120,0.10); border-radius: 1rem; backdrop-filter: blur(0.5px);}
-    .glass-hero { background: rgba(255,255,255,0.3); box-shadow: 0 8px 40px 0 rgba(40,60,80,0.10); border-radius: 1rem; }
+    .playfair { font-family: 'Playfair Display', serif; }
+    .glass { background: rgba(28,32,42,0.78); border-radius: 1rem; box-shadow: 0 8px 40px 0 rgba(10,20,40,0.17);}
+    .glass-hero { background: rgba(36,44,66,0.50); border-radius: 1rem; }
     .section-title {
       font-family: 'Playfair Display', serif;
       font-weight: 900;
-      font-size: 2.3rem;
-      color: #1a213a;
-      line-height: 1.2;
-      text-align: center;
-      margin-bottom: 2.2rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.14),0 1px 0 #fff;
+      font-size: 2.1rem;
+      color: #fff;
+      text-shadow: 0 2px 8px #0d0f14b4;
       letter-spacing: .01em;
+      margin-bottom: 2.2rem;
     }
     .brand-linkedin { color: #0A66C2 !important; }
     .brand-facebook { color: #1877F3 !important; }
     .brand-flickr { color: #ff0084 !important; }
-    .brand-github { color: #171515 !important; }
+    .brand-github { color: #f6f8fa !important; }
     .social-btn { transition: transform 0.2s, box-shadow 0.2s; }
     .social-btn:hover { transform: scale(1.2) rotate(-3deg);}
-    .big-icon { font-size: 2.8rem !important; }
+    .big-icon { font-size: 2.4rem !important; }
+    .nav-link { transition: color .2s, border .2s; }
+    .nav-active, .nav-link.active { color: #65d6ff !important; border-bottom: 2.5px solid #65d6ff !important; font-weight: bold;}
+    .nav-link:hover { color: #65d6ff; }
     .flickr-btn { background: #ff0084; }
+    .glass-sm { background: rgba(40,50,64,0.84); border-radius: .7rem; }
     @media (max-width:640px) {
-      .section-title { font-size: 1.5rem;}
-      .big-icon { font-size: 2rem !important;}
+      .section-title { font-size: 1.3rem;}
+      .big-icon { font-size: 1.6rem !important;}
     }
   </style>
 </head>
-<body class="relative text-gray-900">
-  <div class="fixed-bg"></div>
+<body>
   <!-- Navbar -->
-  <nav class="fixed top-0 w-full bg-white/95 shadow z-20 backdrop-blur">
+  <nav class="fixed top-0 w-full bg-[#171c28e6] shadow z-30 backdrop-blur">
     <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between py-2 px-4">
-      <div class="font-black text-lg md:text-xl text-green-600 tracking-tight playfair">Atiqur Rahman</div>
-      <div class="hidden md:flex gap-5 font-semibold text-gray-800 text-base">
-        <a href="#hero" class="hover:text-green-600 transition">Home</a>
-        <a href="#experience" class="hover:text-green-600 transition">Experience</a>
-        <a href="#projects" class="hover:text-green-600 transition">Projects</a>
-        <a href="#skills" class="hover:text-green-600 transition">Skills</a>
-        <a href="#photography-gallery" class="hover:text-green-600 transition">Photography Gallery</a>
-        <a href="#education" class="hover:text-green-600 transition">Education</a>
-        <a href="#community" class="hover:text-green-600 transition">Community</a>
-        <a href="#references" class="hover:text-green-600 transition">References</a>
-        <a href="#contact" class="hover:text-green-600 transition">Contact</a>
+      <div class="font-black text-lg md:text-xl text-cyan-400 tracking-tight playfair">Atiqur Rahman</div>
+      <div id="nav-links" class="hidden md:flex gap-4 font-semibold text-gray-200 text-base">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#photography-gallery" class="nav-link">Photography Gallery</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#community" class="nav-link">Community</a>
+        <a href="#references" class="nav-link">References</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
-      <button id="menu-btn" class="md:hidden text-2xl text-gray-700 focus:outline-none">
+      <button id="menu-btn" class="md:hidden text-2xl text-gray-200 focus:outline-none">
         <i class="fa fa-bars"></i>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4">
-      <a href="#hero" class="block py-2 hover:text-green-600">Home</a>
-      <a href="#experience" class="block py-2 hover:text-green-600">Experience</a>
-      <a href="#projects" class="block py-2 hover:text-green-600">Projects</a>
-      <a href="#skills" class="block py-2 hover:text-green-600">Skills</a>
-      <a href="#photography-gallery" class="block py-2 hover:text-green-600">Photography Gallery</a>
-      <a href="#education" class="block py-2 hover:text-green-600">Education</a>
-      <a href="#community" class="block py-2 hover:text-green-600">Community</a>
-      <a href="#references" class="block py-2 hover:text-green-600">References</a>
-      <a href="#contact" class="block py-2 hover:text-green-600">Contact</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-[#181e29] border-t border-gray-800 px-4 pb-4">
+      <a href="#hero" class="block py-2 nav-link">Home</a>
+      <a href="#experience" class="block py-2 nav-link">Experience</a>
+      <a href="#projects" class="block py-2 nav-link">Projects</a>
+      <a href="#skills" class="block py-2 nav-link">Skills</a>
+      <a href="#photography-gallery" class="block py-2 nav-link">Photography Gallery</a>
+      <a href="#education" class="block py-2 nav-link">Education</a>
+      <a href="#community" class="block py-2 nav-link">Community</a>
+      <a href="#references" class="block py-2 nav-link">References</a>
+      <a href="#contact" class="block py-2 nav-link">Contact</a>
     </div>
     <script>
       document.getElementById('menu-btn').onclick = () => {
@@ -86,17 +85,17 @@
   <div class="h-16"></div>
 
   <!-- Hero -->
-  <section class="relative flex flex-col justify-center items-center min-h-screen text-center z-10 py-10" id="hero">
+  <section id="hero" class="relative flex flex-col justify-center items-center min-h-screen text-center z-10 py-10">
     <div class="glass-hero max-w-2xl mx-auto p-8 mt-4">
       <h1 class="section-title mb-2">Atiqur Rahman</h1>
-      <p class="text-2xl font-bold mb-7 tracking-wide">Drone Developer | Embedded Engineer | Pilot</p>
-      <div class="flex space-x-7 mb-8 justify-center">
+      <p class="text-xl font-bold mb-7 tracking-wide text-cyan-300">Drone Developer | Embedded Engineer | Pilot</p>
+      <div class="flex space-x-8 mb-7 justify-center">
         <a href="https://linkedin.com/in/aakashrahman" target="_blank" class="social-btn brand-linkedin big-icon"><i class="fab fa-linkedin"></i></a>
         <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank" class="social-btn brand-facebook big-icon"><i class="fab fa-facebook"></i></a>
         <a href="https://flickr.com/photos/atiq-bro" target="_blank" class="social-btn brand-flickr big-icon"><i class="fab fa-flickr"></i></a>
         <a href="https://github.com/AtiqAakash" target="_blank" class="social-btn brand-github big-icon"><i class="fab fa-github"></i></a>
       </div>
-      <a href="Atiq-CV.pdf" target="_blank" class="inline-block px-8 py-3 bg-green-600 hover:bg-blue-600 text-white rounded-full font-bold text-lg transition">Download CV</a>
+      <a href="Atiq-CV.pdf" target="_blank" class="inline-block px-8 py-3 bg-cyan-600 hover:bg-pink-500 text-white rounded-full font-bold text-lg transition">Download CV</a>
     </div>
   </section>
 
@@ -104,119 +103,75 @@
   <section id="experience" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Experience</h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
-      <!-- Beagle Systems -->
-      <div class="glass p-6">
-        <h3 class="text-lg font-bold mb-1"><a href="https://www.beagle.systems/" class="text-green-600 hover:underline" target="_blank">Beagle Systems</a></h3>
-        <p class="font-semibold mb-2">Drone Pilot & Technician<br>
-        <span class="text-gray-600 font-normal">May 2025 | <a href="https://www.google.com/maps/search/Neumann-Reichardt-Straße+27-33,+22041+Hamburg" target="_blank" class="text-blue-600 hover:underline">Hamburg, Germany</a></span></p>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Drone Piloting</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Maintenance</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Assembly</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Operations</span>
+      <!-- Compact cards, NO job descriptions -->
+      <div class="glass-sm p-5">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="font-bold text-lg text-cyan-300">Beagle Systems</h3>
+          <span class="text-xs text-gray-300">May 2025</span>
         </div>
-        <ul class="list-disc list-inside text-gray-800 space-y-1 text-base">
-          <li>Conduct drone piloting operations.</li>
-          <li>Handle technical maintenance and assembly tasks.</li>
-          <li>Deploy drones to customer infrastructure for operational purposes.</li>
-          <li>Collaborate with a dynamic team in an innovative startup environment.</li>
-        </ul>
+        <div class="text-sm text-gray-300 mb-1">Drone Pilot & Technician</div>
+        <div class="text-xs text-gray-400 mb-2">Hamburg, Germany</div>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Drone Piloting</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Maintenance</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Assembly</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Operations</span>
+        </div>
       </div>
-      <!-- TOPseven GmbH -->
-      <div class="glass p-6">
-        <h3 class="text-lg font-bold mb-1"><a href="https://www.topseven.com" class="text-green-600 hover:underline" target="_blank">TOPseven GmbH</a></h3>
-        <p class="font-semibold mb-2">Werkstudent (Drone R&D) <br><span class="text-gray-600 font-normal">Oct 2024 – Mar 2025 | <a href="https://www.google.com/maps/search/W%C3%BCrttemberger+Str.+13,+26723+Emden,+Germany" target="_blank" class="text-blue-600 hover:underline">Emden, Germany</a></span></p>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Python</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">C++</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Creality Scan</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Pixhawk</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">CubePilot</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Fusion 360</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Java (Mavsdk)</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">SITL</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Mission Planner</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">QGroundControl</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Piloting</span>
+      <div class="glass-sm p-5">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="font-bold text-lg text-cyan-300">TOPseven GmbH</h3>
+          <span class="text-xs text-gray-300">Oct 2024 – Mar 2025</span>
         </div>
-        <ul class="list-disc list-inside text-gray-800 space-y-1 text-base">
-          <li>Assembled drones from scratch, integrating sensors, communication systems, and payloads</li>
-          <li>Configured firmware for flight controllers (Pixhawk, CubePilot)</li>
-          <li>Developed an Android app for drone control (Java/Mavsdk)</li>
-          <li>Utilized Fusion 360 for 3D modeling and prototyping custom components</li>
-          <li>Conducted rigorous testing and troubleshooting of drone systems</li>
-          <li>Simulated flights in 2D/3D environments using SITL</li>
-        </ul>
+        <div class="text-sm text-gray-300 mb-1">Werkstudent (Drone R&D)</div>
+        <div class="text-xs text-gray-400 mb-2">Emden, Germany</div>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Python</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">C++</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Pixhawk</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Java (Mavsdk)</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">QGroundControl</span>
+        </div>
       </div>
-      <!-- Robot Aviation -->
-      <div class="glass p-6">
-        <h3 class="text-lg font-bold mb-1"><a href="https://www.robotaviation.com" class="text-green-600 hover:underline" target="_blank">Robot Aviation</a></h3>
-        <p class="font-semibold mb-2">Unmanned Systems Intern <br><span class="text-gray-600 font-normal">Nov 2023 – Jun 2024 | <a href="https://www.google.com/maps/search/Flyplassveien+24,+3514+Hønefoss,+Norway" target="_blank" class="text-blue-600 hover:underline">Hønefoss, Norway</a></span></p>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">C++</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Python</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Bash</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">HTML</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">CSS</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">JavaScript</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">PHP</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">MySQL</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">3D Printing</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">NAS Cloud</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Computer Networks</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">SITL</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Piloting</span>
+      <div class="glass-sm p-5">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="font-bold text-lg text-cyan-300">Robot Aviation</h3>
+          <span class="text-xs text-gray-300">Nov 2023 – Jun 2024</span>
         </div>
-        <ul class="list-disc list-inside text-gray-800 space-y-1 text-base">
-          <li>Integrated FLIR’s radioactivity sensor for real-time radiation monitoring</li>
-          <li>Reduced ground station setup time by 70% using Bash scripting</li>
-          <li>Built Flight Logger system (HTML/CSS/JavaScript/PHP/MySQL)</li>
-          <li>Conducted test flights and troubleshooting</li>
-          <li>Designed secured multilayer cloud backup systems</li>
-        </ul>
+        <div class="text-sm text-gray-300 mb-1">Unmanned Systems Intern</div>
+        <div class="text-xs text-gray-400 mb-2">Hønefoss, Norway</div>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">C++</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Python</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">PHP</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">JavaScript</span>
+        </div>
       </div>
-      <!-- Home & Marine -->
-      <div class="glass p-6">
-        <h3 class="text-lg font-bold mb-1"><a href="https://home-marine.com/" class="text-green-600 hover:underline" target="_blank">Home & Marine</a></h3>
-        <p class="font-semibold mb-2">Network Technician <br><span class="text-gray-600 font-normal">Jul 2024 – Sept 2024 | <a href="https://www.google.com/maps/search/Adam-Opel-Straße+15,+28237+Bremen,+Germany" target="_blank" class="text-blue-600 hover:underline">Bremen, Germany</a></span></p>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">IP Networking</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Network Configuration</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Fault-Finding Tools</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Microsoft Office</span>
+      <div class="glass-sm p-5">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="font-bold text-lg text-cyan-300">Home & Marine</h3>
+          <span class="text-xs text-gray-300">Jul 2024 – Sept 2024</span>
         </div>
-        <ul class="list-disc list-inside text-gray-800 space-y-1 text-base">
-          <li>Gained onshore maritime experience working on Disney Cruise ship networks</li>
-          <li>Conducted fault-finding and resolved technical issues</li>
-          <li>Documented test results and operational procedures</li>
-          <li>Collaborated on network infrastructure upgrades</li>
-        </ul>
+        <div class="text-sm text-gray-300 mb-1">Network Technician</div>
+        <div class="text-xs text-gray-400 mb-2">Bremen, Germany</div>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">IP Networking</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Configuration</span>
+        </div>
       </div>
-      <!-- CodeFix IT -->
-      <div class="glass p-6">
-        <h3 class="text-lg font-bold mb-1"><a href="https://www.codefix.com.bd" class="text-green-600 hover:underline" target="_blank">CodeFix IT</a></h3>
-        <p class="font-semibold mb-2">IT Support Engineer <br><span class="text-gray-600 font-normal">Jan 2018 – Nov 2019 | <a href="https://www.google.com/maps/search/34,+Awal+Centre,+Level-4,+Kemal+Ataturk+Avenue,+Dhaka+1213" target="_blank" class="text-blue-600 hover:underline">Dhaka, Bangladesh</a></span></p>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Linux</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Networking Devices</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Backup Solutions</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">C++</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Python</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">HTML</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">CSS</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">JavaScript</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Linux Server Management</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Ticketing Systems</span>
-          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Remote Management Tools</span>
+      <div class="glass-sm p-5">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="font-bold text-lg text-cyan-300">CodeFix IT</h3>
+          <span class="text-xs text-gray-300">Jan 2018 – Nov 2019</span>
         </div>
-        <ul class="list-disc list-inside text-gray-800 space-y-1 text-base">
-          <li>Acted as a bridge between development teams and customers</li>
-          <li>Installed/configured/maintained IT systems (servers, workstations, networks)</li>
-          <li>Diagnosed hardware/software/network issues</li>
-          <li>Managed backups and implemented security protocols</li>
-          <li>Configured networks for optimal performance</li>
-          <li>Delivered tailored IT solutions to clients</li>
-        </ul>
+        <div class="text-sm text-gray-300 mb-1">IT Support Engineer</div>
+        <div class="text-xs text-gray-400 mb-2">Dhaka, Bangladesh</div>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Linux</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">C++</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Python</span>
+          <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Networking</span>
+        </div>
       </div>
     </div>
   </section>
@@ -225,104 +180,85 @@
   <section id="projects" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Projects</h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <div class="glass p-5">
-        <h3 class="font-semibold mb-1">Smart Workshop Solution</h3>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">AI Depth Camera</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Augmented Reality</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Python</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Object Detection</span>
+      <!-- Compact: Only name & skills/tools -->
+      <div class="glass-sm p-5">
+        <h3 class="font-semibold text-cyan-200 mb-2">Smart Workshop Solution</h3>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">AI Depth Camera</span>
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Augmented Reality</span>
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Python</span>
         </div>
-        <p class="text-gray-700 text-sm">AI-Powered Assembly Guidance System using object detection algorithms</p>
       </div>
-      <div class="glass p-5">
-        <h3 class="font-semibold mb-1">Facial Recognition Secured Access System</h3>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">ESP32</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Python</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Machine Learning</span>
+      <div class="glass-sm p-5">
+        <h3 class="font-semibold text-cyan-200 mb-2">Facial Recognition Secured Access</h3>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">ESP32</span>
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Machine Learning</span>
         </div>
-        <p class="text-gray-700 text-sm">Secure access system with facial/object recognition</p>
       </div>
-      <div class="glass p-5">
-        <h3 class="font-semibold mb-1">ConBot (Bash)</h3>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Bash</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Ardupilot</span>
+      <div class="glass-sm p-5">
+        <h3 class="font-semibold text-cyan-200 mb-2">ConBot (Bash)</h3>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Bash</span>
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Ardupilot</span>
         </div>
-        <p class="text-gray-700 text-sm">Automatic configuration script for unmanned systems contributed to the Ardupilot community</p>
       </div>
-      <div class="glass p-5">
-        <h3 class="font-semibold mb-1">Flight Logger</h3>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">HTML</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">CSS</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">JavaScript</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">PHP</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">MySQL</span>
+      <div class="glass-sm p-5">
+        <h3 class="font-semibold text-cyan-200 mb-2">Flight Logger</h3>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">PHP</span>
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JavaScript</span>
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span>
         </div>
-        <p class="text-gray-700 text-sm">Flight Log Management System to track flight logs, operator activity, and flight hours</p>
       </div>
-      <div class="glass p-5">
-        <h3 class="font-semibold mb-1">IoT-Based Control & Security System</h3>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">HTML</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">CSS</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">JavaScript</span>
+      <div class="glass-sm p-5">
+        <h3 class="font-semibold text-cyan-200 mb-2">IoT Control & Security System</h3>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JS</span>
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span>
         </div>
-        <p class="text-gray-700 text-sm">Real-time monitoring system with biometric authentication</p>
-        <span class="inline-block mt-2 bg-yellow-400 text-yellow-900 px-2 py-0.5 text-xs rounded font-semibold">2nd Prize</span>
       </div>
-      <div class="glass p-5">
-        <h3 class="font-semibold mb-1">IoT Weather Station</h3>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">HTML</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">CSS</span>
+      <div class="glass-sm p-5">
+        <h3 class="font-semibold text-cyan-200 mb-2">IoT Weather Station</h3>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span>
         </div>
-        <p class="text-gray-700 text-sm">Environmental parameter monitoring system</p>
       </div>
-      <div class="glass p-5">
-        <h3 class="font-semibold mb-1">Industrial Sorting Machine Prototype</h3>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+      <div class="glass-sm p-5">
+        <h3 class="font-semibold text-cyan-200 mb-2">Industrial Sorting Machine</h3>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
         </div>
-        <p class="text-gray-700 text-sm">Object detection sorting system for industrial use</p>
       </div>
-      <div class="glass p-5">
-        <h3 class="font-semibold mb-1">Biometric Attendance System</h3>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">PHP</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">MySQL</span>
+      <div class="glass-sm p-5">
+        <h3 class="font-semibold text-cyan-200 mb-2">Biometric Attendance System</h3>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">PHP</span>
         </div>
-        <p class="text-gray-700 text-sm">Fingerprint-based attendance tracking system</p>
       </div>
-      <div class="glass p-5">
-        <h3 class="font-semibold mb-1">GSM Remote Controlled Irrigation System</h3>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+      <div class="glass-sm p-5">
+        <h3 class="font-semibold text-cyan-200 mb-2">GSM Controlled Irrigation</h3>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
         </div>
-        <p class="text-gray-700 text-sm">Remote-controlled irrigation system via SMS</p>
       </div>
-      <div class="glass p-5">
-        <h3 class="font-semibold mb-1">Smart Home Automation</h3>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">HTML</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">CSS</span>
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">JavaScript</span>
+      <div class="glass-sm p-5">
+        <h3 class="font-semibold text-cyan-200 mb-2">Smart Home Automation</h3>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span>
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JS</span>
         </div>
-        <p class="text-gray-700 text-sm">IoT-based home control system</p>
       </div>
-      <div class="glass p-5">
-        <h3 class="font-semibold mb-1">Automatic Irrigation System</h3>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+      <div class="glass-sm p-5">
+        <h3 class="font-semibold text-cyan-200 mb-2">Automatic Irrigation System</h3>
+        <div class="flex flex-wrap gap-1">
+          <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span>
         </div>
-        <p class="text-gray-700 text-sm">Soil moisture-based smart irrigation system</p>
       </div>
     </div>
   </section>
@@ -331,21 +267,21 @@
   <section id="skills" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Skills & Tools</h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <div class="glass p-6 text-center">
-        <h4 class="text-xl font-extrabold mb-1">Programming</h4>
-        <p class="text-base font-semibold">C/C++, Python, Java, JavaScript, PHP, MySQL</p>
+      <div class="glass-sm p-6 text-center">
+        <h4 class="text-base font-extrabold mb-1 text-cyan-300">Programming</h4>
+        <p class="text-sm font-semibold text-gray-300">C/C++, Python, Java, JavaScript, PHP, MySQL</p>
       </div>
-      <div class="glass p-6 text-center">
-        <h4 class="text-xl font-extrabold mb-1">Drone Tech</h4>
-        <p class="text-base font-semibold">Pixhawk, CubePilot, STM32, Raspberry Pi, NVIDIA Jetson Nano, Mission Planner, QGroundControl</p>
+      <div class="glass-sm p-6 text-center">
+        <h4 class="text-base font-extrabold mb-1 text-cyan-300">Drone Tech</h4>
+        <p class="text-sm font-semibold text-gray-300">Pixhawk, CubePilot, STM32, Raspberry Pi, NVIDIA Jetson Nano, Mission Planner, QGroundControl</p>
       </div>
-      <div class="glass p-6 text-center">
-        <h4 class="text-xl font-extrabold mb-1">Networking</h4>
-        <p class="text-base font-semibold">Linux, IP Networking, Bash Scripting, Security Protocols</p>
+      <div class="glass-sm p-6 text-center">
+        <h4 class="text-base font-extrabold mb-1 text-cyan-300">Networking</h4>
+        <p class="text-sm font-semibold text-gray-300">Linux, IP Networking, Bash Scripting, Security Protocols</p>
       </div>
-      <div class="glass p-6 text-center">
-        <h4 class="text-xl font-extrabold mb-1">Embedded Systems</h4>
-        <p class="text-base font-semibold">Firmware, SITL Simulation, 3D Modeling/Printing</p>
+      <div class="glass-sm p-6 text-center">
+        <h4 class="text-base font-extrabold mb-1 text-cyan-300">Embedded Systems</h4>
+        <p class="text-sm font-semibold text-gray-300">Firmware, SITL Simulation, 3D Modeling/Printing</p>
       </div>
     </div>
   </section>
@@ -356,28 +292,28 @@
     <div class="glass max-w-4xl mx-auto p-4">
       <div class="relative rounded-xl overflow-hidden">
         <div class="slides flex transition-transform duration-500" style="width:100%;">
-          <div class="slide w-full"><img src="1.jpg" loading="lazy" class="w-full object-cover h-[340px] sm:h-[500px] bg-gray-200 rounded-lg" alt="Slide 1"></div>
+          <div class="slide w-full"><img src="1.jpg" loading="lazy" class="w-full object-cover h-[340px] sm:h-[500px] bg-gray-700 rounded-lg" alt="Slide 1"></div>
         </div>
         <div class="absolute inset-0 flex items-center justify-between px-2">
-          <button class="slider-button prev bg-white/90 rounded-full shadow text-3xl text-gray-600 hover:bg-green-600 hover:text-white p-2">&#10094;</button>
-          <button class="slider-button next bg-white/90 rounded-full shadow text-3xl text-gray-600 hover:bg-green-600 hover:text-white p-2">&#10095;</button>
+          <button class="slider-button prev bg-gray-900/90 rounded-full shadow text-3xl text-gray-300 hover:bg-cyan-700 hover:text-white p-2">&#10094;</button>
+          <button class="slider-button next bg-gray-900/90 rounded-full shadow text-3xl text-gray-300 hover:bg-cyan-700 hover:text-white p-2">&#10095;</button>
         </div>
         <div class="flex justify-center mt-2 space-x-2">
-          <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
-          <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
-          <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
-          <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
-          <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
-          <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
-          <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
-          <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
-          <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
-          <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
-          <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
-          <span class="slider-dot w-3 h-3 bg-gray-300 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
+          <span class="slider-dot w-3 h-3 bg-gray-500 rounded-full inline-block cursor-pointer"></span>
         </div>
         <div class="flex justify-center mt-6">
-          <a href="http://flickr.com/photos/atiq-bro" target="_blank" class="inline-block px-6 py-2 flickr-btn hover:bg-green-600 text-white rounded-full font-bold text-lg transition">
+          <a href="http://flickr.com/photos/atiq-bro" target="_blank" class="inline-block px-6 py-2 flickr-btn hover:bg-cyan-700 text-white rounded-full font-bold text-lg transition">
             See Full Photography Portfolio <i class="fab fa-flickr ml-2"></i>
           </a>
         </div>
@@ -394,8 +330,8 @@
       let autoInterval;
       function showSlide() {
         sliderImg.src = imgList[currentSlide];
-        dots.forEach(dot => dot.classList.remove('bg-green-600'));
-        dots[currentSlide].classList.add('bg-green-600');
+        dots.forEach(dot => dot.classList.remove('bg-cyan-600'));
+        dots[currentSlide].classList.add('bg-cyan-600');
       }
       function autoSlide() {
         autoInterval = setInterval(() => {
@@ -432,17 +368,17 @@
   <section id="education" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Education</h2>
     <div class="grid gap-6 md:grid-cols-3">
-      <div class="glass p-6 text-center">
-        <h3 class="text-lg font-bold mb-1"><a href="https://www.hs-emden-leer.de" target="_blank" class="text-green-600 hover:underline">Hochschule Emden/Leer</a></h3>
-        <p class="text-gray-900 font-semibold">Master of Engineering – Cyber Physical Systems (Ongoing)</p>
+      <div class="glass-sm p-6 text-center">
+        <h3 class="text-lg font-bold mb-1 text-cyan-200"><a href="https://www.hs-emden-leer.de" target="_blank" class="hover:underline">Hochschule Emden/Leer</a></h3>
+        <div class="text-sm text-gray-400">Master of Engineering – Cyber Physical Systems (Ongoing)</div>
       </div>
-      <div class="glass p-6 text-center">
-        <h3 class="text-lg font-bold mb-1"><a href="https://www.uio.no" target="_blank" class="text-green-600 hover:underline">University of Oslo</a></h3>
-        <p class="text-gray-900 font-semibold">Master of Science – Programming & System Architecture (Discontinued)</p>
+      <div class="glass-sm p-6 text-center">
+        <h3 class="text-lg font-bold mb-1 text-cyan-200"><a href="https://www.uio.no" target="_blank" class="hover:underline">University of Oslo</a></h3>
+        <div class="text-sm text-gray-400">Master of Science – Programming & System Architecture (Discontinued)</div>
       </div>
-      <div class="glass p-6 text-center">
-        <h3 class="text-lg font-bold mb-1"><a href="https://www.uoda.edu.bd" target="_blank" class="text-green-600 hover:underline">University of Development Alternative</a></h3>
-        <p class="text-gray-900 font-semibold">Bachelor of Science – Computer Science & Engineering</p>
+      <div class="glass-sm p-6 text-center">
+        <h3 class="text-lg font-bold mb-1 text-cyan-200"><a href="https://www.uoda.edu.bd" target="_blank" class="hover:underline">University of Development Alternative</a></h3>
+        <div class="text-sm text-gray-400">Bachelor of Science – Computer Science & Engineering</div>
       </div>
     </div>
   </section>
@@ -451,17 +387,17 @@
   <section id="community" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Community</h2>
     <div class="grid gap-6 md:grid-cols-3">
-      <div class="glass p-6 text-center">
-        <h3 class="font-bold mb-1">Founder of Hridoye Bangladesh</h3>
-        <p class="font-semibold">400+ member cultural organization in Norway</p>
+      <div class="glass-sm p-6 text-center">
+        <h3 class="font-bold mb-1 text-cyan-300">Founder of Hridoye Bangladesh</h3>
+        <div class="text-sm text-gray-400">400+ member cultural organization in Norway</div>
       </div>
-      <div class="glass p-6 text-center">
-        <h3 class="font-bold mb-1"><a href="atiq.no/kck" target="_blank" class="text-green-600 hover:underline">Kringjå Cricket Club</a></h3>
-        <p class="font-semibold">Daglig Leder of Board of Directors at Norges Cricket Forbund</p>
+      <div class="glass-sm p-6 text-center">
+        <h3 class="font-bold mb-1 text-cyan-300"><a href="atiq.no/kck" target="_blank" class="hover:underline">Kringjå Cricket Club</a></h3>
+        <div class="text-sm text-gray-400">Daglig Leder of Board of Directors at Norges Cricket Forbund</div>
       </div>
-      <div class="glass p-6 text-center">
-        <h3 class="font-bold mb-1">Freelance Photographer</h3>
-        <p class="font-semibold">Capturing tech innovations and landscapes</p>
+      <div class="glass-sm p-6 text-center">
+        <h3 class="font-bold mb-1 text-cyan-300">Freelance Photographer</h3>
+        <div class="text-sm text-gray-400">Capturing tech innovations and landscapes</div>
       </div>
     </div>
   </section>
@@ -470,23 +406,23 @@
   <section id="references" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">References</h2>
     <div class="grid gap-6 md:grid-cols-3">
-      <div class="glass p-6 text-center">
-        <h4 class="font-bold text-lg mb-1">Niklas Nyroth</h4>
-        <p class="text-gray-900 font-semibold">CEO, <a href="https://www.robotaviation.com" target="_blank" class="text-green-600 hover:underline">Robot Aviation AS</a></p>
-        <p class="text-gray-800 mt-2 font-semibold"><i class="fas fa-phone"></i> <a href="tel:+4790652502" class="text-blue-600">+47 90652502</a></p>
-        <p class="text-gray-800 font-semibold"><i class="fas fa-envelope"></i> <a href="mailto:niklas.nyroth@robotaviation.com" class="text-blue-600">niklas.nyroth@robotaviation.com</a></p>
+      <div class="glass-sm p-6 text-center">
+        <h4 class="font-bold text-lg mb-1 text-cyan-200">Niklas Nyroth</h4>
+        <div class="text-gray-400">CEO, <a href="https://www.robotaviation.com" target="_blank" class="hover:underline">Robot Aviation AS</a></div>
+        <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4790652502" class="text-cyan-400">+47 90652502</a></div>
+        <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:niklas.nyroth@robotaviation.com" class="text-cyan-400">niklas.nyroth@robotaviation.com</a></div>
       </div>
-      <div class="glass p-6 text-center">
-        <h4 class="font-bold text-lg mb-1">Cem Yolcubal</h4>
-        <p class="text-gray-900 font-semibold">Drone Developer, <a href="https://www.topseven.com" target="_blank" class="text-green-600 hover:underline">TOPseven GmbH</a></p>
-        <p class="text-gray-800 mt-2 font-semibold"><i class="fas fa-phone"></i> <a href="tel:+4915170551030" class="text-blue-600">+49 15170551030</a></p>
-        <p class="text-gray-800 font-semibold"><i class="fas fa-envelope"></i> <a href="mailto:cem.yolcubal@topseven.com" class="text-blue-600">cem.yolcubal@topseven.com</a></p>
+      <div class="glass-sm p-6 text-center">
+        <h4 class="font-bold text-lg mb-1 text-cyan-200">Cem Yolcubal</h4>
+        <div class="text-gray-400">Drone Developer, <a href="https://www.topseven.com" target="_blank" class="hover:underline">TOPseven GmbH</a></div>
+        <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4915170551030" class="text-cyan-400">+49 15170551030</a></div>
+        <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:cem.yolcubal@topseven.com" class="text-cyan-400">cem.yolcubal@topseven.com</a></div>
       </div>
-      <div class="glass p-6 text-center">
-        <h4 class="font-bold text-lg mb-1">Farzan M. Noori</h4>
-        <p class="text-gray-900 font-semibold">Researcher, <a href="https://www.uio.no" target="_blank" class="text-green-600 hover:underline">University of Oslo</a></p>
-        <p class="text-gray-800 mt-2 font-semibold"><i class="fas fa-phone"></i> <a href="tel:+4791255115" class="text-blue-600">+47 912 55 115</a></p>
-        <p class="text-gray-800 font-semibold"><i class="fas fa-envelope"></i> <a href="mailto:farzanmn@ifi.uio.no" class="text-blue-600">farzanmn@ifi.uio.no</a></p>
+      <div class="glass-sm p-6 text-center">
+        <h4 class="font-bold text-lg mb-1 text-cyan-200">Farzan M. Noori</h4>
+        <div class="text-gray-400">Researcher, <a href="https://www.uio.no" target="_blank" class="hover:underline">University of Oslo</a></div>
+        <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4791255115" class="text-cyan-400">+47 912 55 115</a></div>
+        <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:farzanmn@ifi.uio.no" class="text-cyan-400">farzanmn@ifi.uio.no</a></div>
       </div>
     </div>
   </section>
@@ -495,18 +431,40 @@
   <section id="contact" class="max-w-6xl mx-auto py-12 px-2">
     <div class="glass max-w-xl mx-auto p-8 text-center">
       <h2 class="section-title mb-5">Contact Me</h2>
-      <p class="mb-2 font-semibold"><i class="fas fa-map-marker-alt text-green-600"></i>
-        <a href="https://www.google.com/maps/search/Olav+M.+Troviks+Vei+66,+0864+Oslo" target="_blank" class="text-blue-600 hover:underline">Olav M. Troviks Vei 66, 0864 Oslo</a></p>
-      <p class="mb-2 font-semibold"><i class="fas fa-envelope text-green-600"></i>
-        <a href="mailto:atiqur.pilot@gmail.com" class="text-blue-600 hover:underline">atiqur.pilot@gmail.com</a></p>
-      <p class="font-semibold"><i class="fas fa-phone text-green-600"></i>
-        <a href="tel:+4745808855" class="text-blue-600 hover:underline">+47 458 08 855</a></p>
-      <a href="mailto:atiqur.pilot@gmail.com" class="inline-block mt-8 px-7 py-3 bg-green-600 hover:bg-blue-600 text-white rounded-full font-bold text-lg transition">Send Message</a>
+      <p class="mb-2 font-semibold text-gray-300"><i class="fas fa-map-marker-alt text-cyan-400"></i>
+        <a href="https://www.google.com/maps/search/Olav+M.+Troviks+Vei+66,+0864+Oslo" target="_blank" class="text-cyan-400 hover:underline">Olav M. Troviks Vei 66, 0864 Oslo</a></p>
+      <p class="mb-2 font-semibold text-gray-300"><i class="fas fa-envelope text-cyan-400"></i>
+        <a href="mailto:atiqur.pilot@gmail.com" class="text-cyan-400 hover:underline">atiqur.pilot@gmail.com</a></p>
+      <p class="font-semibold text-gray-300"><i class="fas fa-phone text-cyan-400"></i>
+        <a href="tel:+4745808855" class="text-cyan-400 hover:underline">+47 458 08 855</a></p>
+      <a href="mailto:atiqur.pilot@gmail.com" class="inline-block mt-8 px-7 py-3 bg-cyan-700 hover:bg-pink-500 text-white rounded-full font-bold text-lg transition">Send Message</a>
     </div>
   </section>
-
-  <footer class="text-center text-gray-400 text-xs py-5 font-semibold">
+  <footer class="text-center text-gray-600 text-xs py-5 font-semibold bg-transparent">
     &copy; 2024 Atiqur Rahman. All rights reserved.
   </footer>
+
+  <!-- Active NavBar Highlight Script -->
+  <script>
+    // Section-to-link mapping
+    const sectionIds = [
+      'hero','experience','projects','skills','photography-gallery',
+      'education','community','references','contact'
+    ];
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function setActiveNav() {
+      let scroll = window.scrollY + 120; // +navbar height
+      let activeIdx = 0;
+      sectionIds.forEach((id, idx) => {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scroll) activeIdx = idx;
+      });
+      navLinks.forEach(l => l.classList.remove('active','nav-active'));
+      navLinks[activeIdx].classList.add('active','nav-active');
+    }
+    window.addEventListener('scroll', setActiveNav, { passive:true });
+    document.addEventListener('DOMContentLoaded', setActiveNav);
+  </script>
 </body>
 </html>
