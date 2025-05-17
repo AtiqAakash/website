@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atiqur Rahman | Drone Developer & Embedded Engineer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: #f7fafd; }
+    body { font-family: 'Inter', sans-serif; background: #f7fafd;}
     .playfair { font-family: 'Playfair Display', serif; }
     .fixed-bg {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
@@ -18,13 +18,30 @@
       opacity: 1;
       pointer-events: none;
     }
-    .glass { background: rgba(255,255,255,0.75); /* 25% transparent */ box-shadow: 0 4px 24px 0 rgba(80,90,120,0.10); border-radius: 1rem; backdrop-filter: blur(0.5px);}
-    .glass-hero { background: rgba(255,255,255,0.3); /* 70% transparent */ box-shadow: 0 8px 40px 0 rgba(40,60,80,0.10); border-radius: 1rem; }
-    .section-title { font-family: 'Playfair Display', serif; font-weight:900; }
-    .big-icon { font-size: 2.7rem !important; }
+    .glass { background: rgba(255,255,255,0.75); box-shadow: 0 4px 24px 0 rgba(80,90,120,0.10); border-radius: 1rem; backdrop-filter: blur(0.5px);}
+    .glass-hero { background: rgba(255,255,255,0.3); box-shadow: 0 8px 40px 0 rgba(40,60,80,0.10); border-radius: 1rem; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 2.3rem;
+      color: #1a213a;
+      line-height: 1.2;
+      text-align: center;
+      margin-bottom: 2.2rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.14),0 1px 0 #fff;
+      letter-spacing: .01em;
+    }
+    .brand-linkedin { color: #0A66C2 !important; }
+    .brand-facebook { color: #1877F3 !important; }
+    .brand-flickr { color: #ff0084 !important; }
+    .brand-github { color: #171515 !important; }
+    .social-btn { transition: transform 0.2s, box-shadow 0.2s; }
+    .social-btn:hover { transform: scale(1.2) rotate(-3deg);}
+    .big-icon { font-size: 2.8rem !important; }
     .flickr-btn { background: #ff0084; }
     @media (max-width:640px) {
-      .big-icon { font-size: 2.1rem !important; }
+      .section-title { font-size: 1.5rem;}
+      .big-icon { font-size: 2rem !important;}
     }
   </style>
 </head>
@@ -71,13 +88,13 @@
   <!-- Hero -->
   <section class="relative flex flex-col justify-center items-center min-h-screen text-center z-10 py-10" id="hero">
     <div class="glass-hero max-w-2xl mx-auto p-8 mt-4">
-      <h1 class="section-title text-4xl sm:text-5xl md:text-6xl mb-3">Atiqur Rahman</h1>
-      <p class="text-xl font-bold mb-7 tracking-wide">Drone Developer | Embedded Engineer | Pilot</p>
+      <h1 class="section-title mb-2">Atiqur Rahman</h1>
+      <p class="text-2xl font-bold mb-7 tracking-wide">Drone Developer | Embedded Engineer | Pilot</p>
       <div class="flex space-x-7 mb-8 justify-center">
-        <a href="https://linkedin.com/in/aakashrahman" target="_blank" class="text-gray-700 hover:text-green-600 big-icon"><i class="fab fa-linkedin"></i></a>
-        <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank" class="text-gray-700 hover:text-green-600 big-icon"><i class="fab fa-facebook"></i></a>
-        <a href="https://flickr.com/photos/atiq-bro" target="_blank" class="text-gray-700 hover:text-pink-500 big-icon"><i class="fab fa-flickr"></i></a>
-        <a href="https://github.com/AtiqAakash" target="_blank" class="text-gray-700 hover:text-green-600 big-icon"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/aakashrahman" target="_blank" class="social-btn brand-linkedin big-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank" class="social-btn brand-facebook big-icon"><i class="fab fa-facebook"></i></a>
+        <a href="https://flickr.com/photos/atiq-bro" target="_blank" class="social-btn brand-flickr big-icon"><i class="fab fa-flickr"></i></a>
+        <a href="https://github.com/AtiqAakash" target="_blank" class="social-btn brand-github big-icon"><i class="fab fa-github"></i></a>
       </div>
       <a href="Atiq-CV.pdf" target="_blank" class="inline-block px-8 py-3 bg-green-600 hover:bg-blue-600 text-white rounded-full font-bold text-lg transition">Download CV</a>
     </div>
@@ -85,8 +102,26 @@
 
   <!-- Experience -->
   <section id="experience" class="max-w-6xl mx-auto py-12 px-2">
-    <h2 class="section-title text-3xl text-center mb-8">Experience</h2>
+    <h2 class="section-title">Experience</h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+      <!-- Beagle Systems -->
+      <div class="glass p-6">
+        <h3 class="text-lg font-bold mb-1"><a href="https://www.beagle.systems/" class="text-green-600 hover:underline" target="_blank">Beagle Systems</a></h3>
+        <p class="font-semibold mb-2">Drone Pilot & Technician<br>
+        <span class="text-gray-600 font-normal">May 2025 | <a href="https://www.google.com/maps/search/Neumann-Reichardt-Straße+27-33,+22041+Hamburg" target="_blank" class="text-blue-600 hover:underline">Hamburg, Germany</a></span></p>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Drone Piloting</span>
+          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Maintenance</span>
+          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Assembly</span>
+          <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Operations</span>
+        </div>
+        <ul class="list-disc list-inside text-gray-800 space-y-1 text-base">
+          <li>Conduct drone piloting operations.</li>
+          <li>Handle technical maintenance and assembly tasks.</li>
+          <li>Deploy drones to customer infrastructure for operational purposes.</li>
+          <li>Collaborate with a dynamic team in an innovative startup environment.</li>
+        </ul>
+      </div>
       <!-- TOPseven GmbH -->
       <div class="glass p-6">
         <h3 class="text-lg font-bold mb-1"><a href="https://www.topseven.com" class="text-green-600 hover:underline" target="_blank">TOPseven GmbH</a></h3>
@@ -188,19 +223,113 @@
 
   <!-- Projects -->
   <section id="projects" class="max-w-6xl mx-auto py-12 px-2">
-    <h2 class="section-title text-3xl text-center mb-8">Projects</h2>
+    <h2 class="section-title">Projects</h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <!-- All 12 projects from your list -->
-      <!-- Copy-paste your earlier project code here, same as previous answer. To keep this message short, see above. -->
-      <!-- ... (exact same 12 glass boxes as above, unchanged) ... -->
-      <!-- For brevity, paste the 12 projects code from previous message here -->
-      <!-- ... see above ... -->
+      <div class="glass p-5">
+        <h3 class="font-semibold mb-1">Smart Workshop Solution</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">AI Depth Camera</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Augmented Reality</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Python</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Object Detection</span>
+        </div>
+        <p class="text-gray-700 text-sm">AI-Powered Assembly Guidance System using object detection algorithms</p>
+      </div>
+      <div class="glass p-5">
+        <h3 class="font-semibold mb-1">Facial Recognition Secured Access System</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">ESP32</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Python</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Machine Learning</span>
+        </div>
+        <p class="text-gray-700 text-sm">Secure access system with facial/object recognition</p>
+      </div>
+      <div class="glass p-5">
+        <h3 class="font-semibold mb-1">ConBot (Bash)</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Bash</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">Ardupilot</span>
+        </div>
+        <p class="text-gray-700 text-sm">Automatic configuration script for unmanned systems contributed to the Ardupilot community</p>
+      </div>
+      <div class="glass p-5">
+        <h3 class="font-semibold mb-1">Flight Logger</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">HTML</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">CSS</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">JavaScript</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">PHP</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">MySQL</span>
+        </div>
+        <p class="text-gray-700 text-sm">Flight Log Management System to track flight logs, operator activity, and flight hours</p>
+      </div>
+      <div class="glass p-5">
+        <h3 class="font-semibold mb-1">IoT-Based Control & Security System</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">HTML</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">CSS</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">JavaScript</span>
+        </div>
+        <p class="text-gray-700 text-sm">Real-time monitoring system with biometric authentication</p>
+        <span class="inline-block mt-2 bg-yellow-400 text-yellow-900 px-2 py-0.5 text-xs rounded font-semibold">2nd Prize</span>
+      </div>
+      <div class="glass p-5">
+        <h3 class="font-semibold mb-1">IoT Weather Station</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">HTML</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">CSS</span>
+        </div>
+        <p class="text-gray-700 text-sm">Environmental parameter monitoring system</p>
+      </div>
+      <div class="glass p-5">
+        <h3 class="font-semibold mb-1">Industrial Sorting Machine Prototype</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+        </div>
+        <p class="text-gray-700 text-sm">Object detection sorting system for industrial use</p>
+      </div>
+      <div class="glass p-5">
+        <h3 class="font-semibold mb-1">Biometric Attendance System</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">PHP</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">MySQL</span>
+        </div>
+        <p class="text-gray-700 text-sm">Fingerprint-based attendance tracking system</p>
+      </div>
+      <div class="glass p-5">
+        <h3 class="font-semibold mb-1">GSM Remote Controlled Irrigation System</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+        </div>
+        <p class="text-gray-700 text-sm">Remote-controlled irrigation system via SMS</p>
+      </div>
+      <div class="glass p-5">
+        <h3 class="font-semibold mb-1">Smart Home Automation</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">HTML</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">CSS</span>
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">JavaScript</span>
+        </div>
+        <p class="text-gray-700 text-sm">IoT-based home control system</p>
+      </div>
+      <div class="glass p-5">
+        <h3 class="font-semibold mb-1">Automatic Irrigation System</h3>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">C++</span>
+        </div>
+        <p class="text-gray-700 text-sm">Soil moisture-based smart irrigation system</p>
+      </div>
     </div>
   </section>
 
   <!-- Skills -->
   <section id="skills" class="max-w-6xl mx-auto py-12 px-2">
-    <h2 class="section-title text-3xl text-center mb-8">Skills & Tools</h2>
+    <h2 class="section-title">Skills & Tools</h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
       <div class="glass p-6 text-center">
         <h4 class="text-xl font-extrabold mb-1">Programming</h4>
@@ -223,7 +352,7 @@
 
   <!-- Photography Gallery -->
   <section id="photography-gallery" class="max-w-6xl mx-auto py-12 px-2">
-    <h2 class="section-title text-3xl text-center mb-8">Photography Gallery</h2>
+    <h2 class="section-title">Photography Gallery</h2>
     <div class="glass max-w-4xl mx-auto p-4">
       <div class="relative rounded-xl overflow-hidden">
         <div class="slides flex transition-transform duration-500" style="width:100%;">
@@ -301,7 +430,7 @@
 
   <!-- Education -->
   <section id="education" class="max-w-6xl mx-auto py-12 px-2">
-    <h2 class="section-title text-3xl text-center mb-8">Education</h2>
+    <h2 class="section-title">Education</h2>
     <div class="grid gap-6 md:grid-cols-3">
       <div class="glass p-6 text-center">
         <h3 class="text-lg font-bold mb-1"><a href="https://www.hs-emden-leer.de" target="_blank" class="text-green-600 hover:underline">Hochschule Emden/Leer</a></h3>
@@ -320,7 +449,7 @@
 
   <!-- Community -->
   <section id="community" class="max-w-6xl mx-auto py-12 px-2">
-    <h2 class="section-title text-3xl text-center mb-8">Community</h2>
+    <h2 class="section-title">Community</h2>
     <div class="grid gap-6 md:grid-cols-3">
       <div class="glass p-6 text-center">
         <h3 class="font-bold mb-1">Founder of Hridoye Bangladesh</h3>
@@ -339,7 +468,7 @@
 
   <!-- References -->
   <section id="references" class="max-w-6xl mx-auto py-12 px-2">
-    <h2 class="section-title text-3xl text-center mb-8">References</h2>
+    <h2 class="section-title">References</h2>
     <div class="grid gap-6 md:grid-cols-3">
       <div class="glass p-6 text-center">
         <h4 class="font-bold text-lg mb-1">Niklas Nyroth</h4>
@@ -365,7 +494,7 @@
   <!-- Contact -->
   <section id="contact" class="max-w-6xl mx-auto py-12 px-2">
     <div class="glass max-w-xl mx-auto p-8 text-center">
-      <h2 class="section-title text-3xl mb-5">Contact Me</h2>
+      <h2 class="section-title mb-5">Contact Me</h2>
       <p class="mb-2 font-semibold"><i class="fas fa-map-marker-alt text-green-600"></i>
         <a href="https://www.google.com/maps/search/Olav+M.+Troviks+Vei+66,+0864+Oslo" target="_blank" class="text-blue-600 hover:underline">Olav M. Troviks Vei 66, 0864 Oslo</a></p>
       <p class="mb-2 font-semibold"><i class="fas fa-envelope text-green-600"></i>
