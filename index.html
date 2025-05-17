@@ -39,6 +39,7 @@
       text-shadow: 0 2px 8px #0d0f14b4;
       letter-spacing: .01em;
       margin-bottom: 2.2rem;
+      text-align: center;
     }
     .brand-linkedin { color: #0A66C2 !important; }
     .brand-facebook { color: #1877F3 !important; }
@@ -51,6 +52,41 @@
     .nav-active, .nav-link.active { color: #65d6ff !important; border-bottom: 2.5px solid #65d6ff !important; font-weight: bold;}
     .nav-link:hover { color: #65d6ff; }
     .flickr-btn { background: #ff0084; }
+    /* SLIDER CSS */
+    .slider-wrapper {
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+    }
+    .slider-inner {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(.62,-0.11,.37,1.16);
+      will-change: transform;
+      width: 100%;
+    }
+    .slider-image {
+      min-width: 100%;
+      max-width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 1rem;
+      background: #223;
+      user-select: none;
+      pointer-events: none;
+    }
+    @media (min-width: 640px) {
+      .slider-image { height: 420px; }
+    }
+    .slider-dot.active,
+    .slider-dot.bg-cyan-500 {
+      background: #06b6d4 !important;
+    }
+    .slider-dot {
+      transition: background .2s;
+    }
     @media (max-width:640px) {
       .section-title { font-size: 1.3rem;}
       .big-icon { font-size: 1.6rem !important;}
@@ -119,12 +155,12 @@
       <!-- Beagle Systems -->
       <div class="glass-sm p-5">
         <div class="flex items-center justify-between mb-2">
-          <h3 class="font-bold text-lg text-cyan-300"><a href="https://www.beaglesystems.com/" target="_blank" class="hover:underline">Beagle Systems</a></h3>
+          <h3 class="font-bold text-lg text-cyan-300 text-center w-full"><a href="https://www.beaglesystems.com/" target="_blank" class="hover:underline">Beagle Systems</a></h3>
           <span class="text-xs text-gray-300">May 2025</span>
         </div>
-        <div class="text-sm text-gray-300 mb-1">Drone Pilot & Technician</div>
-        <div class="text-xs text-gray-400 mb-2">Hamburg, Germany</div>
-        <div class="flex flex-wrap gap-1">
+        <div class="text-sm text-gray-300 mb-1 text-center">Drone Pilot & Technician</div>
+        <div class="text-xs text-gray-400 mb-2 text-center">Hamburg, Germany</div>
+        <div class="flex flex-wrap gap-1 justify-center">
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Drone Piloting</span>
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Maintenance</span>
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Assembly</span>
@@ -134,12 +170,12 @@
       <!-- TOPseven -->
       <div class="glass-sm p-5">
         <div class="flex items-center justify-between mb-2">
-          <h3 class="font-bold text-lg text-cyan-300"><a href="https://www.topseven.com" target="_blank" class="hover:underline">TOPseven GmbH</a></h3>
+          <h3 class="font-bold text-lg text-cyan-300 text-center w-full"><a href="https://www.topseven.com" target="_blank" class="hover:underline">TOPseven GmbH</a></h3>
           <span class="text-xs text-gray-300">Oct 2024 – Mar 2025</span>
         </div>
-        <div class="text-sm text-gray-300 mb-1">Werkstudent (Drone R&D)</div>
-        <div class="text-xs text-gray-400 mb-2">Emden, Germany</div>
-        <div class="flex flex-wrap gap-1">
+        <div class="text-sm text-gray-300 mb-1 text-center">Werkstudent (Drone R&D)</div>
+        <div class="text-xs text-gray-400 mb-2 text-center">Emden, Germany</div>
+        <div class="flex flex-wrap gap-1 justify-center">
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Python</span>
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">C++</span>
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Pixhawk</span>
@@ -155,12 +191,12 @@
       <!-- Robot Aviation -->
       <div class="glass-sm p-5">
         <div class="flex items-center justify-between mb-2">
-          <h3 class="font-bold text-lg text-cyan-300"><a href="https://www.robotaviation.com" target="_blank" class="hover:underline">Robot Aviation</a></h3>
+          <h3 class="font-bold text-lg text-cyan-300 text-center w-full"><a href="https://www.robotaviation.com" target="_blank" class="hover:underline">Robot Aviation</a></h3>
           <span class="text-xs text-gray-300">Nov 2023 – Jun 2024</span>
         </div>
-        <div class="text-sm text-gray-300 mb-1">Unmanned Systems Intern</div>
-        <div class="text-xs text-gray-400 mb-2">Hønefoss, Norway</div>
-        <div class="flex flex-wrap gap-1">
+        <div class="text-sm text-gray-300 mb-1 text-center">Unmanned Systems Intern</div>
+        <div class="text-xs text-gray-400 mb-2 text-center">Hønefoss, Norway</div>
+        <div class="flex flex-wrap gap-1 justify-center">
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">C++</span>
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Python</span>
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Bash</span>
@@ -179,12 +215,12 @@
       <!-- Home & Marine -->
       <div class="glass-sm p-5">
         <div class="flex items-center justify-between mb-2">
-          <h3 class="font-bold text-lg text-cyan-300"><a href="https://home-marine.com/" target="_blank" class="hover:underline">Home & Marine</a></h3>
+          <h3 class="font-bold text-lg text-cyan-300 text-center w-full"><a href="https://home-marine.com/" target="_blank" class="hover:underline">Home & Marine</a></h3>
           <span class="text-xs text-gray-300">Jul 2024 – Sept 2024</span>
         </div>
-        <div class="text-sm text-gray-300 mb-1">Network Technician</div>
-        <div class="text-xs text-gray-400 mb-2">Bremen, Germany</div>
-        <div class="flex flex-wrap gap-1">
+        <div class="text-sm text-gray-300 mb-1 text-center">Network Technician</div>
+        <div class="text-xs text-gray-400 mb-2 text-center">Bremen, Germany</div>
+        <div class="flex flex-wrap gap-1 justify-center">
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">IP Networking</span>
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Configuration</span>
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Fault-Finding</span>
@@ -194,12 +230,12 @@
       <!-- CodeFix IT -->
       <div class="glass-sm p-5">
         <div class="flex items-center justify-between mb-2">
-          <h3 class="font-bold text-lg text-cyan-300">CodeFix IT</h3>
+          <h3 class="font-bold text-lg text-cyan-300 text-center w-full">CodeFix IT</h3>
           <span class="text-xs text-gray-300">Jan 2018 – Nov 2019</span>
         </div>
-        <div class="text-sm text-gray-300 mb-1">IT Support Engineer</div>
-        <div class="text-xs text-gray-400 mb-2">Dhaka, Bangladesh</div>
-        <div class="flex flex-wrap gap-1">
+        <div class="text-sm text-gray-300 mb-1 text-center">IT Support Engineer</div>
+        <div class="text-xs text-gray-400 mb-2 text-center">Dhaka, Bangladesh</div>
+        <div class="flex flex-wrap gap-1 justify-center">
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Linux</span>
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Networking Devices</span>
           <span class="bg-cyan-900 text-cyan-200 px-2 py-0.5 rounded text-xs">Backup Solutions</span>
@@ -220,28 +256,28 @@
   <section id="projects" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Projects</h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Smart Workshop Solution</h3>
-        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">AI Depth Camera</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Augmented Reality</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Python</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Facial Recognition Secured Access</h3>
-        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">ESP32</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Python</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Machine Learning</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">ConBot (Bash)</h3>
-        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Bash</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Ardupilot</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Flight Logger</h3>
-        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">CSS</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JavaScript</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">PHP</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">MySQL</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">IoT Control & Security System</h3>
-        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">CSS</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JavaScript</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">IoT Weather Station</h3>
-        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">CSS</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Industrial Sorting Machine</h3>
-        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Biometric Attendance System</h3>
-        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">PHP</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">MySQL</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">GSM Controlled Irrigation</h3>
-        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Smart Home Automation</h3>
-        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">CSS</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JavaScript</span></div></div>
-      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2">Automatic Irrigation System</h3>
-        <div class="flex flex-wrap gap-1"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2 text-center">Smart Workshop Solution</h3>
+        <div class="flex flex-wrap gap-1 justify-center"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">AI Depth Camera</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Augmented Reality</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Python</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2 text-center">Facial Recognition Secured Access</h3>
+        <div class="flex flex-wrap gap-1 justify-center"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">ESP32</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Python</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Machine Learning</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2 text-center">ConBot (Bash)</h3>
+        <div class="flex flex-wrap gap-1 justify-center"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Bash</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">Ardupilot</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2 text-center">Flight Logger</h3>
+        <div class="flex flex-wrap gap-1 justify-center"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">CSS</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JavaScript</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">PHP</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">MySQL</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2 text-center">IoT Control & Security System</h3>
+        <div class="flex flex-wrap gap-1 justify-center"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">CSS</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JavaScript</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2 text-center">IoT Weather Station</h3>
+        <div class="flex flex-wrap gap-1 justify-center"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">CSS</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2 text-center">Industrial Sorting Machine</h3>
+        <div class="flex flex-wrap gap-1 justify-center"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2 text-center">Biometric Attendance System</h3>
+        <div class="flex flex-wrap gap-1 justify-center"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">PHP</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">MySQL</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2 text-center">GSM Controlled Irrigation</h3>
+        <div class="flex flex-wrap gap-1 justify-center"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2 text-center">Smart Home Automation</h3>
+        <div class="flex flex-wrap gap-1 justify-center"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">HTML</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">CSS</span><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">JavaScript</span></div></div>
+      <div class="glass-sm p-5"><h3 class="font-semibold text-cyan-200 mb-2 text-center">Automatic Irrigation System</h3>
+        <div class="flex flex-wrap gap-1 justify-center"><span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs">C++</span></div></div>
     </div>
   </section>
 
@@ -268,28 +304,28 @@
     </div>
   </section>
 
-  <!-- Photography Gallery (Wide, Professional, Smooth Slider) -->
+  <!-- Photography Gallery (Fixed One-at-a-Time Wide Slider) -->
   <section id="photography-gallery" class="max-w-7xl mx-auto py-12 px-2">
     <h2 class="section-title">Photography Gallery</h2>
     <div class="glass mx-auto px-2 py-5" style="max-width:1200px;">
-      <div class="relative overflow-hidden">
-        <div id="slider-track" class="flex transition-transform duration-500 ease-in-out" style="width:100%;">
-          <img src="1.jpg" alt="Slide 1" class="slider-image w-full object-cover rounded-xl h-[250px] md:h-[420px]"/>
-          <img src="2.jpg" alt="Slide 2" class="slider-image w-full object-cover rounded-xl h-[250px] md:h-[420px]"/>
-          <img src="3.jpg" alt="Slide 3" class="slider-image w-full object-cover rounded-xl h-[250px] md:h-[420px]"/>
-          <img src="4.jpg" alt="Slide 4" class="slider-image w-full object-cover rounded-xl h-[250px] md:h-[420px]"/>
-          <img src="5.jpg" alt="Slide 5" class="slider-image w-full object-cover rounded-xl h-[250px] md:h-[420px]"/>
-          <img src="6.jpg" alt="Slide 6" class="slider-image w-full object-cover rounded-xl h-[250px] md:h-[420px]"/>
-          <img src="7.jpg" alt="Slide 7" class="slider-image w-full object-cover rounded-xl h-[250px] md:h-[420px]"/>
-          <img src="8.jpg" alt="Slide 8" class="slider-image w-full object-cover rounded-xl h-[250px] md:h-[420px]"/>
-          <img src="9.jpg" alt="Slide 9" class="slider-image w-full object-cover rounded-xl h-[250px] md:h-[420px]"/>
-          <img src="10.jpg" alt="Slide 10" class="slider-image w-full object-cover rounded-xl h-[250px] md:h-[420px]"/>
-          <img src="11.jpg" alt="Slide 11" class="slider-image w-full object-cover rounded-xl h-[250px] md:h-[420px]"/>
-          <img src="12.jpg" alt="Slide 12" class="slider-image w-full object-cover rounded-xl h-[250px] md:h-[420px]"/>
+      <div class="slider-wrapper">
+        <div id="slider-inner" class="slider-inner">
+          <img src="1.jpg" alt="Slide 1" class="slider-image"/>
+          <img src="2.jpg" alt="Slide 2" class="slider-image"/>
+          <img src="3.jpg" alt="Slide 3" class="slider-image"/>
+          <img src="4.jpg" alt="Slide 4" class="slider-image"/>
+          <img src="5.jpg" alt="Slide 5" class="slider-image"/>
+          <img src="6.jpg" alt="Slide 6" class="slider-image"/>
+          <img src="7.jpg" alt="Slide 7" class="slider-image"/>
+          <img src="8.jpg" alt="Slide 8" class="slider-image"/>
+          <img src="9.jpg" alt="Slide 9" class="slider-image"/>
+          <img src="10.jpg" alt="Slide 10" class="slider-image"/>
+          <img src="11.jpg" alt="Slide 11" class="slider-image"/>
+          <img src="12.jpg" alt="Slide 12" class="slider-image"/>
         </div>
         <!-- Arrow Buttons -->
-        <button id="slider-prev" class="absolute top-1/2 left-[-40px] md:left-3 transform -translate-y-1/2 bg-gray-900/70 hover:bg-cyan-600 transition text-4xl text-white rounded-full shadow p-2 z-10" aria-label="Prev">&#10094;</button>
-        <button id="slider-next" class="absolute top-1/2 right-[-40px] md:right-3 transform -translate-y-1/2 bg-gray-900/70 hover:bg-cyan-600 transition text-4xl text-white rounded-full shadow p-2 z-10" aria-label="Next">&#10095;</button>
+        <button id="slider-prev" class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-gray-900/70 hover:bg-cyan-600 transition text-4xl text-white rounded-full shadow p-2 z-10" aria-label="Prev">&#10094;</button>
+        <button id="slider-next" class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-gray-900/70 hover:bg-cyan-600 transition text-4xl text-white rounded-full shadow p-2 z-10" aria-label="Next">&#10095;</button>
         <!-- Dots -->
         <div class="flex justify-center mt-4 space-x-2">
           <span class="slider-dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
@@ -313,28 +349,28 @@
       </div>
     </div>
     <script>
-      // Modern, smooth, wide slider
-      const slides = document.querySelectorAll('#slider-track .slider-image');
+      // True 1-at-a-time professional slider
+      const sliderInner = document.getElementById('slider-inner');
+      const sliderImages = document.querySelectorAll('#slider-inner .slider-image');
       const dots = document.querySelectorAll('.slider-dot');
       let currentIndex = 0;
       let sliderInterval;
       function showSlide(idx) {
-        const track = document.getElementById('slider-track');
-        track.style.transform = `translateX(-${idx * 100}%)`;
+        if (idx < 0) idx = sliderImages.length - 1;
+        if (idx >= sliderImages.length) idx = 0;
+        currentIndex = idx;
+        sliderInner.style.transform = `translateX(-${idx * 100}%)`;
         dots.forEach((dot, i) => dot.classList.toggle('bg-cyan-500', i === idx));
         dots.forEach((dot, i) => dot.classList.toggle('bg-gray-400', i !== idx));
       }
       function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
+        showSlide(currentIndex + 1);
       }
       function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(currentIndex);
+        showSlide(currentIndex - 1);
       }
       function goToSlide(idx) {
-        currentIndex = idx;
-        showSlide(currentIndex);
+        showSlide(idx);
       }
       document.getElementById('slider-next').onclick = () => { nextSlide(); resetInterval(); };
       document.getElementById('slider-prev').onclick = () => { prevSlide(); resetInterval(); };
@@ -358,15 +394,15 @@
     <h2 class="section-title">Education</h2>
     <div class="grid gap-6 md:grid-cols-3">
       <div class="glass-sm p-6 text-center">
-        <h3 class="text-lg font-bold mb-1 text-cyan-200"><a href="https://www.hs-emden-leer.de" target="_blank" class="hover:underline">Hochschule Emden/Leer</a></h3>
+        <h3 class="text-lg font-bold mb-1 text-cyan-200 text-center"><a href="https://www.hs-emden-leer.de" target="_blank" class="hover:underline">Hochschule Emden/Leer</a></h3>
         <div class="text-sm text-gray-400">Master of Engineering – Cyber Physical Systems (Ongoing)</div>
       </div>
       <div class="glass-sm p-6 text-center">
-        <h3 class="text-lg font-bold mb-1 text-cyan-200"><a href="https://www.uio.no" target="_blank" class="hover:underline">University of Oslo</a></h3>
+        <h3 class="text-lg font-bold mb-1 text-cyan-200 text-center"><a href="https://www.uio.no" target="_blank" class="hover:underline">University of Oslo</a></h3>
         <div class="text-sm text-gray-400">Master of Science – Programming & System Architecture (Discontinued)</div>
       </div>
       <div class="glass-sm p-6 text-center">
-        <h3 class="text-lg font-bold mb-1 text-cyan-200"><a href="https://www.uoda.edu.bd" target="_blank" class="hover:underline">University of Development Alternative</a></h3>
+        <h3 class="text-lg font-bold mb-1 text-cyan-200 text-center"><a href="https://www.uoda.edu.bd" target="_blank" class="hover:underline">University of Development Alternative</a></h3>
         <div class="text-sm text-gray-400">Bachelor of Science – Computer Science & Engineering</div>
       </div>
     </div>
@@ -377,15 +413,15 @@
     <h2 class="section-title">Community</h2>
     <div class="grid gap-6 md:grid-cols-3">
       <div class="glass-sm p-6 text-center">
-        <h3 class="font-bold mb-1 text-cyan-300">Founder of Hridoye Bangladesh</h3>
+        <h3 class="font-bold mb-1 text-cyan-300 text-center">Founder of Hridoye Bangladesh</h3>
         <div class="text-sm text-gray-400">400+ member cultural organization in Norway</div>
       </div>
       <div class="glass-sm p-6 text-center">
-        <h3 class="font-bold mb-1 text-cyan-300"><a href="atiq.no/kck" target="_blank" class="hover:underline">Kringjå Cricket Club</a></h3>
+        <h3 class="font-bold mb-1 text-cyan-300 text-center"><a href="atiq.no/kck" target="_blank" class="hover:underline">Kringjå Cricket Club</a></h3>
         <div class="text-sm text-gray-400">Daglig Leder of Board of Directors at Norges Cricket Forbund</div>
       </div>
       <div class="glass-sm p-6 text-center">
-        <h3 class="font-bold mb-1 text-cyan-300">Freelance Photographer</h3>
+        <h3 class="font-bold mb-1 text-cyan-300 text-center">Freelance Photographer</h3>
         <div class="text-sm text-gray-400">
           Capturing tech innovations and landscapes<br>
           <a href="http://flickr.com/photos/atiq-bro" target="_blank" class="text-cyan-400 hover:underline text-sm font-bold">See Full Photography Portfolio</a>
@@ -399,24 +435,24 @@
     <h2 class="section-title">References</h2>
     <div class="grid gap-6 md:grid-cols-3">
       <div class="glass-sm p-6 text-center">
-        <h4 class="font-bold text-lg mb-1 text-cyan-300 flex items-center justify-center gap-2">
+        <h4 class="font-bold text-lg mb-1 text-cyan-300 flex items-center justify-center gap-2 text-center">
           <a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:underline flex items-center gap-2">
             Niklas Nyroth <i class="fab fa-linkedin text-[#0A66C2]"></i>
           </a>
         </h4>
-        <div class="text-gray-200">
+        <div class="text-gray-200 text-center">
           CEO, <a href="https://www.robotaviation.com" target="_blank" class="hover:underline text-cyan-300">Robot Aviation AS</a>
         </div>
         <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4790652502" class="text-cyan-400">+47 90652502</a></div>
         <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:niklas.nyroth@robotaviation.com" class="text-cyan-400">niklas.nyroth@robotaviation.com</a></div>
       </div>
       <div class="glass-sm p-6 text-center">
-        <h4 class="font-bold text-lg mb-1 text-cyan-300 flex items-center justify-center gap-2">
+        <h4 class="font-bold text-lg mb-1 text-cyan-300 flex items-center justify-center gap-2 text-center">
           <a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:underline flex items-center gap-2">
             Cem Yolcubal <i class="fab fa-linkedin text-[#0A66C2]"></i>
           </a>
         </h4>
-        <div class="text-gray-200">
+        <div class="text-gray-200 text-center">
           Drone Pilot at <a href="https://www.beaglesystems.com/" target="_blank" class="hover:underline text-cyan-300">Beagle Systems</a><br>
           Formerly at <a href="https://www.topseven.com" target="_blank" class="hover:underline text-cyan-300">TOPseven GmbH</a>
         </div>
@@ -424,12 +460,12 @@
         <div class="text-xs"><i class="fas fa-envelope"></i> <a href="mailto:cem.yolcubal@topseven.com" class="text-cyan-400">cem.yolcubal@topseven.com</a></div>
       </div>
       <div class="glass-sm p-6 text-center">
-        <h4 class="font-bold text-lg mb-1 text-cyan-300 flex items-center justify-center gap-2">
+        <h4 class="font-bold text-lg mb-1 text-cyan-300 flex items-center justify-center gap-2 text-center">
           <a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:underline flex items-center gap-2">
             Farzan M. Noori <i class="fab fa-linkedin text-[#0A66C2]"></i>
           </a>
         </h4>
-        <div class="text-gray-200">
+        <div class="text-gray-200 text-center">
           Researcher, <a href="https://www.uio.no" target="_blank" class="hover:underline text-cyan-300">University of Oslo</a>
         </div>
         <div class="mt-2 text-xs"><i class="fas fa-phone"></i> <a href="tel:+4791255115" class="text-cyan-400">+47 912 55 115</a></div>
