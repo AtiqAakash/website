@@ -99,17 +99,32 @@
     }
     .slider-image-box {
       width: 100%;
-      aspect-ratio: 16 / 8.47; /* 10% higher than 16/7.7 */
-      min-height: 290px;
-      max-height: 532px;
+      aspect-ratio: 16 / 8.47; /* or 16 / 9 for standard */
+      /* Remove min-height and max-height for full fill */
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       background: #232c40;
       overflow: hidden;
+      height: auto; /* Let aspect-ratio set the height */
     }
-        .slider-image-fade {
+    
+    /* Mobile: taller slider for portrait screens */
+    @media (max-width: 900px) {
+      .slider-image-box {
+        aspect-ratio: 16 / 12.1;
+        height: auto;
+      }
+    }
+    @media (max-width: 640px) {
+      .slider-image-box {
+        aspect-ratio: 16 / 14.52;
+        height: auto;
+      }
+    }
+    
+    .slider-image-fade {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -128,6 +143,7 @@
       pointer-events: auto;
       transition: opacity .45s cubic-bezier(.49,.15,.39,1.4);
     }
+
 
     .slider-btn {
       position: absolute;
