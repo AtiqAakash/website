@@ -31,7 +31,7 @@
     }
     .playfair { font-family: 'Montserrat', sans-serif; }
     .parallax-bg {
-      background: url('background.jpg') center center / cover no-repeat fixed;
+      background: url('background.jpg') 60% center / cover no-repeat fixed;
       position: fixed;
       width: 100vw;
       height: 100vh;
@@ -42,13 +42,14 @@
       transition: opacity .4s;
     }
     
-    /* Mobile adjustment for centering the man in the image */
+    /* Mobile adjustment for smoother experience */
     @media (max-width: 700px) {
       .parallax-bg {
-        background-position: 60% center;  /* Adjust this value until you are centered! */
-        background-attachment: scroll;    /* Prevents jank on mobile devices */
+        background-position: 60% center;
+        background-attachment: scroll;
       }
     }
+
     .glass { background: var(--glass-bg); border-radius: 1rem; box-shadow: 0 8px 40px 0 rgba(10,20,40,0.17);}
     .glass-hero { background: var(--glass-hero-bg); border-radius: 1rem; }
     .glass-sm { background: var(--glass-sm-bg); border-radius: .7rem; }
