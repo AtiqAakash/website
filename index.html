@@ -41,6 +41,14 @@
       pointer-events: none;
       transition: opacity .4s;
     }
+    
+    /* Mobile adjustment for centering the man in the image */
+    @media (max-width: 700px) {
+      .parallax-bg {
+        background-position: 60% center;  /* Adjust this value until you are centered! */
+        background-attachment: scroll;    /* Prevents jank on mobile devices */
+      }
+    }
     .glass { background: var(--glass-bg); border-radius: 1rem; box-shadow: 0 8px 40px 0 rgba(10,20,40,0.17);}
     .glass-hero { background: var(--glass-hero-bg); border-radius: 1rem; }
     .glass-sm { background: var(--glass-sm-bg); border-radius: .7rem; }
