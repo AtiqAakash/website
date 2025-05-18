@@ -4,36 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atiqur Rahman | Portfolio</title>
-  <!-- Google Fonts: Preload all -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700;900&family=Fira+Sans:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Fonts: Inter, Playfair Display, Optien -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700;900&family=Optien:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
-    :root {
-      --primary-bg: #181e29;
-      --glass-bg: rgba(28,32,42,0.80);
-      --glass-hero-bg: rgba(36,44,66,0.16);
-      --glass-sm-bg: rgba(40,50,64,0.88);
-      --text-main: #e0e6ef;
-      --accent: #06b6d4;
-      --section-title: #fff;
-      --dot: #5b6578;
-      --dot-active: #06b6d4;
-      --nav-bg: #171c28e6;
-      --font-main: 'Inter',sans-serif;
-      --font-title: 'Playfair Display',serif;
-      --font-color: #e0e6ef;
-    }
     body {
-      font-family: var(--font-main);
-      background: var(--primary-bg);
-      color: var(--font-color);
+      font-family: 'Inter', sans-serif;
+      background: var(--primary-bg, #181e29);
+      color: var(--text-main, #e0e6ef);
       min-height: 100vh;
       position: relative;
-      transition: background .3s, color .3s;
     }
-    .playfair { font-family: var(--font-title);}
+    .playfair { font-family: 'Playfair Display', serif; }
+    .optien { font-family: 'Optien', serif; }
     .parallax-bg {
       background: url('background.jpg') center center / cover no-repeat fixed;
       position: fixed;
@@ -41,23 +26,22 @@
       height: 100vh;
       top: 0; left: 0;
       z-index: -1;
-      opacity: 0.6;
+      opacity: 0.55;
       pointer-events: none;
       transition: opacity .4s;
     }
-    .glass { background: var(--glass-bg); border-radius: 1rem; box-shadow: 0 8px 40px 0 rgba(10,20,40,0.17);}
-    .glass-hero { background: var(--glass-hero-bg); border-radius: 1rem; }
-    .glass-sm { background: var(--glass-sm-bg); border-radius: .7rem; }
+    .glass { background: var(--glass-bg, rgba(28,32,42,0.80)); border-radius: 1rem; box-shadow: 0 8px 40px 0 rgba(10,20,40,0.17);}
+    .glass-hero { background: var(--glass-hero-bg, rgba(36,44,66,0.16)); border-radius: 1rem; }
+    .glass-sm { background: var(--glass-sm-bg, rgba(40,50,64,0.88)); border-radius: .7rem; }
     .section-title {
-      font-family: var(--font-title);
+      font-family: 'Playfair Display', serif;
       font-weight: 900;
       font-size: 2.1rem;
-      color: var(--section-title);
+      color: var(--section-title, #fff);
       text-shadow: 0 2px 8px #0d0f14b4;
       letter-spacing: .01em;
       margin-bottom: 2.2rem;
       text-align: center;
-      transition: color .3s;
     }
     .brand-linkedin { color: #0A66C2 !important; }
     .brand-facebook { color: #1877F3 !important; }
@@ -67,8 +51,8 @@
     .social-btn:hover { transform: scale(1.2) rotate(-3deg);}
     .big-icon { font-size: 2.4rem !important; }
     .nav-link { transition: color .2s, border .2s; }
-    .nav-active, .nav-link.active { color: var(--accent) !important; border-bottom: 2.5px solid var(--accent) !important; font-weight: bold;}
-    .nav-link:hover { color: var(--accent); }
+    .nav-active, .nav-link.active { color: var(--accent, #65d6ff) !important; border-bottom: 2.5px solid var(--accent, #65d6ff) !important; font-weight: bold;}
+    .nav-link:hover { color: var(--accent, #65d6ff); }
     .flickr-btn { background: #ff0084; }
     .slider-wrapper {
       width: 100%;
@@ -80,15 +64,21 @@
     }
     .slider-image {
       width: 100%;
+      max-width: 100%;
       height: 250px;
       object-fit: cover;
       border-radius: 1rem;
       background: #223;
       user-select: none;
-      transition: opacity 0.2s;
+      transition: opacity .3s;
     }
-    @media (min-width: 640px) {.slider-image { height: 420px; }}
-    .slider-dot.active, .slider-dot.bg-cyan-500 {background: var(--dot-active) !important;}
+    @media (min-width: 640px) {
+      .slider-image { height: 420px; }
+    }
+    .slider-dot.active,
+    .slider-dot.bg-cyan-500 {
+      background: var(--dot-active, #06b6d4) !important;
+    }
     .slider-dot {
       transition: background .2s;
       width: 12px;
@@ -96,77 +86,77 @@
       margin: 0 4px;
       border-radius: 50%;
       display: inline-block;
-      background: var(--dot);
+      background: var(--dot, #5b6578);
       cursor: pointer;
     }
-    .theme-dropdown, .font-dropdown, .fontcolor-dropdown {
-      background: var(--glass-bg);
-      border: 1px solid #555a;
-      color: var(--text-main);
-      border-radius: .5rem;
-      padding: 0.25rem 0.7rem;
-      font-weight: 600;
-      margin-right: 12px;
-      margin-bottom: 4px;
-      font-family: inherit;
-      transition: background .2s, color .2s;
+    .theme-font-bar {
+      position: fixed;
+      left: 1rem;
+      top: 1rem;
+      z-index: 1001;
+      display: flex;
+      gap: .8rem;
+      align-items: center;
+      background: rgba(22,25,33,0.65);
+      padding: 8px 18px;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
     }
+    .theme-font-bar select {
+      border: 1px solid #e0e0e0;
+      padding: 2px 10px;
+      border-radius: 0.4rem;
+      font-size: 1rem;
+      font-weight: 600;
+      background: #181e29;
+      color: #eee;
+      outline: none;
+      min-width: 120px;
+    }
+    .theme-font-bar label { color: #90caf9; font-weight: 600; }
     @media (max-width:640px) {
       .section-title { font-size: 1.3rem;}
       .big-icon { font-size: 1.6rem !important;}
       .slider-image { height: 180px; }
+      .theme-font-bar { flex-direction: column; left: 0.2rem; top: 0.2rem; padding: 5px 6px; border-radius: 9px;}
+      .theme-font-bar label { font-size: .96rem;}
+      .theme-font-bar select { font-size: .97rem;}
     }
   </style>
 </head>
 <body>
   <div class="parallax-bg"></div>
-  <!-- THEME/FONT/FONT-COLOR CONTROLS -->
+  <!-- === Theme & Font Bar === -->
+  <div class="theme-font-bar">
+    <label for="theme-selector">Theme:</label>
+    <select id="theme-selector">
+      <option value="default">Default (Dark Cyan)</option>
+      <option value="amber">Amber</option>
+      <option value="teal">Teal</option>
+      <option value="light">Light</option>
+      <option value="purple">Purple</option>
+      <option value="emerald">Emerald</option>
+      <option value="red">Red</option>
+      <option value="classic">Classic Blue</option>
+      <option value="sunset">Sunset</option>
+      <option value="grey">Grey</option>
+      <option value="matrix">Matrix</option>
+      <option value="rose">Rose</option>
+      <option value="forest">Forest</option>
+      <option value="navy">Navy</option>
+      <option value="tangerine">Tangerine</option>
+    </select>
+    <label for="font-selector">Font:</label>
+    <select id="font-selector">
+      <option value="'Inter', sans-serif">Inter</option>
+      <option value="'Playfair Display', serif">Playfair Display</option>
+      <option value="'Optien', serif">Optien</option>
+    </select>
+  </div>
+  <!-- ========== NAVBAR ========== -->
   <nav class="fixed top-0 w-full bg-[#171c28e6] shadow z-30 backdrop-blur">
     <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between py-2 px-4">
-      <div class="flex items-center gap-4">
-        <div class="font-black text-lg md:text-xl text-cyan-400 tracking-tight playfair">Atiqur Rahman</div>
-        <select id="theme-selector" class="theme-dropdown" title="Select Theme">
-          <option value="default">Oceanic (Default)</option>
-          <option value="amber">Amber Brown</option>
-          <option value="teal">Teal Green</option>
-          <option value="light">Light</option>
-          <option value="purple">Royal Purple</option>
-          <option value="emerald">Emerald Green</option>
-          <option value="red">Red Ruby</option>
-          <option value="classic">Classic Blue</option>
-          <option value="sunset">Sunset Orange</option>
-          <option value="grey">Grey Minimal</option>
-          <option value="matrix">Matrix Dark</option>
-          <option value="rose">Rose Quartz</option>
-          <option value="forest">Forest Green</option>
-          <option value="navy">Navy Modern</option>
-          <option value="tangerine">Tangerine</option>
-        </select>
-        <select id="font-selector" class="font-dropdown" title="Font Style">
-          <option value="Inter,sans-serif">Inter</option>
-          <option value="Poppins,sans-serif">Poppins</option>
-          <option value="Montserrat,sans-serif">Montserrat</option>
-          <option value="Roboto,sans-serif">Roboto</option>
-          <option value="Lato,sans-serif">Lato</option>
-          <option value="Fira Sans,sans-serif">Fira Sans</option>
-          <option value="JetBrains Mono,monospace">JetBrains Mono</option>
-          <option value="Merriweather,serif">Merriweather</option>
-          <option value="Playfair Display,serif">Playfair Display</option>
-          <option value="Oswald,sans-serif">Oswald</option>
-        </select>
-        <select id="fontcolor-selector" class="fontcolor-dropdown" title="Font Color">
-          <option value="#e0e6ef">Light</option>
-          <option value="#181e29">Dark</option>
-          <option value="#2dd4bf">Teal</option>
-          <option value="#f59e42">Amber</option>
-          <option value="#ff5e57">Red</option>
-          <option value="#b388ff">Purple</option>
-          <option value="#ffd600">Yellow</option>
-          <option value="#06b6d4">Cyan</option>
-          <option value="#ff0084">Flickr Pink</option>
-          <option value="#fff">White</option>
-        </select>
-      </div>
+      <div class="font-black text-lg md:text-xl text-cyan-400 tracking-tight playfair">Atiqur Rahman</div>
       <div id="nav-links" class="hidden md:flex gap-4 font-semibold text-gray-200 text-base">
         <a href="#hero" class="nav-link">Home</a>
         <a href="#experience" class="nav-link">Experience</a>
@@ -200,9 +190,7 @@
     </script>
   </nav>
   <div class="h-16"></div>
-
-  <!-- All main page content: Start -->
-  <!-- ========= HERO SECTION ========= -->
+  <!-- ========== HERO ========== -->
   <section id="hero" class="relative flex flex-col justify-center items-center min-h-screen text-center z-10 py-10">
     <div class="glass-hero max-w-2xl mx-auto p-8 mt-4">
       <h1 class="section-title mb-2">Atiqur Rahman</h1>
@@ -216,8 +204,7 @@
       <a href="Atiq-CV.pdf" target="_blank" class="inline-block px-8 py-3 bg-cyan-600 hover:bg-pink-500 text-white rounded-full font-bold text-lg transition">Download CV</a>
     </div>
   </section>
-
-  <!-- ========= EXPERIENCE SECTION ========= -->
+  <!-- ========== EXPERIENCE ========== -->
   <section id="experience" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Experience</h2>
     <div class="grid gap-6 md:grid-cols-2">
@@ -371,11 +358,11 @@
       </div>
     </div>
   </section>
-
-  <!-- ========= PROJECTS ========= -->
+  <!-- ========== PROJECTS ========== -->
   <section id="projects" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Projects</h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Project cards (unchanged for brevity, same as your last version) -->
       <div class="glass-sm p-5">
         <h3 class="font-semibold text-cyan-200 mb-2">Smart Workshop Solution</h3>
         <div class="flex flex-wrap gap-1">
@@ -457,8 +444,7 @@
       </div>
     </div>
   </section>
-
-  <!-- ========= SKILLS SECTION ========= -->
+  <!-- ========== SKILLS ========== -->
   <section id="skills" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Skills & Tools</h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -480,16 +466,33 @@
       </div>
     </div>
   </section>
-
-  <!-- ========= PHOTOGRAPHY GALLERY (SLIDER) ========= -->
+  <!-- ========== PHOTOGRAPHY GALLERY ========== -->
   <section id="photography-gallery" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Photography Gallery</h2>
     <div class="glass max-w-4xl mx-auto p-4">
       <div class="slider-wrapper relative">
-        <img id="slider-img" src="1.jpg" alt="Slide" class="slider-image" draggable="false">
-        <button id="prev-slide" class="absolute top-1/2 -translate-y-1/2 left-2 z-10 bg-gray-900/90 rounded-full shadow text-3xl text-gray-300 hover:bg-cyan-700 hover:text-white p-2">&#10094;</button>
-        <button id="next-slide" class="absolute top-1/2 -translate-y-1/2 right-2 z-10 bg-gray-900/90 rounded-full shadow text-3xl text-gray-300 hover:bg-cyan-700 hover:text-white p-2">&#10095;</button>
-        <div class="flex justify-center mt-4" id="slider-dots"></div>
+        <img src="1.jpg" alt="Slide 1" class="slider-image" id="slider-image">
+        <button id="prev-slide" class="absolute top-1/2 -translate-y-1/2 left-2 z-10 bg-gray-900/90 rounded-full shadow text-3xl text-gray-300 hover:bg-cyan-700 hover:text-white p-2">
+          &#10094;
+        </button>
+        <button id="next-slide" class="absolute top-1/2 -translate-y-1/2 right-2 z-10 bg-gray-900/90 rounded-full shadow text-3xl text-gray-300 hover:bg-cyan-700 hover:text-white p-2">
+          &#10095;
+        </button>
+        <div class="flex justify-center mt-4">
+          <!-- 12 dots -->
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+        </div>
       </div>
       <div class="flex justify-center mt-6">
         <a href="http://flickr.com/photos/atiq-bro" target="_blank" class="inline-block px-6 py-2 flickr-btn hover:bg-[#00bcd4] text-white rounded-full font-bold text-lg transition">
@@ -498,33 +501,30 @@
       </div>
     </div>
     <script>
-      // Slider
+      // Single-image-at-a-time slider
       const imgList = [
         '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg',
         '7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg'
       ];
       let currentSlide = 0;
-      const sliderImg = document.getElementById('slider-img');
-      const sliderDots = document.getElementById('slider-dots');
-      function renderDots() {
-        sliderDots.innerHTML = '';
-        imgList.forEach((_, idx) => {
-          const span = document.createElement('span');
-          span.className = 'slider-dot' + (idx === currentSlide ? ' active' : '');
-          span.onclick = () => { currentSlide = idx; showSlide(idx); };
-          sliderDots.appendChild(span);
-        });
-      }
+      const sliderImg = document.getElementById('slider-image');
+      const dots = document.querySelectorAll('.slider-dot');
       function showSlide(idx) {
-        sliderImg.style.opacity = '0.5';
+        sliderImg.style.opacity = '0';
         setTimeout(() => {
           sliderImg.src = imgList[idx];
           sliderImg.style.opacity = '1';
-        }, 120);
-        renderDots();
+        }, 180);
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[idx].classList.add('active');
       }
-      renderDots();
       showSlide(currentSlide);
+      dots.forEach((dot, idx) => {
+        dot.onclick = () => {
+          currentSlide = idx;
+          showSlide(currentSlide);
+        };
+      });
       document.getElementById('next-slide').onclick = () => {
         currentSlide = (currentSlide + 1) % imgList.length;
         showSlide(currentSlide);
@@ -539,8 +539,7 @@
       }, 3500);
     </script>
   </section>
-
-  <!-- ========= EDUCATION ========= -->
+  <!-- ========== EDUCATION ========== -->
   <section id="education" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Education</h2>
     <div class="grid gap-6 md:grid-cols-3">
@@ -558,8 +557,7 @@
       </div>
     </div>
   </section>
-
-  <!-- ========= COMMUNITY ========= -->
+  <!-- ========== COMMUNITY ========== -->
   <section id="community" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">Community</h2>
     <div class="grid gap-6 md:grid-cols-3">
@@ -582,8 +580,7 @@
       </div>
     </div>
   </section>
-
-  <!-- ========= REFERENCES ========= -->
+  <!-- ========== REFERENCES ========== -->
   <section id="references" class="max-w-6xl mx-auto py-12 px-2">
     <h2 class="section-title">References</h2>
     <div class="grid gap-6 md:grid-cols-3">
@@ -607,8 +604,7 @@
       </div>
     </div>
   </section>
-
-  <!-- ========= CONTACT ========= -->
+  <!-- ========== CONTACT ========== -->
   <section id="contact" class="max-w-6xl mx-auto py-12 px-2">
     <div class="glass max-w-xl mx-auto p-8 text-center">
       <h2 class="section-title mb-5">Contact Me</h2>
@@ -624,86 +620,220 @@
   <footer class="text-center text-gray-600 text-xs py-5 font-semibold bg-transparent">
     &copy; 2024 Atiqur Rahman. All rights reserved.
   </footer>
-
-  <!-- THEME/FONT/FONT-COLOR SCRIPT -->
+  <!-- =============================== -->
+  <!-- ACTIVE NAVBAR HIGHLIGHT SCRIPT  -->
   <script>
-    // Theme color sets
-    const THEMES = {
-      'default': {
-        '--primary-bg': '#181e29', '--glass-bg': 'rgba(28,32,42,0.80)', '--glass-hero-bg': 'rgba(36,44,66,0.16)', '--glass-sm-bg': 'rgba(40,50,64,0.88)',
-        '--text-main': '#e0e6ef', '--accent': '#06b6d4', '--section-title': '#fff', '--dot': '#5b6578', '--dot-active': '#06b6d4', '--nav-bg':'#171c28e6'
+    // Section-to-link mapping
+    const sectionIds = [
+      'hero','experience','projects','skills','photography-gallery',
+      'education','community','references','contact'
+    ];
+    const navLinks = document.querySelectorAll('.nav-link');
+    function setActiveNav() {
+      let scroll = window.scrollY + 120;
+      let activeIdx = 0;
+      sectionIds.forEach((id, idx) => {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scroll) activeIdx = idx;
+      });
+      navLinks.forEach(l => l.classList.remove('active','nav-active'));
+      navLinks[activeIdx].classList.add('active','nav-active');
+    }
+    window.addEventListener('scroll', setActiveNav, { passive:true });
+    document.addEventListener('DOMContentLoaded', setActiveNav);
+  </script>
+  <!-- ===== THEME AND FONT PICKER ===== -->
+  <script>
+    // All color values use CSS variables for fast switch
+    const themes = {
+      "default": {
+        "--primary-bg":"#181e29",
+        "--text-main":"#e0e6ef",
+        "--accent":"#65d6ff",
+        "--glass-bg":"rgba(28,32,42,0.80)",
+        "--glass-hero-bg":"rgba(36,44,66,0.16)",
+        "--glass-sm-bg":"rgba(40,50,64,0.88)",
+        "--section-title":"#fff",
+        "--dot-active":"#06b6d4",
+        "--dot":"#5b6578"
       },
-      'amber': {
-        '--primary-bg': '#5d4037', '--glass-bg': 'rgba(70, 44, 20, 0.8)', '--glass-hero-bg': 'rgba(120, 80, 35, 0.23)', '--glass-sm-bg': 'rgba(100, 60, 30, 0.89)',
-        '--text-main': '#ffe0b2', '--accent': '#ffb300', '--section-title': '#ffe0b2', '--dot': '#b7896d', '--dot-active': '#ffb300', '--nav-bg':'#5d4037ee'
+      "amber": {
+        "--primary-bg":"#1d1911",
+        "--text-main":"#ffecc7",
+        "--accent":"#ffbe3c",
+        "--glass-bg":"rgba(69,55,16,0.82)",
+        "--glass-hero-bg":"rgba(101,86,36,0.18)",
+        "--glass-sm-bg":"rgba(70,60,23,0.91)",
+        "--section-title":"#ffecc7",
+        "--dot-active":"#ffbe3c",
+        "--dot":"#bd9641"
       },
-      'teal': {
-        '--primary-bg': '#043933', '--glass-bg': 'rgba(6, 94, 91, 0.8)', '--glass-hero-bg': 'rgba(6,94,91,0.23)', '--glass-sm-bg': 'rgba(4,57,51,0.89)',
-        '--text-main': '#e0fcf9', '--accent': '#2dd4bf', '--section-title': '#fff', '--dot': '#195853', '--dot-active': '#2dd4bf', '--nav-bg':'#043933ee'
+      "teal": {
+        "--primary-bg":"#0c2127",
+        "--text-main":"#c0f5ec",
+        "--accent":"#1de9b6",
+        "--glass-bg":"rgba(15,50,54,0.83)",
+        "--glass-hero-bg":"rgba(14,68,68,0.15)",
+        "--glass-sm-bg":"rgba(19,66,66,0.91)",
+        "--section-title":"#bffae2",
+        "--dot-active":"#1de9b6",
+        "--dot":"#1ca38b"
       },
-      'light': {
-        '--primary-bg': '#f5f7fa', '--glass-bg': 'rgba(255,255,255,0.9)', '--glass-hero-bg': 'rgba(255,255,255,0.75)', '--glass-sm-bg': 'rgba(230,230,230,0.95)',
-        '--text-main': '#222', '--accent': '#1976d2', '--section-title': '#1976d2', '--dot': '#aaa', '--dot-active': '#1976d2', '--nav-bg':'#fff'
+      "light": {
+        "--primary-bg":"#f6fafb",
+        "--text-main":"#20223a",
+        "--accent":"#0da6c2",
+        "--glass-bg":"rgba(255,255,255,0.82)",
+        "--glass-hero-bg":"rgba(245,250,255,0.28)",
+        "--glass-sm-bg":"rgba(243,246,250,0.95)",
+        "--section-title":"#2d2b2c",
+        "--dot-active":"#0da6c2",
+        "--dot":"#6cb6cb"
       },
-      'purple': {
-        '--primary-bg': '#271052', '--glass-bg': 'rgba(64,28,120,0.78)', '--glass-hero-bg': 'rgba(64,28,120,0.18)', '--glass-sm-bg': 'rgba(53,20,80,0.89)',
-        '--text-main': '#e6dbfe', '--accent': '#b388ff', '--section-title': '#fff', '--dot': '#7866ad', '--dot-active': '#b388ff', '--nav-bg':'#271052f5'
+      "purple": {
+        "--primary-bg":"#20162d",
+        "--text-main":"#eee5ff",
+        "--accent":"#a385fd",
+        "--glass-bg":"rgba(58,34,76,0.81)",
+        "--glass-hero-bg":"rgba(84,64,116,0.17)",
+        "--glass-sm-bg":"rgba(53,39,84,0.93)",
+        "--section-title":"#e2d6fb",
+        "--dot-active":"#a385fd",
+        "--dot":"#684ea0"
       },
-      'emerald': {
-        '--primary-bg': '#033a26', '--glass-bg': 'rgba(15,78,65,0.84)', '--glass-hero-bg': 'rgba(23,94,82,0.22)', '--glass-sm-bg': 'rgba(3,58,38,0.93)',
-        '--text-main': '#dbffe0', '--accent': '#5fffa5', '--section-title': '#fff', '--dot': '#19a96f', '--dot-active': '#5fffa5', '--nav-bg':'#033a26eb'
+      "emerald": {
+        "--primary-bg":"#10221c",
+        "--text-main":"#def7e9",
+        "--accent":"#21e884",
+        "--glass-bg":"rgba(22,60,40,0.81)",
+        "--glass-hero-bg":"rgba(28,83,62,0.13)",
+        "--glass-sm-bg":"rgba(28,74,58,0.95)",
+        "--section-title":"#c8ffe0",
+        "--dot-active":"#21e884",
+        "--dot":"#4db27f"
       },
-      'red': {
-        '--primary-bg': '#391515', '--glass-bg': 'rgba(94,6,38,0.83)', '--glass-hero-bg': 'rgba(120,28,64,0.19)', '--glass-sm-bg': 'rgba(58,3,21,0.91)',
-        '--text-main': '#ffdadb', '--accent': '#ff5e57', '--section-title': '#fff', '--dot': '#b8576d', '--dot-active': '#ff5e57', '--nav-bg':'#391515f2'
+      "red": {
+        "--primary-bg":"#2c1616",
+        "--text-main":"#ffdede",
+        "--accent":"#f94144",
+        "--glass-bg":"rgba(67,16,16,0.81)",
+        "--glass-hero-bg":"rgba(96,33,33,0.15)",
+        "--glass-sm-bg":"rgba(88,28,28,0.93)",
+        "--section-title":"#fff0f0",
+        "--dot-active":"#f94144",
+        "--dot":"#a25151"
       },
-      'classic': {
-        '--primary-bg': '#153d68', '--glass-bg': 'rgba(21,61,104,0.82)', '--glass-hero-bg': 'rgba(21,61,104,0.18)', '--glass-sm-bg': 'rgba(15,30,60,0.91)',
-        '--text-main': '#f0f5ff', '--accent': '#2196f3', '--section-title': '#fff', '--dot': '#5d7ea6', '--dot-active': '#2196f3', '--nav-bg':'#153d68f2'
+      "classic": {
+        "--primary-bg":"#212d4a",
+        "--text-main":"#e6eefc",
+        "--accent":"#3477f5",
+        "--glass-bg":"rgba(40,56,97,0.83)",
+        "--glass-hero-bg":"rgba(58,71,121,0.21)",
+        "--glass-sm-bg":"rgba(49,60,103,0.91)",
+        "--section-title":"#e6eefc",
+        "--dot-active":"#3477f5",
+        "--dot":"#7293d3"
       },
-      'sunset': {
-        '--primary-bg': '#ff7043', '--glass-bg': 'rgba(255,87,34,0.85)', '--glass-hero-bg': 'rgba(255,112,67,0.22)', '--glass-sm-bg': 'rgba(255,87,34,0.91)',
-        '--text-main': '#fff6e5', '--accent': '#ff8a65', '--section-title': '#fff', '--dot': '#ffa726', '--dot-active': '#ff7043', '--nav-bg':'#ff7043eb'
+      "sunset": {
+        "--primary-bg":"#432534",
+        "--text-main":"#ffead7",
+        "--accent":"#ff914d",
+        "--glass-bg":"rgba(75,25,54,0.85)",
+        "--glass-hero-bg":"rgba(150,74,51,0.15)",
+        "--glass-sm-bg":"rgba(106,42,65,0.90)",
+        "--section-title":"#ffd1ae",
+        "--dot-active":"#ff914d",
+        "--dot":"#ffbfab"
       },
-      'grey': {
-        '--primary-bg': '#23272e', '--glass-bg': 'rgba(45,47,51,0.82)', '--glass-hero-bg': 'rgba(55,57,60,0.16)', '--glass-sm-bg': 'rgba(45,47,51,0.92)',
-        '--text-main': '#eaeaea', '--accent': '#6ee7b7', '--section-title': '#fff', '--dot': '#666a7e', '--dot-active': '#6ee7b7', '--nav-bg':'#23272eee'
+      "grey": {
+        "--primary-bg":"#262c30",
+        "--text-main":"#ebeef0",
+        "--accent":"#9ad2f7",
+        "--glass-bg":"rgba(58,63,72,0.82)",
+        "--glass-hero-bg":"rgba(70,75,86,0.15)",
+        "--glass-sm-bg":"rgba(80,87,95,0.95)",
+        "--section-title":"#e0e5ea",
+        "--dot-active":"#9ad2f7",
+        "--dot":"#657280"
       },
-      'matrix': {
-        '--primary-bg': '#041d13', '--glass-bg': 'rgba(13, 59, 28, 0.80)', '--glass-hero-bg': 'rgba(13,59,28,0.16)', '--glass-sm-bg': 'rgba(4,29,19,0.88)',
-        '--text-main': '#b8ffcb', '--accent': '#39ff14', '--section-title': '#39ff14', '--dot': '#23a941', '--dot-active': '#39ff14', '--nav-bg':'#041d13e6'
+      "matrix": {
+        "--primary-bg":"#101c12",
+        "--text-main":"#d6ffd4",
+        "--accent":"#3fff63",
+        "--glass-bg":"rgba(20,44,28,0.81)",
+        "--glass-hero-bg":"rgba(41,96,60,0.10)",
+        "--glass-sm-bg":"rgba(25,44,30,0.93)",
+        "--section-title":"#b2f8a6",
+        "--dot-active":"#3fff63",
+        "--dot":"#8be096"
       },
-      'rose': {
-        '--primary-bg': '#350b28', '--glass-bg': 'rgba(102,6,56,0.76)', '--glass-hero-bg': 'rgba(102,6,56,0.19)', '--glass-sm-bg': 'rgba(53,11,40,0.90)',
-        '--text-main': '#fff0f6', '--accent': '#ff5eae', '--section-title': '#fff', '--dot': '#f78da7', '--dot-active': '#ff5eae', '--nav-bg':'#350b28ea'
+      "rose": {
+        "--primary-bg":"#2e192b",
+        "--text-main":"#ffdbe7",
+        "--accent":"#f763a3",
+        "--glass-bg":"rgba(63,21,57,0.78)",
+        "--glass-hero-bg":"rgba(180,76,145,0.13)",
+        "--glass-sm-bg":"rgba(74,28,71,0.91)",
+        "--section-title":"#ffc3e0",
+        "--dot-active":"#f763a3",
+        "--dot":"#a77198"
       },
-      'forest': {
-        '--primary-bg': '#143d14', '--glass-bg': 'rgba(40,80,40,0.83)', '--glass-hero-bg': 'rgba(40,80,40,0.18)', '--glass-sm-bg': 'rgba(20,61,20,0.91)',
-        '--text-main': '#e5ffe6', '--accent': '#5cffa3', '--section-title': '#fff', '--dot': '#5ca671', '--dot-active': '#5cffa3', '--nav-bg':'#143d14f2'
+      "forest": {
+        "--primary-bg":"#162417",
+        "--text-main":"#e5ffe7",
+        "--accent":"#4ed678",
+        "--glass-bg":"rgba(32,62,34,0.84)",
+        "--glass-hero-bg":"rgba(51,90,54,0.18)",
+        "--glass-sm-bg":"rgba(36,69,39,0.91)",
+        "--section-title":"#daf9c3",
+        "--dot-active":"#4ed678",
+        "--dot":"#8ad987"
       },
-      'navy': {
-        '--primary-bg': '#0e223b', '--glass-bg': 'rgba(26,47,81,0.81)', '--glass-hero-bg': 'rgba(14,34,59,0.19)', '--glass-sm-bg': 'rgba(14,34,59,0.91)',
-        '--text-main': '#d6e6fa', '--accent': '#4f83cc', '--section-title': '#fff', '--dot': '#385a80', '--dot-active': '#4f83cc', '--nav-bg':'#0e223bec'
+      "navy": {
+        "--primary-bg":"#1c2341",
+        "--text-main":"#d9e3fa",
+        "--accent":"#4479eb",
+        "--glass-bg":"rgba(29,35,68,0.84)",
+        "--glass-hero-bg":"rgba(51,61,108,0.18)",
+        "--glass-sm-bg":"rgba(43,54,91,0.91)",
+        "--section-title":"#b2ccfc",
+        "--dot-active":"#4479eb",
+        "--dot":"#8aaddb"
       },
-      'tangerine': {
-        '--primary-bg': '#ffbe0b', '--glass-bg': 'rgba(255,170,0,0.82)', '--glass-hero-bg': 'rgba(255,190,11,0.17)', '--glass-sm-bg': 'rgba(255,190,11,0.91)',
-        '--text-main': '#222', '--accent': '#ff5e00', '--section-title': '#ff5e00', '--dot': '#fdc13b', '--dot-active': '#ff5e00', '--nav-bg':'#ffbe0bfc'
+      "tangerine": {
+        "--primary-bg":"#43260f",
+        "--text-main":"#ffe6c7",
+        "--accent":"#ffba4c",
+        "--glass-bg":"rgba(71,36,15,0.84)",
+        "--glass-hero-bg":"rgba(255,186,76,0.13)",
+        "--glass-sm-bg":"rgba(114,72,23,0.91)",
+        "--section-title":"#ffe6c7",
+        "--dot-active":"#ffba4c",
+        "--dot":"#cf9541"
       }
     };
-    document.getElementById('theme-selector').onchange = e => {
-      const t = THEMES[e.target.value];
-      Object.entries(t).forEach(([key,val]) => document.documentElement.style.setProperty(key, val));
-    };
-    document.getElementById('font-selector').onchange = e => {
-      document.body.style.fontFamily = e.target.value;
-    };
-    document.getElementById('fontcolor-selector').onchange = e => {
-      document.documentElement.style.setProperty('--font-color', e.target.value);
-      document.body.style.color = e.target.value;
-    };
+    function applyTheme(theme) {
+      const cssVars = themes[theme] || themes['default'];
+      for (const key in cssVars) {
+        document.documentElement.style.setProperty(key, cssVars[key]);
+      }
+    }
+    document.getElementById('theme-selector').addEventListener('change', function() {
+      applyTheme(this.value);
+    });
+    // Font picker
+    document.getElementById('font-selector').addEventListener('change', function() {
+      document.body.style.fontFamily = this.value;
+    });
+    // On page load: default theme and font
+    document.addEventListener('DOMContentLoaded', function() {
+      applyTheme('default');
+      document.body.style.fontFamily = "'Inter', sans-serif";
+    });
   </script>
+  <!-- NAVBAR SECTION TRACKER -->
   <script>
-    // Active Navbar highlight on scroll
+    // Section-to-link mapping
     const sectionIds = [
       'hero','experience','projects','skills','photography-gallery',
       'education','community','references','contact'
