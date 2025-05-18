@@ -99,39 +99,48 @@
     }
     
     .slider-image-box {
-      width: 100%;
-      height: 60vw;
-      max-height: 480px;
-      min-height: 200px;
-      position: relative;
-      background: #232c40;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    @media (max-width: 600px) {
-      .slider-image-box {
-        height: 55vw;
-        min-height: 160px;
-        max-height: 270px;
-      }
-    }
-    
-    .slider-image-fade {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      border-radius: 1rem;
-      opacity: 0;
-      position: absolute;
-      left: 0; top: 0;
-      z-index: 1;
-      transition: opacity .45s cubic-bezier(.49,.15,.39,1.4);
-      pointer-events: none;
-    }
+  width: 100%;
+  height: 50vh; /* Fills half the viewport vertically. Use 60vh, 70vh, etc. if you want taller. */
+  min-height: 220px; /* Reasonable minimum for mobile */
+  max-height: 600px; /* Max for desktop, adjust as needed */
+  position: relative;
+  background: #232c40;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive: slightly taller on mobile if needed */
+@media (max-width: 600px) {
+  .slider-image-box {
+    height: 40vh;
+    min-height: 170px;
+    max-height: 320px;
+  }
+}
+
+.slider-image-fade {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* THIS makes the image always fill the box, cropping as needed */
+  object-position: center center;
+  border-radius: 1rem;
+  opacity: 0;
+  position: absolute;
+  left: 0; top: 0;
+  z-index: 1;
+  transition: opacity .45s cubic-bezier(.49,.15,.39,1.4);
+  pointer-events: none;
+}
+
+.slider-image-fade.active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+  transition: opacity .45s cubic-bezier(.49,.15,.39,1.4);
+}
+
     .slider-image-fade.active {
       opacity: 1;
       z-index: 2;
