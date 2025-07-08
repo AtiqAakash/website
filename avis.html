@@ -9,14 +9,15 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     body { background: #121212; color: #eee; font-family: "Inter", sans-serif; text-align: center; }
-    #map, .chart-container, #aglChart, #chartTitle { display: none; }
-    #map { height: 45vh; width: 100%; border-radius: 10px; margin: 2em auto; position: relative; z-index: 1; }
-    .logo { height: 50px; position: absolute; right: 20px; top: 20px; z-index: 1000; }
+    #map, .chart-container, #aglChart { display: none; }
+    #map { height: 50vh; width: 100%; border-radius: 10px; margin: 1em auto; position: relative; z-index: 1; }
+    .logo { height: 30px; position: absolute; right: 20px; top: 10px; z-index: 1000; }
+    .header h2 { font-size: 1.5rem; }
     .chart-container { width: 90%; height: 50vh; margin: 0 auto; }
     canvas { border-radius: 10px; background: #1e1e1e; padding: 1em; }
     .status { font-weight: 500; color: #0dcaf0; }
-    .header { position: relative; margin-bottom: 2rem; z-index: 1000; background: #121212; padding: 1rem; }
-    #uploadSection { background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 10px; backdrop-filter: blur(10px); display: inline-block; }
+    .header { position: relative; margin-bottom: 1rem; z-index: 1000; background: #121212; padding: 0.5rem; }
+    #uploadSection { background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 10px; backdrop-filter: blur(10px); display: inline-block; }
     #fileInput { background: rgba(255,255,255,0.1); color: #0dcaf0; border: none; font-family: "Inter", sans-serif; color-scheme: dark; }
     #fileInput::file-selector-button { background: rgba(255,255,255,0.2); color: #0dcaf0; border: none; padding: 0.5em 1em; border-radius: 5px; font-weight: bold; font-family: "Inter", sans-serif; }
     .custom-flag span { font-size: 24px; display: inline-block; animation: balloonpin 1.5s infinite alternate ease-in-out; }
@@ -34,7 +35,6 @@
     <span id="status" class="ms-3 status"></span>
   </div>
   <div id="map"></div>
-  <h5 id="chartTitle">Above Ground Level (AGL) Profile</h5>
   <div class="chart-container">
     <canvas id="aglChart"></canvas>
   </div>
@@ -61,7 +61,6 @@
             document.getElementById('uploadSection').style.display = 'none';
             document.getElementById('map').style.display = 'block';
             document.getElementById('aglChart').parentElement.style.display = 'block';
-            document.getElementById('chartTitle').style.display = 'block';
             initMap();
             visualize();
           }
@@ -86,7 +85,6 @@
         lowMarkers = [];
 
         const latlngs = pointList.map(p => [p.lat, p.lon]);
-
         if (latlngs.length > 1) {
           map.fitBounds(latlngs);
         } else {
