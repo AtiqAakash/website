@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>.plan to .kml Converter</title>
+  <title>.plan to 3D .kml Converter</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -34,8 +34,8 @@
 <body>
   <div class="flex flex-col items-center justify-center min-h-screen px-4">
     <div class="glass p-10 w-full max-w-3xl">
-      <h1 class="section-title text-3xl md:text-4xl text-white font-bold text-center mb-2">QGroundControl .plan to .kml Converter</h1>
-      <p class="subtitle text-center text-[#65d6ff] mb-4">Convert flight plans to view in Google Earth</p>
+      <h1 class="text-3xl md:text-4xl text-white font-bold text-center mb-2">QGroundControl .plan to 3D .kml</h1>
+      <p class="text-center text-[#65d6ff] mb-4">Convert flight plans into Google Earth 3D visualizations</p>
 
       <div id="dropZone" class="drag-area mb-4">Drag & Drop .plan/.json files here or click to select</div>
       <input id="fileInput" type="file" accept=".plan,.json" multiple hidden/>
@@ -44,7 +44,7 @@
         <div id="progressBar" class="absolute top-0 left-0 bg-cyan-500 h-4 rounded-md transition-all duration-300" style="width: 0%"></div>
       </div>
 
-      <button id="convertButton" onclick="convertPlans()" class="bg-cyan-600 hover:bg-cyan-400 transition px-6 py-2 rounded text-white font-semibold w-full">Convert & Download .kml Files</button>
+      <button id="convertButton" onclick="convertPlans()" class="bg-cyan-600 hover:bg-cyan-400 transition px-6 py-2 rounded text-white font-semibold w-full">Convert & Download 3D .kml</button>
       <p id="status" class="text-green-400 font-medium mt-4 text-center"></p>
     </div>
   </div>
@@ -56,16 +56,13 @@
     const status = document.getElementById("status");
 
     dropZone.addEventListener("click", () => fileInput.click());
-
     dropZone.addEventListener("dragover", (e) => {
       e.preventDefault();
       dropZone.classList.add("dragover");
     });
-
     dropZone.addEventListener("dragleave", () => {
       dropZone.classList.remove("dragover");
     });
-
     dropZone.addEventListener("drop", (e) => {
       e.preventDefault();
       dropZone.classList.remove("dragover");
@@ -88,37 +85,38 @@
         const reader = new FileReader();
         reader.onload = function (e) {
           try {
-            updateProgress(20);
+            updateProgress(10);
             status.innerText = `Processing ${file.name}...`;
 
             const data = JSON.parse(e.target.result);
             const items = data.mission?.items || [];
 
-            let kml = `<?xml version="1.0" encoding="UTF-8"?>\n<kml xmlns="http://www.opengis.net/kml/2.2">\n<Document>\n`;
+            let coords = [];
 
-            const coords = [];
-
-            items.forEach((item, index) => {
+            items.forEach((item, i) => {
               const lat = item.params?.[4];
               const lon = item.params?.[5];
-              const alt = item.params?.[6];
+              const alt = item.params?.[6] ?? 50;
               if (lat !== undefined && lon !== undefined) {
-                kml += `<Placemark><name>WP${index}</name>\n<description>Altitude: ${alt || 0} m</description>\n<Point><coordinates>${lon},${lat},${alt || 0}</coordinates></Point>\n</Placemark>\n`;
-                coords.push(`${lon},${lat},${alt || 0}`);
+                coords.push(`<gx:coord>${lon} ${lat} ${alt}</gx:coord>`);
               }
             });
 
-            if (coords.length > 1) {
-              kml += `<Placemark><name>Flight Path</name>\n<Style><LineStyle><color>ff00ffff</color><width>3</width></LineStyle></Style>\n<LineString><tessellate>1</tessellate><coordinates>\n${coords.join("\n")}\n</coordinates></LineString></Placemark>\n`;
-            }
+            let kml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+            kml += `<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">\n`;
+            kml += `<Document>\n`;
+            kml += `<Placemark>\n`;
+            kml += `<name>${file.name.replace(/\.[^/.]+$/, "")} 3D Flight Path</name>\n`;
+            kml += `<Style><LineStyle><color>ff00ffff</color><width>3</width></LineStyle></Style>\n`;
+            kml += `<gx:Track>\n<altitudeMode>absolute</altitudeMode>\n${coords.join("\n")}\n</gx:Track>\n`;
+            kml += `</Placemark>\n</Document>\n</kml>`;
 
-            kml += `</Document>\n</kml>`;
             const blob = new Blob([kml], { type: "application/vnd.google-earth.kml+xml" });
             const url = URL.createObjectURL(blob);
 
             const a = document.createElement("a");
             a.href = url;
-            a.download = file.name.replace(/\.[^/.]+$/, "") + ".kml";
+            a.download = file.name.replace(/\.[^/.]+$/, "") + "_3D.kml";
             a.click();
 
             updateProgress(((idx + 1) / files.length) * 100);
@@ -126,6 +124,7 @@
           } catch (err) {
             console.error(err);
             status.innerText = `❌ Failed to convert ${file.name}`;
+            updateProgress(0);
           }
         };
         reader.readAsText(file);
