@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>.plan to .kml Converter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #181e29;
+      color: #e0e6ef;
+      min-height: 100vh;
+    }
+    .glass {
+      background: rgba(28,32,42,0.80);
+      border-radius: 1rem;
+      box-shadow: 0 8px 40px 0 rgba(10,20,40,0.17);
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .subtitle {
+      color: #65d6ff;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex flex-col items-center justify-center min-h-screen px-4">
+    <div class="glass p-10 w-full max-w-2xl">
+      <h1 class="section-title">QGroundControl .plan to .kml Converter</h1>
+      <p class="subtitle">Convert flight plans to view in Google Earth</p>
+      <div class="flex flex-col gap-4 text-center">
+        <input id="fileInput" type="file" accept=".plan,.json" class="text-white bg-[#2c3447] px-4 py-2 rounded-md w-full" />
+        <div class="relative w-full bg-[#2c3447] rounded-md h-4">
+          <div id="progressBar" class="absolute top-0 left-0 bg-cyan-500 h-4 rounded-md transition-all duration-300" style="width: 0%"></div>
+        </div>
+        <button id="convertButton" onclick="convertPlanToKml()" class="bg-cyan-600 hover:bg-cyan-400 transition px-6 py-2 rounded text-white font-semibold">
+          Convert & Download .kml
+        </button>
+        <p id="status" class="text-green-400 font-medium mt-2"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let downloadLink = null;
+
+    function updateProgress(percent) {
+      document.getElementById("progressBar").style.width = `${percent}%`;
+    }
+
+    function convertPlanToKml() {
+      const input = document.getElementById("fileInput");
+      const file = input.files[0];
+      const button = document.getElementById("convertButton");
+      const status = document.getElementById("status");
+      if (!file) {
+        alert("Please select a .plan file first.");
+        return;
+      }
+
+      updateProgress(10);
+      status.innerText = "Reading file...";
+      button.disabled = true;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        try {
+          updateProgress(30);
+          status.innerText = "Parsing JSON...";
+          const data = JSON.parse(e.target.result);
+          const items = data.mission?.items || [];
+
+          let kml = `<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n`;
+          kml += `<kml xmlns=\"http://www.opengis.net/kml/2.2\">\n<Document>\n`;
+
+          items.forEach((item, index) => {
+            const lat = item.params?.[4];
+            const lon = item.params?.[5];
+            const alt = item.params?.[6];
+            if (lat !== undefined && lon !== undefined) {
+              kml += `<Placemark>\n`;
+              kml += `<name>WP${index}</name>\n`;
+              kml += `<description>Altitude: ${alt || 0} m</description>\n`;
+              kml += `<Point><coordinates>${lon},${lat},${alt || 0}</coordinates></Point>\n`;
+              kml += `</Placemark>\n`;
+            }
+          });
+
+          updateProgress(70);
+          status.innerText = "Generating KML...";
+          kml += `</Document>\n</kml>`;
+
+          const blob = new Blob([kml], { type: "application/vnd.google-earth.kml+xml" });
+          const url = URL.createObjectURL(blob);
+
+          downloadLink = document.createElement("a");
+          downloadLink.href = url;
+          downloadLink.download = file.name.replace(/\.[^/.]+$/, "") + ".kml";
+
+          updateProgress(100);
+          status.innerText = "✅ KML file ready to download!";
+          button.innerText = "Download KML";
+          button.disabled = false;
+          button.onclick = () => downloadLink.click();
+        } catch (err) {
+          status.innerText = "❌ Failed to parse or convert file.";
+          button.disabled = false;
+          updateProgress(0);
+          console.error(err);
+        }
+      };
+      reader.readAsText(file);
+    }
+  </script>
+</body>
+</html>
