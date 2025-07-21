@@ -94,11 +94,14 @@
             let coordinates = [];
 
             items.forEach((item) => {
-              const lat = item.params?.[4];
-              const lon = item.params?.[5];
-              const alt = item.params?.[6] ?? 50;
-              if (lat !== undefined && lon !== undefined) {
-                coordinates.push(`${lon},${lat},${alt}`);
+              if (Array.isArray(item.params) && item.params.length >= 7) {
+                const lat = item.params[4];
+                const lon = item.params[5];
+                const alt = item.params[6] ?? 50;
+
+                if (typeof lat === "number" && typeof lon === "number") {
+                  coordinates.push(`${lon},${lat},${alt}`);
+                }
               }
             });
 
@@ -111,7 +114,6 @@
   <Document>
     <Placemark>
       <name>${file.name.replace(/\.[^/.]+$/, "")} 3D Path</name>
-      <styleUrl>#lineStyle1</styleUrl>
       <LineString>
         <altitudeMode>absolute</altitudeMode>
         <coordinates>
