@@ -35,7 +35,7 @@
   <div class="flex flex-col items-center justify-center min-h-screen px-4">
     <div class="glass p-10 w-full max-w-3xl">
       <h1 class="text-3xl md:text-4xl text-white font-bold text-center mb-2">QGroundControl .plan to 3D .kml</h1>
-      <p class="text-center text-[#65d6ff] mb-4">Convert flight plans into Google Earth 3D visualizations</p>
+      <p class="text-center text-[#65d6ff] mb-4">Convert flight plans into altitude-based 3D paths</p>
 
       <div id="dropZone" class="drag-area mb-4">Drag & Drop .plan/.json files here or click to select</div>
       <input id="fileInput" type="file" accept=".plan,.json" multiple hidden/>
@@ -91,25 +91,36 @@
             const data = JSON.parse(e.target.result);
             const items = data.mission?.items || [];
 
-            let coords = [];
+            let coordinates = [];
 
-            items.forEach((item, i) => {
+            items.forEach((item) => {
               const lat = item.params?.[4];
               const lon = item.params?.[5];
               const alt = item.params?.[6] ?? 50;
               if (lat !== undefined && lon !== undefined) {
-                coords.push(`<gx:coord>${lon} ${lat} ${alt}</gx:coord>`);
+                coordinates.push(`${lon},${lat},${alt}`);
               }
             });
 
-            let kml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-            kml += `<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">\n`;
-            kml += `<Document>\n`;
-            kml += `<Placemark>\n`;
-            kml += `<name>${file.name.replace(/\.[^/.]+$/, "")} 3D Flight Path</name>\n`;
-            kml += `<Style><LineStyle><color>ff00ffff</color><width>3</width></LineStyle></Style>\n`;
-            kml += `<gx:Track>\n<altitudeMode>absolute</altitudeMode>\n${coords.join("\n")}\n</gx:Track>\n`;
-            kml += `</Placemark>\n</Document>\n</kml>`;
+            if (coordinates.length < 2) {
+              throw new Error("Not enough valid waypoints to form a path.");
+            }
+
+            const kml = `<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>${file.name.replace(/\.[^/.]+$/, "")} 3D Path</name>
+      <styleUrl>#lineStyle1</styleUrl>
+      <LineString>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>
+          ${coordinates.join("\n          ")}
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>`;
 
             const blob = new Blob([kml], { type: "application/vnd.google-earth.kml+xml" });
             const url = URL.createObjectURL(blob);
