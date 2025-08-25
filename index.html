@@ -37,8 +37,7 @@
         .background-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background: url('background.jpg') center center / cover no-repeat; will-change: transform; }
         .background-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-            /* ADJUSTED OPACITY: Changed from 0.8 to 0.6 for maximum background visibility */
-            background-color: rgba(17, 24, 39, 0.6); 
+            background-color: rgba(17, 24, 39, 0.7); 
         }
 
         .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
@@ -134,11 +133,15 @@
         <section id="about" class="py-24">
             <div class="scroll-animate text-center">
                 <h2 class="section-title">About Me</h2>
-                <div class="card p-8 md:p-12 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
+                <div class="card p-8 md:p-12 max-w-4xl mx-auto flex flex-col items-center gap-8">
                     <img src="about-photo.jpg" alt="Atiqur Rahman" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover flex-shrink-0 border-4 border-cyan-500">
-                    <div class="text-center md:text-left">
-                        <h3 class="text-3xl text-white mb-4">A Hands-On Engineer</h3>
-                        <p class="text-lg text-gray-300" style="font-family: var(--font-body); font-weight: 400;">My career is a practical journey from foundational IT support to specialized drone and embedded systems engineering. I began by managing Linux servers and networks, which gave me a strong technical base. This led me to hands-on R&D roles where I've developed, tested, and piloted unmanned systems for leading companies like Robot Aviation and Beagle Systems. I build and program with tools like C++, Python, Pixhawk, and Linux to create functional, real-world solutions.</p>
+                    <div class="text-center">
+                        <h3 class="text-3xl text-white mb-4">Mastering the Skies and the Code</h3>
+                        <p class="text-lg text-gray-300" style="font-family: var(--font-body); font-weight: 400;">
+                            My career is driven by a fascination with robotics in the air and underwater. I thrive at the intersection of hands-on piloting and deep-level software development, transforming complex challenges into functional unmanned solutions.
+                            <br><br>
+                            Whether I'm flying a UAV for infrastructure inspection, developing control applications in C++ and Python, or integrating sensors on an ESP32 or NVIDIA Jetson, my goal is to create seamless and intelligent systems. As a certified pilot and technician with Beagle Systems, I’m deeply involved in the entire operational lifecycle, from assembly and maintenance to mission execution. I am actively seeking ambitious roles where I can push the boundaries of what's possible, particularly in ROV operations and the development of next-generation drone software.
+                        </p>
                     </div>
                 </div>
             </div>
