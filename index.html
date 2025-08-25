@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- NEW FONT PAIRING: Oswald for headings, Lato for body text -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Google Analytics -->
@@ -29,7 +28,6 @@
             --primary-bg: #111827; --card-bg: #1f2937; --text-main: #f3f4f6;
             --text-secondary: #9ca3af; --accent: #06b6d4; --accent-secondary: #ec4899;
             --border-color: rgba(255, 255, 255, 0.1);
-            /* NEW FONT VARIABLES */
             --font-heading: 'Oswald', sans-serif; 
             --font-body: 'Lato', sans-serif;
         }
@@ -38,14 +36,8 @@
         body { font-family: var(--font-body); color: var(--text-main); background-color: var(--primary-bg); }
 
         /* FIXED BACKGROUND IMAGE */
-        .background-container { 
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; 
-            background: url('background.jpg') center center / cover no-repeat fixed; 
-        }
-        .background-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-            background-color: rgba(17, 24, 39, 0.7); 
-        }
+        .background-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background: url('background.jpg') center center / cover no-repeat fixed; }
+        .background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-color: rgba(17, 24, 39, 0.7); }
 
         .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 0 25px rgba(6, 182, 212, 0.3); border-color: rgba(6, 182, 212, 0.5); }
@@ -60,7 +52,7 @@
         h1, h2, h3, h4, .section-title { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
         
         /* INCREASED SECTION TITLE FONT SIZE */
-        .section-title { position: relative; display: inline-block; padding-bottom: 0.75rem; font-size: 3rem; }
+        .section-title { position: relative; display: inline-block; padding-bottom: 0.75rem; font-size: 3rem; margin-bottom: 3.5rem; }
         
         /* --- ANIMATIONS --- */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -141,12 +133,11 @@
                 <div class="card p-8 md:p-12 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
                     <img src="about-photo.jpg" alt="Atiqur Rahman" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover flex-shrink-0 border-4 border-cyan-500">
                     <div class="text-center md:text-left">
-                        <h3 class="text-3xl text-white mb-4">Mastering the Skies and the Code</h3>
-                        <!-- REDUCED FONT SIZE FOR BODY TEXT -->
-                        <p class="text-base text-gray-300" style="font-family: var(--font-body); line-height: 1.75;">
-                            My career is driven by a fascination with robotics in the air and underwater. I thrive at the intersection of hands-on piloting and deep-level software development, transforming complex challenges into functional unmanned solutions.
+                        <h3 class="text-3xl text-white mb-4">A Hands-On Drone and Systems Technologist</h3>
+                        <p class="text-base text-gray-300" style="line-height: 1.75;">
+                            My focus is on the practical application of unmanned systems. I specialize in both the operational side—as an EASA-certified drone pilot responsible for flights and maintenance—and the development side, where I program embedded systems using C++ and Python.
                             <br><br>
-                            Whether I'm flying a UAV for infrastructure inspection, developing control applications in C++ and Python, or integrating sensors on an ESP32 or NVIDIA Jetson, my goal is to create seamless and intelligent systems. As a certified pilot and technician with Beagle Systems, I’m deeply involved in the entire operational lifecycle, from assembly and maintenance to mission execution. I am actively seeking ambitious roles where I can push the boundaries of what's possible, particularly in ROV operations and the development of next-generation drone software.
+                            I have direct experience building and configuring drones with platforms like Pixhawk and CubePilot, and I've worked with a range of microcontrollers including ESP32 and STM32. Coming from a background in IT support, I have a comprehensive understanding of the full technology stack. I am most interested in opportunities that allow me to stay hands-on with drone or ROV systems, contributing to both their operation and software.
                         </p>
                     </div>
                 </div>
@@ -251,7 +242,7 @@
             <div class="scroll-animate text-center">
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="max-w-2xl mx-auto">
-                    <p class="text-xl text-gray-300 mb-8">I'm actively seeking new opportunities and collaborations. If my skills and experience align with your needs, I would be delighted to connect.</p>
+                    <p class="text-xl text-gray-300 mb-8" style="font-family: var(--font-body);">I'm actively seeking new opportunities and collaborations. If my skills and experience align with your needs, I would be delighted to connect.</p>
                     <a href="mailto:atiqur.pilot@gmail.com" class="cta-button inline-block mb-10 px-10 py-4 text-white rounded-full font-bold text-lg">Send me an Email</a>
                     <div class="text-gray-400 space-y-2">
                         <p><i class="fas fa-map-marker-alt text-cyan-400 w-6"></i> <a href="https://www.google.com/maps/search/Olav+M.+Troviks+Vei+66,+0864+Oslo" target="_blank" class="hover:underline">Olav M. Troviks Vei 66, 0864 Oslo</a></p>
