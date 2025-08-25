@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- NEW FONT SET: Bebas Neue for Hero, Oswald for Section Titles, Lato for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BQCJ04EJ7"></script>
@@ -23,11 +24,12 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* --- "THE POLISHED MOTION" FINAL STYLING --- */
+        /* --- "THE SIGNATURE" FINAL STYLING --- */
         :root {
             --primary-bg: #111827; --card-bg: #1f2937; --text-main: #f3f4f6;
             --text-secondary: #9ca3af; --accent: #06b6d4; --accent-secondary: #ec4899;
             --border-color: rgba(255, 255, 255, 0.1);
+            --font-hero: 'Bebas Neue', sans-serif; 
             --font-heading: 'Oswald', sans-serif; 
             --font-body: 'Lato', sans-serif;
         }
@@ -37,7 +39,11 @@
 
         /* FIXED BACKGROUND IMAGE */
         .background-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background: url('background.jpg') center center / cover no-repeat fixed; }
-        .background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-color: rgba(17, 24, 39, 0.7); }
+        .background-overlay { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; 
+            /* INCREASED VISIBILITY */
+            background-color: rgba(17, 24, 39, 0.6); 
+        }
 
         .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 0 25px rgba(6, 182, 212, 0.3); border-color: rgba(6, 182, 212, 0.5); }
@@ -49,10 +55,10 @@
         .cta-button { background-image: linear-gradient(to right, var(--accent) 0%, var(--accent-secondary) 100%); background-size: 200% auto; transition: all 0.4s ease; }
         .cta-button:hover { background-position: right center; transform: scale(1.05); }
 
-        h1, h2, h3, h4, .section-title { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
-        
-        /* INCREASED SECTION TITLE FONT SIZE & SPACING */
-        .section-title { position: relative; display: inline-block; padding-bottom: 0.75rem; font-size: 2.5rem; font-weight: 900; margin-bottom: 4.5rem; }
+        /* FONT HIERARCHY */
+        h1, h2, h3, h4 { font-family: var(--font-heading); text-transform: uppercase; }
+        .hero-title { font-family: var(--font-hero); letter-spacing: 0.05em; }
+        .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 4.5rem; position: relative; display: inline-block; padding-bottom: 0.75rem; }
         
         /* --- ANIMATIONS --- */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -103,28 +109,12 @@
         <div class="max-w-7xl mx-auto flex items-center justify-between py-3 px-4">
             <div class="font-black text-xl text-white" style="font-family: var(--font-heading);">Atiqur Rahman</div>
             <div id="nav-links" class="hidden md:flex gap-6 font-semibold text-sm">
-                <!-- UPDATED NAVIGATION ORDER -->
-                <a href="#about" class="nav-link hover:text-cyan-400 transition">About</a>
-                <a href="#experience" class="nav-link hover:text-cyan-400 transition">Experience</a>
-                <a href="#education" class="nav-link hover:text-cyan-400 transition">Education</a>
-                <a href="#projects" class="nav-link hover:text-cyan-400 transition">Projects</a>
-                <a href="#skills" class="nav-link hover:text-cyan-400 transition">Skills</a>
-                <a href="#photography-gallery" class="nav-link hover:text-cyan-400 transition">Photography</a>
-                <a href="#contact" class="nav-link hover:text-cyan-400 transition">Contact</a>
+                <a href="#about" class="nav-link hover:text-cyan-400 transition">About</a><a href="#experience" class="nav-link hover:text-cyan-400 transition">Experience</a><a href="#education" class="nav-link hover:text-cyan-400 transition">Education</a><a href="#projects" class="nav-link hover:text-cyan-400 transition">Projects</a><a href="#skills" class="nav-link hover:text-cyan-400 transition">Skills</a><a href="#photography-gallery" class="nav-link hover:text-cyan-400 transition">Photography</a><a href="#contact" class="nav-link hover:text-cyan-400 transition">Contact</a>
             </div>
             <button id="menu-btn" class="md:hidden text-2xl focus:outline-none"><i class="fa fa-bars"></i></button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-[#111827] px-4 pb-4">
-             <!-- UPDATED MOBILE NAVIGATION ORDER -->
-             <a href="#about" class="block py-2 nav-link">About</a>
-             <a href="#experience" class="block py-2 nav-link">Experience</a>
-             <a href="#education" class="block py-2 nav-link">Education</a>
-             <a href="#projects" class="block py-2 nav-link">Projects</a>
-             <a href="#skills" class="block py-2 nav-link">Skills</a>
-             <a href="#photography-gallery" class="block py-2 nav-link">Photography</a>
-             <a href="#community" class="block py-2 nav-link">Community</a>
-             <a href="#references" class="block py-2 nav-link">References</a>
-             <a href="#contact" class="block py-2 nav-link">Contact</a>
+             <a href="#about" class="block py-2 nav-link">About</a><a href="#experience" class="block py-2 nav-link">Experience</a><a href="#education" class="block py-2 nav-link">Education</a><a href="#projects" class="block py-2 nav-link">Projects</a><a href="#skills" class="block py-2 nav-link">Skills</a><a href="#photography-gallery" class="block py-2 nav-link">Photography</a><a href="#community" class="block py-2 nav-link">Community</a><a href="#references" class="block py-2 nav-link">References</a><a href="#contact" class="block py-2 nav-link">Contact</a>
         </div>
     </nav>
     <div class="h-16"></div>
@@ -133,8 +123,8 @@
         <!-- HERO -->
         <section id="hero" class="text-center py-24 md:py-32">
             <div class="max-w-4xl mx-auto">
-                <h1 class="text-5xl md:text-7xl font-black text-white mb-4 animate-fadeInUp">Atiqur Rahman</h1>
-                <h2 class="text-xl md:text-2xl font-bold mb-8 tracking-wider text-cyan-300 animate-fadeInUp" style="animation-delay: 0.3s;">Drone Developer | Embedded Engineer | Pilot</h2>
+                <h1 class="hero-title text-6xl md:text-8xl font-black text-white mb-4 animate-fadeInUp">Atiqur Rahman</h1>
+                <h2 class="hero-title text-3xl md:text-4xl font-bold mb-8 tracking-wider text-cyan-300 animate-fadeInUp" style="animation-delay: 0.3s;">Drone Developer | Embedded Engineer | Pilot</h2>
                 <div class="flex space-x-8 mb-10 justify-center animate-fadeInUp" style="animation-delay: 0.6s;">
                     <a href="https://linkedin.com/in/aakashrahman" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-linkedin"></i></a><a href="https://github.com/AtiqAakash" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-github"></i></a><a href="https://flickr.com/photos/atiq-bro" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-flickr"></i></a><a href="https://facebook.com/atiqur.rahman.aakash" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-facebook"></i></a>
                 </div>
@@ -160,7 +150,7 @@
             </div>
         </section>
         
-        <!-- EXPERIENCE (MOVED UP) -->
+        <!-- EXPERIENCE -->
         <section id="experience" class="py-24">
             <div class="scroll-animate text-center">
                 <h2 class="section-title">Professional Experience</h2>
