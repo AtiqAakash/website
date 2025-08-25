@@ -23,7 +23,7 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* --- "THE POLISHED NARRATIVE" FINAL STYLING --- */
+        /* --- "THE FOCUSED FLOW" FINAL STYLING --- */
         :root {
             --primary-bg: #111827; /* Dark Blue-Gray */
             --card-bg: #1f2937;   /* Lighter Blue-Gray */
@@ -49,7 +49,6 @@
 
         .background-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-            /* ADJUSTED OPACITY: Changed from 0.9 to 0.8 for more visibility */
             background-color: rgba(17, 24, 39, 0.8); 
         }
 
@@ -114,17 +113,12 @@
         <div class="max-w-7xl mx-auto flex items-center justify-between py-3 px-4">
             <div class="font-black text-xl text-white">Atiqur Rahman</div>
             <div id="nav-links" class="hidden md:flex gap-6 font-semibold text-sm">
-                <a href="#about" class="nav-link hover:text-cyan-400 transition">About</a>
-                <a href="#experience" class="nav-link hover:text-cyan-400 transition">Experience</a>
-                <a href="#projects" class="nav-link hover:text-cyan-400 transition">Projects</a>
-                <a href="#skills" class="nav-link hover:text-cyan-400 transition">Skills</a>
-                <a href="#photography-gallery" class="nav-link hover:text-cyan-400 transition">Photography</a>
-                <a href="#contact" class="nav-link hover:text-cyan-400 transition">Contact</a>
+                <a href="#about" class="nav-link hover:text-cyan-400 transition">About</a><a href="#experience" class="nav-link hover:text-cyan-400 transition">Experience</a><a href="#projects" class="nav-link hover:text-cyan-400 transition">Projects</a><a href="#skills" class="nav-link hover:text-cyan-400 transition">Skills</a><a href="#education" class="nav-link hover:text-cyan-400 transition">Education</a><a href="#photography-gallery" class="nav-link hover:text-cyan-400 transition">Photography</a><a href="#contact" class="nav-link hover:text-cyan-400 transition">Contact</a>
             </div>
             <button id="menu-btn" class="md:hidden text-2xl focus:outline-none"><i class="fa fa-bars"></i></button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-[#111827] px-4 pb-4">
-             <a href="#about" class="block py-2 nav-link">About</a><a href="#experience" class="block py-2 nav-link">Experience</a><a href="#projects" class="block py-2 nav-link">Projects</a><a href="#education" class="block py-2 nav-link">Education</a><a href="#skills" class="block py-2 nav-link">Skills</a><a href="#photography-gallery" class="block py-2 nav-link">Photography</a><a href="#community" class="block py-2 nav-link">Community</a><a href="#references" class="block py-2 nav-link">References</a><a href="#contact" class="block py-2 nav-link">Contact</a>
+             <a href="#about" class="block py-2 nav-link">About</a><a href="#experience" class="block py-2 nav-link">Experience</a><a href="#projects" class="block py-2 nav-link">Projects</a><a href="#skills" class="block py-2 nav-link">Skills</a><a href="#education" class="block py-2 nav-link">Education</a><a href="#photography-gallery" class="block py-2 nav-link">Photography</a><a href="#community" class="block py-2 nav-link">Community</a><a href="#references" class="block py-2 nav-link">References</a><a href="#contact" class="block py-2 nav-link">Contact</a>
         </div>
     </nav>
     <div class="h-16"></div> <!-- Spacer for fixed navbar -->
@@ -136,10 +130,7 @@
                 <h1 class="text-5xl md:text-7xl font-black text-white mb-3 scroll-animate">Atiqur Rahman</h1>
                 <p class="text-xl md:text-2xl font-bold mb-8 tracking-wide text-cyan-300 scroll-animate" style="transition-delay: 100ms;">Drone Developer | Embedded Engineer | Pilot</p>
                 <div class="flex space-x-8 mb-10 justify-center scroll-animate" style="transition-delay: 200ms;">
-                    <a href="https://linkedin.com/in/aakashrahman" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/AtiqAakash" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-github"></i></a>
-                    <a href="https://flickr.com/photos/atiq-bro" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-flickr"></i></a>
-                    <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://linkedin.com/in/aakashrahman" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-linkedin"></i></a><a href="https://github.com/AtiqAakash" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-github"></i></a><a href="https://flickr.com/photos/atiq-bro" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-flickr"></i></a><a href="https://facebook.com/atiqur.rahman.aakash" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-facebook"></i></a>
                 </div>
                 <a href="Atiq-CV.pdf" target="_blank" class="cta-button inline-block px-8 py-3 text-white rounded-full font-bold text-lg scroll-animate" style="transition-delay: 300ms;">Download CV</a>
             </div>
@@ -153,9 +144,7 @@
                     <img src="https://via.placeholder.com/200" alt="Atiqur Rahman" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover flex-shrink-0 border-4 border-cyan-500">
                     <div class="text-center md:text-left">
                         <h3 class="text-3xl font-bold text-white mb-4">A Hands-On Engineer</h3>
-                        <p class="text-lg text-gray-300">
-                            My career is a practical journey from foundational IT support to specialized drone and embedded systems engineering. I began by managing Linux servers and networks, which gave me a strong technical base. This led me to hands-on R&D roles where I've developed, tested, and piloted unmanned systems for leading companies like Robot Aviation and Beagle Systems. I build and program with tools like C++, Python, Pixhawk, and Linux to create functional, real-world solutions.
-                        </p>
+                        <p class="text-lg text-gray-300">My career is a practical journey from foundational IT support to specialized drone and embedded systems engineering. I began by managing Linux servers and networks, which gave me a strong technical base. This led me to hands-on R&D roles where I've developed, tested, and piloted unmanned systems for leading companies like Robot Aviation and Beagle Systems. I build and program with tools like C++, Python, Pixhawk, and Linux to create functional, real-world solutions.</p>
                     </div>
                 </div>
             </div>
@@ -166,7 +155,6 @@
             <div class="scroll-animate">
                 <h2 class="section-title">Professional Experience</h2>
                 <div class="timeline">
-                    <!-- Experience items with full details -->
                     <div class="timeline-container left scroll-animate"><div class="timeline-content card p-6"><h3 class="font-bold text-xl text-cyan-300"><a href="https://www.beaglesystems.com/" target="_blank" class="hover:underline">Beagle Systems</a></h3><p class="font-semibold">Drone Pilot & Technician</p><p class="text-sm text-gray-400 mb-2">May 2025 | Hamburg, Germany</p><ul class="text-sm list-disc"><li>Piloted commercial UAVs and managed flight operations.</li><li>Performed system maintenance, assembly, and diagnostics on drone fleets.</li><li>Utilized Linux, QGroundControl, Mission Planner, and PX4.</li></ul></div></div>
                     <div class="timeline-container right scroll-animate"><div class="timeline-content card p-6"><h3 class="font-bold text-xl text-cyan-300"><a href="https://www.topseven.com" target="_blank" class="hover:underline">TOPseven GmbH</a></h3><p class="font-semibold">Werkstudent (Drone R&D)</p><p class="text-sm text-gray-400 mb-2">Oct 2024 – Mar 2025 | Emden, Germany</p><ul class="text-sm list-disc"><li>Developed drone systems using Python, C++, and MAVSDK (Java).</li><li>Created 3D models with Fusion 360 for R&D projects.</li><li>Conducted SITL simulations and flight tests with Pixhawk.</li></ul></div></div>
                     <div class="timeline-container left scroll-animate"><div class="timeline-content card p-6"><h3 class="font-bold text-xl text-cyan-300"><a href="https://www.robotaviation.com" target="_blank" class="hover:underline">Robot Aviation</a></h3><p class="font-semibold">Unmanned Systems Engineer (Intern)</p><p class="text-sm text-gray-400 mb-2">Nov 2023 – Jun 2024 | Hønefoss, Norway</p><ul class="text-sm list-disc"><li>Contributed to full-stack development (C++, Python, PHP, JS) for UAV systems.</li><li>Managed Linux servers, networking, and NAS cloud infrastructure.</li><li>Involved in 3D printing, system testing, and piloting various drone types.</li></ul></div></div>
@@ -180,7 +168,6 @@
             <h2 class="section-title scroll-animate">Project Showcase</h2>
             <div class="card p-8 md:p-10 max-w-4xl mx-auto scroll-animate">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-                    <!-- All 9 projects are listed here -->
                     <div><h4 class="font-bold text-white">ConBot (Bash)</h4><p class="text-sm text-gray-400">Bash, Ardupilot</p></div>
                     <div><h4 class="font-bold text-white">Flight Logger</h4><p class="text-sm text-gray-400">PHP, JavaScript, HTML</p></div>
                     <div><h4 class="font-bold text-white">IoT Control & Security System</h4><p class="text-sm text-gray-400">C++, JS, HTML, CSS</p></div>
@@ -194,25 +181,23 @@
             </div>
         </section>
 
-        <!-- SKILLS & EDUCATION -->
+        <!-- SKILLS -->
         <section id="skills" class="py-24">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <div class="scroll-animate">
-                    <h2 class="section-title lg:text-left">Skills & Tools</h2>
-                    <div class="space-y-8">
-                        <div><h4 class="text-lg font-bold mb-2 text-cyan-400">Programming</h4><p class="text-gray-300 leading-relaxed">C/C++, Python, Java, JavaScript, PHP, MySQL, Bash, MATLAB</p></div>
-                        <div><h4 class="text-lg font-bold mb-2 text-cyan-400">Drone & Robotics</h4><p class="text-gray-300 leading-relaxed">Pixhawk, CubePilot, STM32, Raspberry Pi, NVIDIA Jetson, Mission Planner, QGroundControl, PX4, SITL, Ardupilot</p></div>
-                        <div><h4 class="text-lg font-bold mb-2 text-cyan-400">Networking & Embedded</h4><p class="text-gray-300 leading-relaxed">Linux, IP Networking, Bash Scripting, Security Protocols, Arduino, ESP32, Firmware, Embedded Systems, 3D Modeling/Printing</p></div>
-                    </div>
-                </div>
-                <div class="scroll-animate" style="transition-delay: 100ms;">
-                    <h2 class="section-title lg:text-left">Education</h2>
-                    <div class="space-y-6">
-                        <div class="card p-6"><h4 class="text-lg font-bold text-white"><a href="https://www.hs-emden-leer.de" target="_blank" class="hover:text-cyan-400 transition">Hochschule Emden/Leer</a></h4><p class="text-gray-400">M.Eng, Cyber Physical Systems (paused)</p></div>
-                        <div class="card p-6"><h4 class="text-lg font-bold text-white"><a href="https://www.uio.no" target="_blank" class="hover:text-cyan-400 transition">University of Oslo</a></h4><p class="text-gray-400">M.Sc, Programming & System Architecture (paused)</p></div>
-                        <div class="card p-6"><h4 class="text-lg font-bold text-white"><a href="https://www.uoda.edu.bd" target="_blank" class="hover:text-cyan-400 transition">University of Development Alternative</a></h4><p class="text-gray-400">B.Sc, Computer Science & Engineering</p></div>
-                    </div>
-                </div>
+            <h2 class="section-title scroll-animate">Skills & Tools</h2>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-8 scroll-animate"><h4 class="text-xl font-bold mb-4 text-cyan-400">Programming</h4><p class="text-gray-300 leading-relaxed">C/C++, Python, Java, JavaScript, PHP, MySQL, Bash, MATLAB</p></div>
+                <div class="card p-8 scroll-animate" style="transition-delay: 100ms;"><h4 class="text-xl font-bold mb-4 text-cyan-400">Drone & Robotics</h4><p class="text-gray-300 leading-relaxed">Pixhawk, CubePilot, STM32, Raspberry Pi, NVIDIA Jetson, Mission Planner, QGroundControl, PX4, SITL, Ardupilot</p></div>
+                <div class="card p-8 scroll-animate" style="transition-delay: 200ms;"><h4 class="text-xl font-bold mb-4 text-cyan-400">Networking & Embedded</h4><p class="text-gray-300 leading-relaxed">Linux, IP Networking, Bash Scripting, Security Protocols, Arduino, ESP32, Firmware, Embedded Systems, 3D Modeling/Printing</p></div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education" class="py-24">
+            <h2 class="section-title scroll-animate">Education</h2>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 scroll-animate"><h4 class="text-lg font-bold text-white"><a href="https://www.hs-emden-leer.de" target="_blank" class="hover:text-cyan-400 transition">Hochschule Emden/Leer</a></h4><p class="text-gray-400">M.Eng, Cyber Physical Systems (paused)</p></div>
+                <div class="card p-6 scroll-animate" style="transition-delay: 100ms;"><h4 class="text-lg font-bold text-white"><a href="https://www.uio.no" target="_blank" class="hover:text-cyan-400 transition">University of Oslo</a></h4><p class="text-gray-400">M.Sc, Programming & System Architecture (paused)</p></div>
+                <div class="card p-6 scroll-animate" style="transition-delay: 200ms;"><h4 class="text-lg font-bold text-white"><a href="https://www.uoda.edu.bd" target="_blank" class="hover:text-cyan-400 transition">University of Development Alternative</a></h4><p class="text-gray-400">B.Sc, Computer Science & Engineering</p></div>
             </div>
         </section>
         
@@ -232,25 +217,23 @@
             </div>
         </section>
 
-        <!-- COMMUNITY & REFERENCES -->
+        <!-- COMMUNITY -->
         <section id="community" class="py-24">
-             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <div class="scroll-animate">
-                    <h2 class="section-title lg:text-left">Community</h2>
-                    <div class="space-y-6">
-                        <div class="card p-6"><h4 class="text-lg font-bold text-white">Founder of Hridoye Bangladesh</h4><p class="text-gray-400">400+ member cultural organization in Norway</p></div>
-                        <div class="card p-6"><h4 class="text-lg font-bold text-white"><a href="kck.html" class="hover:text-cyan-400 transition">Kringjå Cricket Club</a></h4><p class="text-gray-400">Daglig Leder, Board of Directors at Norges Cricket Forbund</p></div>
-                        <div class="card p-6"><h4 class="text-lg font-bold text-white">Freelance Photographer</h4><p class="text-gray-400">Capturing tech innovations and landscapes. <a href="https://flickr.com/photos/atiq-bro" target="_blank" class="text-cyan-400 font-semibold hover:underline">View portfolio</a></p></div>
-                    </div>
-                </div>
-                <div class="scroll-animate" style="transition-delay: 100ms;">
-                    <h2 class="section-title lg:text-left">References</h2>
-                    <div class="space-y-6">
-                        <div class="card p-6"><h4 class="text-lg font-bold text-white"><a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:text-cyan-400 transition">Niklas Nyroth</a></h4><p class="text-gray-400">CEO, Robot Aviation AS<br><a href="mailto:niklas.nyroth@robotaviation.com" class="text-cyan-500 text-sm hover:underline">niklas.nyroth@robotaviation.com</a></p></div>
-                        <div class="card p-6"><h4 class="text-lg font-bold text-white"><a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:text-cyan-400 transition">Cem Yolcubal</a></h4><p class="text-gray-400">Drone Pilot, Beagle Systems<br><a href="mailto:cem.yolcubal@topseven.com" class="text-cyan-500 text-sm hover:underline">cem.yolcubal@topseven.com</a></p></div>
-                        <div class="card p-6"><h4 class="text-lg font-bold text-white"><a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:text-cyan-400 transition">Farzan M. Noori</a></h4><p class="text-gray-400">Postdoctoral Research Fellow, University of Oslo<br><a href="tel:+4791255115" class="text-cyan-500 text-sm hover:underline">+47 912 55 115</a></p></div>
-                    </div>
-                </div>
+            <h2 class="section-title scroll-animate">Community & Involvement</h2>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 scroll-animate"><h4 class="text-lg font-bold text-white">Founder of Hridoye Bangladesh</h4><p class="text-gray-400">400+ member cultural organization in Norway</p></div>
+                <div class="card p-6 scroll-animate" style="transition-delay: 100ms;"><h4 class="text-lg font-bold text-white"><a href="kck.html" class="hover:text-cyan-400 transition">Kringjå Cricket Club</a></h4><p class="text-gray-400">Daglig Leder, Board of Directors at Norges Cricket Forbund</p></div>
+                <div class="card p-6 scroll-animate" style="transition-delay: 200ms;"><h4 class="text-lg font-bold text-white">Freelance Photographer</h4><p class="text-gray-400">Capturing tech & landscapes. <a href="https://flickr.com/photos/atiq-bro" target="_blank" class="text-cyan-400 font-semibold hover:underline">View portfolio</a></p></div>
+            </div>
+        </section>
+
+        <!-- REFERENCES -->
+        <section id="references" class="py-24">
+            <h2 class="section-title scroll-animate">References</h2>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 scroll-animate"><h4 class="text-lg font-bold text-white"><a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:text-cyan-400 transition">Niklas Nyroth</a></h4><p class="text-gray-400">CEO, Robot Aviation AS<br><a href="mailto:niklas.nyroth@robotaviation.com" class="text-cyan-500 text-sm hover:underline">niklas.nyroth@robotaviation.com</a></p></div>
+                <div class="card p-6 scroll-animate" style="transition-delay: 100ms;"><h4 class="text-lg font-bold text-white"><a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:text-cyan-400 transition">Cem Yolcubal</a></h4><p class="text-gray-400">Drone Pilot, Beagle Systems<br><a href="mailto:cem.yolcubal@topseven.com" class="text-cyan-500 text-sm hover:underline">cem.yolcubal@topseven.com</a></p></div>
+                <div class="card p-6 scroll-animate" style="transition-delay: 200ms;"><h4 class="text-lg font-bold text-white"><a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:text-cyan-400 transition">Farzan M. Noori</a></h4><p class="text-gray-400">Postdoctoral Research Fellow, University of Oslo<br><a href="tel:+4791255115" class="text-cyan-500 text-sm hover:underline">+47 912 55 115</a></p></div>
             </div>
         </section>
 
