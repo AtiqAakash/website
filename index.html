@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- NEW FONT PAIRING: Montserrat for headings, Open Sans for body text -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BQCJ04EJ7"></script>
@@ -24,14 +23,13 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* --- "THE REFINED MOTION" FINAL STYLING --- */
+        /* --- "THE POLISHED MOTION" FINAL STYLING --- */
         :root {
             --primary-bg: #111827; --card-bg: #1f2937; --text-main: #f3f4f6;
             --text-secondary: #9ca3af; --accent: #06b6d4; --accent-secondary: #ec4899;
             --border-color: rgba(255, 255, 255, 0.1);
-            /* NEW FONT VARIABLES */
-            --font-heading: 'Montserrat', sans-serif; 
-            --font-body: 'Open Sans', sans-serif;
+            --font-heading: 'Oswald', sans-serif; 
+            --font-body: 'Lato', sans-serif;
         }
 
         html { scroll-behavior: smooth; }
@@ -51,7 +49,7 @@
         .cta-button { background-image: linear-gradient(to right, var(--accent) 0%, var(--accent-secondary) 100%); background-size: 200% auto; transition: all 0.4s ease; }
         .cta-button:hover { background-position: right center; transform: scale(1.05); }
 
-        h1, h2, h3, h4, .section-title { font-family: var(--font-heading); font-weight: 700; }
+        h1, h2, h3, h4, .section-title { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
         
         /* INCREASED SECTION TITLE FONT SIZE & SPACING */
         .section-title { position: relative; display: inline-block; padding-bottom: 0.75rem; font-size: 2.5rem; font-weight: 900; margin-bottom: 4.5rem; }
@@ -86,7 +84,7 @@
         .slider-btn.left { left: 10px; } .slider-btn.right { right: 10px; }
 
         @media screen and (max-width: 768px) {
-            .section-title { font-size: 2rem; margin-bottom: 3.5rem; }
+            .section-title { font-size: 2.25rem; }
             .timeline::after { left: 20px; }
             .timeline-container { width: 100%; padding-left: 50px; padding-right: 15px; }
             .timeline-container.right { left: 0%; }
@@ -119,9 +117,7 @@
         <!-- HERO -->
         <section id="hero" class="text-center py-24 md:py-32">
             <div class="max-w-4xl mx-auto">
-                <!-- REDUCED FONT SIZE FOR NAME -->
                 <h1 class="text-5xl md:text-7xl font-black text-white mb-4 animate-fadeInUp">Atiqur Rahman</h1>
-                <!-- REDUCED FONT SIZE FOR SUBTITLE -->
                 <h2 class="text-xl md:text-2xl font-bold mb-8 tracking-wider text-cyan-300 animate-fadeInUp" style="animation-delay: 0.3s;">Drone Developer | Embedded Engineer | Pilot</h2>
                 <div class="flex space-x-8 mb-10 justify-center animate-fadeInUp" style="animation-delay: 0.6s;">
                     <a href="https://linkedin.com/in/aakashrahman" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-linkedin"></i></a><a href="https://github.com/AtiqAakash" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-github"></i></a><a href="https://flickr.com/photos/atiq-bro" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-flickr"></i></a><a href="https://facebook.com/atiqur.rahman.aakash" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-facebook"></i></a>
@@ -180,10 +176,11 @@
             <div class="scroll-animate text-center">
                 <h2 class="section-title">Professional Experience</h2>
                 <div class="timeline">
-                    <div class="timeline-container left scroll-animate"><div class="timeline-content card p-6 text-left"><h3 class="text-xl text-cyan-300"><a href="https://www.beaglesystems.com/" target="_blank" class="hover:underline">Beagle Systems</a></h3><p class="font-semibold text-base">Drone Pilot & Technician</p><p class="text-sm text-gray-400 mb-2">May 2025 – Present | Hamburg, Germany</p><ul class="text-sm list-disc"><li>Licensed A1/A2/A3 Drone Pilot (EASA certified).</li><li>Conduct drone piloting, technical maintenance, and assembly.</li><li>Participate in engineering activities and UAV test flights.</li></ul></div></div>
-                    <div class="timeline-container right scroll-animate"><div class="timeline-content card p-6 text-left"><h3 class="text-xl text-cyan-300"><a href="https://www.topseven.com" target="_blank" class="hover:underline">TOPseven GmbH</a></h3><p class="font-semibold text-base">Drone R&D (Werkstudent)</p><p class="text-sm text-gray-400 mb-2">Oct 2024 – Mar 2025 | Emden, Germany</p><ul class="text-sm list-disc"><li>Built drones from scratch; integrated sensors and payloads.</li><li>Configured firmware for Pixhawk & CubePilot flight controllers.</li><li>Developed Android application for UAV control using Java (MavSDK).</li></ul></div></div>
-                    <div class="timeline-container left scroll-animate"><div class="timeline-content card p-6 text-left"><h3 class="text-xl text-cyan-300"><a href="https://www.robotaviation.com" target="_blank" class="hover:underline">Robot Aviation</a></h3><p class="font-semibold text-base">UAV Systems Intern</p><p class="text-sm text-gray-400 mb-2">Nov 2023 – Jun 2024 | Hønefoss, Norway</p><ul class="text-sm list-disc"><li>Performed UAV test flights and troubleshooting of aerial systems.</li><li>Configured high-bandwidth communication modules (PMDDL, 4G).</li><li>Integrated advanced sensors (e.g., FLIR) for inspection missions.</li></ul></div></div>
-                    <div class="timeline-container right scroll-animate"><div class="timeline-content card p-6 text-left"><h3 class="text-xl text-cyan-300"><a href="https://home-marine.com/" target="_blank" class="hover:underline">Home & Marine</a></h3><p class="font-semibold text-base">Network Testing Technician (Summer Student)</p><p class="text-sm text-gray-400 mb-2">Jul 2024 – Sep 2024 | Bremen, Germany</p><ul class="text-sm list-disc"><li>Worked on IT infrastructure onboard Disney Cruise Ship (Disney Treasure 2).</li><li>Performed troubleshooting, configuration, and fault analysis.</li></ul></div></div>
+                    <!-- ALL RESPONSIBILITIES FROM CV ARE NOW INCLUDED -->
+                    <div class="timeline-container left scroll-animate"><div class="timeline-content card p-6 text-left"><h3 class="text-xl text-cyan-300"><a href="https://www.beaglesystems.com/" target="_blank" class="hover:underline">Beagle Systems</a></h3><p class="font-semibold text-base">Drone Pilot & Technician</p><p class="text-sm text-gray-400 mb-2">May 2025 – Present | Hamburg, Germany</p><ul class="text-sm list-disc"><li>Licensed A1/A2/A3 Drone Pilot (EASA certified).</li><li>Conduct drone piloting, technical maintenance, and assembly.</li><li>Participate in engineering activities and UAV test flights.</li><li>Support project preparation, coordination, and HSE routines.</li></ul></div></div>
+                    <div class="timeline-container right scroll-animate"><div class="timeline-content card p-6 text-left"><h3 class="text-xl text-cyan-300"><a href="https://www.topseven.com" target="_blank" class="hover:underline">TOPseven GmbH</a></h3><p class="font-semibold text-base">Drone R&D (Werkstudent)</p><p class="text-sm text-gray-400 mb-2">Oct 2024 – Mar 2025 | Emden, Germany</p><ul class="text-sm list-disc"><li>Built drones from scratch; integrated sensors and payloads.</li><li>Configured firmware for Pixhawk & CubePilot flight controllers.</li><li>Developed Android application for UAV control using Java (MavSDK).</li><li>Worked with industrial drones and inspection sensors; performed SITL simulations.</li></ul></div></div>
+                    <div class="timeline-container left scroll-animate"><div class="timeline-content card p-6 text-left"><h3 class="text-xl text-cyan-300"><a href="https://www.robotaviation.com" target="_blank" class="hover:underline">Robot Aviation</a></h3><p class="font-semibold text-base">UAV Systems Intern</p><p class="text-sm text-gray-400 mb-2">Nov 2023 – Jun 2024 | Hønefoss, Norway</p><ul class="text-sm list-disc"><li>Performed UAV test flights and troubleshooting of aerial systems.</li><li>Configured dual-channel PMDDL and 4G high-bandwidth communication modules.</li><li>Integrated advanced sensors (e.g., FLIR) for inspection missions.</li><li>Documented results, prepared reports, and supported system validation.</li><li>Assisted in training colleagues and apprentices on setup and operation.</li></ul></div></div>
+                    <div class="timeline-container right scroll-animate"><div class="timeline-content card p-6 text-left"><h3 class="text-xl text-cyan-300"><a href="https://home-marine.com/" target="_blank" class="hover:underline">Home & Marine</a></h3><p class="font-semibold text-base">Network Testing Technician (Summer Student)</p><p class="text-sm text-gray-400 mb-2">Jul 2024 – Sep 2024 | Bremen, Germany</p><ul class="text-sm list-disc"><li>Worked on IT infrastructure onboard Disney Cruise Ship (Disney Treasure 2).</li><li>Performed troubleshooting, configuration, and fault analysis.</li><li>Documented technical procedures to support system reliability.</li></ul></div></div>
                     <div class="timeline-container left scroll-animate"><div class="timeline-content card p-6 text-left"><h3 class="text-xl text-cyan-300">CodeFix IT</h3><p class="font-semibold text-base">IT Support Engineer</p><p class="text-sm text-gray-400 mb-2">Jan 2018 – Nov 2019 | Dhaka, Bangladesh</p><ul class="text-sm list-disc"><li>Provided server and network support; configured and maintained Linux systems.</li><li>Implemented data security protocols and backup solutions.</li><li>Supported customers and development team with technical troubleshooting.</li></ul></div></div>
                 </div>
             </div>
