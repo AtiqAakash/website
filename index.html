@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- NEW FONT PAIRING: Montserrat for headings, Open Sans for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BQCJ04EJ7"></script>
@@ -23,13 +24,14 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* --- "THE POLISHED MOTION" FINAL STYLING --- */
+        /* --- "THE REFINED MOTION" FINAL STYLING --- */
         :root {
             --primary-bg: #111827; --card-bg: #1f2937; --text-main: #f3f4f6;
             --text-secondary: #9ca3af; --accent: #06b6d4; --accent-secondary: #ec4899;
             --border-color: rgba(255, 255, 255, 0.1);
-            --font-heading: 'Oswald', sans-serif; 
-            --font-body: 'Lato', sans-serif;
+            /* NEW FONT VARIABLES */
+            --font-heading: 'Montserrat', sans-serif; 
+            --font-body: 'Open Sans', sans-serif;
         }
 
         html { scroll-behavior: smooth; }
@@ -49,10 +51,10 @@
         .cta-button { background-image: linear-gradient(to right, var(--accent) 0%, var(--accent-secondary) 100%); background-size: 200% auto; transition: all 0.4s ease; }
         .cta-button:hover { background-position: right center; transform: scale(1.05); }
 
-        h1, h2, h3, h4, .section-title { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+        h1, h2, h3, h4, .section-title { font-family: var(--font-heading); font-weight: 700; }
         
-        /* INCREASED SECTION TITLE FONT SIZE */
-        .section-title { position: relative; display: inline-block; padding-bottom: 0.75rem; font-size: 3rem; margin-bottom: 3.5rem; }
+        /* INCREASED SECTION TITLE FONT SIZE & SPACING */
+        .section-title { position: relative; display: inline-block; padding-bottom: 0.75rem; font-size: 2.5rem; font-weight: 900; margin-bottom: 4.5rem; }
         
         /* --- ANIMATIONS --- */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -84,7 +86,7 @@
         .slider-btn.left { left: 10px; } .slider-btn.right { right: 10px; }
 
         @media screen and (max-width: 768px) {
-            .section-title { font-size: 2.25rem; }
+            .section-title { font-size: 2rem; margin-bottom: 3.5rem; }
             .timeline::after { left: 20px; }
             .timeline-container { width: 100%; padding-left: 50px; padding-right: 15px; }
             .timeline-container.right { left: 0%; }
@@ -117,8 +119,10 @@
         <!-- HERO -->
         <section id="hero" class="text-center py-24 md:py-32">
             <div class="max-w-4xl mx-auto">
-                <h1 class="text-6xl md:text-8xl font-black text-white mb-4 animate-fadeInUp">Md Atiqur Rahman</h1>
-                <h2 class="text-2xl md:text-4xl font-bold mb-8 tracking-wider text-cyan-300 animate-fadeInUp" style="animation-delay: 0.3s;">Drone Developer | Embedded Engineer | Pilot</h2>
+                <!-- REDUCED FONT SIZE FOR NAME -->
+                <h1 class="text-5xl md:text-7xl font-black text-white mb-4 animate-fadeInUp">Atiqur Rahman</h1>
+                <!-- REDUCED FONT SIZE FOR SUBTITLE -->
+                <h2 class="text-xl md:text-2xl font-bold mb-8 tracking-wider text-cyan-300 animate-fadeInUp" style="animation-delay: 0.3s;">Drone Developer | Embedded Engineer | Pilot</h2>
                 <div class="flex space-x-8 mb-10 justify-center animate-fadeInUp" style="animation-delay: 0.6s;">
                     <a href="https://linkedin.com/in/aakashrahman" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-linkedin"></i></a><a href="https://github.com/AtiqAakash" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-github"></i></a><a href="https://flickr.com/photos/atiq-bro" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-flickr"></i></a><a href="https://facebook.com/atiqur.rahman.aakash" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-facebook"></i></a>
                 </div>
