@@ -1,447 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="pilot.png" type="image/png">
-  <title>Portfolio | Atiq</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="pilot.png" type="image/png">
+    <title>Atiqur Rahman | Drone Developer & Embedded Engineer</title>
     
-    <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BQCJ04EJ7"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-6BQCJ04EJ7');
-  </script>
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root {
-      --primary-bg: #111827;
-      --secondary-bg: #1f2937;
-      --text-main: #d1d5db;
-      --accent: #38bdf8;
-      --accent-hover: #0ea5e9;
-      --section-title: #ffffff;
-      --dot-active: #38bdf8;
-      --dot: #4b5563;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.1rem;
-      background: var(--primary-bg);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-    .parallax-bg {
-      background: url('background.jpg') 50% 50% / cover no-repeat fixed;
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
-      top: 0; left: 0;
-      z-index: -1;
-      opacity: 0.15;
-    }
-    .section-title {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 2.5rem;
-      color: var(--section-title);
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-    /* Social Buttons */
-    .social-btn {
-      transition: transform 0.3s ease;
-      color: var(--text-main);
-    }
-    .social-btn:hover {
-      transform: translateY(-5px);
-      color: var(--accent);
-    }
-    .big-icon { font-size: 2.2rem; }
-    /* Slider */
-    .slider-frame {
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-    }
-    .slider-image-box {
-      width: 100%;
-      height: 60vh;
-      display: flex;
-    }
-    .slider-image-fade {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-    .slider-image-fade.active {
-      opacity: 1;
-    }
-    .slider-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      border: none;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      color: white;
-      padding: 0.5rem;
-      cursor: pointer;
-      transition: background 0.3s;
-      z-index: 10;
-    }
-    .slider-btn:hover { background: rgba(0,0,0,0.8); }
-    .slider-btn.left { left: 1rem; }
-    .slider-btn.right { right: 1rem; }
-
-    /* Card */
-    .card {
-        background-color: var(--secondary-bg);
-        border-radius: 0.75rem;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-
-    /* Navbar */
-    .nav-link {
-        position: relative;
-        transition: color 0.3s;
-    }
-
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -5px;
-        left: 0;
-        background-color: var(--accent);
-        transition: width 0.3s;
-    }
-
-    .nav-link:hover::after,
-    .nav-link.active::after {
-        width: 100%;
-    }
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BQCJ04EJ7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6BQCJ04EJ7');
+    </script>
     
-  </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* --- "THE POLISHED NARRATIVE" STYLING --- */
+        :root {
+            --primary-bg: #111827; /* Dark Blue-Gray */
+            --card-bg: #1f2937;   /* Lighter Blue-Gray */
+            --text-main: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent: #06b6d4; /* Cyan */
+            --accent-secondary: #ec4899; /* Pink */
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--primary-bg);
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: url('background.jpg') center center / cover no-repeat fixed;
+        }
+
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: rgba(17, 24, 39, 0.9); /* Dark overlay for readability */
+        }
+
+        .card { 
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem; 
+        }
+
+        .section-title {
+            font-weight: 900;
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .nav-link.active { color: var(--accent) !important; font-weight: 700; }
+        
+        .social-btn { transition: transform 0.2s, color 0.2s; }
+        .social-btn:hover { transform: scale(1.1); color: var(--accent); }
+
+        .cta-button {
+            background-image: linear-gradient(to right, var(--accent) 0%, var(--accent-secondary) 100%);
+            background-size: 200% auto;
+            transition: all 0.4s ease;
+        }
+        .cta-button:hover { background-position: right center; transform: scale(1.05); }
+
+        /* --- Scroll Animation --- */
+        .scroll-animate { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .scroll-animate.visible { opacity: 1; transform: translateY(0); }
+        
+        /* --- Enhanced Project Cards --- */
+        .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+        .project-card:hover { transform: translateY(-8px); border-color: var(--accent); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); }
+        .project-card .project-image { transition: transform 0.4s ease; }
+        .project-card:hover .project-image { transform: scale(1.05); }
+
+        /* --- Experience Timeline --- */
+        .timeline { position: relative; max-width: 1200px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 3px; background-color: var(--border-color); top: 0; bottom: 0; left: 50%; margin-left: -1.5px; }
+        .timeline-container { padding: 10px 40px; position: relative; width: 50%; }
+        .timeline-container.left { left: 0; }
+        .timeline-container.right { left: 50%; }
+        .timeline-container::after { content: ''; position: absolute; width: 16px; height: 16px; right: -8px; background-color: white; border: 4px solid var(--accent); top: 28px; border-radius: 50%; z-index: 1; }
+        .timeline-container.right::after { left: -8px; }
+        .timeline-content ul { padding-left: 1.2rem; color: var(--text-secondary); }
+        .timeline-content ul li { margin-bottom: 0.5rem; }
+
+        /* --- Photography Slider Styles (from original file) --- */
+        .slider-frame { width: 100%; margin: 0 auto; position: relative; overflow: hidden; }
+        .slider-image-box { width: 100%; height: 70vh; min-height: 250px; max-height: 700px; position: relative; overflow: hidden; border-radius: 0.75rem; }
+        .slider-image-fade { width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; position: absolute; left: 0; top: 0; z-index: 1; transition: opacity .45s cubic-bezier(.49,.15,.39,1.4); }
+        .slider-image-fade.active { opacity: 1; z-index: 2; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(30,40,60,0.5); border: none; border-radius: 50%; font-size: 2rem; color: #e0e6ef; padding: 0.4rem 1rem; cursor: pointer; transition: background 0.15s, color 0.15s; z-index: 11; opacity: 0.88; }
+        .slider-btn:hover { background: var(--accent); color: #fff; }
+        .slider-btn.left { left: 10px; }
+        .slider-btn.right { right: 10px; }
+
+        @media screen and (max-width: 768px) {
+            .section-title { font-size: 2rem; }
+            .timeline::after { left: 20px; }
+            .timeline-container { width: 100%; padding-left: 50px; padding-right: 15px; }
+            .timeline-container.right { left: 0%; }
+            .timeline-container.left::after, .timeline-container.right::after { left: 12px; }
+            .slider-image-box { height: 50vh; }
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-gray-300">
-  <div class="parallax-bg"></div>
-  
-  <!-- NAVBAR -->
-  <nav class="fixed top-0 w-full bg-gray-900 bg-opacity-80 backdrop-blur-md shadow-lg z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <div class="flex items-center">
-          <a href="#hero" class="text-2xl font-bold text-cyan-400">Atiqur Rahman</a>
-        </div>
-        <div class="hidden md:block">
-          <div class="ml-10 flex items-baseline space-x-4">
-            <a href="#hero" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Home</a>
-            <a href="#experience" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Experience</a>
-            <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-            <a href="#education" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Education</a>
-            <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-            <a href="#photography-gallery" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Photography</a>
-            <a href="#community" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Community</a>
-            <a href="#references" class="nav-link px-3 py-2 rounded-md text-sm font-medium">References</a>
-            <a href="#contact" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-          </div>
-        </div>
-        <div class="-mr-2 flex md:hidden">
-          <button id="menu-btn" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-            <span class="sr-only">Open main menu</span>
-            <i class="fa fa-bars"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div id="mobile-menu" class="md:hidden hidden">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        <a href="#hero" class="nav-link block px-3 py-2 rounded-md text-base font-medium">Home</a>
-        <a href="#experience" class="nav-link block px-3 py-2 rounded-md text-base font-medium">Experience</a>
-        <a href="#projects" class="nav-link block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-        <a href="#education" class="nav-link block px-3 py-2 rounded-md text-base font-medium">Education</a>
-        <a href="#skills" class="nav-link block px-3 py-2 rounded-md text-base font-medium">Skills</a>
-        <a href="#photography-gallery" class="nav-link block px-3 py-2 rounded-md text-base font-medium">Photography</a>
-        <a href="#community" class="nav-link block px-3 py-2 rounded-md text-base font-medium">Community</a>
-        <a href="#references" class="nav-link block px-3 py-2 rounded-md text-base font-medium">References</a>
-        <a href="#contact" class="nav-link block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-      </div>
-    </div>
-  </nav>
+<body class="text-gray-200">
+    
+    <div class="background-container"></div>
+    <div class="background-overlay"></div>
 
-  <main>
-    <!-- HERO -->
-    <section id="hero" class="min-h-screen flex items-center justify-center text-center px-4">
-        <div class="max-w-3xl">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4">Atiqur Rahman</h1>
-            <p class="text-xl md:text-2xl font-semibold text-cyan-300 mb-8">Drone Developer | Embedded Engineer | Pilot</p>
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="https://linkedin.com/in/aakashrahman" target="_blank" class="social-btn"><i class="fab fa-linkedin big-icon"></i></a>
-                <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank" class="social-btn"><i class="fab fa-facebook big-icon"></i></a>
-                <a href="https://flickr.com/photos/atiq-bro" target="_blank" class="social-btn"><i class="fab fa-flickr big-icon"></i></a>
-                <a href="https://github.com/AtiqAakash" target="_blank" class="social-btn"><i class="fab fa-github big-icon"></i></a>
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full bg-[#111827e6] shadow-lg z-30 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between py-3 px-4">
+            <div class="font-black text-xl text-white">Atiqur Rahman</div>
+            <div id="nav-links" class="hidden md:flex gap-6 font-semibold text-sm">
+                <a href="#about" class="nav-link hover:text-cyan-400 transition">About</a>
+                <a href="#experience" class="nav-link hover:text-cyan-400 transition">Experience</a>
+                <a href="#projects" class="nav-link hover:text-cyan-400 transition">Projects</a>
+                <a href="#skills" class="nav-link hover:text-cyan-400 transition">Skills</a>
+                <a href="#photography-gallery" class="nav-link hover:text-cyan-400 transition">Photography</a>
+                <a href="#contact" class="nav-link hover:text-cyan-400 transition">Contact</a>
             </div>
-            <a href="Atiq-CV.pdf" target="_blank" class="inline-block px-8 py-3 bg-cyan-600 hover:bg-cyan-700 text-white rounded-full font-bold text-lg transition-transform transform hover:scale-105">Download CV</a>
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none"><i class="fa fa-bars"></i></button>
         </div>
-    </section>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#111827] px-4 pb-4">
+             <a href="#about" class="block py-2 nav-link">About</a>
+             <a href="#experience" class="block py-2 nav-link">Experience</a>
+             <a href="#projects" class="block py-2 nav-link">Projects</a>
+             <a href="#skills" class="block py-2 nav-link">Skills</a>
+             <a href="#photography-gallery" class="block py-2 nav-link">Photography</a>
+             <a href="#community" class="block py-2 nav-link">Community</a>
+             <a href="#references" class="block py-2 nav-link">References</a>
+             <a href="#contact" class="block py-2 nav-link">Contact</a>
+        </div>
+    </nav>
+    <div class="h-16"></div> <!-- Spacer for fixed navbar -->
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="section-title">Experience</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">Beagle Systems</h3>
-                    <p class="font-semibold">Drone Pilot & Technician</p>
-                    <p class="text-sm text-gray-400">May 2025 | Hamburg, Germany</p>
+    <main class="max-w-7xl mx-auto px-4 relative z-10">
+        <!-- HERO -->
+        <section id="hero" class="text-center py-24 md:py-32">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-black text-white mb-3 scroll-animate">Atiqur Rahman</h1>
+                <p class="text-xl md:text-2xl font-bold mb-8 tracking-wide text-cyan-300 scroll-animate" style="transition-delay: 100ms;">Drone Developer | Embedded Engineer | Pilot</p>
+                <div class="flex space-x-8 mb-10 justify-center scroll-animate" style="transition-delay: 200ms;">
+                    <a href="https://linkedin.com/in/aakashrahman" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/AtiqAakash" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-github"></i></a>
+                    <a href="https://flickr.com/photos/atiq-bro" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-flickr"></i></a>
+                    <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank" class="social-btn text-gray-400 text-3xl"><i class="fab fa-facebook"></i></a>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">TOPseven GmbH</h3>
-                    <p class="font-semibold">Werkstudent (Drone R&D)</p>
-                    <p class="text-sm text-gray-400">Oct 2024 – Mar 2025 | Emden, Germany</p>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">Robot Aviation</h3>
-                    <p class="font-semibold">Unmanned Systems Development and Testing Engineer (Intern)</p>
-                    <p class="text-sm text-gray-400">Nov 2023 – Jun 2024 | Hønefoss, Norway</p>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">Home & Marine</h3>
-                    <p class="font-semibold">Network Technician</p>
-                    <p class="text-sm text-gray-400">Jul 2024 – Sept 2024 | Bremen, Germany</p>
-                </div>
-                 <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">CodeFix IT</h3>
-                    <p class="font-semibold">IT Support Engineer</p>
-                    <p class="text-sm text-gray-400">Jan 2018 – Nov 2019 | Dhaka, Bangladesh</p>
+                <a href="Atiq-CV.pdf" target="_blank" class="cta-button inline-block px-8 py-3 text-white rounded-full font-bold text-lg scroll-animate" style="transition-delay: 300ms;">Download CV</a>
+            </div>
+        </section>
+        
+        <!-- ABOUT ME -->
+        <section id="about" class="py-24">
+            <div class="scroll-animate">
+                <h2 class="section-title">About Me</h2>
+                <div class="card p-8 md:p-12 max-w-4xl mx-auto text-center">
+                    <h3 class="text-3xl font-bold text-white mb-4">Bridging Hardware and Software</h3>
+                    <p class="mb-4 text-gray-300 text-lg">I'm an engineer with a deep passion for creating intelligent systems that interact with the physical world. My journey has taken me from programming low-level embedded systems to developing and piloting sophisticated drones for leading tech companies in Europe.</p>
+                    <p class="text-gray-300 text-lg">I thrive on hands-on challenges, whether it's debugging C++ firmware, scripting drone missions in Python, or assembling complex unmanned aerial vehicles. I am a lifelong learner, dedicated to mastering the technologies that power the future of robotics and automation.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="py-20 px-4 bg-gray-900">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="section-title">Projects</h2>
+        <!-- EXPERIENCE -->
+        <section id="experience" class="py-24">
+            <div class="scroll-animate">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-container left scroll-animate"><div class="timeline-content card p-6"><h3 class="font-bold text-xl text-cyan-300">Beagle Systems</h3><p class="font-semibold">Drone Pilot & Technician</p><p class="text-sm text-gray-400 mb-2">May 2025 | Hamburg, Germany</p><ul class="text-sm list-disc"><li>Piloted commercial UAVs and managed flight operations.</li><li>Performed system maintenance, assembly, and diagnostics on drone fleets.</li><li>Utilized Linux, QGroundControl, Mission Planner, and PX4.</li></ul></div></div>
+                    <div class="timeline-container right scroll-animate"><div class="timeline-content card p-6"><h3 class="font-bold text-xl text-cyan-300">TOPseven GmbH</h3><p class="font-semibold">Werkstudent (Drone R&D)</p><p class="text-sm text-gray-400 mb-2">Oct 2024 – Mar 2025 | Emden, Germany</p><ul class="text-sm list-disc"><li>Developed and tested drone systems using Python, C++, and MAVSDK.</li><li>Created 3D models with Fusion 360 for R&D projects.</li><li>Conducted SITL simulations and flight tests with Pixhawk flight controllers.</li></ul></div></div>
+                    <div class="timeline-container left scroll-animate"><div class="timeline-content card p-6"><h3 class="font-bold text-xl text-cyan-300">Robot Aviation</h3><p class="font-semibold">Unmanned Systems Engineer (Intern)</p><p class="text-sm text-gray-400 mb-2">Nov 2023 – Jun 2024 | Hønefoss, Norway</p><ul class="text-sm list-disc"><li>Contributed to full-stack development (C++, Python, PHP, JS) for UAV ground control systems.</li><li>Managed Linux servers, networking, and NAS cloud infrastructure.</li><li>Involved in 3D printing, system testing, and piloting various drone types.</li></ul></div></div>
+                    <div class="timeline-container right scroll-animate"><div class="timeline-content card p-6"><h3 class="font-bold text-xl text-cyan-300">Home & Marine</h3><p class="font-semibold">Network Technician (Disney Treasure)</p><p class="text-sm text-gray-400 mb-2">Jul 2024 – Sep 2024 | Bremen, Germany</p><ul class="text-sm list-disc"><li>Installed and configured IP networking equipment on a large-scale marine vessel.</li><li>Performed fault-finding and troubleshooting on complex network systems.</li></ul></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="py-24">
+            <h2 class="section-title scroll-animate">Personal Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card p-6">
-                    <h3 class="text-lg font-bold">ConBot (Bash)</h3>
+                <!-- Project cards now use your own images for a more personal touch! -->
+                <div class="project-card card flex flex-col overflow-hidden scroll-animate"><div class="overflow-hidden"><img src="4.jpg" alt="ConBot" class="w-full h-48 object-cover project-image"></div><div class="p-6 flex flex-col flex-grow"><h3 class="font-bold text-xl text-white mb-2">ConBot Autonomous Robot</h3><p class="text-sm text-gray-400 mb-4 flex-grow">An Ardupilot-powered robot utilizing Bash scripting for autonomous navigation.</p></div></div>
+                <div class="project-card card flex flex-col overflow-hidden scroll-animate" style="transition-delay: 100ms;"><div class="overflow-hidden"><img src="5.jpg" alt="IoT Security" class="w-full h-48 object-cover project-image"></div><div class="p-6 flex flex-col flex-grow"><h3 class="font-bold text-xl text-white mb-2">IoT Control & Security System</h3><p class="text-sm text-gray-400 mb-4 flex-grow">A full-stack home automation system using C++ on an ESP32 with a web dashboard.</p></div></div>
+                <div class="project-card card flex flex-col overflow-hidden scroll-animate" style="transition-delay: 200ms;"><div class="overflow-hidden"><img src="6.jpg" alt="Flight Logger" class="w-full h-48 object-cover project-image"></div><div class="p-6 flex flex-col flex-grow"><h3 class="font-bold text-xl text-white mb-2">UAV Flight Logger</h3><p class="text-sm text-gray-400 mb-4 flex-grow">A web application for real-time logging and visualization of drone flight telemetry data.</p></div></div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </section>
+
+        <!-- SKILLS & EDUCATION -->
+        <section id="skills" class="py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Skills -->
+                <div class="scroll-animate">
+                    <h2 class="section-title text-left lg:text-center">Skills & Tools</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div><h4 class="text-lg font-bold mb-2 text-cyan-400">Programming</h4><p class="text-gray-400">C/C++, Python, Java, JavaScript, PHP, MySQL, Bash</p></div>
+                        <div><h4 class="text-lg font-bold mb-2 text-cyan-400">Drone & Robotics</h4><p class="text-gray-400">Pixhawk, CubePilot, STM32, Raspberry Pi, Mission Planner, QGroundControl, PX4, SITL</p></div>
+                        <div><h4 class="text-lg font-bold mb-2 text-cyan-400">Embedded & Network</h4><p class="text-gray-400">Linux, IP Networking, Arduino, ESP32, Firmware, 3D Modeling/Printing</p></div>
+                        <div><h4 class="text-lg font-bold mb-2 text-cyan-400">Web & Tools</h4><p class="text-gray-400">HTML, CSS, Git & GitHub, Fusion 360, Microsoft Office</p></div>
+                    </div>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-lg font-bold">Flight Logger</h3>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-lg font-bold">IoT Control & Security System</h3>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-lg font-bold">IoT Weather Station</h3>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-lg font-bold">Industrial Sorting Machine</h3>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-lg font-bold">Biometric Attendance System</h3>
+                <!-- Education -->
+                <div class="scroll-animate" style="transition-delay: 100ms;">
+                    <h2 class="section-title text-left lg:text-center">Education</h2>
+                    <div class="space-y-6">
+                        <div><h4 class="text-lg font-bold text-white">Hochschule Emden/Leer</h4><p class="text-gray-400">M.Eng, Cyber Physical Systems (paused)</p></div>
+                        <div><h4 class="text-lg font-bold text-white">University of Oslo</h4><p class="text-gray-400">M.Sc, Programming & System Architecture (paused)</p></div>
+                        <div><h4 class="text-lg font-bold text-white">University of Development Alternative</h4><p class="text-gray-400">B.Sc, Computer Science & Engineering</p></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education" class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="section-title">Education</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">Hochschule Emden/Leer</h3>
-                    <p>Master of Engineering – Cyber Physical Systems</p>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">University of Oslo</h3>
-                    <p>Master of Science – Programming & System Architecture</p>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">University of Development Alternative</h3>
-                    <p>Bachelor of Science – Computer Science & Engineering</p>
+        </section>
+        
+        <!-- PHOTOGRAPHY -->
+        <section id="photography-gallery" class="py-24">
+            <div class="scroll-animate">
+                <h2 class="section-title">Photography Gallery</h2>
+                <div class="card p-4 md:p-6 text-center">
+                     <p class="max-w-2xl mx-auto mb-6 text-gray-400">Beyond engineering, I am passionate about capturing the world through my lens.</p>
+                     <div class="slider-frame">
+                        <div class="slider-image-box" id="sliderImageBox">
+                            <img src="1.jpg" alt="Slide 1" class="slider-image-fade active"><img src="2.jpg" alt="Slide 2" class="slider-image-fade"><img src="3.jpg" alt="Slide 3" class="slider-image-fade"><img src="4.jpg" alt="Slide 4" class="slider-image-fade"><img src="5.jpg" alt="Slide 5" class="slider-image-fade"><img src="6.jpg" alt="Slide 6" class="slider-image-fade"><img src="7.jpg" alt="Slide 7" class="slider-image-fade"><img src="8.jpg" alt="Slide 8" class="slider-image-fade"><img src="9.jpg" alt="Slide 9" class="slider-image-fade"><img src="10.jpg" alt="Slide 10" class="slider-image-fade"><img src="11.jpg" alt="Slide 11" class="slider-image-fade"><img src="12.jpg" alt="Slide 12" class="slider-image-fade">
+                            <button class="slider-btn left" id="sliderPrevBtn">&#10094;</button><button class="slider-btn right" id="sliderNextBtn">&#10095;</button>
+                        </div>
+                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="py-20 px-4 bg-gray-900">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="section-title">Skills & Tools</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="card p-6">
-                    <h3 class="text-lg font-bold text-cyan-400 mb-2">Programming</h3>
-                    <p>C/C++, Python, Java, JavaScript, PHP, MySQL, Bash, MATLAB</p>
+        <!-- COMMUNITY & REFERENCES -->
+        <section id="community" class="py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="scroll-animate">
+                    <h2 class="section-title text-left lg:text-center">Community</h2>
+                    <div class="space-y-6">
+                        <div><h4 class="text-lg font-bold text-white">Founder of Hridoye Bangladesh</h4><p class="text-gray-400">400+ member cultural organization in Norway</p></div>
+                        <div><h4 class="text-lg font-bold text-white">Kringjå Cricket Club</h4><p class="text-gray-400">Daglig Leder, Board of Directors at Norges Cricket Forbund</p></div>
+                        <div><h4 class="text-lg font-bold text-white">Freelance Photographer</h4><p class="text-gray-400">Capturing tech innovations and landscapes</p></div>
+                    </div>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-lg font-bold text-cyan-400 mb-2">Drone & Robotics</h3>
-                    <p>Pixhawk, CubePilot, STM32, Raspberry Pi, NVIDIA Jetson Nano, Mission Planner, QGroundControl, PX4, SITL, Ardupilot</p>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-lg font-bold text-cyan-400 mb-2">Networking & Embedded</h3>
-                    <p>Linux, IP Networking, Bash Scripting, Security Protocols, Arduino, ESP32, Firmware, Embedded Systems, 3D Modeling/Printing</p>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-lg font-bold text-cyan-400 mb-2">Web & Tools</h3>
-                    <p>HTML, CSS, JavaScript, PHP, MySQL, Git, Fusion 360, Microsoft Office</p>
+                <div class="scroll-animate" style="transition-delay: 100ms;">
+                    <h2 class="section-title text-left lg:text-center">References</h2>
+                    <div class="space-y-6">
+                        <div><h4 class="text-lg font-bold text-white">Niklas Nyroth</h4><p class="text-gray-400">CEO, Robot Aviation AS</p></div>
+                        <div><h4 class="text-lg font-bold text-white">Cem Yolcubal</h4><p class="text-gray-400">Drone Pilot, Beagle Systems</p></div>
+                        <div><h4 class="text-lg font-bold text-white">Farzan M. Noori</h4><p class="text-gray-400">Postdoctoral Research Fellow, University of Oslo</p></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- PHOTOGRAPHY GALLERY -->
-    <section id="photography-gallery" class="py-20">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="section-title">Photography Gallery</h2>
-            <div class="slider-frame rounded-lg">
-                <div class="slider-image-box">
-                    <img src="1.jpg" alt="Slide 1" class="slider-image-fade active">
-                    <img src="2.jpg" alt="Slide 2" class="slider-image-fade">
-                    <img src="3.jpg" alt="Slide 3" class="slider-image-fade">
-                    <img src="4.jpg" alt="Slide 4" class="slider-image-fade">
-                    <img src="5.jpg" alt="Slide 5" class="slider-image-fade">
-                    <img src="6.jpg" alt="Slide 6" class="slider-image-fade">
-                    <img src="7.jpg" alt="Slide 7" class="slider-image-fade">
-                    <img src="8.jpg" alt="Slide 8" class="slider-image-fade">
-                    <img src="9.jpg" alt="Slide 9" class="slider-image-fade">
-                    <img src="10.jpg" alt="Slide 10" class="slider-image-fade">
-                    <img src="11.jpg" alt="Slide 11" class="slider-image-fade">
-                    <img src="12.jpg" alt="Slide 12" class="slider-image-fade">
-                </div>
-                <button class="slider-btn left" id="sliderPrevBtn">&#10094;</button>
-                <button class="slider-btn right" id="sliderNextBtn">&#10095;</button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- COMMUNITY -->
-    <section id="community" class="py-20 px-4 bg-gray-900">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="section-title">Community</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">Founder of Hridoye Bangladesh</h3>
-                    <p>400+ member cultural organization in Norway</p>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">Kringjå Cricket Club</h3>
-                    <p>Daglig Leder, Board of Directors at Norges Cricket Forbund</p>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">Freelance Photographer</h3>
-                    <p>Capturing tech innovations and landscapes</p>
+        <!-- CONTACT -->
+        <section id="contact" class="py-24">
+            <div class="scroll-animate text-center">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="max-w-2xl mx-auto">
+                    <p class="text-xl text-gray-300 mb-8">I'm always open to new opportunities and collaborations. Whether you have a question or just want to connect, feel free to reach out!</p>
+                    <a href="mailto:atiqur.pilot@gmail.com" class="cta-button inline-block mb-10 px-10 py-4 text-white rounded-full font-bold text-lg">Send me an Email</a>
+                    <div class="text-gray-400 space-y-2">
+                        <p><i class="fas fa-map-marker-alt text-cyan-400 w-6"></i> Olav M. Troviks Vei 66, 0864 Oslo</p>
+                        <p><i class="fas fa-phone text-cyan-400 w-6"></i> +47 458 08 855</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- REFERENCES -->
-    <section id="references" class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="section-title">References</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">Niklas Nyroth</h3>
-                    <p>CEO, Robot Aviation AS</p>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">Cem Yolcubal</h3>
-                    <p>Drone Pilot at Beagle Systems</p>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold text-cyan-400">Farzan M. Noori</h3>
-                    <p>Postdoctoral Research Fellow, University of Oslo</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <footer class="text-center text-gray-500 text-sm py-6 relative z-10">
+        &copy; 2025 Atiqur Rahman. All Rights Reserved.
+    </footer>
 
-    <!-- CONTACT -->
-    <section id="contact" class="py-20 px-4 bg-gray-900">
-        <div class="max-w-xl mx-auto text-center">
-            <h2 class="section-title">Contact Me</h2>
-            <p class="mb-4">Olav M. Troviks Vei 66, 0864 Oslo</p>
-            <p class="mb-4"><a href="mailto:atiqur.pilot@gmail.com" class="hover:text-cyan-400">atiqur.pilot@gmail.com</a></p>
-            <p class="mb-8"><a href="tel:+4745808855" class="hover:text-cyan-400">+47 458 08 855</a></p>
-            <a href="mailto:atiqur.pilot@gmail.com" class="inline-block px-8 py-3 bg-cyan-600 hover:bg-cyan-700 text-white rounded-full font-bold text-lg transition-transform transform hover:scale-105">Send Message</a>
-        </div>
-    </section>
-  </main>
-  
-  <footer class="text-center py-8">
-    <p>&copy; 2025 Atiqur Rahman. All rights reserved.</p>
-  </footer>
-  
-  <script>
-    // Mobile Menu
-    document.getElementById('menu-btn').addEventListener('click', function() {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Mobile Menu ---
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuBtn.onclick = () => mobileMenu.classList.toggle('hidden');
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.onclick = () => mobileMenu.classList.add('hidden');
+            });
 
-    // Slider
-    const sliderImgs = document.querySelectorAll('.slider-image-fade');
-    let sliderIndex = 0;
-    
-    function showSlide(index) {
-        sliderImgs.forEach(img => img.classList.remove('active'));
-        sliderImgs[index].classList.add('active');
-    }
-
-    document.getElementById('sliderPrevBtn').addEventListener('click', () => {
-        sliderIndex = (sliderIndex - 1 + sliderImgs.length) % sliderImgs.length;
-        showSlide(sliderIndex);
-    });
-
-    document.getElementById('sliderNextBtn').addEventListener('click', () => {
-        sliderIndex = (sliderIndex + 1) % sliderImgs.length;
-        showSlide(sliderIndex);
-    });
-
-    setInterval(() => {
-        sliderIndex = (sliderIndex + 1) % sliderImgs.length;
-        showSlide(sliderIndex);
-    }, 4000);
-
-    // Navbar Active State
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 60) {
-                current = section.getAttribute('id');
+            // --- Active Nav Link on Scroll ---
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            }, { passive: true });
+            
+            // --- Scroll Animation Script ---
+            const animatedElements = document.querySelectorAll('.scroll-animate');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+            }, { threshold: 0.1 });
+            animatedElements.forEach(el => observer.observe(el));
+            
+            // --- Photography Slider Script (from original file) ---
+            const sliderImgs = [...document.querySelectorAll('.slider-image-fade')];
+            if (sliderImgs.length > 0) {
+                let sliderIndex = 0, sliderAnimating = false;
+                function showSlide(idx) {
+                    if(sliderAnimating || idx === sliderIndex) return;
+                    sliderAnimating = true;
+                    sliderImgs[sliderIndex].classList.remove('active');
+                    sliderImgs[idx].classList.add('active');
+                    setTimeout(()=>{ sliderAnimating = false; }, 450);
+                    sliderIndex = idx;
+                }
+                document.getElementById('sliderPrevBtn').onclick = () => showSlide((sliderIndex - 1 + sliderImgs.length) % sliderImgs.length);
+                document.getElementById('sliderNextBtn').onclick = () => showSlide((sliderIndex + 1) % sliderImgs.length);
+                setInterval(() => showSlide((sliderIndex + 1) % sliderImgs.length), 4000);
             }
         });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    });
-  </script>
+    </script>
 </body>
 </html>
