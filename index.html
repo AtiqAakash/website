@@ -107,20 +107,6 @@
         .slider-btn:hover { background: var(--accent); }
         .slider-btn.left { left: 10px; } .slider-btn.right { right: 10px; }
 
-        /* REFERENCE HEADING STYLE FIX (Ensures text fits single line on large screens) */
-        .ref-heading-inner {
-            display: inline;
-        }
-        @media (min-width: 1024px) { /* Applies only on desktop/large screens */
-            .ref-heading-container {
-                white-space: nowrap; /* Prevent wrap */
-                overflow: hidden; /* Hide overflow */
-                text-overflow: ellipsis; /* Add dots if necessary */
-                display: block;
-            }
-        }
-
-
         @media screen and (max-width: 768px) {
             .section-title { font-size: 2.25rem; }
             .timeline::after { left: 20px; }
@@ -382,10 +368,10 @@
                 <div class="max-w-7xl mx-auto flex gap-8 overflow-x-scroll pb-4 snap-x snap-mandatory">
                     
                     <div class="card p-6 scroll-animate text-left flex-none w-80 md:w-96 snap-start">
-                        <h4 class="text-xl text-white ref-heading-container">
-                            <a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:text-cyan-400 transition ref-heading-inner">Niklas Nyroth</a>
-                            <span class="text-base text-gray-400 font-normal ml-2 ref-heading-inner">| CEO, Robot Aviation AS</span>
+                        <h4 class="text-xl text-white">
+                            <a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:text-cyan-400 transition">Niklas Nyroth</a>
                         </h4>
+                        <p class="text-base text-gray-400">CEO, Robot Aviation AS</p>
                         <div class="mt-2 text-sm text-cyan-500 space-y-1">
                             <p><i class="fas fa-phone fa-fw mr-1"></i>
                                 <a href="tel:+4790652502" class="hover:underline">+47 906 52 502</a>
@@ -397,10 +383,10 @@
                     </div>
 
                     <div class="card p-6 scroll-animate text-left flex-none w-80 md:w-96 snap-start" style="animation-delay: 0.2s;">
-                        <h4 class="text-xl text-white ref-heading-container">
-                            <a href="https://www.linkedin.com/in/simon-b-209677223/" target="_blank" class="hover:text-cyan-400 transition ref-heading-inner">Simon Burczyk</a>
-                            <span class="text-base text-gray-400 font-normal ml-2 ref-heading-inner">| Operational Manager, Beagle Systems</span>
+                        <h4 class="text-xl text-white">
+                            <a href="https://www.linkedin.com/in/simon-b-209677223/" target="_blank" class="hover:text-cyan-400 transition">Simon Burczyk</a>
                         </h4>
+                        <p class="text-base text-gray-400">Operational Manager, Beagle Systems</p>
                         <div class="mt-2 text-sm text-cyan-500 space-y-1">
                             <p><i class="fas fa-phone fa-fw mr-1"></i>
                                 <a href="tel:+4915227157906" class="hover:underline">+49 1522 715 7906</a>
@@ -412,10 +398,10 @@
                     </div>
                     
                     <div class="card p-6 scroll-animate text-left flex-none w-80 md:w-96 snap-start" style="animation-delay: 0.4s;">
-                        <h4 class="text-xl text-white ref-heading-container">
-                            <a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:text-cyan-400 transition ref-heading-inner">Cem Yolcubal</a>
-                            <span class="text-base text-gray-400 font-normal ml-2 ref-heading-inner">| Drone R&D Specialist, TOPseven GmbH</span>
+                        <h4 class="text-xl text-white">
+                            <a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:text-cyan-400 transition">Cem Yolcubal</a>
                         </h4>
+                        <p class="text-base text-gray-400">Drone R&D Specialist, TOPseven GmbH</p>
                         <div class="mt-2 text-sm text-cyan-500 space-y-1">
                             <p><i class="fas fa-phone fa-fw mr-1"></i>
                                 <a href="tel:+4915170551030" class="hover:underline">+49 151 7055 1030</a>
@@ -427,10 +413,10 @@
                     </div>
 
                     <div class="card p-6 scroll-animate text-left flex-none w-80 md:w-96 snap-start" style="animation-delay: 0.6s;">
-                        <h4 class="text-xl text-white ref-heading-container">
-                            <a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:text-cyan-400 transition ref-heading-inner">Farzan M. Noori</a>
-                            <span class="text-base text-gray-400 font-normal ml-2 ref-heading-inner">| Postdoctoral Research Fellow, University of Oslo</span>
+                        <h4 class="text-xl text-white">
+                            <a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:text-cyan-400 transition">Farzan M. Noori</a>
                         </h4>
+                        <p class="text-base text-gray-400">Postdoctoral Research Fellow, University of Oslo</p>
                         <div class="mt-2 text-sm text-cyan-500 space-y-1">
                             <p><i class="fas fa-phone fa-fw mr-1"></i>
                                 <a href="tel:+4791255115" class="hover:underline">+47 912 55 115</a>
