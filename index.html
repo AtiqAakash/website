@@ -107,13 +107,19 @@
         .slider-btn:hover { background: var(--accent); }
         .slider-btn.left { left: 10px; } .slider-btn.right { right: 10px; }
 
-        /* *** NEW CSS FOR SINGLE-LINE REFERENCE HEADINGS (Desktop) *** */
-        .no-wrap-heading {
-            white-space: nowrap; /* Prevents text wrap on desktop */
-            overflow: hidden; 
-            text-overflow: ellipsis; /* Adds dots if it still overflows horizontally */
-            display: block; /* Ensures it occupies the full width */
+        /* REFERENCE HEADING STYLE FIX (Ensures text fits single line on large screens) */
+        .ref-heading-inner {
+            display: inline;
         }
+        @media (min-width: 1024px) { /* Applies only on desktop/large screens */
+            .ref-heading-container {
+                white-space: nowrap; /* Prevent wrap */
+                overflow: hidden; /* Hide overflow */
+                text-overflow: ellipsis; /* Add dots if necessary */
+                display: block;
+            }
+        }
+
 
         @media screen and (max-width: 768px) {
             .section-title { font-size: 2.25rem; }
@@ -122,12 +128,6 @@
             .timeline-container.right { left: 0%; }
             .timeline-container.left::after, .timeline-container.right::after { left: 12px; }
             .slider-image-box { height: 50vh; }
-            
-            /* Allow text wrapping on smaller screens for mobile readability */
-            .no-wrap-heading {
-                white-space: normal; 
-                text-overflow: clip;
-            }
         }
     </style>
 </head>
@@ -379,12 +379,12 @@
         <section id="references" class="py-24">
             <div class="scroll-animate text-center">
                 <h2 class="section-title">References</h2>
-                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="max-w-7xl mx-auto flex gap-8 overflow-x-scroll pb-4 snap-x snap-mandatory">
                     
-                    <div class="card p-6 scroll-animate text-left">
-                        <h4 class="text-xl text-white no-wrap-heading">
-                            <a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:text-cyan-400 transition">Niklas Nyroth</a>
-                            <span class="text-base text-gray-400 font-normal ml-2">| CEO, Robot Aviation AS</span>
+                    <div class="card p-6 scroll-animate text-left flex-none w-80 md:w-96 snap-start">
+                        <h4 class="text-xl text-white ref-heading-container">
+                            <a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:text-cyan-400 transition ref-heading-inner">Niklas Nyroth</a>
+                            <span class="text-base text-gray-400 font-normal ml-2 ref-heading-inner">| CEO, Robot Aviation AS</span>
                         </h4>
                         <div class="mt-2 text-sm text-cyan-500 space-y-1">
                             <p><i class="fas fa-phone fa-fw mr-1"></i>
@@ -396,10 +396,10 @@
                         </div>
                     </div>
 
-                    <div class="card p-6 scroll-animate text-left" style="animation-delay: 0.2s;">
-                        <h4 class="text-xl text-white no-wrap-heading">
-                            <a href="https://www.linkedin.com/in/simon-b-209677223/" target="_blank" class="hover:text-cyan-400 transition">Simon Burczyk</a>
-                            <span class="text-base text-gray-400 font-normal ml-2">| Operational Manager, Beagle Systems</span>
+                    <div class="card p-6 scroll-animate text-left flex-none w-80 md:w-96 snap-start" style="animation-delay: 0.2s;">
+                        <h4 class="text-xl text-white ref-heading-container">
+                            <a href="https://www.linkedin.com/in/simon-b-209677223/" target="_blank" class="hover:text-cyan-400 transition ref-heading-inner">Simon Burczyk</a>
+                            <span class="text-base text-gray-400 font-normal ml-2 ref-heading-inner">| Operational Manager, Beagle Systems</span>
                         </h4>
                         <div class="mt-2 text-sm text-cyan-500 space-y-1">
                             <p><i class="fas fa-phone fa-fw mr-1"></i>
@@ -411,10 +411,10 @@
                         </div>
                     </div>
                     
-                    <div class="card p-6 scroll-animate text-left" style="animation-delay: 0.4s;">
-                        <h4 class="text-xl text-white no-wrap-heading">
-                            <a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:text-cyan-400 transition">Cem Yolcubal</a>
-                            <span class="text-base text-gray-400 font-normal ml-2">| Drone R&D Specialist, TOPseven GmbH</span>
+                    <div class="card p-6 scroll-animate text-left flex-none w-80 md:w-96 snap-start" style="animation-delay: 0.4s;">
+                        <h4 class="text-xl text-white ref-heading-container">
+                            <a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:text-cyan-400 transition ref-heading-inner">Cem Yolcubal</a>
+                            <span class="text-base text-gray-400 font-normal ml-2 ref-heading-inner">| Drone R&D Specialist, TOPseven GmbH</span>
                         </h4>
                         <div class="mt-2 text-sm text-cyan-500 space-y-1">
                             <p><i class="fas fa-phone fa-fw mr-1"></i>
@@ -426,10 +426,10 @@
                         </div>
                     </div>
 
-                    <div class="card p-6 scroll-animate text-left" style="animation-delay: 0.6s;">
-                        <h4 class="text-xl text-white no-wrap-heading">
-                            <a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:text-cyan-400 transition">Farzan M. Noori</a>
-                            <span class="text-base text-gray-400 font-normal ml-2">| Postdoctoral Research Fellow, University of Oslo</span>
+                    <div class="card p-6 scroll-animate text-left flex-none w-80 md:w-96 snap-start" style="animation-delay: 0.6s;">
+                        <h4 class="text-xl text-white ref-heading-container">
+                            <a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:text-cyan-400 transition ref-heading-inner">Farzan M. Noori</a>
+                            <span class="text-base text-gray-400 font-normal ml-2 ref-heading-inner">| Postdoctoral Research Fellow, University of Oslo</span>
                         </h4>
                         <div class="mt-2 text-sm text-cyan-500 space-y-1">
                             <p><i class="fas fa-phone fa-fw mr-1"></i>
@@ -441,7 +441,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
         </section>
 
         <section id="contact" class="py-24">
