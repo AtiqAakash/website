@@ -21,14 +21,14 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* --- CORE STYLING (Reverted closer to original dark theme) --- */
+        /* --- CORE STYLING --- */
         :root {
             --primary-bg: #111827;
             --card-bg: #1f2937;
             --text-main: #f3f4f6;
             --text-secondary: #9ca3af;
-            --accent: #06b6d4; /* Original Cyan */
-            --accent-secondary: #ec4899; /* Original Pink */
+            --accent: #06b6d4; 
+            --accent-secondary: #ec4899; 
             --border-color: rgba(255, 255, 255, 0.1);
             --font-heading: 'Playfair Display', serif; 
             --font-body: 'Roboto', sans-serif;
@@ -41,7 +41,7 @@
         .background-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background: url('background.jpg') center center / cover no-repeat fixed; }
         .background-overlay { 
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; 
-            background-color: rgba(17, 24, 39, 0.6); /* Slightly darker overlay for contrast */
+            background-color: rgba(17, 24, 39, 0.6);
         }
 
         /* Card and Hover Effects */
@@ -85,7 +85,7 @@
         .timeline-container.right::after { left: -8px; }
         .timeline-content ul { padding-left: 1.2rem; color: var(--text-secondary); }
 
-        /* ENHANCED Photography Slider */
+        /* Photography Slider */
         .slider-image-box { 
             width: 100%; height: 70vh; min-height: 250px; max-height: 700px; 
             position: relative; overflow: hidden; border-radius: 0.75rem; 
@@ -107,6 +107,14 @@
         .slider-btn:hover { background: var(--accent); }
         .slider-btn.left { left: 10px; } .slider-btn.right { right: 10px; }
 
+        /* *** NEW CSS FOR SINGLE-LINE REFERENCE HEADINGS (Desktop) *** */
+        .no-wrap-heading {
+            white-space: nowrap; /* Prevents text wrap on desktop */
+            overflow: hidden; 
+            text-overflow: ellipsis; /* Adds dots if it still overflows horizontally */
+            display: block; /* Ensures it occupies the full width */
+        }
+
         @media screen and (max-width: 768px) {
             .section-title { font-size: 2.25rem; }
             .timeline::after { left: 20px; }
@@ -114,6 +122,12 @@
             .timeline-container.right { left: 0%; }
             .timeline-container.left::after, .timeline-container.right::after { left: 12px; }
             .slider-image-box { height: 50vh; }
+            
+            /* Allow text wrapping on smaller screens for mobile readability */
+            .no-wrap-heading {
+                white-space: normal; 
+                text-overflow: clip;
+            }
         }
     </style>
 </head>
@@ -368,7 +382,7 @@
                 <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <div class="card p-6 scroll-animate text-left">
-                        <h4 class="text-xl text-white">
+                        <h4 class="text-xl text-white no-wrap-heading">
                             <a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:text-cyan-400 transition">Niklas Nyroth</a>
                             <span class="text-base text-gray-400 font-normal ml-2">| CEO, Robot Aviation AS</span>
                         </h4>
@@ -383,7 +397,7 @@
                     </div>
 
                     <div class="card p-6 scroll-animate text-left" style="animation-delay: 0.2s;">
-                        <h4 class="text-xl text-white">
+                        <h4 class="text-xl text-white no-wrap-heading">
                             <a href="https://www.linkedin.com/in/simon-b-209677223/" target="_blank" class="hover:text-cyan-400 transition">Simon Burczyk</a>
                             <span class="text-base text-gray-400 font-normal ml-2">| Operational Manager, Beagle Systems</span>
                         </h4>
@@ -398,7 +412,7 @@
                     </div>
                     
                     <div class="card p-6 scroll-animate text-left" style="animation-delay: 0.4s;">
-                        <h4 class="text-xl text-white">
+                        <h4 class="text-xl text-white no-wrap-heading">
                             <a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:text-cyan-400 transition">Cem Yolcubal</a>
                             <span class="text-base text-gray-400 font-normal ml-2">| Drone R&D Specialist, TOPseven GmbH</span>
                         </h4>
@@ -413,7 +427,7 @@
                     </div>
 
                     <div class="card p-6 scroll-animate text-left" style="animation-delay: 0.6s;">
-                        <h4 class="text-xl text-white">
+                        <h4 class="text-xl text-white no-wrap-heading">
                             <a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:text-cyan-400 transition">Farzan M. Noori</a>
                             <span class="text-base text-gray-400 font-normal ml-2">| Postdoctoral Research Fellow, University of Oslo</span>
                         </h4>
@@ -495,7 +509,7 @@
             }, { rootMargin: '-50% 0px -50% 0px' });
             sections.forEach(section => navObserver.observe(section));
             
-            // --- Photography Slider (Simplified and Robust) ---
+            // --- Photography Slider ---
             const sliderImgs = [...document.querySelectorAll('.slider-image-fade')];
             if (sliderImgs.length > 0) {
                 let sliderIndex = 0, sliderAnimating = false;
@@ -503,17 +517,13 @@
                 function showSlide(idx) {
                     const newIdx = (idx + sliderImgs.length) % sliderImgs.length;
                     
-                    // Prevent animation if already animating or index is the same
                     if(sliderAnimating || newIdx === sliderIndex) return; 
                     
                     sliderAnimating = true;
 
-                    // Fade out current slide, then switch, then fade in new slide
                     sliderImgs[sliderIndex].classList.remove('active');
                     
-                    // Wait for fade-out time (e.g., half the CSS transition time)
                     setTimeout(() => {
-                        // Ensure only the new slide has the active class
                         sliderImgs.forEach(img => img.classList.remove('active')); 
                         sliderImgs[newIdx].classList.add('active');
                         sliderIndex = newIdx;
@@ -524,7 +534,6 @@
                 document.getElementById('sliderPrevBtn').onclick = () => showSlide(sliderIndex - 1);
                 document.getElementById('sliderNextBtn').onclick = () => showSlide(sliderIndex + 1);
                 
-                // Auto-advance every 4 seconds
                 setInterval(() => showSlide(sliderIndex + 1), 4000);
             }
         });
