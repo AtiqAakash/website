@@ -21,15 +21,15 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* --- ENHANCED "THE CLASSIC SIGNATURE" STYLING --- */
+        /* --- CORE STYLING (Reverted closer to original dark theme) --- */
         :root {
-            --primary-bg: #0d131f; /* Deeper Dark Blue */
-            --card-bg: #1c2637; /* Slightly Lighter Card for Depth */
-            --text-main: #f0f4f8; /* Off-white for better contrast */
-            --text-secondary: #a0aab8; /* Softer gray */
-            --accent: #00bcd4; /* Brighter Cyan */
-            --accent-secondary: #ff4081; /* Pink Accent */
-            --border-color: rgba(255, 255, 255, 0.15); /* Slightly clearer border */
+            --primary-bg: #111827;
+            --card-bg: #1f2937;
+            --text-main: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent: #06b6d4; /* Original Cyan */
+            --accent-secondary: #ec4899; /* Original Pink */
+            --border-color: rgba(255, 255, 255, 0.1);
             --font-heading: 'Playfair Display', serif; 
             --font-body: 'Roboto', sans-serif;
         }
@@ -37,100 +37,82 @@
         html { scroll-behavior: smooth; }
         body { font-family: var(--font-body); color: var(--text-main); background-color: var(--primary-bg); }
 
-        /* Fixed Background & Overlay - Adjusted opacity for better content readability */
+        /* FIXED BACKGROUND IMAGE */
         .background-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background: url('background.jpg') center center / cover no-repeat fixed; }
         .background-overlay { 
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; 
-            background-color: rgba(13, 19, 31, 0.7); /* Darker overlay */
+            background-color: rgba(17, 24, 39, 0.6); /* Slightly darker overlay for contrast */
         }
 
-        /* Card Enhancements for Depth and Hover Effect */
+        /* Card and Hover Effects */
         .card { 
             background-color: var(--card-bg); 
             border: 1px solid var(--border-color); 
             border-radius: 0.75rem; 
             transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
         .card:hover { 
-            transform: translateY(-7px); 
-            box-shadow: 0 0 30px rgba(0, 188, 212, 0.4); 
-            border-color: var(--accent);
+            transform: translateY(-5px); 
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.3); 
+            border-color: rgba(6, 182, 212, 0.5); 
         }
 
-        /* Navbar Enhancements */
-        .nav-link { transition: color 0.2s, font-weight 0.2s; padding: 0.5rem 0; }
+        /* Navbar & Socials */
         .nav-link.active { color: var(--accent) !important; font-weight: 700; border-bottom: 2px solid var(--accent); }
-        .social-btn { transition: transform 0.2s, color 0.2s, outline 0.2s; border-radius: 50%; padding: 0.25rem; }
-        .social-btn:hover, .social-btn:focus { transform: scale(1.2); color: var(--accent); outline: 2px solid var(--accent); outline-offset: 2px; }
+        .social-btn { transition: transform 0.2s, color 0.2s; }
+        .social-btn:hover, .social-btn:focus { transform: scale(1.1); color: var(--accent); }
+        .cta-button { background-image: linear-gradient(to right, var(--accent) 0%, var(--accent-secondary) 100%); background-size: 200% auto; transition: all 0.4s ease; }
+        .cta-button:hover { background-position: right center; transform: scale(1.05); }
 
-        /* CTA Button */
-        .cta-button { 
-            background-image: linear-gradient(to right, var(--accent) 0%, var(--accent-secondary) 100%); 
-            background-size: 200% auto; 
-            transition: all 0.4s ease;
-            box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
-        }
-        .cta-button:hover, .cta-button:focus { 
-            background-position: right center; 
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(255, 64, 129, 0.6);
-        }
-
-        /* Headings & Titles */
+        /* Headings & Animations */
         h1, h2, h3, h4, .section-title { font-family: var(--font-heading); }
-        .section-title { 
-            position: relative; 
-            display: inline-block; 
-            padding-bottom: 0.75rem; 
-            font-size: 2.75rem; /* Slightly larger */
-            font-weight: 700; 
-            margin-bottom: 5rem; 
-        }
+        .section-title { position: relative; display: inline-block; padding-bottom: 0.75rem; font-size: 2.5rem; font-weight: 700; margin-bottom: 4.5rem; }
         
-        /* Animations */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes underlineGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-        
         .animate-fadeInUp { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
         .scroll-animate { opacity: 0; will-change: transform, opacity; }
         .scroll-animate.visible { animation: fadeInUp 0.8s ease-out forwards; }
-        
-        .section-title::after { 
-            content: ''; 
-            position: absolute; 
-            bottom: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 4px; /* Thicker underline */
-            background-color: var(--accent); 
-            transform: scaleX(0); 
-            transform-origin: left; 
-        }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background-color: var(--accent); transform: scaleX(0); transform-origin: left; }
         .scroll-animate.visible .section-title::after { animation: underlineGrow 0.8s ease-out 0.3s forwards; }
 
-        /* Experience Timeline - Enhanced visibility */
-        .timeline::after { content: ''; position: absolute; width: 4px; background-color: var(--border-color); top: 0; bottom: 0; left: 50%; margin-left: -2px; }
-        .timeline-container::after { 
-            content: ''; position: absolute; width: 18px; height: 18px; 
-            right: -10px; 
-            background-color: var(--primary-bg); /* Match background */
-            border: 4px solid var(--accent); 
-            top: 28px; border-radius: 50%; z-index: 1; 
-        }
-        .timeline-container.right::after { left: -10px; }
-        .timeline-content a { color: var(--accent); }
-        .timeline-content a:hover { text-decoration: underline; }
+        /* Experience Timeline */
+        .timeline { position: relative; max-width: 1200px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 3px; background-color: var(--border-color); top: 0; bottom: 0; left: 50%; margin-left: -1.5px; }
+        .timeline-container { padding: 10px 40px; position: relative; width: 50%; }
+        .timeline-container.left { left: 0; } .timeline-container.right { left: 50%; }
+        .timeline-container::after { content: ''; position: absolute; width: 16px; height: 16px; right: -8px; background-color: var(--primary-bg); border: 4px solid var(--accent); top: 28px; border-radius: 50%; z-index: 1; }
+        .timeline-container.right::after { left: -8px; }
+        .timeline-content ul { padding-left: 1.2rem; color: var(--text-secondary); }
 
-        /* Photography Slider */
-        .slider-image-box { border: 2px solid var(--border-color); }
-        .slider-btn:hover { background: var(--accent); color: var(--text-main); }
+        /* ENHANCED Photography Slider */
+        .slider-image-box { 
+            width: 100%; height: 70vh; min-height: 250px; max-height: 700px; 
+            position: relative; overflow: hidden; border-radius: 0.75rem; 
+        }
+        .slider-image-fade { 
+            width: 100%; height: 100%; object-fit: cover; object-position: center; 
+            position: absolute; left: 0; top: 0; opacity: 0; 
+            transition: opacity 0.5s ease-in-out; 
+        }
+        .slider-image-fade.active { opacity: 1; }
+        .slider-btn { 
+            position: absolute; top: 50%; transform: translateY(-50%); 
+            background: rgba(30,40,60,0.6); 
+            border: none; border-radius: 50%; 
+            font-size: 2rem; color: #fff; 
+            padding: 0.4rem 1rem; cursor: pointer; 
+            transition: background 0.2s, color 0.2s; z-index: 11; 
+        }
+        .slider-btn:hover { background: var(--accent); }
+        .slider-btn.left { left: 10px; } .slider-btn.right { right: 10px; }
 
         @media screen and (max-width: 768px) {
-            .section-title { font-size: 2.25rem; margin-bottom: 3rem; }
-            .timeline::after { left: 15px; width: 3px; }
-            .timeline-container { padding-left: 40px; padding-right: 15px; }
-            .timeline-container.left::after, .timeline-container.right::after { left: 7px; width: 14px; height: 14px; }
+            .section-title { font-size: 2.25rem; }
+            .timeline::after { left: 20px; }
+            .timeline-container { width: 100%; padding-left: 50px; padding-right: 15px; }
+            .timeline-container.right { left: 0%; }
+            .timeline-container.left::after, .timeline-container.right::after { left: 12px; }
             .slider-image-box { height: 50vh; }
         }
     </style>
@@ -140,23 +122,15 @@
     <div class="background-container"></div>
     <div class="background-overlay"></div>
 
-    <nav class="fixed top-0 w-full bg-[rgba(13,19,31,0.9)] shadow-xl z-30 backdrop-blur-sm border-b border-gray-700">
+    <nav class="fixed top-0 w-full bg-[#111827e6] shadow-lg z-30 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto flex items-center justify-between py-3 px-4">
-            <div class="font-black text-xl text-white tracking-wider" style="font-family: var(--font-heading);">Atiqur Rahman</div>
+            <div class="font-black text-xl text-white" style="font-family: var(--font-heading);">Atiqur Rahman</div>
             <div id="nav-links" class="hidden md:flex gap-6 font-semibold text-sm">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#photography-gallery" class="nav-link">Photography</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#about" class="nav-link">About</a><a href="#experience" class="nav-link">Experience</a><a href="#education" class="nav-link">Education</a><a href="#projects" class="nav-link">Projects</a><a href="#skills" class="nav-link">Skills</a><a href="#photography-gallery" class="nav-link">Photography</a><a href="#contact" class="nav-link">Contact</a>
             </div>
-            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none text-white focus:ring-2 focus:ring-cyan-400 p-1 rounded">
-                <i class="fa fa-bars"></i>
-            </button>
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none"><i class="fa fa-bars"></i></button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-[rgba(13,19,31,0.95)] px-4 pb-4 flex flex-col items-center space-y-2">
+        <div id="mobile-menu" class="hidden md:hidden bg-[#111827] px-4 pb-4 flex flex-col items-center space-y-2">
                <a href="#about" class="nav-link w-full text-center py-2">About</a>
                <a href="#experience" class="nav-link w-full text-center py-2">Experience</a>
                <a href="#education" class="nav-link w-full text-center py-2">Education</a>
@@ -174,14 +148,14 @@
         <section id="hero" class="text-center py-24 md:py-32">
             <div class="max-w-4xl mx-auto">
                 <h1 class="text-5xl md:text-7xl text-white mb-4 animate-fadeInUp">Atiqur Rahman</h1>
-                <h2 class="text-2xl md:text-3xl font-bold mb-8 tracking-wider text-cyan-400 animate-fadeInUp" style="animation-delay: 0.3s;">Drone Pilot & Developer | Embedded Software Developer | Photographer</h2>
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 tracking-wider text-cyan-300 animate-fadeInUp" style="animation-delay: 0.3s;">Drone Pilot & Developer | Embedded Software Developer | Photographer</h2>
                 <div class="flex space-x-8 mb-10 justify-center animate-fadeInUp" style="animation-delay: 0.6s;">
                     <a href="https://linkedin.com/in/aakashrahman" target="_blank" class="social-btn text-gray-400 text-3xl" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/AtiqAakash" target="_blank" class="social-btn text-gray-400 text-3xl" title="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://flickr.com/photos/atiq-bro" target="_blank" class="social-btn text-gray-400 text-3xl" title="Flickr"><i class="fab fa-flickr"></i></a>
                     <a href="https://facebook.com/atiqur.rahman.aakash" target="_blank" class="social-btn text-gray-400 text-3xl" title="Facebook"><i class="fab fa-facebook"></i></a>
                 </div>
-                <a href="Atiq-CV.pdf" target="_blank" class="cta-button inline-block px-8 py-3 text-white rounded-full font-bold text-lg animate-fadeInUp focus:outline-none focus:ring-4 focus:ring-cyan-400" style="animation-delay: 0.9s;">Download CV</a>
+                <a href="Atiq-CV.pdf" target="_blank" class="cta-button inline-block px-8 py-3 text-white rounded-full font-bold text-lg animate-fadeInUp" style="animation-delay: 0.9s;">Download CV</a>
             </div>
         </section>
         
@@ -189,10 +163,10 @@
             <div class="scroll-animate text-center">
                 <h2 class="section-title">About Me</h2>
                 <div class="card p-8 md:p-12 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
-                    <img src="about-photo.jpg" alt="Atiqur Rahman" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover flex-shrink-0 border-4 border-cyan-500 shadow-xl">
+                    <img src="about-photo.jpg" alt="Atiqur Rahman" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover flex-shrink-0 border-4 border-cyan-500">
                     <div class="text-center md:text-left">
-                        <p class="text-lg text-gray-300" style="line-height: 1.75;">
-                            A **C++ developer** and **EASA-certified drone pilot** with hands-on experience in research and development for unmanned systems. I combine a strong computer science background with practical hardware and software skills to innovate in the world of drones and ROVs.
+                        <p class="text-base text-gray-300" style="line-height: 1.75;">
+                            A C++ developer and EASA-certified drone pilot with hands-on experience in research and development for unmanned systems. I combine a strong computer science background with practical hardware and software skills to innovate in the world of drones and ROVs.
                         </p>
                     </div>
                 </div>
@@ -205,8 +179,8 @@
                 <div class="timeline">
                     <div class="timeline-container left scroll-animate">
                         <div class="timeline-content card p-6 text-left">
-                            <h3 class="text-xl text-cyan-400"><a href="https://www.beaglesystems.com/" target="_blank" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">Beagle Systems</a></h3>
-                            <p class="font-semibold text-base text-white">Drone Pilot & Technician</p>
+                            <h3 class="text-xl text-cyan-300"><a href="https://www.beaglesystems.com/" target="_blank" class="hover:underline">Beagle Systems</a></h3>
+                            <p class="font-semibold text-base">Drone Pilot & Technician</p>
                             <p class="text-sm text-gray-400 mb-2">May 2025 – Present | Hamburg, Germany</p>
                             <ul class="text-sm list-disc">
                                 <li>Licensed A1/A2/A3 Drone Pilot (EASA certified).</li>
@@ -218,8 +192,8 @@
                     </div>
                     <div class="timeline-container right scroll-animate">
                         <div class="timeline-content card p-6 text-left">
-                            <h3 class="text-xl text-cyan-400"><a href="https://www.topseven.com" target="_blank" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">TOPseven GmbH</a></h3>
-                            <p class="font-semibold text-base text-white">Drone R&D (Werkstudent)</p>
+                            <h3 class="text-xl text-cyan-300"><a href="https://www.topseven.com" target="_blank" class="hover:underline">TOPseven GmbH</a></h3>
+                            <p class="font-semibold text-base">Drone R&D (Werkstudent)</p>
                             <p class="text-sm text-gray-400 mb-2">Oct 2024 – Mar 2025 | Emden, Germany</p>
                             <ul class="text-sm list-disc">
                                 <li>Built drones from scratch; integrated sensors and payloads.</li>
@@ -231,8 +205,8 @@
                     </div>
                     <div class="timeline-container left scroll-animate">
                         <div class="timeline-content card p-6 text-left">
-                            <h3 class="text-xl text-cyan-400"><a href="https://www.robotaviation.com" target="_blank" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">Robot Aviation</a></h3>
-                            <p class="font-semibold text-base text-white">UAV Systems Intern</p>
+                            <h3 class="text-xl text-cyan-300"><a href="https://www.robotaviation.com" target="_blank" class="hover:underline">Robot Aviation</a></h3>
+                            <p class="font-semibold text-base">UAV Systems Intern</p>
                             <p class="text-sm text-gray-400 mb-2">Nov 2023 – Jun 2024 | Hønefoss, Norway</p>
                             <ul class="text-sm list-disc">
                                 <li>Performed UAV test flights and troubleshooting of aerial systems.</li>
@@ -245,8 +219,8 @@
                     </div>
                     <div class="timeline-container right scroll-animate">
                         <div class="timeline-content card p-6 text-left">
-                            <h3 class="text-xl text-cyan-400"><a href="https://home-marine.com/" target="_blank" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">Home & Marine</a></h3>
-                            <p class="font-semibold text-base text-white">Network Testing Technician (Summer Student)</p>
+                            <h3 class="text-xl text-cyan-300"><a href="https://home-marine.com/" target="_blank" class="hover:underline">Home & Marine</a></h3>
+                            <p class="font-semibold text-base">Network Testing Technician (Summer Student)</p>
                             <p class="text-sm text-gray-400 mb-2">Jul 2024 – Sep 2024 | Bremen, Germany</p>
                             <ul class="text-sm list-disc">
                                 <li>Worked on IT infrastructure onboard Disney Cruise Ship (Disney Treasure 2).</li>
@@ -257,8 +231,8 @@
                     </div>
                     <div class="timeline-container left scroll-animate">
                         <div class="timeline-content card p-6 text-left">
-                            <h3 class="text-xl text-cyan-400">CodeFix IT</h3>
-                            <p class="font-semibold text-base text-white">IT Support Engineer</p>
+                            <h3 class="text-xl text-cyan-300">CodeFix IT</h3>
+                            <p class="font-semibold text-base">IT Support Engineer</p>
                             <p class="text-sm text-gray-400 mb-2">Jan 2018 – Nov 2019 | Dhaka, Bangladesh</p>
                             <ul class="text-sm list-disc">
                                 <li>Provided server and network support; configured and maintained Linux systems.</li>
@@ -276,11 +250,11 @@
                  <h2 class="section-title">Education</h2>
                  <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                      <div class="card p-6 scroll-animate">
-                         <h4 class="text-xl text-white"><a href="https://www.uio.no" target="_blank" class="hover:text-cyan-400 transition focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">University of Oslo</a></h4>
+                         <h4 class="text-xl text-white"><a href="https://www.uio.no" target="_blank" class="hover:text-cyan-400 transition">University of Oslo</a></h4>
                          <p class="text-gray-400 text-base">M.Sc, Programming & System Architecture (Thesis remaining)</p>
                      </div>
                      <div class="card p-6 scroll-animate" style="animation-delay: 0.2s;">
-                         <h4 class="text-xl text-white"><a href="https://www.uoda.edu.bd" target="_blank" class="hover:text-cyan-400 transition focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">University of Development Alternative</a></h4>
+                         <h4 class="text-xl text-white"><a href="https://www.uoda.edu.bd" target="_blank" class="hover:text-cyan-400 transition">University of Development Alternative</a></h4>
                          <p class="text-gray-400 text-base">B.Sc, Computer Science & Engineering</p>
                      </div>
                  </div>
@@ -323,15 +297,15 @@
                 <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card p-8 scroll-animate">
                         <h4 class="text-2xl text-cyan-400 mb-4">Programming</h4>
-                        <p class="text-base text-gray-300 leading-relaxed">**C/C++**, Python, Java, JavaScript, PHP, MySQL, Bash, MATLAB</p>
+                        <p class="text-base text-gray-300 leading-relaxed">C/C++, Python, Java, JavaScript, PHP, MySQL, Bash, MATLAB</p>
                     </div>
                     <div class="card p-8 scroll-animate" style="animation-delay: 0.2s;">
                         <h4 class="text-2xl text-cyan-400 mb-4">Drone & Robotics</h4>
-                        <p class="text-base text-gray-300 leading-relaxed">Pixhawk, CubePilot, STM32, Raspberry Pi, NVIDIA Jetson, **Mission Planner**, QGroundControl, **PX4**, **SITL**, Ardupilot</p>
+                        <p class="text-base text-gray-300 leading-relaxed">Pixhawk, CubePilot, STM32, Raspberry Pi, NVIDIA Jetson, Mission Planner, QGroundControl, PX4, SITL, Ardupilot</p>
                     </div>
                     <div class="card p-8 scroll-animate" style="animation-delay: 0.4s;">
                         <h4 class="text-2xl text-cyan-400 mb-4">Networking & Embedded</h4>
-                        <p class="text-base text-gray-300 leading-relaxed">Linux, IP Networking, Bash Scripting, Security Protocols, Arduino, **ESP32**, Firmware, Embedded Systems, 3D Modeling/Printing</p>
+                        <p class="text-base text-gray-300 leading-relaxed">Linux, IP Networking, Bash Scripting, Security Protocols, Arduino, ESP32, Firmware, Embedded Systems, 3D Modeling/Printing</p>
                     </div>
                 </div>
             </div>
@@ -356,8 +330,8 @@
                             <img src="10.jpg" alt="Slide 10" class="slider-image-fade">
                             <img src="11.jpg" alt="Slide 11" class="slider-image-fade">
                             <img src="12.jpg" alt="Slide 12" class="slider-image-fade">
-                            <button class="slider-btn left focus:outline-none focus:ring-4 focus:ring-cyan-400" id="sliderPrevBtn" aria-label="Previous image">❮</button>
-                            <button class="slider-btn right focus:outline-none focus:ring-4 focus:ring-cyan-400" id="sliderNextBtn" aria-label="Next image">❯</button>
+                            <button class="slider-btn left" id="sliderPrevBtn" aria-label="Previous image">❮</button>
+                            <button class="slider-btn right" id="sliderNextBtn" aria-label="Next image">❯</button>
                         </div>
                     </div>
                 </div>
@@ -374,14 +348,14 @@
                      </div>
                      <div class="card p-6 scroll-animate" style="animation-delay: 0.2s;">
                          <h4 class="text-xl text-white">
-                             <a href="kck.html" class="hover:text-cyan-400 transition focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">Board Leader (Daglig Leder)</a>
+                             <a href="kck.html" class="hover:text-cyan-400 transition">Board Leader (Daglig Leder)</a>
                          </h4>
                          <p class="text-base text-gray-400">Kringjå Cricket Club, Norges Cricket Forbund.</p>
                      </div>
                      <div class="card p-6 scroll-animate" style="animation-delay: 0.4s;">
                          <h4 class="text-xl text-white">Freelance Photographer</h4>
                          <p class="text-base text-gray-400">
-                             Capturing tech & landscapes. <a href="https://flickr.com/photos/atiq-bro" target="_blank" class="text-cyan-400 font-semibold hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">View Portfolio</a>
+                             Capturing tech & landscapes. <a href="https://flickr.com/photos/atiq-bro" target="_blank" class="text-cyan-400 font-semibold hover:underline">View Portfolio</a>
                          </p>
                      </div>
                  </div>
@@ -395,60 +369,60 @@
                     
                     <div class="card p-6 scroll-animate text-left">
                         <h4 class="text-xl text-white">
-                            <a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:text-cyan-400 transition focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">Niklas Nyroth</a>
+                            <a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:text-cyan-400 transition">Niklas Nyroth</a>
                             <span class="text-base text-gray-400 font-normal ml-2">| CEO, Robot Aviation AS</span>
                         </h4>
                         <div class="mt-2 text-sm text-cyan-500 space-y-1">
                             <p><i class="fas fa-phone fa-fw mr-1"></i>
-                                <a href="tel:+4790652502" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">+47 906 52 502</a>
+                                <a href="tel:+4790652502" class="hover:underline">+47 906 52 502</a>
                             </p>
                             <p><i class="fas fa-envelope fa-fw mr-1"></i>
-                                <a href="mailto:niklas.nyroth@robotaviation.com" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">niklas.nyroth@robotaviation.com</a>
+                                <a href="mailto:niklas.nyroth@robotaviation.com" class="hover:underline">niklas.nyroth@robotaviation.com</a>
                             </p>
                         </div>
                     </div>
 
                     <div class="card p-6 scroll-animate text-left" style="animation-delay: 0.2s;">
                         <h4 class="text-xl text-white">
-                            <a href="https://www.linkedin.com/in/simon-b-209677223/" target="_blank" class="hover:text-cyan-400 transition focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">Simon Burczyk</a>
+                            <a href="https://www.linkedin.com/in/simon-b-209677223/" target="_blank" class="hover:text-cyan-400 transition">Simon Burczyk</a>
                             <span class="text-base text-gray-400 font-normal ml-2">| Operational Manager, Beagle Systems</span>
                         </h4>
                         <div class="mt-2 text-sm text-cyan-500 space-y-1">
                             <p><i class="fas fa-phone fa-fw mr-1"></i>
-                                <a href="tel:+4915227157906" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">+49 1522 715 7906</a>
+                                <a href="tel:+4915227157906" class="hover:underline">+49 1522 715 7906</a>
                             </p>
                             <p><i class="fas fa-envelope fa-fw mr-1"></i>
-                                <a href="mailto:s.burczyk@beaglesystems.com" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">s.burczyk@beaglesystems.com</a>
+                                <a href="mailto:s.burczyk@beaglesystems.com" class="hover:underline">s.burczyk@beaglesystems.com</a>
                             </p>
                         </div>
                     </div>
                     
                     <div class="card p-6 scroll-animate text-left" style="animation-delay: 0.4s;">
                         <h4 class="text-xl text-white">
-                            <a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:text-cyan-400 transition focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">Cem Yolcubal</a>
+                            <a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:text-cyan-400 transition">Cem Yolcubal</a>
                             <span class="text-base text-gray-400 font-normal ml-2">| Drone R&D Specialist, TOPseven GmbH</span>
                         </h4>
                         <div class="mt-2 text-sm text-cyan-500 space-y-1">
                             <p><i class="fas fa-phone fa-fw mr-1"></i>
-                                <a href="tel:+4915170551030" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">+49 151 7055 1030</a>
+                                <a href="tel:+4915170551030" class="hover:underline">+49 151 7055 1030</a>
                             </p>
                             <p><i class="fas fa-envelope fa-fw mr-1"></i>
-                                <a href="mailto:cem.yolcubal@topseven.com" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">cem.yolcubal@topseven.com</a>
+                                <a href="mailto:cem.yolcubal@topseven.com" class="hover:underline">cem.yolcubal@topseven.com</a>
                             </p>
                         </div>
                     </div>
 
                     <div class="card p-6 scroll-animate text-left" style="animation-delay: 0.6s;">
                         <h4 class="text-xl text-white">
-                            <a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:text-cyan-400 transition focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">Farzan M. Noori</a>
+                            <a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:text-cyan-400 transition">Farzan M. Noori</a>
                             <span class="text-base text-gray-400 font-normal ml-2">| Postdoctoral Research Fellow, University of Oslo</span>
                         </h4>
                         <div class="mt-2 text-sm text-cyan-500 space-y-1">
                             <p><i class="fas fa-phone fa-fw mr-1"></i>
-                                <a href="tel:+4791255115" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">+47 912 55 115</a>
+                                <a href="tel:+4791255115" class="hover:underline">+47 912 55 115</a>
                             </p>
                             <p><i class="fas fa-envelope fa-fw mr-1"></i>
-                                <a href="mailto:farzanmn@ifi.uio.no" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">farzanmn@ifi.uio.no</a>
+                                <a href="mailto:farzanmn@ifi.uio.no" class="hover:underline">farzanmn@ifi.uio.no</a>
                             </p>
                         </div>
                     </div>
@@ -461,17 +435,17 @@
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="max-w-2xl mx-auto">
                     <p class="text-xl text-gray-300 mb-8" style="font-family: var(--font-body);">I'm actively seeking new opportunities and collaborations. If my skills and experience align with your needs, I would be delighted to connect.</p>
-                    <a href="mailto:atiqur.pilot@gmail.com" class="cta-button inline-block mb-10 px-10 py-4 text-white rounded-full font-bold text-lg focus:outline-none focus:ring-4 focus:ring-cyan-400">Send me an Email</a>
+                    <a href="mailto:atiqur.pilot@gmail.com" class="cta-button inline-block mb-10 px-10 py-4 text-white rounded-full font-bold text-lg">Send me an Email</a>
                     <div class="text-gray-400 space-y-2">
                         <p>
                             <i class="fas fa-map-marker-alt text-cyan-400 w-6"></i>
-                            <a href="https://www.google.com/maps/search/?api=1&query=Heegbarg+87,+22395+Hamburg" target="_blank" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Heegbarg+87,+22395+Hamburg" target="_blank" class="hover:underline">
                                 Heegbarg 87, 22395 Hamburg
                             </a>
                         </p>
                         <p>
                             <i class="fas fa-phone text-cyan-400 w-6"></i>
-                            <a href="tel:+4745808855" class="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded">+47 458 08 855</a>
+                            <a href="tel:+4745808855" class="hover:underline">+47 458 08 855</a>
                         </p>
                     </div>
                 </div>
@@ -479,7 +453,7 @@
         </section>
     </main>
 
-    <footer class="text-center text-gray-500 text-sm py-6 relative z-10 border-t border-gray-800">
+    <footer class="text-center text-gray-500 text-sm py-6 relative z-10">
         © 2025 Atiqur Rahman. All Rights Reserved.
     </footer>
 
@@ -521,21 +495,36 @@
             }, { rootMargin: '-50% 0px -50% 0px' });
             sections.forEach(section => navObserver.observe(section));
             
-            // --- Photography Slider ---
+            // --- Photography Slider (Simplified and Robust) ---
             const sliderImgs = [...document.querySelectorAll('.slider-image-fade')];
             if (sliderImgs.length > 0) {
                 let sliderIndex = 0, sliderAnimating = false;
+                
                 function showSlide(idx) {
                     const newIdx = (idx + sliderImgs.length) % sliderImgs.length;
-                    if(sliderAnimating || newIdx === sliderIndex) return;
+                    
+                    // Prevent animation if already animating or index is the same
+                    if(sliderAnimating || newIdx === sliderIndex) return; 
+                    
                     sliderAnimating = true;
+
+                    // Fade out current slide, then switch, then fade in new slide
                     sliderImgs[sliderIndex].classList.remove('active');
-                    sliderImgs[newIdx].classList.add('active');
-                    setTimeout(()=>{ sliderAnimating = false; }, 450);
-                    sliderIndex = newIdx;
+                    
+                    // Wait for fade-out time (e.g., half the CSS transition time)
+                    setTimeout(() => {
+                        // Ensure only the new slide has the active class
+                        sliderImgs.forEach(img => img.classList.remove('active')); 
+                        sliderImgs[newIdx].classList.add('active');
+                        sliderIndex = newIdx;
+                        sliderAnimating = false;
+                    }, 250); 
                 }
+
                 document.getElementById('sliderPrevBtn').onclick = () => showSlide(sliderIndex - 1);
                 document.getElementById('sliderNextBtn').onclick = () => showSlide(sliderIndex + 1);
+                
+                // Auto-advance every 4 seconds
                 setInterval(() => showSlide(sliderIndex + 1), 4000);
             }
         });
