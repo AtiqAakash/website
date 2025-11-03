@@ -261,34 +261,118 @@
              </div>
         </section>
 
+        <!-- UPDATED PROJECTS -->
         <section id="projects" class="py-24">
-            <div class="scroll-animate text-center">
-                <h2 class="section-title">Project Showcase</h2>
-                <div class="card p-8 md:p-10 max-w-5xl mx-auto">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 text-left">
-                        <div>
-                            <h4 class="text-white text-lg font-bold">ConBot (Bash)</h4>
-                            <p class="text-sm text-gray-400">Automated SITL setup script for ArduPilot (open source contribution).</p>
-                        </div>
-                        <div>
-                            <h4 class="text-white text-lg font-bold">Flight Logger</h4>
-                            <p class="text-sm text-gray-400">Web-based UAV flight log management system (HTML, PHP, MySQL).</p>
-                        </div>
-                        <div>
-                            <h4 class="text-white text-lg font-bold">IoT Security & Control System</h4>
-                            <p class="text-sm text-gray-400">Real-time monitoring and notification system (C++, HTML, JS).</p>
-                        </div>
-                        <div>
-                            <h4 class="text-white text-lg font-bold">Facial Recognition Access</h4>
-                            <p class="text-sm text-gray-400">ML-based ESP32/C++ authentication system.</p>
-                        </div>
-                        <div class="md:col-span-2">
-                            <h4 class="text-white text-lg font-bold">Other IoT Projects</h4>
-                            <p class="text-sm text-gray-400">Includes Weather Station, multiple Irrigation Systems, Smart Home Automation, and a Biometric Attendance system.</p>
-                        </div>
-                    </div>
+          <div class="scroll-animate text-center">
+            <h2 class="section-title">Project Showcase</h2>
+            <div class="card p-8 md:p-10 max-w-6xl mx-auto">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 text-left">
+                
+                <!-- Flight Logger -->
+                <div class="group">
+                  <h4 class="text-white text-lg font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-plane-up text-cyan-400"></i>
+                    Flight Logger
+                  </h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Web app to track UAV flight logs, operator activity, and flight hours (HTML, CSS, JS, PHP, MySQL).
+                  </p>
+                  <div class="mt-3">
+                    <a href="https://github.com/AtiqAakash/flight-logger" target="_blank"
+                       class="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full border border-cyan-500 text-cyan-300 hover:bg-cyan-500/10 transition">
+                      <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                  </div>
                 </div>
+
+                <!-- ConBot -->
+                <div class="group">
+                  <h4 class="text-white text-lg font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-terminal text-cyan-400"></i>
+                    ConBot
+                  </h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Automated PowerShell setup for ArduPilot/SITL and required tools on Windows; streamlines dev/sim environments.
+                  </p>
+                  <div class="mt-3">
+                    <a href="https://github.com/AtiqAakash/ConBot" target="_blank"
+                       class="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full border border-cyan-500 text-cyan-300 hover:bg-cyan-500/10 transition">
+                      <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                  </div>
+                </div>
+
+                <!-- PX4 Simulation Configurator (Beagle Sim) -->
+                <div class="group">
+                  <h4 class="text-white text-lg font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-gear text-cyan-400"></i>
+                    PX4 Simulation Configurator (Beagle Sim)
+                  </h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    GUI launcher for PX4 SITL with persistent configuration, real-time log viewer, and ULG→KML conversion (Python).
+                  </p>
+                  <div class="mt-3">
+                    <a href="https://github.com/AtiqAakash/px4-simulation-configurator" target="_blank"
+                       class="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full border border-cyan-500 text-cyan-300 hover:bg-cyan-500/10 transition">
+                      <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Transparent MAVLink OSD -->
+                <div class="group">
+                  <h4 class="text-white text-lg font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-video text-cyan-400"></i>
+                    Transparent MAVLink OSD
+                  </h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    FPV-style transparent OSD overlay for Ubuntu/QGroundControl; reads MAVLink telemetry over UDP and overlays on live video (Python).
+                  </p>
+                  <div class="mt-3">
+                    <a href="https://github.com/BeagleSystems/OSD" target="_blank"
+                       class="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full border border-cyan-500 text-cyan-300 hover:bg-cyan-500/10 transition">
+                      <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                  </div>
+                </div>
+
+                <!-- IoT Home/Arduino -->
+                <div class="group">
+                  <h4 class="text-white text-lg font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-house-signal text-cyan-400"></i>
+                    IoT Home / Arduino
+                  </h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    Versatile home monitoring & automation (motion, temp, gas, flame) with a simple web UI (C++/Arduino, HTML/JS).
+                  </p>
+                  <div class="mt-3">
+                    <a href="https://github.com/AtiqAakash/iot-home-arduino" target="_blank"
+                       class="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full border border-cyan-500 text-cyan-300 hover:bg-cyan-500/10 transition">
+                      <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                  </div>
+                </div>
+
+                <!-- IoT Weather Station -->
+                <div class="group">
+                  <h4 class="text-white text-lg font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-cloud-sun-rain text-cyan-400"></i>
+                    IoT Weather Station
+                  </h4>
+                  <p class="text-sm text-gray-400 mt-1">
+                    ESP8266 + DHT22 web dashboard for temperature & humidity (C++/Arduino, HTML/CSS/JS).
+                  </p>
+                  <div class="mt-3">
+                    <a href="https://github.com/AtiqAakash/iot-weather-station" target="_blank"
+                       class="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full border border-cyan-500 text-cyan-300 hover:bg-cyan-500/10 transition">
+                      <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                  </div>
+                </div>
+
+              </div>
             </div>
+          </div>
         </section>
 
         <section id="skills" class="py-24">
@@ -362,72 +446,85 @@
              </div>
         </section>
 
+        <!-- UPDATED REFERENCES -->
         <section id="references" class="py-24">
-            <div class="scroll-animate text-center">
-                <h2 class="section-title">References</h2>
-                <div class="max-w-7xl mx-auto flex gap-8 overflow-x-scroll pb-4 snap-x snap-mandatory">
-                    
-                    <div class="card p-6 scroll-animate text-left flex-none w-80 md:w-96 snap-start">
-                        <h4 class="text-xl text-white">
-                            <a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:text-cyan-400 transition">Niklas Nyroth</a>
-                        </h4>
-                        <p class="text-base text-gray-400">CEO, Robot Aviation AS</p>
-                        <div class="mt-2 text-sm text-cyan-500 space-y-1">
-                            <p><i class="fas fa-phone fa-fw mr-1"></i>
-                                <a href="tel:+4790652502" class="hover:underline">+47 906 52 502</a>
-                            </p>
-                            <p><i class="fas fa-envelope fa-fw mr-1"></i>
-                                <a href="mailto:niklas.nyroth@robotaviation.com" class="hover:underline">niklas.nyroth@robotaviation.com</a>
-                            </p>
-                        </div>
-                    </div>
+          <div class="scroll-animate text-center">
+            <h2 class="section-title">References</h2>
 
-                    <div class="card p-6 scroll-animate text-left flex-none w-80 md:w-96 snap-start" style="animation-delay: 0.2s;">
-                        <h4 class="text-xl text-white">
-                            <a href="https://www.linkedin.com/in/simon-b-209677223/" target="_blank" class="hover:text-cyan-400 transition">Simon Burczyk</a>
-                        </h4>
-                        <p class="text-base text-gray-400">Operational Manager, Beagle Systems</p>
-                        <div class="mt-2 text-sm text-cyan-500 space-y-1">
-                            <p><i class="fas fa-phone fa-fw mr-1"></i>
-                                <a href="tel:+4915227157906" class="hover:underline">+49 1522 715 7906</a>
-                            </p>
-                            <p><i class="fas fa-envelope fa-fw mr-1"></i>
-                                <a href="mailto:s.burczyk@beaglesystems.com" class="hover:underline">s.burczyk@beaglesystems.com</a>
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="card p-6 scroll-animate text-left flex-none w-80 md:w-96 snap-start" style="animation-delay: 0.4s;">
-                        <h4 class="text-xl text-white">
-                            <a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:text-cyan-400 transition">Cem Yolcubal</a>
-                        </h4>
-                        <p class="text-base text-gray-400">Drone R&D Specialist, TOPseven GmbH</p>
-                        <div class="mt-2 text-sm text-cyan-500 space-y-1">
-                            <p><i class="fas fa-phone fa-fw mr-1"></i>
-                                <a href="tel:+4915170551030" class="hover:underline">+49 151 7055 1030</a>
-                            </p>
-                            <p><i class="fas fa-envelope fa-fw mr-1"></i>
-                                <a href="mailto:cem.yolcubal@topseven.com" class="hover:underline">cem.yolcubal@topseven.com</a>
-                            </p>
-                        </div>
-                    </div>
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <!-- Niklas -->
+              <div class="card p-6 text-left">
+                <h4 class="text-xl text-white">
+                  <a href="https://www.linkedin.com/in/niklas-nyroth-64264622/" target="_blank" class="hover:text-cyan-400 transition">
+                    Niklas Nyroth
+                  </a>
+                </h4>
+                <p class="text-base text-gray-400">CEO, Robot Aviation AS</p>
+                <div class="mt-2 text-sm text-cyan-500 space-y-1">
+                  <p><i class="fas fa-phone fa-fw mr-1"></i>
+                    <a href="tel:+4790652502" class="hover:underline">+47 906 52 502</a>
+                  </p>
+                  <p><i class="fas fa-envelope fa-fw mr-1"></i>
+                    <a href="mailto:niklas.nyroth@robotaviation.com" class="hover:underline">niklas.nyroth@robotaviation.com</a>
+                  </p>
+                </div>
+              </div>
 
-                    <div class="card p-6 scroll-animate text-left flex-none w-80 md:w-96 snap-start" style="animation-delay: 0.6s;">
-                        <h4 class="text-xl text-white">
-                            <a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:text-cyan-400 transition">Farzan M. Noori</a>
-                        </h4>
-                        <p class="text-base text-gray-400">Postdoctoral Research Fellow, University of Oslo</p>
-                        <div class="mt-2 text-sm text-cyan-500 space-y-1">
-                            <p><i class="fas fa-phone fa-fw mr-1"></i>
-                                <a href="tel:+4791255115" class="hover:underline">+47 912 55 115</a>
-                            </p>
-                            <p><i class="fas fa-envelope fa-fw mr-1"></i>
-                                <a href="mailto:farzanmn@ifi.uio.no" class="hover:underline">farzanmn@ifi.uio.no</a>
-                            </p>
-                        </div>
-                    </div>
+              <!-- Simon -->
+              <div class="card p-6 text-left">
+                <h4 class="text-xl text-white">
+                  <a href="https://www.linkedin.com/in/simon-b-209677223/" target="_blank" class="hover:text-cyan-400 transition">
+                    Simon Burczyk
+                  </a>
+                </h4>
+                <p class="text-base text-gray-400">Operations Specialist, Beagle Systems</p>
+                <div class="mt-2 text-sm text-cyan-500 space-y-1">
+                  <p><i class="fas fa-phone fa-fw mr-1"></i>
+                    <a href="tel:+4915227157906" class="hover:underline">+49 1522 715 7906</a>
+                  </p>
+                  <p><i class="fas fa-envelope fa-fw mr-1"></i>
+                    <a href="mailto:s.burczyk@beaglesystems.com" class="hover:underline">s.burczyk@beaglesystems.com</a>
+                  </p>
                 </div>
+              </div>
+
+              <!-- Farzan -->
+              <div class="card p-6 text-left">
+                <h4 class="text-xl text-white">
+                  <a href="https://www.linkedin.com/in/farzan-m-noori-1a1200110/" target="_blank" class="hover:text-cyan-400 transition">
+                    Farzan M. Noori
+                  </a>
+                </h4>
+                <p class="text-base text-gray-400">Postdoctoral Research Fellow, University of Oslo</p>
+                <div class="mt-2 text-sm text-cyan-500 space-y-1">
+                  <p><i class="fas fa-phone fa-fw mr-1"></i>
+                    <a href="tel:+4791255115" class="hover:underline">+47 912 55 115</a>
+                  </p>
+                  <p><i class="fas fa-envelope fa-fw mr-1"></i>
+                    <a href="mailto:farzanmn@ifi.uio.no" class="hover:underline">farzanmn@ifi.uio.no</a>
+                  </p>
                 </div>
+              </div>
+
+              <!-- Cem -->
+              <div class="card p-6 text-left">
+                <h4 class="text-xl text-white">
+                  <a href="https://www.linkedin.com/in/cem-yolcubal-48a435145/" target="_blank" class="hover:text-cyan-400 transition">
+                    Cem Yolcubal
+                  </a>
+                </h4>
+                <p class="text-base text-gray-400">Drone Pilot, Beagle Systems (formerly TOPseven)</p>
+                <div class="mt-2 text-sm text-cyan-500 space-y-1">
+                  <p><i class="fas fa-phone fa-fw mr-1"></i>
+                    <a href="tel:+4915170551030" class="hover:underline">+49 151 7055 1030</a>
+                  </p>
+                  <p><i class="fas fa-envelope fa-fw mr-1"></i>
+                    <a href="mailto:c.yolcubal@beaglesystems.com" class="hover:underline">c.yolcubal@beaglesystems.com</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="contact" class="py-24">
@@ -517,10 +614,13 @@
                     }, 250); 
                 }
 
-                document.getElementById('sliderPrevBtn').onclick = () => showSlide(sliderIndex - 1);
-                document.getElementById('sliderNextBtn').onclick = () => showSlide(sliderIndex + 1);
-                
-                setInterval(() => showSlide(sliderIndex + 1), 4000);
+                const prevBtn = document.getElementById('sliderPrevBtn');
+                const nextBtn = document.getElementById('sliderNextBtn');
+                if (prevBtn && nextBtn) {
+                  prevBtn.onclick = () => showSlide(sliderIndex - 1);
+                  nextBtn.onclick = () => showSlide(sliderIndex + 1);
+                  setInterval(() => showSlide(sliderIndex + 1), 4000);
+                }
             }
         });
     </script>
