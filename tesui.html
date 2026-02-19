@@ -3,275 +3,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beagle Systems | Pilot Data Portal</title>
+    <title>WayneTech | Beagle Systems Secure Uplink</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #0f172a; /* Slate 900 */
-            --accent-color: #2563eb;  /* Blue 600 */
-            --accent-hover: #1d4ed8;  /* Blue 700 */
-            --bg-color: #f1f5f9;      /* Slate 100 */
-            --card-bg: #ffffff;
-            --text-main: #334155;     /* Slate 700 */
-            --text-light: #64748b;    /* Slate 500 */
-            --success: #10b981;       /* Emerald 500 */
-            --border: #e2e8f0;
+            --bg-dark: #050505;
+            --panel-bg: #111111;
+            --neon-blue: #00f3ff;
+            --neon-green: #39ff14;
+            --neon-yellow: #fce205;
+            --text-main: #e0e0e0;
+            --border-color: #333;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
+            font-family: 'Roboto', sans-serif; background-color: var(--bg-dark); color: var(--text-main);
+            margin: 0; display: flex; height: 100vh; overflow: hidden;
+            background-image: linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
         }
 
-        .card {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            width: 100%;
-            max-width: 550px;
-            border: 1px solid var(--border);
-        }
+        h1, h2, h3, .cyber-text { font-family: 'Orbitron', sans-serif; text-transform: uppercase; }
 
-        .header { text-align: center; margin-bottom: 30px; }
-        .header h1 { margin: 0; color: var(--primary-color); font-size: 24px; }
-        .header p { color: var(--text-light); margin-top: 5px; font-size: 14px; }
-
-        .form-group { margin-bottom: 20px; }
-        label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 13px; color: var(--primary-color); }
-        input[type="text"], input[type="password"], select {
-            width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 6px; 
-            box-sizing: border-box; font-size: 14px; transition: border-color 0.2s;
+        /* Login Screen */
+        #login-view {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-dark);
+            display: flex; justify-content: center; align-items: center; z-index: 100;
         }
-        input:focus, select:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
-
-        button {
-            background-color: var(--accent-color); color: white; border: none; padding: 14px 20px;
-            width: 100%; border-radius: 6px; font-size: 15px; cursor: pointer; font-weight: 600;
-            transition: background-color 0.2s; display: flex; justify-content: center; align-items: center;
+        .login-box {
+            background: rgba(10, 10, 10, 0.9); padding: 40px; border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.2); width: 400px; text-align: center;
         }
-        button:hover { background-color: var(--accent-hover); }
-        button:disabled { background-color: #94a3b8; cursor: not-allowed; }
-
-        /* Spinner for loading states */
-        .spinner {
-            border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; border-top: 3px solid white;
-            width: 16px; height: 16px; animation: spin 1s linear infinite; margin-left: 10px; display: none;
+        .login-box h1 { color: var(--neon-blue); margin-bottom: 5px; text-shadow: 0 0 10px var(--neon-blue); }
+        .input-cyber {
+            width: 100%; padding: 12px; margin: 10px 0; background: #000; border: 1px solid var(--border-color);
+            color: var(--neon-blue); font-family: 'Orbitron', sans-serif; outline: none; box-sizing: border-box;
         }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        /* Upload Area */
-        #drop-zone {
-            border: 2px dashed var(--accent-color); border-radius: 8px; padding: 50px 20px;
-            text-align: center; background-color: #eff6ff; cursor: pointer; margin-top: 10px;
-            transition: all 0.2s ease;
-        }
-        #drop-zone:hover, #drop-zone.dragover { background-color: #dbeafe; border-color: var(--accent-hover); }
-        #drop-zone svg { width: 40px; height: 40px; fill: var(--accent-color); margin-bottom: 10px; }
+        .input-cyber:focus { border-color: var(--neon-blue); box-shadow: 0 0 10px rgba(0, 243, 255, 0.5); }
         
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .btn-cyber {
+            background: transparent; color: var(--neon-blue); border: 2px solid var(--neon-blue);
+            padding: 12px 20px; font-family: 'Orbitron', sans-serif; font-weight: bold; cursor: pointer;
+            text-transform: uppercase; transition: all 0.2s; width: 100%; margin-top: 15px;
+        }
+        .btn-cyber:hover:not(:disabled) { background: var(--neon-blue); color: #000; box-shadow: 0 0 15px var(--neon-blue); }
+        .btn-cyber:disabled { border-color: #555; color: #555; cursor: not-allowed; }
+
+        /* Main App Layout (Drive Style) */
+        #app-view { display: flex; width: 100%; height: 100%; flex-direction: column; }
+        
+        .top-bar {
+            height: 60px; background: var(--panel-bg); border-bottom: 2px solid var(--neon-blue);
+            display: flex; align-items: center; padding: 0 20px; justify-content: space-between;
+        }
+        .breadcrumb { font-family: 'Orbitron', sans-serif; font-size: 18px; color: var(--neon-blue); }
+        .breadcrumb span { cursor: pointer; transition: text-shadow 0.2s; }
+        .breadcrumb span:hover { text-shadow: 0 0 8px var(--neon-blue); }
+
+        .workspace { display: flex; flex: 1; overflow: hidden; }
+        
+        .sidebar {
+            width: 280px; background: var(--panel-bg); border-right: 1px solid var(--border-color);
+            padding: 20px; display: flex; flex-direction: column; gap: 15px;
+        }
+        
+        .main-area { flex: 1; padding: 20px; overflow-y: auto; position: relative; }
+        
+        /* Drop Zone overlay for drag and drop */
+        #drop-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 243, 255, 0.1); border: 4px dashed var(--neon-blue);
+            z-index: 50; display: flex; justify-content: center; align-items: center;
+            font-family: 'Orbitron'; font-size: 24px; color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue);
+            pointer-events: none; opacity: 0; transition: opacity 0.2s; box-sizing: border-box;
+        }
+        .main-area.dragover #drop-overlay { opacity: 1; }
+
+        /* File/Folder Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 20px; }
+        .item-card {
+            background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 20px 10px; text-align: center; cursor: pointer;
+            transition: all 0.2s; user-select: none;
+        }
+        .item-card:hover { border-color: var(--neon-blue); background: rgba(0, 243, 255, 0.1); }
+        .item-icon { font-size: 40px; margin-bottom: 10px; display: block; }
+        .item-name { font-size: 13px; word-break: break-all; }
+        .file-size { font-size: 11px; color: #888; margin-top: 5px; }
+
+        /* Cyberpunk Upload Progress */
+        .upload-container { margin-top: 20px; display: none; background: #0a0a0a; padding: 15px; border: 1px solid var(--neon-green); }
+        .progress-bar-bg { width: 100%; height: 25px; background: #000; border: 1px solid var(--neon-green); position: relative; overflow: hidden; margin-top: 10px;}
+        .progress-bar-fill { height: 100%; width: 0%; background: var(--neon-green); box-shadow: 0 0 10px var(--neon-green); transition: width 0.1s; }
+        .progress-text { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-family: 'Orbitron'; font-weight: bold; color: #fff; mix-blend-mode: difference; }
+
         .hidden { display: none !important; }
-
-        /* File List UI */
-        .file-list { margin-top: 20px; max-height: 200px; overflow-y: auto; }
-        .file-item { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 10px; border-bottom: 1px solid var(--border); font-size: 13px;
-        }
-        .file-info { display: flex; flex-direction: column; }
-        .file-name { font-weight: 600; color: var(--primary-color); }
-        .file-size { color: var(--text-light); font-size: 11px; }
-        
-        /* Logout */
-        .user-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid var(--border); }
-        .logout-link { color: var(--text-light); text-decoration: none; font-size: 13px; cursor: pointer; }
-        .logout-link:hover { color: #ef4444; }
     </style>
 </head>
 <body>
 
-<div class="card" id="login-view">
-    <div class="header">
-        <h1>Beagle Systems</h1>
-        <p>Pilot Flight Data Portal</p>
+<div id="login-view">
+    <div class="login-box">
+        <h1>WAYNETECH</h1>
+        <p class="cyber-text" style="color: #888; font-size: 12px; margin-bottom: 30px;">Beagle Systems SECURE UPLINK</p>
+        <input type="text" id="username" class="input-cyber" placeholder="OPERATIVE ID (e.g., Ulf)">
+        <input type="password" id="password" class="input-cyber" placeholder="AUTHORIZATION CODE">
+        <button class="btn-cyber" onclick="login()">ESTABLISH CONNECTION</button>
     </div>
-    
-    <div class="form-group">
-        <label>Pilot ID / Username</label>
-        <input type="text" id="username" placeholder="Enter your assigned Pilot ID">
-    </div>
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" id="password" placeholder="••••••••">
-    </div>
-    <button id="login-btn" onclick="handleLogin()">
-        Secure Login <div class="spinner" id="login-spinner"></div>
-    </button>
 </div>
 
-<div class="card hidden" id="upload-view">
-    <div class="user-nav">
-        <div>
-            <strong style="color: var(--primary-color);" id="pilot-name-display">Pilot</strong>
-            <span style="color: var(--success); font-size: 12px; margin-left: 5px;">● Authenticated</span>
-        </div>
-        <a class="logout-link" onclick="handleLogout()">Log out</a>
-    </div>
-
-    <div class="header" style="text-align: left; margin-bottom: 20px;">
-        <h2 style="margin:0; font-size: 18px; color: var(--primary-color);">Upload Flight Data</h2>
-        <p style="margin: 5px 0 0 0;">Select your route and upload imagery.</p>
+<div id="app-view" class="hidden">
+    <div class="top-bar">
+        <div class="breadcrumb" id="breadcrumb"></div>
+        <div style="color: var(--neon-blue); font-family: 'Orbitron';">SYS_STATUS: <span style="color: var(--neon-green);">ONLINE</span></div>
     </div>
     
-    <div class="grid-2">
-        <div class="form-group">
-            <label>Flight Route</label>
-            <input type="text" id="route" placeholder="e.g., Harz">
+    <div class="workspace">
+        <div class="sidebar">
+            <h3 style="color: var(--neon-blue); margin-top: 0; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">COMMANDS</h3>
+            <button class="btn-cyber" onclick="createFolder()">+ MKDIR (NEW FOLDER)</button>
+            <input type="file" id="file-input" multiple class="hidden" onchange="handleFiles(this.files)">
+            <button class="btn-cyber" style="border-color: var(--neon-yellow); color: var(--neon-yellow);" onclick="document.getElementById('file-input').click()">UPLOAD FILES HERE</button>
+            
+            <p class="cyber-text" style="font-size: 11px; color: #888; margin-top: 20px;">
+                > Navigate via double-click<br>
+                > Files upload to current directory<br>
+                > Drag & drop supported
+            </p>
+
+            <div class="upload-container" id="upload-container">
+                <div style="font-family: 'Orbitron'; color: var(--neon-green); font-size: 12px;" id="upload-status-text">TRANSMITTING...</div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progress-fill"></div>
+                    <div class="progress-text" id="progress-text">0%</div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label>Flight Month</label>
-            <select id="month">
-                <option value="02_2026">February 2026</option>
-                <option value="03_2026">March 2026</option>
-                <option value="04_2026">April 2026</option>
-            </select>
+        
+        <div class="main-area" id="main-area">
+            <div id="drop-overlay">DROP FILES TO UPLOAD</div>
+            <div class="grid" id="item-grid">
+                </div>
         </div>
     </div>
-
-    <div id="drop-zone" onclick="document.getElementById('file-input').click()">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
-        <br><strong>Drag & Drop flight logs and imagery here</strong>
-        <p style="margin-top: 5px; color: var(--text-light); font-size: 13px;">or click to browse your computer (JPEG, RAW, GeoTIFF)</p>
-        <input type="file" id="file-input" multiple class="hidden">
-    </div>
-
-    <div class="file-list" id="file-list"></div>
-    <button id="upload-btn" class="hidden" onclick="startUpload()" style="margin-top: 20px; background-color: var(--success);">
-        Transfer to AWS <div class="spinner" id="upload-spinner"></div>
-    </button>
 </div>
 
 <script>
     let currentPilot = "";
-    let selectedFiles = [];
+    let currentPath = []; 
+    
+    // Mock Database for the Prototype (Folders AND Files)
+    // Structure: folder_name: { type: 'folder', children: {} } OR file_name: { type: 'file', size: '1.2 GB' }
+    let mockFileSystem = {
+        "harz": { type: 'folder', children: { 
+            "01_2026": { type: 'folder', children: {} },
+            "02_2026": { type: 'folder', children: {} } 
+        }},
+        "berlin": { type: 'folder', children: {} }
+    };
 
-    // --- Format File Size (Makes it look legit) ---
-    function formatBytes(bytes, decimals = 2) {
-        if (!+bytes) return '0 Bytes';
-        const k = 1024;
-        const dm = decimals < 0 ? 0 : decimals;
-        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
-    }
-
-    // --- 1. Secure Login Simulation ---
-    function handleLogin() {
+    function login() {
         const user = document.getElementById('username').value.trim().toLowerCase();
-        const pass = document.getElementById('password').value;
-        const btn = document.getElementById('login-btn');
-        const spinner = document.getElementById('login-spinner');
-
-        if(!user || !pass) return alert("Please enter both ID and Password.");
-
-        // Simulate backend authentication request
-        btn.disabled = true;
-        spinner.style.display = 'inline-block';
-
-        setTimeout(() => {
-            // MOCK: Generate a fake secure session token like a real backend would
-            const fakeToken = "ey" + btoa(user + Date.now()) + ".secure_signature";
-            sessionStorage.setItem('pilotAuthToken', fakeToken); // Store token securely in session
-            
-            currentPilot = user;
-            document.getElementById('pilot-name-display').innerText = `Pilot: ${user.toUpperCase()}`;
-            
-            document.getElementById('login-view').classList.add('hidden');
-            document.getElementById('upload-view').classList.remove('hidden');
-            
-            btn.disabled = false;
-            spinner.style.display = 'none';
-        }, 1200);
-    }
-
-    function handleLogout() {
-        sessionStorage.removeItem('pilotAuthToken'); // Destroy token
-        window.location.reload(); // Refresh to clear state
-    }
-
-    // --- 2. Drag & Drop Logic ---
-    const dropZone = document.getElementById('drop-zone');
-    const fileInput = document.getElementById('file-input');
-
-    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
-    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
-    dropZone.addEventListener('drop', (e) => {
-        e.preventDefault(); dropZone.classList.remove('dragover'); handleFiles(e.dataTransfer.files);
-    });
-    fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
-
-    function handleFiles(files) {
-        selectedFiles = Array.from(files);
-        const fileListDiv = document.getElementById('file-list');
+        if(!user) return;
+        currentPilot = user;
+        currentPath = []; // Root is the pilot's base directory
         
-        let html = '';
-        selectedFiles.slice(0, 10).forEach(f => {
-            html += `<div class="file-item">
-                        <div class="file-info">
-                            <span class="file-name">${f.name}</span>
-                            <span class="file-size">${formatBytes(f.size)}</span>
-                        </div>
-                     </div>`;
+        document.getElementById('login-view').classList.add('hidden');
+        document.getElementById('app-view').classList.remove('hidden');
+        renderView();
+    }
+
+    // --- File System Navigation ---
+    function getCurrentDirectory() {
+        let current = mockFileSystem;
+        for (let folder of currentPath) {
+            current = current[folder].children;
+        }
+        return current;
+    }
+
+    function renderView() {
+        const grid = document.getElementById('item-grid');
+        const breadcrumb = document.getElementById('breadcrumb');
+        
+        // Update Breadcrumb UI
+        let breadcrumbHTML = `<span onclick="navigateTo(-1)">${currentPilot.toUpperCase()}</span>`;
+        currentPath.forEach((folder, index) => {
+            breadcrumbHTML += ` <span style="color:#555">/</span> <span onclick="navigateTo(${index})">${folder}</span>`;
         });
+        breadcrumb.innerHTML = breadcrumbHTML;
+
+        grid.innerHTML = '';
+        const currentDir = getCurrentDirectory();
         
-        if(selectedFiles.length > 10) html += `<div class="file-item"><em>...and ${selectedFiles.length - 10} more files.</em></div>`;
-        
-        fileListDiv.innerHTML = html;
-        if(selectedFiles.length > 0) document.getElementById('upload-btn').classList.remove('hidden');
+        // Render everything in the current directory
+        for (let itemName in currentDir) {
+            const item = currentDir[itemName];
+            const div = document.createElement('div');
+            div.className = 'item-card';
+            
+            if (item.type === 'folder') {
+                div.innerHTML = `<span class="item-icon">📁</span><div class="item-name">${itemName}</div>`;
+                div.ondblclick = () => {
+                    currentPath.push(itemName);
+                    renderView();
+                };
+            } else {
+                // It's a file
+                div.innerHTML = `<span class="item-icon" style="filter: hue-rotate(180deg);">📄</span>
+                                 <div class="item-name">${itemName}</div>
+                                 <div class="file-size">${item.size}</div>`;
+            }
+
+            grid.appendChild(div);
+        }
+
+        // Show empty state if nothing is there
+        if (Object.keys(currentDir).length === 0) {
+            grid.innerHTML = `<div style="color: #555; font-family: 'Orbitron'; grid-column: 1 / -1; text-align: center; margin-top: 50px;">
+                DIRECTORY IS EMPTY. DROP FILES HERE.
+            </div>`;
+        }
     }
 
-    // --- 3. Secure Upload Logic ---
-    async function startUpload() {
-        const route = document.getElementById('route').value.trim().toLowerCase();
-        const month = document.getElementById('month').value;
-        const btn = document.getElementById('upload-btn');
-        const spinner = document.getElementById('upload-spinner');
+    function navigateTo(index) {
+        if (index === -1) {
+            currentPath = [];
+        } else {
+            currentPath = currentPath.slice(0, index + 1);
+        }
+        renderView();
+    }
 
-        if(!route) return alert("Error: Flight Route is required to structure AWS folders.");
+    function createFolder() {
+        const name = prompt("Enter new directory name (e.g., flight_data_01):");
+        if (name) {
+            const currentDir = getCurrentDirectory();
+            if(!currentDir[name]) {
+                currentDir[name] = { type: 'folder', children: {} };
+                renderView();
+            } else {
+                alert("Directory already exists!");
+            }
+        }
+    }
 
-        const token = sessionStorage.getItem('pilotAuthToken');
-        if(!token) return alert("Security Error: Your session has expired. Please log in again.");
+    // --- Drag and Drop Logic ---
+    const mainArea = document.getElementById('main-area');
 
-        const basePath = `${currentPilot}/${route}/${month}/`;
+    mainArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        mainArea.classList.add('dragover');
+    });
+
+    mainArea.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        if (e.relatedTarget === null || !mainArea.contains(e.relatedTarget)) {
+            mainArea.classList.remove('dragover');
+        }
+    });
+
+    mainArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        mainArea.classList.remove('dragover');
+        if (e.dataTransfer.files.length > 0) {
+            handleFiles(e.dataTransfer.files);
+        }
+    });
+
+    // --- File Size Formatter ---
+    function formatBytes(bytes) {
+        if (!+bytes) return '0 Bytes';
+        const k = 1024, sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return `${parseFloat((bytes / Math.pow(k, i)).toFixed(2))} ${sizes[i]}`;
+    }
+
+    // --- Cyberpunk Upload Simulation ---
+    function handleFiles(files) {
+        if(files.length === 0) return;
         
-        btn.disabled = true;
-        btn.innerHTML = `Transferring to AWS... <div class="spinner" id="upload-spinner" style="display:inline-block;"></div>`;
+        const fileArray = Array.from(files);
+        document.getElementById('upload-container').style.display = 'block';
+        document.getElementById('upload-status-text').innerText = `TRANSMITTING ${fileArray.length} FILES...`;
+        document.getElementById('upload-status-text').style.color = "var(--neon-green)";
+        
+        const fill = document.getElementById('progress-fill');
+        const text = document.getElementById('progress-text');
+        
+        let progress = 0;
+        
+        // Simulate crazy fast/choppy cyberpunk upload progress
+        const interval = setInterval(() => {
+            progress += Math.random() * 12; 
+            if(progress >= 100) {
+                progress = 100;
+                clearInterval(interval);
+                finishUpload(fileArray);
+            }
+            fill.style.width = `${progress}%`;
+            text.innerText = `${Math.floor(progress)}%`;
+        }, 100);
+    }
 
-        // Mocking the backend API call where we pass the token to prove identity
-        console.log(`Sending token ${token} to backend to authorize upload to ${basePath}`);
+    function finishUpload(files) {
+        const fill = document.getElementById('progress-fill');
+        document.getElementById('upload-status-text').innerText = "DATA SECURED.";
+        document.getElementById('upload-status-text').style.color = "var(--neon-blue)";
+        fill.style.boxShadow = "0 0 20px var(--neon-blue)";
+        fill.style.backgroundColor = "var(--neon-blue)";
+        
+        // Add files to the mock file system in the CURRENT directory
+        const currentDir = getCurrentDirectory();
+        files.forEach(file => {
+            currentDir[file.name] = { 
+                type: 'file', 
+                size: formatBytes(file.size) 
+            };
+        });
 
+        // Re-render to show the newly uploaded files instantly
+        renderView();
+
+        // Reset progress bar UI after a delay
         setTimeout(() => {
-            btn.style.backgroundColor = "var(--success)";
-            btn.innerHTML = `✓ Successfully Uploaded ${selectedFiles.length} files`;
-            selectedFiles = [];
-            
-            // Reset button after 3 seconds
-            setTimeout(() => {
-                btn.classList.add('hidden');
-                btn.disabled = false;
-                btn.innerHTML = `Transfer to AWS <div class="spinner" id="upload-spinner"></div>`;
-                document.getElementById('file-list').innerHTML = '';
-                document.getElementById('route').value = '';
-            }, 3000);
-
+            document.getElementById('upload-container').style.display = 'none';
+            fill.style.backgroundColor = "var(--neon-green)";
+            fill.style.boxShadow = "0 0 10px var(--neon-green)";
+            fill.style.width = "0%";
+            document.getElementById('file-input').value = ""; // Clear input
         }, 2500);
     }
 </script>
-
 </body>
 </html>
