@@ -7,39 +7,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --parchment: #f4ebd0;
-            --parchment-dark: #e6d5aa;
-            --ink: #2b1b17;
-            --gold: #b8860b;
-            --gold-light: #dfb125;
-            --magic-glow: rgba(223, 177, 37, 0.4);
-            --danger: #8b0000;
+            --parchment: #f4ebd0; --parchment-dark: #e6d5aa;
+            --ink: #2b1b17; --gold: #b8860b; --gold-light: #dfb125;
+            --magic-glow: rgba(223, 177, 37, 0.4); --danger: #8b0000;
         }
 
         body {
-            font-family: 'Lora', serif;
-            background-color: var(--parchment);
+            font-family: 'Lora', serif; background-color: var(--parchment);
             background-image: radial-gradient(circle, transparent 20%, var(--parchment-dark) 150%);
-            color: var(--ink);
-            margin: 0; display: flex; height: 100vh; overflow: hidden;
+            color: var(--ink); margin: 0; display: flex; height: 100vh; overflow: hidden;
         }
-
         h1, h2, h3, .magic-text { font-family: 'Cinzel', serif; }
 
-        /* Smooth UI Animations */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0px); }
-        }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-5px); } 100% { transform: translateY(0px); } }
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
 
         /* Login Screen */
         #login-view {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             display: flex; justify-content: center; align-items: center; z-index: 100;
-            background: var(--parchment);
-            transition: opacity 0.5s ease;
+            background: var(--parchment); transition: opacity 0.5s ease;
         }
         .login-box {
             background: #fffdf5; padding: 50px; border: 2px solid var(--gold);
@@ -59,9 +46,10 @@
             background: var(--gold); color: #fff; border: none; padding: 15px 20px;
             font-family: 'Cinzel', serif; font-size: 16px; font-weight: bold; border-radius: 6px;
             cursor: pointer; width: 100%; margin-top: 15px; transition: all 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: inline-flex; justify-content: center; align-items: center; gap: 8px;
         }
-        .btn-magic:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 12px var(--magic-glow); }
+        .btn-magic:hover:not(:disabled) { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 12px var(--magic-glow); }
+        .btn-magic:disabled { background: #bcaea3; cursor: not-allowed; transform: none; box-shadow: none; }
         .btn-magic.secondary { background: transparent; color: var(--ink); border: 2px solid var(--gold); box-shadow: none; }
         .btn-magic.secondary:hover { background: #fffdf5; }
 
@@ -70,10 +58,19 @@
         
         .top-bar {
             height: 70px; background: #fffdf5; border-bottom: 2px solid var(--gold);
-            display: flex; align-items: center; padding: 0 30px; justify-content: space-between;
+            display: flex; align-items: center; padding: 0 30px; gap: 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 10;
         }
-        .breadcrumb { font-family: 'Cinzel', serif; font-size: 20px; font-weight: bold; color: var(--ink); }
+        
+        /* NEW: Back Button */
+        .btn-back {
+            background: transparent; border: 1px solid var(--gold); color: var(--ink);
+            padding: 8px 15px; font-family: 'Cinzel', serif; font-weight: bold; border-radius: 4px;
+            cursor: pointer; transition: all 0.2s; display: none; /* Hidden at root */
+        }
+        .btn-back:hover { background: var(--gold); color: #fff; }
+
+        .breadcrumb { font-family: 'Cinzel', serif; font-size: 20px; font-weight: bold; color: var(--ink); flex: 1; }
         .breadcrumb span { cursor: pointer; transition: color 0.2s; }
         .breadcrumb span:hover { color: var(--gold); }
 
@@ -86,7 +83,7 @@
         
         .main-area { flex: 1; padding: 30px; overflow-y: auto; position: relative; }
 
-        /* Drag & Drop Overlay */
+        /* Drag & Drop */
         #drop-overlay {
             position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px;
             background: rgba(255, 253, 245, 0.9); border: 3px dashed var(--gold); border-radius: 12px;
@@ -101,18 +98,14 @@
         .item-card {
             background: #fffdf5; border: 1px solid #dcd3b6; border-radius: 10px;
             padding: 25px 15px; text-align: center; cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: all 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
-        .item-card:hover { 
-            border-color: var(--gold); transform: translateY(-5px); 
-            box-shadow: 0 10px 15px rgba(0,0,0,0.05), 0 0 15px var(--magic-glow); 
-        }
+        .item-card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.05), 0 0 15px var(--magic-glow); }
         .item-icon { font-size: 45px; margin-bottom: 12px; display: block; animation: float 4s ease-in-out infinite; }
         .item-name { font-size: 15px; font-weight: 600; word-break: break-word; color: var(--ink); }
         .file-size { font-size: 12px; color: #666; margin-top: 8px; font-style: italic; }
 
-        /* Custom Modal (Replaces standard prompt/alert) */
+        /* Modal */
         #custom-modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.4); z-index: 200; display: flex;
@@ -128,10 +121,11 @@
         #custom-modal.active .modal-content { transform: scale(1); }
         .modal-buttons { display: flex; gap: 10px; margin-top: 20px; }
 
-        /* Magical Progress Bar */
+        /* Real Progress Bar UI */
         .upload-container { margin-top: auto; display: none; background: #fffdf5; padding: 20px; border-radius: 8px; border: 1px solid var(--gold); }
-        .progress-bar-bg { width: 100%; height: 12px; background: #e6d5aa; border-radius: 6px; overflow: hidden; margin-top: 15px;}
-        .progress-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--gold), #ffdf70); transition: width 0.2s ease-out; }
+        .progress-bar-bg { width: 100%; height: 16px; background: #e6d5aa; border-radius: 8px; overflow: hidden; margin-top: 10px; position: relative;}
+        .progress-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--gold), #ffdf70); transition: width 0.1s linear; }
+        .progress-percent { position: absolute; width: 100%; text-align: center; top: 0; left: 0; font-size: 11px; font-weight: bold; line-height: 16px; color: var(--ink); mix-blend-mode: overlay; }
         #upload-status { font-weight: bold; font-family: 'Cinzel', serif; font-size: 14px; }
 
         .hidden { display: none !important; }
@@ -151,10 +145,8 @@
 
 <div id="app-view" class="hidden">
     <div class="top-bar">
+        <button class="btn-back" id="back-btn" onclick="navigateBack()">← Go Back</button>
         <div class="breadcrumb" id="breadcrumb"></div>
-        <div style="font-family: 'Cinzel'; font-weight: bold;">
-            Status: <span style="color: #2e8b57;">Connected to Floo Network</span>
-        </div>
     </div>
     
     <div class="workspace">
@@ -163,16 +155,13 @@
             
             <button class="btn-magic" onclick="openFolderModal()">+ Conjure Folder</button>
             <input type="file" id="file-input" multiple class="hidden" onchange="handleFiles(this.files)">
-            <button class="btn-magic secondary" onclick="document.getElementById('file-input').click()">Upload Parchments</button>
-            
-            <p style="font-size: 13px; color: #666; text-align: center; margin-top: 20px; font-style: italic;">
-                Double-click to open folders.<br>Drag and drop files to upload.
-            </p>
+            <button class="btn-magic secondary" id="upload-btn" onclick="document.getElementById('file-input').click()">Upload Parchments</button>
 
             <div class="upload-container" id="upload-container">
-                <div id="upload-status">Transporting files...</div>
+                <div id="upload-status">Transporting to S3...</div>
                 <div class="progress-bar-bg">
                     <div class="progress-bar-fill" id="progress-fill"></div>
+                    <div class="progress-percent" id="progress-percent">0%</div>
                 </div>
             </div>
         </div>
@@ -182,8 +171,7 @@
                 <span style="font-size: 60px;">📜</span>
                 <div class="drop-text">Release to Upload into Current Folder</div>
             </div>
-            <div class="grid" id="item-grid">
-                </div>
+            <div class="grid" id="item-grid"></div>
         </div>
     </div>
 </div>
@@ -191,8 +179,7 @@
 <div id="custom-modal">
     <div class="modal-content">
         <h2 style="margin-top:0;">Create New Folder</h2>
-        <p style="font-size: 14px; color: #666;">Enter a name for the new directory (e.g., 03_2026)</p>
-        <input type="text" id="new-folder-name" placeholder="Folder Name">
+        <input type="text" id="new-folder-name" placeholder="Folder Name (e.g., 03_2026)">
         <div class="modal-buttons">
             <button class="btn-magic secondary" onclick="closeFolderModal()">Cancel</button>
             <button class="btn-magic" onclick="confirmCreateFolder()">Create</button>
@@ -202,22 +189,21 @@
 </div>
 
 <script>
+    // ==========================================
+    // CONFIGURATION
+    // Set to false when connecting to real backend
+    const DEMO_MODE = true; 
+    // ==========================================
+
     let currentPilot = "";
     let currentPath = []; 
-    
-    // Mock Database
-    let mockFileSystem = {
-        "harz": { type: 'folder', children: { 
-            "01_2026": { type: 'folder', children: {} }
-        }}
-    };
+    let mockFileSystem = { "harz": { type: 'folder', children: { "01_2026": { type: 'folder', children: {} } } } };
 
     function login() {
         const user = document.getElementById('username').value.trim();
         if(!user) return;
         currentPilot = user.charAt(0).toUpperCase() + user.slice(1);
         currentPath = []; 
-        
         document.getElementById('login-view').style.opacity = '0';
         setTimeout(() => {
             document.getElementById('login-view').classList.add('hidden');
@@ -226,21 +212,26 @@
         }, 500);
     }
 
-    // --- File System Navigation ---
     function getCurrentDirectory() {
         let current = mockFileSystem;
-        for (let folder of currentPath) {
-            current = current[folder].children;
-        }
+        for (let folder of currentPath) current = current[folder].children;
         return current;
     }
 
     function renderView() {
         const grid = document.getElementById('item-grid');
         const breadcrumb = document.getElementById('breadcrumb');
+        const backBtn = document.getElementById('back-btn');
         
+        // Handle Back Button Visibility
+        if (currentPath.length > 0) {
+            backBtn.style.display = 'block';
+        } else {
+            backBtn.style.display = 'none';
+        }
+
         // Build Breadcrumb
-        let breadcrumbHTML = `<span onclick="navigateTo(-1)">📜 ${currentPilot}'s Archives</span>`;
+        let breadcrumbHTML = `<span onclick="navigateTo(-1)">📜 ${currentPilot}</span>`;
         currentPath.forEach((folder, index) => {
             breadcrumbHTML += ` <span style="color:#dcd3b6">></span> <span onclick="navigateTo(${index})">${folder}</span>`;
         });
@@ -249,27 +240,17 @@
         grid.innerHTML = '';
         const currentDir = getCurrentDirectory();
         
-        // Render items
         for (let itemName in currentDir) {
             const item = currentDir[itemName];
             const div = document.createElement('div');
             div.className = 'item-card';
-            
             if (item.type === 'folder') {
                 div.innerHTML = `<span class="item-icon" style="animation-delay: ${Math.random()}s;">📁</span><div class="item-name">${itemName}</div>`;
                 div.ondblclick = () => { currentPath.push(itemName); renderView(); };
             } else {
-                div.innerHTML = `<span class="item-icon" style="animation-delay: ${Math.random()}s;">📄</span>
-                                 <div class="item-name">${itemName}</div>
-                                 <div class="file-size">${item.size}</div>`;
+                div.innerHTML = `<span class="item-icon" style="animation-delay: ${Math.random()}s;">📄</span><div class="item-name">${itemName}</div><div class="file-size">${item.size}</div>`;
             }
             grid.appendChild(div);
-        }
-
-        if (Object.keys(currentDir).length === 0) {
-            grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; margin-top: 80px; color: #888; font-style: italic;">
-                This folder is empty. Drag files here or click "Upload Parchments".
-            </div>`;
         }
     }
 
@@ -279,98 +260,118 @@
         renderView();
     }
 
-    // --- Custom Modal Logic ---
-    function openFolderModal() {
-        document.getElementById('new-folder-name').value = '';
-        document.getElementById('modal-error').style.display = 'none';
-        document.getElementById('custom-modal').classList.add('active');
-        document.getElementById('new-folder-name').focus();
+    function navigateBack() {
+        if (currentPath.length > 0) {
+            currentPath.pop(); // Remove the last folder from the path
+            renderView();
+        }
     }
 
-    function closeFolderModal() {
-        document.getElementById('custom-modal').classList.remove('active');
-    }
-
+    // Modal Logic
+    function openFolderModal() { document.getElementById('new-folder-name').value = ''; document.getElementById('modal-error').style.display = 'none'; document.getElementById('custom-modal').classList.add('active'); document.getElementById('new-folder-name').focus(); }
+    function closeFolderModal() { document.getElementById('custom-modal').classList.remove('active'); }
     function confirmCreateFolder() {
         const name = document.getElementById('new-folder-name').value.trim();
         const errorMsg = document.getElementById('modal-error');
-        
-        if (!name) {
-            errorMsg.innerText = "Folder name cannot be empty.";
-            errorMsg.style.display = 'block';
-            return;
-        }
-
+        if (!name) { errorMsg.innerText = "Folder name cannot be empty."; errorMsg.style.display = 'block'; return; }
         const currentDir = getCurrentDirectory();
-        if (currentDir[name]) {
-            errorMsg.innerText = "A folder with this name already exists.";
-            errorMsg.style.display = 'block';
-            return;
-        }
-
-        // Success
+        if (currentDir[name]) { errorMsg.innerText = "Folder exists."; errorMsg.style.display = 'block'; return; }
         currentDir[name] = { type: 'folder', children: {} };
-        closeFolderModal();
-        renderView();
+        closeFolderModal(); renderView();
     }
 
-    // --- Drag and Drop Logic ---
+    // Drag & Drop
     const mainArea = document.getElementById('main-area');
     mainArea.addEventListener('dragover', (e) => { e.preventDefault(); mainArea.classList.add('dragover'); });
-    mainArea.addEventListener('dragleave', (e) => {
-        if (e.relatedTarget === null || !mainArea.contains(e.relatedTarget)) {
-            mainArea.classList.remove('dragover');
-        }
-    });
-    mainArea.addEventListener('drop', (e) => {
-        e.preventDefault(); mainArea.classList.remove('dragover');
-        if (e.dataTransfer.files.length > 0) handleFiles(e.dataTransfer.files);
-    });
+    mainArea.addEventListener('dragleave', (e) => { if (e.relatedTarget === null || !mainArea.contains(e.relatedTarget)) mainArea.classList.remove('dragover'); });
+    mainArea.addEventListener('drop', (e) => { e.preventDefault(); mainArea.classList.remove('dragover'); if (e.dataTransfer.files.length > 0) handleFiles(e.dataTransfer.files); });
 
-    // --- Upload Simulation ---
-    function formatBytes(bytes) {
-        if (!+bytes) return '0 B';
-        const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return `${parseFloat((bytes / Math.pow(k, i)).toFixed(1))} ${sizes[i]}`;
-    }
+    function formatBytes(bytes) { if (!+bytes) return '0 B'; const k = 1024, sizes = ['B', 'KB', 'MB', 'GB']; const i = Math.floor(Math.log(bytes) / Math.log(k)); return `${parseFloat((bytes / Math.pow(k, i)).toFixed(1))} ${sizes[i]}`; }
 
-    function handleFiles(files) {
+    // --- REAL AWS UPLOAD TRACKING LOGIC ---
+    async function handleFiles(files) {
         if(files.length === 0) return;
+        const file = files[0]; // For simplicity, handling one massive file at a time in this function
         
-        const fileArray = Array.from(files);
         const container = document.getElementById('upload-container');
         const statusText = document.getElementById('upload-status');
         const fill = document.getElementById('progress-fill');
+        const percentText = document.getElementById('progress-percent');
+        const uploadBtn = document.getElementById('upload-btn');
         
         container.style.display = 'block';
-        statusText.innerText = `Transporting ${fileArray.length} files...`;
+        uploadBtn.disabled = true;
+        statusText.innerText = `Sending ${file.name} to AWS...`;
         fill.style.width = '0%';
-        
-        let progress = 0;
-        
-        // Smooth magic fill animation
-        const interval = setInterval(() => {
-            progress += 5; 
-            fill.style.width = `${progress}%`;
-            
-            if(progress >= 100) {
-                clearInterval(interval);
-                statusText.innerText = "✓ Files Secured in Archives.";
-                
-                // Add to mock file system
-                const currentDir = getCurrentDirectory();
-                fileArray.forEach(file => {
-                    currentDir[file.name] = { type: 'file', size: formatBytes(file.size) };
-                });
-                renderView();
+        percentText.innerText = '0%';
 
-                setTimeout(() => {
-                    container.style.display = 'none';
-                    document.getElementById('file-input').value = "";
-                }, 2000);
+        if (DEMO_MODE) {
+            // DEMO: Simulating the XHR progress for Antonin tomorrow
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 8; 
+                if(progress >= 100) progress = 100;
+                
+                fill.style.width = `${progress}%`;
+                percentText.innerText = `${Math.floor(progress)}%`;
+
+                if(progress === 100) {
+                    clearInterval(interval);
+                    finalizeUpload(file);
+                }
+            }, 200);
+
+        } else {
+            // REALITY: This is the exact code you will uncomment when the backend is ready.
+            try {
+                // 1. Ask your new backend for the AWS S3 Presigned URL
+                const targetPath = `${currentPilot.toLowerCase()}/${currentPath.join('/')}/${file.name}`;
+                // const response = await fetch(`https://api.beaglesystems.com/get-url?path=${targetPath}`);
+                // const { presignedUrl } = await response.json();
+                
+                const presignedUrl = "MOCK_URL"; // Remove this line in production
+
+                // 2. Use XMLHttpRequest to track REAL byte-by-byte AWS progress
+                await new Promise((resolve, reject) => {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('PUT', presignedUrl, true);
+                    xhr.setRequestHeader('Content-Type', file.type);
+
+                    // THIS IS THE MAGIC LISTENER FOR REAL PROGRESS
+                    xhr.upload.addEventListener('progress', (event) => {
+                        if (event.lengthComputable) {
+                            const percentComplete = Math.round((event.loaded / event.total) * 100);
+                            fill.style.width = `${percentComplete}%`;
+                            percentText.innerText = `${percentComplete}%`;
+                        }
+                    });
+
+                    xhr.onload = () => { if (xhr.status === 200) resolve(); else reject(); };
+                    xhr.onerror = () => reject();
+                    
+                    xhr.send(file); // Actually sends the file to AWS
+                });
+
+                finalizeUpload(file);
+            } catch (error) {
+                statusText.innerText = "Upload Failed! Check connection.";
+                statusText.style.color = "var(--danger)";
+                uploadBtn.disabled = false;
             }
-        }, 100);
+        }
+    }
+
+    function finalizeUpload(file) {
+        document.getElementById('upload-status').innerText = "✓ Secured in AWS S3.";
+        const currentDir = getCurrentDirectory();
+        currentDir[file.name] = { type: 'file', size: formatBytes(file.size) };
+        renderView();
+
+        setTimeout(() => {
+            document.getElementById('upload-container').style.display = 'none';
+            document.getElementById('file-input').value = "";
+            document.getElementById('upload-btn').disabled = false;
+        }, 2500);
     }
 </script>
 </body>
