@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BQCJ04EJ7"></script>
     <script>
@@ -32,6 +32,9 @@
             --border-color: rgba(255, 255, 255, 0.1);
             --font-heading: 'Playfair Display', serif; 
             --font-body: 'Roboto', sans-serif;
+            /* New font variables for the Hero section */
+            --font-name: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            --font-subtitle: 'DM Sans', sans-serif;
         }
 
         html { scroll-behavior: smooth; }
@@ -127,7 +130,6 @@
             .timeline-container.right { left: 0%; }
             .timeline-container.left::after, .timeline-container.right::after { left: 12px; }
             .slider-image-box { height: 50vh; }
-            /* Shift background focus to the second quarter from the right on mobile */
             .background-container { background-position: 60% center; }
         }
     </style>
@@ -162,8 +164,8 @@
     <main class="max-w-7xl mx-auto px-4 relative z-10">
         <section id="hero" class="text-center py-24 md:py-32">
             <div class="max-w-4xl mx-auto">
-                <h1 class="text-5xl md:text-7xl text-white mb-4 animate-fadeInUp">Atiqur Rahman</h1>
-                <h2 class="text-2xl md:text-3xl font-bold mb-8 tracking-wider text-cyan-300 animate-fadeInUp" style="animation-delay: 0.3s;">Co-founder & Operations Manager | Drone R&D Engineer | Photographer</h2>
+                <h1 class="text-5xl md:text-7xl text-white mb-4 animate-fadeInUp" style="font-family: var(--font-name);">Atiqur Rahman</h1>
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 tracking-wider text-cyan-300 animate-fadeInUp" style="font-family: var(--font-subtitle); animation-delay: 0.3s;">Co-founder & Operations Manager | Drone R&D Engineer | Photographer</h2>
                 <div class="flex space-x-8 mb-10 justify-center animate-fadeInUp" style="animation-delay: 0.6s;">
                     <a href="https://linkedin.com/in/aakashrahman" target="_blank" class="social-btn text-gray-400 text-3xl" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/AtiqAakash" target="_blank" class="social-btn text-gray-400 text-3xl" title="GitHub"><i class="fab fa-github"></i></a>
@@ -181,7 +183,9 @@
                     <img src="about-photo.jpg" alt="Atiqur Rahman" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover flex-shrink-0 border-4 border-cyan-500">
                     <div class="text-center md:text-left">
                         <p class="text-base text-gray-300" style="line-height: 1.75;">
-An engineer by logic, a creator by instinct, and a maker at heart. As Co-founder and Operations Manager at Altivon AS, I translate the quiet poetry of C++ code into the reality of autonomous flight, bridging raw R&D with commercial execution. My world thrives on precision and perspective—whether I am scaling aerial operations, strategizing on the cricket pitch, or finding rhythm on the badminton court. Beyond the tech and the turf, I am a photographer chasing fleeting light, and a pet lover grounded by life's simplest joys.                    </div>
+                            An engineer by logic, a creator by instinct, and a maker at heart. As Co-founder and Operations Manager at Altivon AS, I translate the quiet poetry of C++ code into the reality of autonomous flight, bridging raw R&D with commercial execution. My world thrives on precision and perspective—whether I am scaling aerial operations, strategizing on the cricket pitch, or finding rhythm on the badminton court. Beyond the tech and the turf, I am a photographer chasing fleeting light, and a pet lover grounded by life's simplest joys.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
